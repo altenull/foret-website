@@ -17,6 +17,7 @@
     "@emotion/core": "^10.0.28",
     "gatsby": "^2.23.12",
     "gatsby-plugin-emotion": "^4.3.10",
+    "gatsby-plugin-intl": "^0.3.3",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
