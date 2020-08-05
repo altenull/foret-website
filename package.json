@@ -14,11 +14,14 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.28",
     "gatsby": "^2.23.12",
+    "gatsby-plugin-emotion": "^4.3.10",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
   "devDependencies": {
+    "@altenull/foret-core": "^1.0.0-2",
     "prettier": "2.0.5"
   },
   "repository": {
