@@ -1,14 +1,17 @@
+import { Color } from '@altenull/foret-core';
+import { css } from '@emotion/core';
+import { useIntl } from 'gatsby-plugin-intl';
 import React from 'react';
 import Layout from '../components/common/Layout';
-import { css } from '@emotion/core';
-import { Color } from '@altenull/foret-core';
 
 const homeStyles = css`
   background-color: ${Color.Paper};
 `;
 
 const Home = () => {
-  return <Layout css={homeStyles}>Hello world!</Layout>;
+  const intl = useIntl();
+
+  return <Layout css={homeStyles}>{intl.formatMessage({ id: 'title' })}</Layout>;
 };
 
 export default Home;
