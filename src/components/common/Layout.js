@@ -1,5 +1,6 @@
 import React from 'react';
 import { Global, css } from '@emotion/core';
+import { Color } from '@altenull/foret-core';
 
 const globalStyles = css`
   body {
@@ -7,6 +8,20 @@ const globalStyles = css`
     padding: 0;
     min-height: 100vh;
     max-width: 100vw;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  div {
+    &::selection {
+      background: ${Color.ForetGreen};
+    }
   }
 
   #___gatsby,
