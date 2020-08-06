@@ -5,11 +5,14 @@
  */
 
 module.exports = {
-  /* Your site config here */
+  siteMetadata: {
+    title: 'Foret Design System',
+  },
   plugins: [
     'gatsby-plugin-emotion',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-intl',
       options: {
