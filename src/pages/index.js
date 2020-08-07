@@ -3,7 +3,7 @@ import { css } from '@emotion/core';
 import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
-import { Header, Layout } from '../components/common';
+import { Footer, Header, Layout } from '../components/common';
 import { useSiteMetadata } from '../hooks';
 
 const homeStyles = css`
@@ -20,6 +20,7 @@ const Home = () => {
       <Layout css={homeStyles}>
         <Header />
         {intl.formatMessage({ id: 'title' })}
+        <Footer />
       </Layout>
     </Fragment>
   );
