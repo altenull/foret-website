@@ -1,3 +1,4 @@
+// TODO: Put language selector feature into footer
 import { Color } from '@altenull/foret-core';
 import { SmallText } from '@altenull/foret-react';
 import { css } from '@emotion/core';

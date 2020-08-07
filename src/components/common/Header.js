@@ -1,3 +1,4 @@
+// TODO: Put language selector feature into sidebar or modal
 import { css } from '@emotion/core';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
