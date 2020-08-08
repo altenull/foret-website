@@ -1,14 +1,23 @@
 // TODO: Put language selector feature into sidebar or modal
+import { Color } from '@altenull/foret-core';
 import { css } from '@emotion/core';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
-import React from 'react';
+import React, { Fragment, useState } from 'react';
+import ReactDOM from 'react-dom';
 import { HamburgerIcon } from '../icons';
+import Drawer from './Drawer';
 
 const headerStyles = css`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 56px;
+  background-color: ${Color.Paper};
+  position: fixed;
+  top: 56px;
+  z-index: 1100; /* TODO: Manage z-index in one place */
 `;
 
 const logoWrapperStyles = css`
@@ -30,6 +39,12 @@ const hamburgerMenuStyles = css`
 `;
 
 const Header = () => {
+  const [isDrawerShowing, setIsDrawerShowing] = useState(false);
+
+  const toggleDrawer = () => {
+    setIsDrawerShowing(!isDrawerShowing);
+  };
+
   const data = useStaticQuery(graphql`
     query {
       logoImage: file(relativePath: { eq: "logo-temp.png" }) {
@@ -43,16 +58,20 @@ const Header = () => {
   `);
 
   return (
-    <header css={headerStyles}>
-      <div css={logoWrapperStyles}>
-        <Img fixed={data.logoImage.childImageSharp.fixed} css={logoStyles} />
-        <span css={titleStyles}>Foret Design System</span>
-      </div>
+    <Fragment>
+      {isDrawerShowing && ReactDOM.createPortal(<Drawer />, document.body)}
 
-      <div css={hamburgerMenuStyles}>
-        <HamburgerIcon />
-      </div>
-    </header>
+      <header css={headerStyles}>
+        <div css={logoWrapperStyles}>
+          <Img fixed={data.logoImage.childImageSharp.fixed} css={logoStyles} />
+          <span css={titleStyles}>Foret Design System</span>
+        </div>
+
+        <div css={hamburgerMenuStyles} onClick={() => toggleDrawer()}>
+          <HamburgerIcon />
+        </div>
+      </header>
+    </Fragment>
   );
 };
 
