@@ -5,8 +5,8 @@ import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import React, { Fragment, useState } from 'react';
 import ReactDOM from 'react-dom';
-import { HamburgerIcon } from '../icons';
-import Drawer from './Drawer';
+import { HamburgerIcon } from '../../components/icons';
+import Drawer from '../../components/common/Drawer';
 
 const headerStyles = css`
   width: 100%;
@@ -38,7 +38,7 @@ const hamburgerMenuStyles = css`
   align-items: center;
 `;
 
-const Header = () => {
+const HeaderContainer = () => {
   const [isDrawerShowing, setIsDrawerShowing] = useState(false);
 
   const toggleDrawer = () => {
@@ -75,4 +75,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderContainer;

@@ -3,7 +3,8 @@ import { css } from '@emotion/core';
 import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
-import { Footer, Header, Layout } from '../components/common';
+import { Footer, Layout } from '../components/common';
+import { HeaderContainer } from '../containers/common';
 import HeroSection from '../components/home/HeroSection';
 import { useSiteMetadata } from '../hooks';
 
@@ -19,7 +20,7 @@ const Home = () => {
     <Fragment>
       <Helmet title={siteMetadata.title} defer={false} />
       <Layout css={homeStyles}>
-        <Header />
+        <HeaderContainer />
         <HeroSection />
         {intl.formatMessage({ id: 'title' })}
         <Footer />
