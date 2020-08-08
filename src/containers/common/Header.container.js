@@ -68,7 +68,7 @@ const HeaderContainer = () => {
         </div>
 
         <div css={hamburgerMenuStyles} onClick={() => toggleDrawer()}>
-          <HamburgerIcon />
+          <HamburgerIcon isDrawerShowing={isDrawerShowing} />
         </div>
       </header>
     </Fragment>

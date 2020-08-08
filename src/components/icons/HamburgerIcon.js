@@ -17,7 +17,10 @@ const lineStyles = css`
   background-color: ${Color.Ink};
 `;
 
-const HamburgerIcon = () => {
+const HamburgerIcon = ({ isDrawerShowing }) => {
+  // TODO: Implement animation depending on isDrawerShowing value
+  //       Benchmark https://www.greshamsmith.com/
+
   return (
     <span css={hamburgerIconStyles}>
       <span css={lineStyles} />
