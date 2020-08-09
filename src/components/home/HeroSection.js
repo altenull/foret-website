@@ -16,18 +16,33 @@ const canvasStyles = css`
 const HeroSection = () => {
   let ctx;
   let pixelRatio;
+  let stageWidth;
+  let stageHeight;
 
   const sectionRef = useRef();
   const canvasRef = useRef();
 
   const resize = () => {
-    const stageWidth = sectionRef.current.clientWidth;
-    const stageHeight = sectionRef.current.clientHeight;
+    stageWidth = sectionRef.current.clientWidth;
+    stageHeight = sectionRef.current.clientHeight;
+
+    ctx.clearRect(0, 0, stageWidth, stageHeight);
 
     canvasRef.current.width = stageWidth * pixelRatio;
     canvasRef.current.height = stageHeight * pixelRatio;
 
     ctx.scale(pixelRatio, pixelRatio);
+    drawCircle();
+  };
+
+  const drawCircle = () => {
+    const x = stageWidth / 4;
+    const y = stageHeight / 2;
+    const radius = stageHeight / 2.5;
+
+    ctx.fillStyle = `rgba(46, 139, 87, 1)`;
+    ctx.arc(x, y, radius, 0, Math.PI * 2, false);
+    ctx.fill();
   };
 
   useEffect(() => {

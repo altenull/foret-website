@@ -14,7 +14,6 @@ const headerStyles = css`
   justify-content: space-between;
   box-sizing: border-box;
   padding: 0 56px;
-  background-color: ${Color.Paper};
   position: fixed;
   top: 56px;
   z-index: 1100; /* TODO: Manage z-index in one place */
@@ -29,8 +28,9 @@ const logoStyles = css`
   margin-right: 16px;
 `;
 
-const titleStyles = css`
+const titleStyles = (isDrawerShowing) => css`
   font-size: 1.5rem;
+  color: ${isDrawerShowing ? Color.Ink : Color.White};
 `;
 
 const hamburgerMenuStyles = css`
@@ -64,11 +64,11 @@ const HeaderContainer = () => {
       <header css={headerStyles}>
         <div css={logoWrapperStyles}>
           <Img fixed={data.logoImage.childImageSharp.fixed} css={logoStyles} />
-          <span css={titleStyles}>Foret Design System</span>
+          <span css={titleStyles(isDrawerShowing)}>Foret Design System</span>
         </div>
 
         <div css={hamburgerMenuStyles} onClick={() => toggleDrawer()}>
-          <HamburgerIcon isDrawerShowing={isDrawerShowing} />
+          <HamburgerIcon isDrawerShowing={isDrawerShowing} color={isDrawerShowing ? Color.Ink : Color.White} />
         </div>
       </header>
     </Fragment>
