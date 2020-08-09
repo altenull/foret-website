@@ -1,6 +1,7 @@
 import { css } from '@emotion/core';
 import React, { useEffect, useRef } from 'react';
 import { Color } from '@altenull/foret-core';
+import { hexToRgb } from '../../utils';
 
 const sectionStyles = css`
   width: 100%;
@@ -39,8 +40,9 @@ const HeroSection = () => {
     const x = stageWidth / 4;
     const y = stageHeight / 2;
     const radius = stageHeight / 2.5;
+    const foretGreenRgb = hexToRgb(Color.ForetGreen);
 
-    ctx.fillStyle = `rgba(46, 139, 87, 1)`;
+    ctx.fillStyle = `rgba(${foretGreenRgb.r}, ${foretGreenRgb.g}, ${foretGreenRgb.b}, 1)`;
     ctx.arc(x, y, radius, 0, Math.PI * 2, false);
     ctx.fill();
   };
