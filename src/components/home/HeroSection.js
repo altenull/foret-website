@@ -1,7 +1,6 @@
 import { css } from '@emotion/core';
 import React, { useEffect, useRef } from 'react';
-import { Color } from '@altenull/foret-core';
-import { hexToRgb } from '../../utils';
+import { Color, hexToRgb } from '@altenull/foret-core';
 
 const sectionStyles = css`
   width: 100%;

@@ -14,7 +14,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "@altenull/foret-core": "^1.0.0-2",
+    "@altenull/foret-core": "^1.0.0-4",
     "@altenull/foret-react": "^1.0.0-18",
     "@emotion/core": "^10.0.28",
     "gatsby": "^2.23.12",
