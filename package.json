@@ -23,8 +23,11 @@
     "gatsby-plugin-intl": "^0.3.3",
     "gatsby-plugin-react-helmet": "^3.3.10",
     "gatsby-plugin-sharp": "^2.6.24",
+    "gatsby-remark-prismjs": "^3.5.10",
     "gatsby-source-filesystem": "^2.3.23",
+    "gatsby-transformer-remark": "^2.8.28",
     "gatsby-transformer-sharp": "^2.5.12",
+    "prismjs": "^1.21.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0"
