@@ -6,7 +6,7 @@ import Img from 'gatsby-image';
 import React, { Fragment, useState } from 'react';
 import ReactDOM from 'react-dom';
 import { HamburgerIcon } from '../../components/icons';
-import Drawer from '../../components/common/Drawer';
+import DrawerContainer from './Drawer.container';
 
 const headerStyles = css`
   width: 100%;
@@ -59,7 +59,7 @@ const HeaderContainer = () => {
 
   return (
     <Fragment>
-      {isDrawerShowing && ReactDOM.createPortal(<Drawer />, document.body)}
+      {isDrawerShowing && ReactDOM.createPortal(<DrawerContainer />, document.body)}
 
       <header css={headerStyles}>
         <div css={logoWrapperStyles}>

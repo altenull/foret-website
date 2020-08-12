@@ -7,6 +7,10 @@ const useSiteMetadata = () => {
         site {
           siteMetadata {
             title
+            pageRoutes {
+              key
+              camelCase
+            }
           }
         }
       }

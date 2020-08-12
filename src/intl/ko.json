@@ -1,3 +1,10 @@
 {
-  "title": "Gatsby 한국어"
+  "title": "Gatsby 한국어",
+  "pages": {
+    "home": "홈페이지",
+    "getStarted": "시작하기",
+    "designPrinciple": "디자인 원칙",
+    "color": "색상",
+    "components": "컴포넌트"
+  }
 }

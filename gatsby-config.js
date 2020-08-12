@@ -7,6 +7,28 @@
 module.exports = {
   siteMetadata: {
     title: 'Foret Design System',
+    pageRoutes: [
+      {
+        key: 'home',
+        camelCase: 'home',
+      },
+      {
+        key: 'get-started',
+        camelCase: 'getStarted',
+      },
+      {
+        key: 'design-principle',
+        camelCase: 'designPrinciple',
+      },
+      {
+        key: 'color',
+        camelCase: 'color',
+      },
+      {
+        key: 'components',
+        camelCase: 'components',
+      },
+    ],
   },
   plugins: [
     'gatsby-plugin-emotion',

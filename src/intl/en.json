@@ -1,3 +1,10 @@
 {
-  "title": "Gatsby English"
+  "title": "Gatsby English",
+  "pages": {
+    "home": "Home",
+    "getStarted": "Get Started",
+    "designPrinciple": "Design Principle",
+    "color": "Color",
+    "components": "Components"
+  }
 }
