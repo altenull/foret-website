@@ -48,16 +48,18 @@ const HeroSection = () => {
 
   useEffect(() => {
     ctx = canvasRef.current.getContext('2d');
-    pixelRatio = window.devicePixelRatio > 1 ? 2 : 1;
-
     if (window !== undefined) {
+      pixelRatio = window.devicePixelRatio > 1 ? 2 : 1;
+
       resize();
 
       window.addEventListener('resize', resize);
     }
 
     return () => {
-      window.removeEventListener('resize', resize);
+      if (window !== undefined) {
+        window.removeEventListener('resize', resize);
+      }
     };
   }, []);
 
