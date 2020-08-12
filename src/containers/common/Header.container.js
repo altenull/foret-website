@@ -7,6 +7,7 @@ import React, { Fragment, useState } from 'react';
 import ReactDOM from 'react-dom';
 import { HamburgerIcon } from '../../components/icons';
 import DrawerContainer from './Drawer.container';
+import { useIntl } from 'gatsby-plugin-intl';
 
 const headerStyles = css`
   width: 100%;
@@ -40,6 +41,7 @@ const hamburgerMenuStyles = css`
 
 const HeaderContainer = () => {
   const [isDrawerShowing, setIsDrawerShowing] = useState(false);
+  const intl = useIntl();
 
   const toggleDrawer = () => {
     setIsDrawerShowing(!isDrawerShowing);
@@ -64,7 +66,7 @@ const HeaderContainer = () => {
       <header css={headerStyles}>
         <div css={logoWrapperStyles}>
           <Img fixed={data.logoImage.childImageSharp.fixed} css={logoStyles} />
-          <span css={titleStyles(isDrawerShowing)}>Foret Design System</span>
+          <span css={titleStyles(isDrawerShowing)}>{intl.formatMessage({ id: 'header.title' })}</span>
         </div>
 
         <div css={hamburgerMenuStyles} onClick={() => toggleDrawer()}>

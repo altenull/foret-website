@@ -6,5 +6,11 @@
     "designPrinciple": "디자인 원칙",
     "color": "색상",
     "components": "컴포넌트"
+  },
+  "header": {
+    "title": "Foret 디자인 시스템"
+  },
+  "drawer": {
+    "preferredLanguageTitle": "선호하는 언어를 선택하세요"
   }
 }
