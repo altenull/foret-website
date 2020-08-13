@@ -1,4 +1,3 @@
-// TODO: Put language selector feature into footer
 import { Color } from '@altenull/foret-core';
 import { SmallText } from '@altenull/foret-react';
 import { css } from '@emotion/core';
@@ -18,10 +17,9 @@ const smallTextStyles = css`
 const Footer = () => {
   return (
     <footer css={footerStyles}>
-      <SmallText css={smallTextStyles}>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-        standard dummy text ever since the 1500s,
-      </SmallText>
+      <SmallText css={smallTextStyles}>TODO: Preferred Languages</SmallText>
+      <SmallText css={smallTextStyles}>© 2020 Foret Design System. All rights reserved.</SmallText>
+      <SmallText css={smallTextStyles}>TODO: Creator Heonyoung Kim. (github link or others...)</SmallText>
     </footer>
   );
 };
