@@ -6,17 +6,24 @@ import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment, useState } from 'react';
 import ReactDOM from 'react-dom';
 import { HamburgerIcon } from '../../components/icons';
+import { BreakpointEnum, mediaQuery } from '../../utils/media-query.utils';
 import DrawerContainer from './Drawer.container';
 
 const headerStyles = css`
-  width: 100%;
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 2rem);
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
-  padding: 0 56px;
-  position: fixed;
-  top: 56px;
   z-index: 1100; /* TODO: Manage z-index in one place */
+  ${mediaQuery(BreakpointEnum.ViewPort9)} {
+    width: calc(100% - 4rem);
+    max-width: 1440px;
+    top: 56px;
+  }
 `;
 
 const logoWrapperStyles = css`
