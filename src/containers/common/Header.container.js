@@ -1,13 +1,12 @@
-// TODO: Put language selector feature into sidebar or modal
 import { Color } from '@altenull/foret-core';
 import { css } from '@emotion/core';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
+import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment, useState } from 'react';
 import ReactDOM from 'react-dom';
 import { HamburgerIcon } from '../../components/icons';
 import DrawerContainer from './Drawer.container';
-import { useIntl } from 'gatsby-plugin-intl';
 
 const headerStyles = css`
   width: 100%;
@@ -48,7 +47,7 @@ const HeaderContainer = () => {
   };
 
   const data = useStaticQuery(graphql`
-    query {
+    query getLogoImage {
       logoImage: file(relativePath: { eq: "logo-temp.png" }) {
         childImageSharp {
           fixed(width: 64, height: 64) {
