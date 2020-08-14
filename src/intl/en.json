@@ -7,9 +7,6 @@
     "color": "Color",
     "components": "Components"
   },
-  "header": {
-    "title": "Foret Design System"
-  },
   "drawer": {
     "preferredLanguageTitle": "Select your preferred language"
   }

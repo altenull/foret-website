@@ -73,7 +73,7 @@ const HeaderContainer = () => {
       <header css={headerStyles}>
         <div css={logoWrapperStyles}>
           <Img fixed={data.logoImage.childImageSharp.fixed} css={logoStyles} />
-          <span css={titleStyles(isDrawerShowing)}>{intl.formatMessage({ id: 'header.title' })}</span>
+          <span css={titleStyles(isDrawerShowing)}>{intl.formatMessage({ id: 'title' })}</span>
         </div>
 
         <div css={hamburgerMenuStyles} onClick={() => toggleDrawer()}>
