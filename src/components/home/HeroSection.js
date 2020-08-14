@@ -2,10 +2,7 @@ import { css } from '@emotion/core';
 import React, { useEffect, useRef } from 'react';
 import { Color, hexToRgb } from '@altenull/foret-core';
 
-const sectionStyles = css`
-  width: 100%;
-  height: 100%;
-`;
+const sectionStyles = css``;
 
 const canvasStyles = css`
   width: 100%;

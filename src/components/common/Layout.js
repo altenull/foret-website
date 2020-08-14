@@ -1,9 +1,7 @@
 import { css } from '@emotion/core';
 import React from 'react';
 
-const layoutStyles = css`
-  height: 100%;
-`;
+const layoutStyles = css``;
 
 const Layout = ({ children, ...props }) => {
   return (

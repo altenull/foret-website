@@ -1,10 +1,10 @@
 import { Color } from '@altenull/foret-core';
 import { css } from '@emotion/core';
+import { HeroSection, IntroSection } from '../components/home';
 import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 import { Footer, Layout } from '../components/common';
-import HeroSection from '../components/home/HeroSection';
 import { HeaderContainer } from '../containers/common';
 
 const homeStyles = css`
@@ -21,6 +21,7 @@ const HomePage = () => {
       <Layout css={homeStyles}>
         <HeaderContainer />
         <HeroSection />
+        <IntroSection />
         <Footer />
       </Layout>
     </Fragment>
