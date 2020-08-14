@@ -6,7 +6,6 @@ const useSiteMetadata = () => {
       query getSiteMetaData {
         site {
           siteMetadata {
-            title
             pageRoutes {
               key
               camelCase

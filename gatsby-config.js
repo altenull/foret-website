@@ -1,3 +1,5 @@
+const { PageRouteEnum } = require('./src/enums/core/page-route.enum');
+
 /**
  * Configure your Gatsby site with this file.
  *
@@ -6,26 +8,21 @@
 
 module.exports = {
   siteMetadata: {
-    title: 'Foret Design System',
     pageRoutes: [
       {
-        key: 'home',
-        camelCase: 'home',
-      },
-      {
-        key: 'get-started',
+        key: PageRouteEnum.GetStarted,
         camelCase: 'getStarted',
       },
       {
-        key: 'design-principle',
+        key: PageRouteEnum.DesignPrinciple,
         camelCase: 'designPrinciple',
       },
       {
-        key: 'color',
+        key: PageRouteEnum.Color,
         camelCase: 'color',
       },
       {
-        key: 'components',
+        key: PageRouteEnum.Components,
         camelCase: 'components',
       },
     ],
