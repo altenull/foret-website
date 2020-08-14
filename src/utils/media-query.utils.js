@@ -1,8 +1,4 @@
-export const BreakpointEnum = Object.freeze({
-  ViewPort4: 'viewPort4',
-  ViewPort9: 'viewPort9',
-  ViewPort12: 'viewPort12',
-});
+import { BreakpointEnum } from '../enums/core/breakpoint.enum';
 
 // Breakpoint references
 // https://dev.to/rstacruz/what-media-query-breakpoints-should-i-use-292c

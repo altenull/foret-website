@@ -6,7 +6,8 @@ import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment, useState } from 'react';
 import ReactDOM from 'react-dom';
 import { HamburgerIcon } from '../../components/icons';
-import { BreakpointEnum, mediaQuery } from '../../utils/media-query.utils';
+import { BreakpointEnum } from '../../enums/core/breakpoint.enum';
+import { mediaQuery } from '../../utils/media-query.utils';
 import DrawerContainer from './Drawer.container';
 
 const headerStyles = css`
