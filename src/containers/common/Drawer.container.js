@@ -1,6 +1,7 @@
 import { Color } from '@altenull/foret-core';
-import { Paragraph, PrimaryButton, Subtitle1 } from '@altenull/foret-react';
+import { Heading3, Paragraph, PrimaryButton } from '@altenull/foret-react';
 import { css, Global } from '@emotion/core';
+import { Link } from 'gatsby';
 import { changeLocale, useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
 import { useGetLanguages, useGetSiteMetadata } from '../../hooks';
@@ -26,9 +27,17 @@ const pageListWrapperStyles = css`
 `;
 
 const pageListItemStyles = css`
-  list-style: none;
-  height: 48px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 64px;
+  & + & {
+    margin-top: 2rem;
+  }
+`;
+
+const linkStyles = css`
+  text-decoration: none;
 `;
 
 const preferredLanguageWrapperStyles = css``;
@@ -45,9 +54,11 @@ const DrawerContainer = () => {
   const getLanguagesResponse = useGetLanguages();
   const intl = useIntl();
 
-  const pages = getSiteMetadataResponse.siteMetadata.pageRoutes.map((pageRoute) => (
-    <li key={pageRoute.key} css={pageListItemStyles}>
-      <Subtitle1>{intl.formatMessage({ id: `pages.${pageRoute.camelCase}` })}</Subtitle1>
+  const pages = getSiteMetadataResponse.siteMetadata.pageRoutes.map(({ key, camelCase }) => (
+    <li key={key} css={pageListItemStyles}>
+      <Link to={`/${key}`} css={linkStyles}>
+        <Heading3>{intl.formatMessage({ id: `pages.${camelCase}` })}</Heading3>
+      </Link>
     </li>
   ));
 
