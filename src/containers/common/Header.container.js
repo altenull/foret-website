@@ -16,6 +16,7 @@ const headerStyles = css`
   left: 50%;
   transform: translateX(-50%);
   width: calc(100% - 2rem);
+  height: 80px;
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
