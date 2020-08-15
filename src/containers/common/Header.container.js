@@ -1,13 +1,12 @@
 import { Color } from '@altenull/foret-core';
 import { css } from '@emotion/core';
-import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment, useEffect, useRef, useState } from 'react';
 import ReactDOM from 'react-dom';
 import { HamburgerIcon } from '../../components/icons';
 import { BreakpointEnum } from '../../enums/core/breakpoint.enum';
-import { useIsMounted } from '../../hooks';
+import { useGetLogoImage, useIsMounted } from '../../hooks';
 import { mediaQuery } from '../../utils/media-query.utils';
 import DrawerContainer from './Drawer.container';
 
@@ -61,6 +60,7 @@ const HeaderContainer = () => {
 
   const isMounted = useIsMounted();
   const intl = useIntl();
+  const getLogoImageResponse = useGetLogoImage();
 
   const headerRef = useRef();
 
@@ -93,25 +93,13 @@ const HeaderContainer = () => {
     setIsDrawerShowing(!isDrawerShowing);
   };
 
-  const data = useStaticQuery(graphql`
-    query getLogoImage {
-      logoImage: file(relativePath: { eq: "logo-temp.png" }) {
-        childImageSharp {
-          fixed(width: 80, height: 80) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-    }
-  `);
-
   return (
     <Fragment>
       {isDrawerShowing && ReactDOM.createPortal(<DrawerContainer />, document.body)}
 
       <header css={headerStyles} ref={headerRef}>
         <div css={logoWrapperStyles}>
-          <Img fixed={data.logoImage.childImageSharp.fixed} css={logoStyles(isScrolled)} />
+          <Img fixed={getLogoImageResponse.fixed} css={logoStyles(isScrolled)} />
           <span css={titleStyles(isDrawerShowing, isScrolled)}>{intl.formatMessage({ id: 'title' })}</span>
         </div>
 

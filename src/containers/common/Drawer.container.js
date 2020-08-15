@@ -1,10 +1,9 @@
 import { Color } from '@altenull/foret-core';
 import { Paragraph, PrimaryButton, Subtitle1 } from '@altenull/foret-react';
 import { css, Global } from '@emotion/core';
-import { graphql, useStaticQuery } from 'gatsby';
 import { changeLocale, useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
-import { useSiteMetadata } from '../../hooks';
+import { useGetLanguages, useGetSiteMetadata } from '../../hooks';
 
 const drawerStyles = css`
   position: fixed;
@@ -42,30 +41,17 @@ const globalStyles = css`
 `;
 
 const DrawerContainer = () => {
-  const { pageRoutes } = useSiteMetadata();
+  const getSiteMetadataResponse = useGetSiteMetadata();
+  const getLanguagesResponse = useGetLanguages();
   const intl = useIntl();
 
-  const getLanguagesResponse = useStaticQuery(
-    graphql`
-      query getLanguages {
-        sitePage {
-          context {
-            intl {
-              languages
-            }
-          }
-        }
-      }
-    `
-  );
-
-  const pages = pageRoutes.map((pageRoute) => (
+  const pages = getSiteMetadataResponse.siteMetadata.pageRoutes.map((pageRoute) => (
     <li key={pageRoute.key} css={pageListItemStyles}>
       <Subtitle1>{intl.formatMessage({ id: `pages.${pageRoute.camelCase}` })}</Subtitle1>
     </li>
   ));
 
-  const languageButtons = getLanguagesResponse.sitePage.context.intl.languages.map((language) => {
+  const languageButtons = getLanguagesResponse.languages.map((language) => {
     const translatedLanguageMap = {
       ko: '한국어',
       en: 'English',
