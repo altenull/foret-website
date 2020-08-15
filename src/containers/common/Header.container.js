@@ -1,9 +1,9 @@
 import { Color } from '@altenull/foret-core';
 import { css } from '@emotion/core';
-import Img from 'gatsby-image';
 import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment, useEffect, useRef, useState } from 'react';
 import ReactDOM from 'react-dom';
+import { HeaderLogo } from '../../components/common';
 import { HamburgerIcon } from '../../components/icons';
 import { BreakpointEnum } from '../../enums/core/breakpoint.enum';
 import { useGetLogoImage, useIsMounted } from '../../hooks';
@@ -26,28 +26,6 @@ const headerStyles = css`
     max-width: 1440px;
     top: 56px;
   }
-`;
-
-const logoWrapperStyles = css`
-  display: flex;
-  align-items: center;
-`;
-
-const logoStyles = (isScrolled) => css`
-  margin-right: 16px;
-  transition: width 0.3s, height 0.3s;
-  width: ${isScrolled ? '56px' : '80px'} !important;
-  height: ${isScrolled ? '56px' : '80px'} !important;
-`;
-
-const titleStyles = (isDrawerShowing, isScrolled) => css`
-  font-size: 1.5rem;
-  white-space: nowrap;
-  color: ${isDrawerShowing ? Color.Ink : Color.White};
-  visibility: ${isScrolled ? 'hidden' : 'visible'};
-  max-width: ${isScrolled ? '0' : 'initial'};
-  opacity: ${isScrolled ? '0' : '1'};
-  transition: ${isScrolled ? 'opacity 0.3s, visibility 0ms 0.3s, max-width 0ms 0.3s' : 'opacity 0.3s'};
 `;
 
 const hamburgerMenuStyles = css`
@@ -99,10 +77,12 @@ const HeaderContainer = () => {
       {isDrawerShowing && ReactDOM.createPortal(<DrawerContainer />, document.body)}
 
       <header css={headerStyles} ref={headerRef}>
-        <div css={logoWrapperStyles}>
-          <Img fixed={getLogoImageResponse.fixed} css={logoStyles(isScrolled)} />
-          <span css={titleStyles(isDrawerShowing, isScrolled)}>{intl.formatMessage({ id: 'title' })}</span>
-        </div>
+        <HeaderLogo
+          logoFixed={getLogoImageResponse.fixed}
+          logoTitle={intl.formatMessage({ id: 'title' })}
+          isScrolled={isScrolled}
+          isDrawerShowing={isDrawerShowing}
+        />
 
         <div css={hamburgerMenuStyles} onClick={() => toggleDrawer()}>
           <HamburgerIcon isDrawerShowing={isDrawerShowing} color={isDrawerShowing ? Color.Ink : Color.White} />
