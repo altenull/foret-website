@@ -2,6 +2,7 @@ import { Subtitle1 } from '@altenull/foret-react';
 import { css } from '@emotion/core';
 import { changeLocale } from 'gatsby-plugin-intl';
 import React from 'react';
+import { LanguageEnum } from '../../enums/core/language.enum';
 
 const languageLinkStyles = css`
   cursor: pointer;
@@ -12,8 +13,8 @@ const languageLinkStyles = css`
 
 const LanguageLink = ({ language }) => {
   const translatedLanguageMap = {
-    ko: '한국어',
-    en: 'English',
+    [LanguageEnum.Ko]: '한국어',
+    [LanguageEnum.En]: 'English',
   };
 
   return (

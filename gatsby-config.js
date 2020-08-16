@@ -1,4 +1,5 @@
 const { PageRouteEnum } = require('./src/enums/core/page-route.enum');
+const { LanguageEnum } = require('./src/enums/core/language.enum');
 
 /**
  * Configure your Gatsby site with this file.
@@ -36,8 +37,8 @@ module.exports = {
       resolve: 'gatsby-plugin-intl',
       options: {
         path: `${__dirname}/src/intl`,
-        languages: ['ko', 'en'],
-        defaultLanguage: 'ko',
+        languages: [LanguageEnum.Ko, LanguageEnum.En],
+        defaultLanguage: LanguageEnum.Ko,
         redirect: true,
       },
     },
