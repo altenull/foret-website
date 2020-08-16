@@ -1,8 +1,8 @@
 import { Color } from '@altenull/foret-core';
-import { SmallText, Subtitle1 } from '@altenull/foret-react';
+import { SmallText } from '@altenull/foret-react';
 import { css } from '@emotion/core';
-import { changeLocale } from 'gatsby-plugin-intl';
 import React from 'react';
+import { LanguageLink } from '../../components/common';
 import { useGetLanguages } from '../../hooks';
 
 const footerStyles = css`
@@ -17,13 +17,6 @@ const languageLinksWrapperStyles = css`
   justify-content: center;
 `;
 
-const languageLinkStyles = css`
-  cursor: pointer;
-  & + & {
-    margin-left: 16px;
-  }
-`;
-
 const smallTextStyles = css`
   text-align: center;
 `;
@@ -31,18 +24,9 @@ const smallTextStyles = css`
 const FooterContainer = () => {
   const getLanguagesResponse = useGetLanguages();
 
-  const languageLinks = getLanguagesResponse.languages.map((language) => {
-    const translatedLanguageMap = {
-      ko: '한국어',
-      en: 'English',
-    };
-
-    return (
-      <Subtitle1 key={language} onClick={() => changeLocale(language, null)} css={languageLinkStyles}>
-        {translatedLanguageMap[language]}
-      </Subtitle1>
-    );
-  });
+  const languageLinks = getLanguagesResponse.languages.map((language) => (
+    <LanguageLink key={language} language={language} />
+  ));
 
   return (
     <footer css={footerStyles}>

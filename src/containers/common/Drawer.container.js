@@ -1,9 +1,10 @@
 import { Color } from '@altenull/foret-core';
-import { Heading3, Paragraph, Subtitle1 } from '@altenull/foret-react';
+import { Heading3, Paragraph } from '@altenull/foret-react';
 import { css, Global } from '@emotion/core';
 import { Link } from 'gatsby';
-import { changeLocale, useIntl } from 'gatsby-plugin-intl';
+import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
+import { LanguageLink } from '../../components/common';
 import { useGetLanguages, useGetSiteMetadata } from '../../hooks';
 
 const drawerStyles = css`
@@ -42,6 +43,10 @@ const linkStyles = css`
 
 const preferredLanguageWrapperStyles = css``;
 
+const languageLinksWrapperStyles = css`
+  display: flex;
+`;
+
 const globalStyles = css`
   body {
     /* To prevent scrolling when drawer is showing */
@@ -62,18 +67,9 @@ const DrawerContainer = () => {
     </li>
   ));
 
-  const languageLinks = getLanguagesResponse.languages.map((language) => {
-    const translatedLanguageMap = {
-      ko: '한국어',
-      en: 'English',
-    };
-
-    return (
-      <Subtitle1 key={language} onClick={() => changeLocale(language, null)}>
-        {translatedLanguageMap[language]}
-      </Subtitle1>
-    );
-  });
+  const languageLinks = getLanguagesResponse.languages.map((language) => (
+    <LanguageLink key={language} language={language} />
+  ));
 
   return (
     <Fragment>
@@ -84,7 +80,7 @@ const DrawerContainer = () => {
 
           <div css={preferredLanguageWrapperStyles}>
             <Paragraph>{intl.formatMessage({ id: 'drawer.preferredLanguageTitle' })}</Paragraph>
-            {languageLinks}
+            <div css={languageLinksWrapperStyles}>{languageLinks}</div>
           </div>
         </div>
       </div>
