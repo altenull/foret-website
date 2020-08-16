@@ -1,8 +1,8 @@
 import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
-import { Footer, Layout } from '../components/common';
-import { HeaderContainer } from '../containers/common';
+import { Layout } from '../components/common';
+import { HeaderContainer, FooterContainer } from '../containers/common';
 import { PageRouteEnum } from '../enums/core/page-route.enum';
 import { useGetSiteMetadata } from '../hooks';
 
@@ -22,8 +22,7 @@ const GetStartedPage = () => {
       <Helmet title={getStartedPageTitle} defer={false} />
       <Layout>
         <HeaderContainer />
-        Get Started
-        <Footer />
+        <FooterContainer />
       </Layout>
     </Fragment>
   );

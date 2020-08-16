@@ -1,5 +1,5 @@
 import { Color } from '@altenull/foret-core';
-import { Heading3, Paragraph, PrimaryButton } from '@altenull/foret-react';
+import { Heading3, Paragraph, Subtitle1 } from '@altenull/foret-react';
 import { css, Global } from '@emotion/core';
 import { Link } from 'gatsby';
 import { changeLocale, useIntl } from 'gatsby-plugin-intl';
@@ -62,16 +62,16 @@ const DrawerContainer = () => {
     </li>
   ));
 
-  const languageButtons = getLanguagesResponse.languages.map((language) => {
+  const languageLinks = getLanguagesResponse.languages.map((language) => {
     const translatedLanguageMap = {
       ko: '한국어',
       en: 'English',
     };
 
     return (
-      <PrimaryButton key={language} onClick={() => changeLocale(language, null)}>
+      <Subtitle1 key={language} onClick={() => changeLocale(language, null)}>
         {translatedLanguageMap[language]}
-      </PrimaryButton>
+      </Subtitle1>
     );
   });
 
@@ -84,7 +84,7 @@ const DrawerContainer = () => {
 
           <div css={preferredLanguageWrapperStyles}>
             <Paragraph>{intl.formatMessage({ id: 'drawer.preferredLanguageTitle' })}</Paragraph>
-            {languageButtons}
+            {languageLinks}
           </div>
         </div>
       </div>

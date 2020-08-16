@@ -3,9 +3,9 @@ import { css } from '@emotion/core';
 import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
-import { Footer, Layout } from '../components/common';
+import { Layout } from '../components/common';
 import { HeroSection, IntroSection } from '../components/home';
-import { HeaderContainer } from '../containers/common';
+import { HeaderContainer, FooterContainer } from '../containers/common';
 
 const homeStyles = css`
   background-color: ${Color.Paper};
@@ -22,7 +22,7 @@ const HomePage = () => {
         <HeaderContainer />
         <HeroSection />
         <IntroSection />
-        <Footer />
+        <FooterContainer />
       </Layout>
     </Fragment>
   );
