@@ -2,10 +2,10 @@ import { Color } from '@altenull/foret-core';
 import { Heading3, Paragraph } from '@altenull/foret-react';
 import { css, Global } from '@emotion/core';
 import { Link } from 'gatsby';
-import { useIntl } from 'gatsby-plugin-intl';
+import { IntlContextConsumer, useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
 import { LanguageLink } from '../../components/common';
-import { useGetLanguages, useGetSiteMetadata } from '../../hooks';
+import { useGetSiteMetadata } from '../../hooks';
 
 const drawerStyles = css`
   position: fixed;
@@ -56,7 +56,6 @@ const globalStyles = css`
 
 const DrawerContainer = () => {
   const getSiteMetadataResponse = useGetSiteMetadata();
-  const getLanguagesResponse = useGetLanguages();
   const intl = useIntl();
 
   const pages = getSiteMetadataResponse.siteMetadata.pageRoutes.map(({ key, camelCase }) => (
@@ -67,24 +66,27 @@ const DrawerContainer = () => {
     </li>
   ));
 
-  const languageLinks = getLanguagesResponse.languages.map((language) => (
-    <LanguageLink key={language} language={language} />
-  ));
+  const getLanguageLinks = (languages) =>
+    languages.map((language) => <LanguageLink key={language} language={language} />);
 
   return (
-    <Fragment>
-      <Global styles={globalStyles} />
-      <div css={drawerStyles}>
-        <div css={positionerStyles}>
-          <ul css={pageListWrapperStyles}>{pages}</ul>
+    <IntlContextConsumer>
+      {({ languages }) => (
+        <Fragment>
+          <Global styles={globalStyles} />
+          <div css={drawerStyles}>
+            <div css={positionerStyles}>
+              <ul css={pageListWrapperStyles}>{pages}</ul>
 
-          <div css={preferredLanguageWrapperStyles}>
-            <Paragraph>{intl.formatMessage({ id: 'drawer.preferredLanguageTitle' })}</Paragraph>
-            <div css={languageLinksWrapperStyles}>{languageLinks}</div>
+              <div css={preferredLanguageWrapperStyles}>
+                <Paragraph>{intl.formatMessage({ id: 'drawer.preferredLanguageTitle' })}</Paragraph>
+                <div css={languageLinksWrapperStyles}>{getLanguageLinks(languages)}</div>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </Fragment>
+        </Fragment>
+      )}
+    </IntlContextConsumer>
   );
 };
 

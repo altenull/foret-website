@@ -1,7 +1,7 @@
 import { Color } from '@altenull/foret-core';
 import { css } from '@emotion/core';
 import { useIntl } from 'gatsby-plugin-intl';
-import React, { Fragment, useEffect, useRef, useState, useCallback } from 'react';
+import React, { Fragment, useCallback, useEffect, useRef, useState } from 'react';
 import ReactDOM from 'react-dom';
 import { HeaderLogo } from '../../components/common';
 import { HamburgerIcon } from '../../components/icons';
