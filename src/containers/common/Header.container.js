@@ -1,7 +1,7 @@
 import { Color } from '@altenull/foret-core';
 import { css } from '@emotion/core';
 import { useIntl } from 'gatsby-plugin-intl';
-import React, { Fragment, useEffect, useRef, useState } from 'react';
+import React, { Fragment, useEffect, useRef, useState, useCallback } from 'react';
 import ReactDOM from 'react-dom';
 import { HeaderLogo } from '../../components/common';
 import { HamburgerIcon } from '../../components/icons';
@@ -43,20 +43,20 @@ const HeaderContainer = () => {
 
   const headerRef = useRef();
 
-  const handleScroll = () => {
+  const handleScroll = useCallback(() => {
     const newIsScrolled = window.scrollY >= headerRef.current.getBoundingClientRect().bottom;
 
     if (newIsScrolled !== isScrolled) {
       setIsScrolled(newIsScrolled);
     }
-  };
+  }, [isScrolled]);
 
   useEffect(() => {
     if (isMounted) {
       // Check whether logo wrapper should be animated or not at initial load
       handleScroll();
     }
-  }, [isMounted]);
+  }, [isMounted, handleScroll]);
 
   useEffect(() => {
     if (isMounted) {
@@ -66,7 +66,7 @@ const HeaderContainer = () => {
     return () => {
       document.removeEventListener('scroll', handleScroll);
     };
-  }, [isMounted, isScrolled]);
+  }, [isMounted, isScrolled, handleScroll]);
 
   const toggleDrawer = () => {
     setIsDrawerShowing(!isDrawerShowing);
