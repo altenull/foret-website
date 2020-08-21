@@ -1,4 +1,3 @@
-import { Color } from '@altenull/foret-core';
 import { css } from '@emotion/core';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
@@ -17,21 +16,21 @@ const logoStyles = (isScrolled) => css`
   height: ${isScrolled ? '56px' : '80px'} !important;
 `;
 
-const logoTitleStyles = (isDrawerShowing, isScrolled) => css`
+const logoTitleStyles = (isScrolled, headerContentColor) => css`
   font-size: 1.5rem;
   white-space: nowrap;
-  color: ${isDrawerShowing ? Color.Ink : Color.White};
+  color: ${headerContentColor};
   visibility: ${isScrolled ? 'hidden' : 'visible'};
   max-width: ${isScrolled ? '0' : 'initial'};
   opacity: ${isScrolled ? '0' : '1'};
   transition: ${isScrolled ? 'opacity 0.3s, visibility 0ms 0.3s, max-width 0ms 0.3s' : 'opacity 0.3s'};
 `;
 
-const HeaderLogo = ({ logoFixed, logoTitle, isScrolled, isDrawerShowing }) => {
+const HeaderLogo = ({ logoFixed, logoTitle, isScrolled, headerContentColor }) => {
   return (
     <Link to={'/'} css={headerLogoStyles}>
       <Img fixed={logoFixed} css={logoStyles(isScrolled)} />
-      <span css={logoTitleStyles(isDrawerShowing, isScrolled)}>{logoTitle}</span>
+      <span css={logoTitleStyles(isScrolled, headerContentColor)}>{logoTitle}</span>
     </Link>
   );
 };

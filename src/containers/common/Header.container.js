@@ -1,11 +1,13 @@
 import { Color } from '@altenull/foret-core';
 import { css } from '@emotion/core';
+import { useLocation } from '@reach/router';
 import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment, useCallback, useEffect, useRef, useState } from 'react';
 import ReactDOM from 'react-dom';
 import { HeaderLogo } from '../../components/common';
 import { HamburgerIcon } from '../../components/icons';
 import { BreakpointEnum } from '../../enums/core/breakpoint.enum';
+import { PageRouteEnum } from '../../enums/core/page-route.enum';
 import { useGetLogoImage, useIsMounted } from '../../hooks';
 import { mediaQuery } from '../../utils/media-query.utils';
 import DrawerContainer from './Drawer.container';
@@ -40,6 +42,7 @@ const HeaderContainer = () => {
   const isMounted = useIsMounted();
   const intl = useIntl();
   const getLogoImageResponse = useGetLogoImage();
+  const location = useLocation();
 
   const headerRef = useRef();
 
@@ -72,6 +75,13 @@ const HeaderContainer = () => {
     setIsDrawerShowing(!isDrawerShowing);
   };
 
+  const pageRouteEnums = Object.keys(PageRouteEnum).map((key) => PageRouteEnum[key]);
+  const isNotHomePage = pageRouteEnums.reduce(
+    (acc, pageRouteEnum) => acc || location.pathname.includes(pageRouteEnum),
+    false
+  );
+  const headerContentColor = isDrawerShowing ? Color.Ink : isNotHomePage ? Color.Ink : Color.White;
+
   return (
     <Fragment>
       {isDrawerShowing && ReactDOM.createPortal(<DrawerContainer />, document.body)}
@@ -81,11 +91,11 @@ const HeaderContainer = () => {
           logoFixed={getLogoImageResponse.fixed}
           logoTitle={intl.formatMessage({ id: 'title' })}
           isScrolled={isScrolled}
-          isDrawerShowing={isDrawerShowing}
+          headerContentColor={headerContentColor}
         />
 
         <div css={hamburgerMenuStyles} onClick={() => toggleDrawer()}>
-          <HamburgerIcon isDrawerShowing={isDrawerShowing} color={isDrawerShowing ? Color.Ink : Color.White} />
+          <HamburgerIcon isDrawerShowing={isDrawerShowing} color={headerContentColor} />
         </div>
       </header>
     </Fragment>
