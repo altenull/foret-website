@@ -16,5 +16,22 @@
       "description2": "Sed gravida elit in tincidunt commodo. Fusce malesuada velit at suscipit cursus. Donec congue imperdiet dignissim. Aliquam lacinia tortor non maximus bibendum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus faucibus ex lectus, ultricies mollis metus placerat in.",
       "description3": "Nulla lacinia ac ipsum nec rutrum. Phasellus maximus nunc elit, vehicula tempus ligula faucibus a. Praesent sed facilisis nisl, id egestas massa. Etiam rhoncus, nibh eget tempus rhoncus, arcu ante congue purus, non posuere urna ante in mauris. Ut porttitor iaculis ex, at euismod neque. Quisque pretium odio vel magna aliquam imperdiet."
     }
+  },
+  "getStarted": {
+    "hero": {
+      "title": "Get Started"
+    },
+    "content": {
+      "installation": {
+        "title": "Installation",
+        "description": "foret is served as an npm package. Add them to your project by running:",
+        "installWithNpm": "Using npm:",
+        "installWithYarn": "If you prefer Yarn:"
+      },
+      "troubleShooting": {
+        "title": "Trouble Shooting",
+        "description": "If you experience any issues while getting set up with Foret React / Angular, please head over to the GitHub repo for more guidelines and support. Please create an issue if your issue does not already exist."
+      }
+    }
   }
 }
