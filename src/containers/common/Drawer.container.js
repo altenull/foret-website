@@ -13,7 +13,7 @@ const drawerStyles = css`
   top: 0;
   right: 0;
   bottom: 0;
-  background-color: ${Color.Paper};
+  background-color: ${Color.White};
   z-index: 1000; /* TODO: Manage z-index in one place */
 `;
 
