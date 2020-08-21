@@ -5,7 +5,6 @@ import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 import { Layout } from '../components/common';
 import { HeroSection, IntroSection } from '../components/home';
-import { HeaderContainer, FooterContainer } from '../containers/common';
 
 const homeStyles = css`
   background-color: ${Color.Paper};
@@ -19,10 +18,8 @@ const HomePage = () => {
     <Fragment>
       <Helmet title={homePageTitle} defer={false} />
       <Layout css={homeStyles}>
-        <HeaderContainer />
         <HeroSection />
         <IntroSection />
-        <FooterContainer />
       </Layout>
     </Fragment>
   );

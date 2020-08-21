@@ -5,7 +5,6 @@ import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 import { Layout } from '../components/common';
 import { ContentSection, HeroSection } from '../components/get-started';
-import { FooterContainer, HeaderContainer } from '../containers/common';
 import { PageRouteEnum } from '../enums/core/page-route.enum';
 import { useGetSiteMetadata } from '../hooks';
 
@@ -28,10 +27,8 @@ const GetStartedPage = () => {
     <Fragment>
       <Helmet title={getStartedPageTitle} defer={false} />
       <Layout css={getStartedStyles}>
-        <HeaderContainer />
         <HeroSection />
         <ContentSection />
-        <FooterContainer />
       </Layout>
     </Fragment>
   );
