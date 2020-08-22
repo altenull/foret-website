@@ -7,8 +7,7 @@ import ReactDOM from 'react-dom';
 import { HeaderLogo } from '../../components/common';
 import { HamburgerIcon } from '../../components/icons';
 import { BreakpointEnum } from '../../enums/core/breakpoint.enum';
-import { PageRouteEnum } from '../../enums/core/page-route.enum';
-import { useGetLogoImage, useIsMounted } from '../../hooks';
+import { useGetLogoImage, useGetSiteMetadata, useIsMounted } from '../../hooks';
 import { mediaQuery } from '../../utils/media-query.utils';
 import DrawerContainer from './Drawer.container';
 
@@ -39,9 +38,10 @@ const HeaderContainer = () => {
   const [isDrawerShowing, setIsDrawerShowing] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
+  const getLogoImageResponse = useGetLogoImage();
+  const getSiteMetadataResponse = useGetSiteMetadata();
   const isMounted = useIsMounted();
   const intl = useIntl();
-  const getLogoImageResponse = useGetLogoImage();
   const location = useLocation();
 
   const headerRef = useRef();
@@ -75,9 +75,8 @@ const HeaderContainer = () => {
     setIsDrawerShowing(!isDrawerShowing);
   };
 
-  const pageRouteEnums = Object.keys(PageRouteEnum).map((key) => PageRouteEnum[key]);
-  const isNotHomePage = pageRouteEnums.reduce(
-    (acc, pageRouteEnum) => acc || location.pathname.includes(pageRouteEnum),
+  const isNotHomePage = getSiteMetadataResponse.siteMetadata.pageRoutes.reduce(
+    (acc, { key, ...rest }) => acc || location.pathname.includes(key),
     false
   );
   const headerContentColor = isDrawerShowing ? Color.Ink : isNotHomePage ? Color.Ink : Color.White;
