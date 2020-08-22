@@ -7,8 +7,12 @@ const layoutStyles = css`
   margin: auto;
 `;
 
-const ResponsiveContentLayout = ({ children }) => {
-  return <div css={layoutStyles}>{children}</div>;
+const ResponsiveContentLayout = ({ children, ...props }) => {
+  return (
+    <div css={layoutStyles} {...props}>
+      {children}
+    </div>
+  );
 };
 
 export default ResponsiveContentLayout;
