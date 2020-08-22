@@ -5,7 +5,15 @@ import { ResponsiveContentLayout } from '../common';
 import { useIntl } from 'gatsby-plugin-intl';
 
 const sectionStyles = css`
-  padding: 24rem 0 16rem;
+  position: relative;
+  height: 100vh;
+`;
+
+const responsiveContentLayoutStyles = css`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
 
 const HeroSection = () => {
@@ -13,7 +21,7 @@ const HeroSection = () => {
 
   return (
     <section css={sectionStyles}>
-      <ResponsiveContentLayout>
+      <ResponsiveContentLayout css={responsiveContentLayoutStyles}>
         <Heading1>{intl.formatMessage({ id: 'getStarted.hero.title' })}</Heading1>
         <Subtitle1>Our components are served as an npm packages.</Subtitle1>
         <Subtitle1>Our components are served both angular and react versions</Subtitle1>
