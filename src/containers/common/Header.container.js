@@ -94,7 +94,7 @@ const HeaderContainer = () => {
         />
 
         <div css={hamburgerMenuStyles} onClick={() => toggleDrawer()}>
-          <HamburgerIcon isDrawerShowing={isDrawerShowing} color={headerContentColor} />
+          <HamburgerIcon shouldTransformToCloseIcon={isDrawerShowing} color={headerContentColor} />
         </div>
       </header>
     </Fragment>

@@ -19,30 +19,30 @@ const lineStyles = (color) => css`
   transition: top 0.3s ease-in-out, left 0.15s ease-in-out, right 0.15s ease-in-out, transform 0.3s ease-in-out;
 `;
 
-const topLineStyles = (isDrawerShowing) => css`
-  top: ${isDrawerShowing ? '50%' : '0'};
-  left: ${isDrawerShowing ? '50%' : '0'};
-  right: ${isDrawerShowing ? '50%' : '0'};
+const topLineStyles = (shouldTransformToCloseIcon) => css`
+  top: ${shouldTransformToCloseIcon ? '50%' : '0'};
+  left: ${shouldTransformToCloseIcon ? '50%' : '0'};
+  right: ${shouldTransformToCloseIcon ? '50%' : '0'};
 `;
 
-const middleLineStyles = (isDrawerShowing, direction) => css`
+const middleLineStyles = (shouldTransformToCloseIcon, direction) => css`
   top: 50%;
-  transform: rotate(${isDrawerShowing ? 45 * direction + 'deg' : '0'});
+  transform: rotate(${shouldTransformToCloseIcon ? 45 * direction + 'deg' : '0'});
 `;
 
-const bottomLineStyles = (isDrawerShowing) => css`
-  top: ${isDrawerShowing ? '50%' : '100%'};
-  left: ${isDrawerShowing ? '50%' : '0'};
-  right: ${isDrawerShowing ? '50%' : '0'};
+const bottomLineStyles = (shouldTransformToCloseIcon) => css`
+  top: ${shouldTransformToCloseIcon ? '50%' : '100%'};
+  left: ${shouldTransformToCloseIcon ? '50%' : '0'};
+  right: ${shouldTransformToCloseIcon ? '50%' : '0'};
 `;
 
-const HamburgerIcon = ({ isDrawerShowing, color }) => {
+const HamburgerIcon = ({ shouldTransformToCloseIcon, color }) => {
   return (
     <span css={hamburgerIconStyles}>
-      <span css={[lineStyles(color), topLineStyles(isDrawerShowing)]} />
-      <span css={[lineStyles(color), middleLineStyles(isDrawerShowing, 1)]} />
-      <span css={[lineStyles(color), middleLineStyles(isDrawerShowing, -1)]} />
-      <span css={[lineStyles(color), bottomLineStyles(isDrawerShowing)]} />
+      <span css={[lineStyles(color), topLineStyles(shouldTransformToCloseIcon)]} />
+      <span css={[lineStyles(color), middleLineStyles(shouldTransformToCloseIcon, 1)]} />
+      <span css={[lineStyles(color), middleLineStyles(shouldTransformToCloseIcon, -1)]} />
+      <span css={[lineStyles(color), bottomLineStyles(shouldTransformToCloseIcon)]} />
     </span>
   );
 };
