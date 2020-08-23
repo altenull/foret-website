@@ -1,32 +1,37 @@
 // TODO: Set styles
 import { Color } from '@altenull/foret-core';
-import { Subtitle1 } from '@altenull/foret-react';
+import { Subtitle2 } from '@altenull/foret-react';
 import { css } from '@emotion/core';
 import { Link } from 'gatsby';
 import React from 'react';
+import { ArrowLeftIcon, ArrowRightIcon } from '../icons';
 
 const navStyles = css`
   display: flex;
 `;
 
 const linkStyles = css`
+  display: flex;
   flex: 1;
   padding: 16px 0;
+  text-decoration: none;
   background-color: ${Color.White};
 `;
 
 const nextPageLinkStyles = css`
-  text-align: right;
+  justify-content: flex-end;
 `;
 
 const PageNavigation = ({ prevLink, nextLink }) => {
   return (
     <nav css={navStyles}>
       <Link css={linkStyles} to={prevLink.to}>
-        <Subtitle1>{prevLink.text}</Subtitle1>
+        <ArrowLeftIcon />
+        <Subtitle2>{prevLink.text}</Subtitle2>
       </Link>
       <Link css={[linkStyles, nextPageLinkStyles]} to={nextLink.to}>
-        <Subtitle1>{nextLink.text}</Subtitle1>
+        <Subtitle2>{nextLink.text}</Subtitle2>
+        <ArrowRightIcon />
       </Link>
     </nav>
   );
