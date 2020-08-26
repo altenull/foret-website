@@ -1,8 +1,13 @@
-import { Heading2, Paragraph, Subtitle1, Subtitle2 } from '@altenull/foret-react';
+import { Heading2, Paragraph, Subtitle2, Tab, TabGroup } from '@altenull/foret-react';
+import { css } from '@emotion/core';
 import { graphql, useStaticQuery } from 'gatsby';
+import { useIntl } from 'gatsby-plugin-intl';
 import React from 'react';
 import { CodeViewer, ResponsiveContentLayout } from '../common';
-import { useIntl } from 'gatsby-plugin-intl';
+
+const contentWrapperStyles = css`
+  padding: 32px 0;
+`;
 
 const ContentSection = () => {
   const intl = useIntl();
@@ -40,30 +45,57 @@ const ContentSection = () => {
     }
   `);
 
+  const installationTitle = <Heading2>{intl.formatMessage({ id: 'getStarted.content.installation.title' })}</Heading2>;
+  const troubleShootingTitle = (
+    <Heading2>{intl.formatMessage({ id: 'getStarted.content.troubleShooting.title' })}</Heading2>
+  );
+
+  const reactVersionContent = () => (
+    <div css={contentWrapperStyles}>
+      {installationTitle}
+      <Paragraph>{intl.formatMessage({ id: 'getStarted.content.installation.description' })}</Paragraph>
+
+      <Subtitle2>{intl.formatMessage({ id: 'getStarted.content.installation.installWithNpm' })}</Subtitle2>
+      <CodeViewer codeInHtml={getInstallWithNpmReact.nodes[0].html}></CodeViewer>
+
+      <Subtitle2>{intl.formatMessage({ id: 'getStarted.content.installation.installWithYarn' })}</Subtitle2>
+      <CodeViewer codeInHtml={getInstallWithYarnReact.nodes[0].html}></CodeViewer>
+
+      <p>Don’t forget to install the @emotion/core ^10.0.0 also.</p>
+
+      {troubleShootingTitle}
+      <Paragraph>{intl.formatMessage({ id: 'getStarted.content.troubleShooting.description' })}</Paragraph>
+    </div>
+  );
+
+  const angularVersionContent = () => (
+    <div css={contentWrapperStyles}>
+      {installationTitle}
+      <Paragraph>{intl.formatMessage({ id: 'getStarted.content.installation.description' })}</Paragraph>
+
+      <Subtitle2>{intl.formatMessage({ id: 'getStarted.content.installation.installWithNpm' })}</Subtitle2>
+      <CodeViewer codeInHtml={getInstallWithNpmNg.nodes[0].html}></CodeViewer>
+
+      <Subtitle2>{intl.formatMessage({ id: 'getStarted.content.installation.installWithYarn' })}</Subtitle2>
+      <CodeViewer codeInHtml={getInstallWithYarnNg.nodes[0].html}></CodeViewer>
+
+      {troubleShootingTitle}
+      <Paragraph>{intl.formatMessage({ id: 'getStarted.content.troubleShooting.description' })}</Paragraph>
+    </div>
+  );
+
   return (
     <section>
       <ResponsiveContentLayout>
-        <Subtitle1>Angular / React Tab component here!</Subtitle1>
+        <TabGroup selectedValue={'contentSectionReactTap'} name={'content-section-tap'}>
+          <Tab id={'content-section-react-tap'} labelText={'React'} value={'contentSectionReactTap'}>
+            {reactVersionContent()}
+          </Tab>
 
-        <Heading2>{intl.formatMessage({ id: 'getStarted.content.installation.title' })}</Heading2>
-        <Paragraph>{intl.formatMessage({ id: 'getStarted.content.installation.description' })}</Paragraph>
-
-        <Subtitle2>{intl.formatMessage({ id: 'getStarted.content.installation.installWithNpm' })}</Subtitle2>
-        <CodeViewer codeInHtml={getInstallWithNpmReact.nodes[0].html}></CodeViewer>
-
-        <Subtitle2>{intl.formatMessage({ id: 'getStarted.content.installation.installWithYarn' })}</Subtitle2>
-        <CodeViewer codeInHtml={getInstallWithYarnReact.nodes[0].html}></CodeViewer>
-
-        <Subtitle2>{intl.formatMessage({ id: 'getStarted.content.installation.installWithNpm' })}</Subtitle2>
-        <CodeViewer codeInHtml={getInstallWithNpmNg.nodes[0].html}></CodeViewer>
-
-        <Subtitle2>{intl.formatMessage({ id: 'getStarted.content.installation.installWithYarn' })}</Subtitle2>
-        <CodeViewer codeInHtml={getInstallWithYarnNg.nodes[0].html}></CodeViewer>
-
-        <p>Don’t forget to install the @emotion/core ^10.0.0 also.</p>
-
-        <Heading2>{intl.formatMessage({ id: 'getStarted.content.troubleShooting.title' })}</Heading2>
-        <Paragraph>{intl.formatMessage({ id: 'getStarted.content.troubleShooting.description' })}</Paragraph>
+          <Tab id={'content-section-ng-tap'} labelText={'Angular'} value={'contentSectionNgTap'}>
+            {angularVersionContent()}
+          </Tab>
+        </TabGroup>
       </ResponsiveContentLayout>
     </section>
   );

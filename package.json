@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@altenull/foret-core": "^1.0.0-4",
-    "@altenull/foret-react": "^1.0.0-18",
+    "@altenull/foret-react": "^1.0.0-19",
     "@emotion/core": "^10.0.28",
     "@reach/router": "^1.3.4",
     "gatsby": "^2.23.12",
