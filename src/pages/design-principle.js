@@ -4,7 +4,7 @@ import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 import { Layout, PageNavigationSection } from '../components/common';
-import { HeroSection } from '../components/design-principle';
+import { ContentSection, HeroSection } from '../components/design-principle';
 import { useGetSiteMetadata } from '../hooks';
 import { getPageNavigationLinks, getPageTitle } from '../utils/page.utils';
 
@@ -28,6 +28,7 @@ const DesignPrinciplePage = ({ location }) => {
       <Helmet title={designPrincipleTitle} defer={false} />
       <Layout css={designPrincipleStyles}>
         <HeroSection />
+        <ContentSection />
         <PageNavigationSection prevLink={prevLink} nextLink={nextLink} />
       </Layout>
     </Fragment>

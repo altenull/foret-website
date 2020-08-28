@@ -37,6 +37,16 @@
   "designPrinciple": {
     "hero": {
       "title": "디자인 원칙"
+    },
+    "content": {
+      "designPrinciple": {
+        "principle1Title": "단순함(Simple)",
+        "principle1Description": "꼭 필요하고, 최소한의 디자인이어야 합니다.",
+        "principle2Title": "편안함(Comfortable)",
+        "principle2Description": "외관상 편안하게 보여야 함은 물론, 사용성에서도 편안함을 느껴야 합니다.",
+        "principle3Title": "자연스러움(Natural)",
+        "principle3Description": "튀지 않아야 합니다. 각 디자인 요소의 역할이 당연하고 자연스럽게 받아들여져야 합니다."
+      }
     }
   }
 }
