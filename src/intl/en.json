@@ -33,5 +33,10 @@
         "description": "If you experience any issues while getting set up with Foret React / Angular, please head over to the GitHub repo for more guidelines and support. Please create an issue if your issue does not already exist."
       }
     }
+  },
+  "designPrinciple": {
+    "hero": {
+      "title": "Design Principle"
+    }
   }
 }

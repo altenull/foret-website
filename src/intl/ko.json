@@ -33,5 +33,10 @@
         "description": "Foret React / Angular를 설치하는 중에 이슈를 발생하였다면, 지원을 받기위해 Github 저장소롤 이동하세요. 만약 발생된 이슈가 존재하지 않는 이슈라면 등록해주세요."
       }
     }
+  },
+  "designPrinciple": {
+    "hero": {
+      "title": "디자인 원칙"
+    }
   }
 }
