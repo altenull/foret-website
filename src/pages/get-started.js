@@ -29,15 +29,15 @@ const GetStartedPage = ({ location }) => {
 
     return {
       prevLink: {
-        to: pageRoutes[prevPageNavigationIndex].key,
+        to: `/${pageRoutes[prevPageNavigationIndex].key}`,
         text: intl.formatMessage({
           id: `pages.${pageRoutes[prevPageNavigationIndex].camelCase}`,
         }),
       },
       nextLink: {
-        to: siteMetadata.pageRoutes[nextPageNavigationIndex].key,
+        to: `/${pageRoutes[nextPageNavigationIndex].key}`,
         text: intl.formatMessage({
-          id: `pages.${siteMetadata.pageRoutes[nextPageNavigationIndex].camelCase}`,
+          id: `pages.${pageRoutes[nextPageNavigationIndex].camelCase}`,
         }),
       },
     };
