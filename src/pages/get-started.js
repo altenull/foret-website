@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet';
 import { Layout, PageNavigationSection } from '../components/common';
 import { ContentSection, HeroSection } from '../components/get-started';
 import { useGetSiteMetadata } from '../hooks';
+import { getPageNavigationLinks, getPageTitle } from '../utils/page.utils';
 
 const getStartedStyles = css`
   background-color: ${Color.Paper};
@@ -19,31 +20,8 @@ const GetStartedPage = ({ location }) => {
     location.pathname.includes(key)
   );
 
-  const getStartedPageTitle = `${intl.formatMessage({
-    id: `pages.${siteMetadata.pageRoutes[currentPageRouteIndex].camelCase}`,
-  })} | ${intl.formatMessage({ id: 'title' })}`;
-
-  const getPageNavigationLinks = (currentPageRouteIndex, pageRoutes) => {
-    const prevPageNavigationIndex = currentPageRouteIndex - 1 < 0 ? pageRoutes.length - 1 : currentPageRouteIndex - 1;
-    const nextPageNavigationIndex = currentPageRouteIndex + 1 > pageRoutes.length - 1 ? 0 : currentPageRouteIndex + 1;
-
-    return {
-      prevLink: {
-        to: `/${pageRoutes[prevPageNavigationIndex].key}`,
-        text: intl.formatMessage({
-          id: `pages.${pageRoutes[prevPageNavigationIndex].camelCase}`,
-        }),
-      },
-      nextLink: {
-        to: `/${pageRoutes[nextPageNavigationIndex].key}`,
-        text: intl.formatMessage({
-          id: `pages.${pageRoutes[nextPageNavigationIndex].camelCase}`,
-        }),
-      },
-    };
-  };
-
-  const { prevLink, nextLink } = getPageNavigationLinks(currentPageRouteIndex, siteMetadata.pageRoutes);
+  const getStartedPageTitle = getPageTitle(intl, currentPageRouteIndex, siteMetadata.pageRoutes);
+  const { prevLink, nextLink } = getPageNavigationLinks(intl, currentPageRouteIndex, siteMetadata.pageRoutes);
 
   return (
     <Fragment>
