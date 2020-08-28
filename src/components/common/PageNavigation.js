@@ -59,37 +59,33 @@ const PageNavigation = ({ prevLink, nextLink }) => {
   const [isPrevLinkHovered, setIsPrevLinkHovered] = useState(false);
   const [isNextLinkHovered, setIsNextLinkHovered] = useState(false);
 
-  const handlePrevLinkeMouseOver = () => {
+  const handlePrevLinkMouseOver = () => {
     setIsPrevLinkHovered(true);
   };
 
-  const handlePrevLinkeMouseOut = () => {
+  const handlePrevLinkMouseOut = () => {
     setIsPrevLinkHovered(false);
   };
 
-  const handleNextLinkeMouseOver = () => {
+  const handleNextLinkMouseOver = () => {
     setIsNextLinkHovered(true);
   };
 
-  const handleNextLinkeMouseOut = () => {
+  const handleNextLinkMouseOut = () => {
     setIsNextLinkHovered(false);
   };
 
   return (
     <nav css={navStyles}>
-      <Link
-        css={linkStyles}
-        to={prevLink.to}
-        onMouseOver={handlePrevLinkeMouseOver}
-        onMouseOut={handlePrevLinkeMouseOut}>
+      <Link css={linkStyles} to={prevLink.to} onMouseOver={handlePrevLinkMouseOver} onMouseOut={handlePrevLinkMouseOut}>
         <ArrowLeftIcon css={arrowLeftIconStyles(isPrevLinkHovered)} />
         <Subtitle2>{prevLink.text}</Subtitle2>
       </Link>
       <Link
         css={nextPageLinkStyles}
         to={nextLink.to}
-        onMouseOver={handleNextLinkeMouseOver}
-        onMouseOut={handleNextLinkeMouseOut}>
+        onMouseOver={handleNextLinkMouseOver}
+        onMouseOut={handleNextLinkMouseOut}>
         <Subtitle2>{nextLink.text}</Subtitle2>
         <ArrowRightIcon css={arrowRightIconStyles(isNextLinkHovered)} />
       </Link>
