@@ -48,5 +48,10 @@
         "principle3Description": "튀지 않아야 합니다. 각 디자인 요소의 역할이 당연하고 자연스럽게 받아들여져야 합니다."
       }
     }
+  },
+  "components": {
+    "hero": {
+      "title": "컴포넌트"
+    }
   }
 }

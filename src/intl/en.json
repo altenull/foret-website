@@ -48,5 +48,10 @@
         "principle3Description": "It must not splash. The role of each design element should be taken for granted and naturally."
       }
     }
+  },
+  "components": {
+    "hero": {
+      "title": "Components"
+    }
   }
 }
