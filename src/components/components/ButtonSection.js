@@ -7,14 +7,6 @@ import { ComponentDemoBox, ResponsiveContentLayout } from '../common';
 
 const sectionStyles = css`
   position: relative;
-  height: 100vh;
-`;
-
-const responsiveContentLayoutStyles = css`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 `;
 
 const ButtonSection = () => {
@@ -83,7 +75,7 @@ const ButtonSection = () => {
 
   return (
     <section css={sectionStyles}>
-      <ResponsiveContentLayout css={responsiveContentLayoutStyles}>
+      <ResponsiveContentLayout>
         <Heading2>{intl.formatMessage({ id: 'components.button.title' })}</Heading2>
         <Paragraph>{intl.formatMessage({ id: 'components.button.description' })}</Paragraph>
 
