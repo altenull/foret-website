@@ -14,9 +14,9 @@ const linkIconStyles = css`
   transform: translateY(-50%);
 `;
 
-const AnchorHeading2 = ({ children }) => {
+const AnchorHeading2 = ({ headingHash, children }) => {
   return (
-    <Heading2 css={heading2Styles}>
+    <Heading2 css={heading2Styles} id={headingHash}>
       {/* TODO: LinkIcon should be visible when AnchorHeading2 is hovered */}
       <LinkIcon css={linkIconStyles} />
       {children}

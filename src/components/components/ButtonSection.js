@@ -10,7 +10,7 @@ const sectionStyles = css`
   position: relative;
 `;
 
-const ButtonSection = () => {
+const ButtonSection = ({ headingHash }) => {
   const intl = useIntl();
   const {
     getDemoPrimaryButton,
@@ -77,7 +77,9 @@ const ButtonSection = () => {
   return (
     <section css={sectionStyles}>
       <ResponsiveContentLayout>
-        <AnchorHeading2>{intl.formatMessage({ id: 'components.button.title' })}</AnchorHeading2>
+        <AnchorHeading2 headingHash={headingHash}>
+          {intl.formatMessage({ id: 'components.button.title' })}
+        </AnchorHeading2>
         <Paragraph>{intl.formatMessage({ id: 'components.button.description' })}</Paragraph>
 
         {getPrimaryButtonDemoBox()}

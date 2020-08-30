@@ -10,13 +10,15 @@ const sectionStyles = css`
   height: 100vh;
 `;
 
-const CheckboxSection = () => {
+const CheckboxSection = ({ headingHash }) => {
   const intl = useIntl();
 
   return (
     <section css={sectionStyles}>
       <ResponsiveContentLayout>
-        <AnchorHeading2>{intl.formatMessage({ id: 'components.checkbox.title' })}</AnchorHeading2>
+        <AnchorHeading2 headingHash={headingHash}>
+          {intl.formatMessage({ id: 'components.checkbox.title' })}
+        </AnchorHeading2>
         <Paragraph>{intl.formatMessage({ id: 'components.checkbox.description' })}</Paragraph>
       </ResponsiveContentLayout>
     </section>

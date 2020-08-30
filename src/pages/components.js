@@ -16,6 +16,28 @@ const ComponentsPage = ({ location }) => {
   const intl = useIntl();
   const { siteMetadata } = useGetSiteMetadata();
 
+  const sectionComponentsWithHash = [
+    {
+      hash: '#button',
+      component: ButtonSection,
+    },
+    {
+      hash: '#checkbox',
+      component: CheckboxSection,
+    },
+  ];
+
+  const scrollTo = (hash) => {
+    const targetElement = document.getElementById(hash);
+
+    if (targetElement != null) {
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
+
   const currentPageRouteIndex = siteMetadata.pageRoutes.findIndex(({ key, ...rest }) =>
     location.pathname.includes(key)
   );
@@ -23,13 +45,17 @@ const ComponentsPage = ({ location }) => {
   const componentsTitle = getPageTitle(intl, currentPageRouteIndex, siteMetadata.pageRoutes);
   const { prevLink, nextLink } = getPageNavigationLinks(intl, currentPageRouteIndex, siteMetadata.pageRoutes);
 
+  const getSections = () =>
+    sectionComponentsWithHash.map(({ hash, component: SectionComponent }) => (
+      <SectionComponent key={hash} headingHash={hash} />
+    ));
+
   return (
     <Fragment>
       <Helmet title={componentsTitle} defer={false} />
       <Layout css={componentsStyles}>
         <HeroSection />
-        <ButtonSection />
-        <CheckboxSection />
+        {getSections()}
         <PageNavigationSection prevLink={prevLink} nextLink={nextLink} />
       </Layout>
     </Fragment>
