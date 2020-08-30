@@ -1,9 +1,10 @@
-import { Heading2, Paragraph, PrimaryButton, SecondaryButton } from '@altenull/foret-react';
+import { Paragraph, PrimaryButton, SecondaryButton } from '@altenull/foret-react';
 import { css } from '@emotion/core';
 import { graphql, useStaticQuery } from 'gatsby';
 import { useIntl } from 'gatsby-plugin-intl';
 import React from 'react';
 import { ComponentDemoBox, ResponsiveContentLayout } from '../common';
+import AnchorHeading2 from './AnchorHeading2';
 
 const sectionStyles = css`
   position: relative;
@@ -76,7 +77,7 @@ const ButtonSection = () => {
   return (
     <section css={sectionStyles}>
       <ResponsiveContentLayout>
-        <Heading2>{intl.formatMessage({ id: 'components.button.title' })}</Heading2>
+        <AnchorHeading2>{intl.formatMessage({ id: 'components.button.title' })}</AnchorHeading2>
         <Paragraph>{intl.formatMessage({ id: 'components.button.description' })}</Paragraph>
 
         {getPrimaryButtonDemoBox()}
