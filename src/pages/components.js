@@ -4,7 +4,7 @@ import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 import { Layout, PageNavigationSection } from '../components/common';
-import { ButtonSection, HeroSection } from '../components/components';
+import { ButtonSection, CheckboxSection, HeroSection } from '../components/components';
 import { useGetSiteMetadata } from '../hooks';
 import { getPageNavigationLinks, getPageTitle } from '../utils/page.utils';
 
@@ -29,6 +29,7 @@ const ComponentsPage = ({ location }) => {
       <Layout css={componentsStyles}>
         <HeroSection />
         <ButtonSection />
+        <CheckboxSection />
         <PageNavigationSection prevLink={prevLink} nextLink={nextLink} />
       </Layout>
     </Fragment>
