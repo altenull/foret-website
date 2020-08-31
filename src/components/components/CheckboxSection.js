@@ -7,7 +7,6 @@ import AnchorHeading2 from './AnchorHeading2';
 
 const sectionStyles = css`
   position: relative;
-  height: 100vh;
 `;
 
 const CheckboxSection = ({ headingHash }) => {
