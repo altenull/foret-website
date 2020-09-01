@@ -16,11 +16,11 @@ const responsiveContentLayoutStyles = css`
   transform: translate(-50%, -50%);
 `;
 
-const HeroSection = () => {
+const HeroSection = React.forwardRef((props, ref) => {
   const intl = useIntl();
 
   return (
-    <section css={sectionStyles}>
+    <section css={sectionStyles} ref={ref} {...props}>
       <ResponsiveContentLayout css={responsiveContentLayoutStyles}>
         <Heading1>{intl.formatMessage({ id: 'components.hero.title' })}</Heading1>
         <Subtitle1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Subtitle1>
@@ -28,6 +28,6 @@ const HeroSection = () => {
       </ResponsiveContentLayout>
     </section>
   );
-};
+});
 
 export default HeroSection;
