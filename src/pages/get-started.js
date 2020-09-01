@@ -8,7 +8,7 @@ import { ContentSection, HeroSection } from '../components/get-started';
 import { useGetSiteMetadata } from '../hooks';
 import { getPageNavigationLinks, getPageTitle } from '../utils/page.utils';
 
-const getStartedStyles = css`
+const layoutStyles = css`
   background-color: ${Color.Paper};
 `;
 
@@ -26,7 +26,7 @@ const GetStartedPage = ({ location }) => {
   return (
     <Fragment>
       <Helmet title={getStartedPageTitle} defer={false} />
-      <Layout css={getStartedStyles}>
+      <Layout css={layoutStyles}>
         <HeroSection />
         <ContentSection />
         <PageNavigationSection prevLink={prevLink} nextLink={nextLink} />

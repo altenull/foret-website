@@ -8,7 +8,7 @@ import { ContentSection, HeroSection } from '../components/design-principle';
 import { useGetSiteMetadata } from '../hooks';
 import { getPageNavigationLinks, getPageTitle } from '../utils/page.utils';
 
-const designPrincipleStyles = css`
+const layoutStyles = css`
   background-color: ${Color.Paper};
 `;
 
@@ -26,7 +26,7 @@ const DesignPrinciplePage = ({ location }) => {
   return (
     <Fragment>
       <Helmet title={designPrincipleTitle} defer={false} />
-      <Layout css={designPrincipleStyles}>
+      <Layout css={layoutStyles}>
         <HeroSection />
         <ContentSection />
         <PageNavigationSection prevLink={prevLink} nextLink={nextLink} />

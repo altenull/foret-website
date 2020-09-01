@@ -10,7 +10,7 @@ import { ComponentHashEnum } from '../enums/components/component-hash.enum';
 import { useGetSiteMetadata } from '../hooks';
 import { getPageNavigationLinks, getPageTitle } from '../utils/page.utils';
 
-const componentsStyles = css`
+const layoutStyles = css`
   background-color: ${Color.Paper};
 `;
 
@@ -121,7 +121,7 @@ const ComponentsPage = ({ location }) => {
   return (
     <Fragment>
       <Helmet title={componentsTitle} defer={false} />
-      <Layout css={componentsStyles}>
+      <Layout css={layoutStyles}>
         <HeroSection ref={heroSectionRef} />
         {getSections(componentHashes)}
         <TOC items={getTocItems(componentHashes)} currentHash={currentHash} scrollTo={scrollTo} />

@@ -7,7 +7,7 @@ import { Layout, PageNavigationSection } from '../components/common';
 import { useGetSiteMetadata } from '../hooks';
 import { getPageNavigationLinks, getPageTitle } from '../utils/page.utils';
 
-const colorStyles = css`
+const layoutStyles = css`
   background-color: ${Color.Paper};
 `;
 
@@ -25,7 +25,7 @@ const ColorPage = ({ location }) => {
   return (
     <Fragment>
       <Helmet title={colorPageTitle} defer={false} />
-      <Layout css={colorStyles}>
+      <Layout css={layoutStyles}>
         <PageNavigationSection prevLink={prevLink} nextLink={nextLink} />
       </Layout>
     </Fragment>
