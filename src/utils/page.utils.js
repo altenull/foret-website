@@ -1,3 +1,7 @@
+export const getCurrentPageRouteIndex = (pathname, pageRoutes) => {
+  return pageRoutes.findIndex(({ key, ...rest }) => pathname.includes(key));
+};
+
 export const getPageTitle = (intl, currentPageRouteIndex, pageRoutes) => {
   return `${intl.formatMessage({
     id: `pages.${pageRoutes[currentPageRouteIndex].camelCase}`,

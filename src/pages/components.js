@@ -8,7 +8,7 @@ import { Layout, PageNavigationSection } from '../components/common';
 import { ButtonSection, CheckboxSection, HeroSection, TOC } from '../components/components';
 import { ComponentHashEnum } from '../enums/components/component-hash.enum';
 import { useGetSiteMetadata } from '../hooks';
-import { getPageNavigationLinks, getPageTitle } from '../utils/page.utils';
+import { getCurrentPageRouteIndex, getPageNavigationLinks, getPageTitle } from '../utils/page.utils';
 
 const layoutStyles = css`
   background-color: ${Color.Paper};
@@ -86,10 +86,7 @@ const ComponentsPage = ({ location }) => {
     }
   };
 
-  const currentPageRouteIndex = siteMetadata.pageRoutes.findIndex(({ key, ...rest }) =>
-    location.pathname.includes(key)
-  );
-
+  const currentPageRouteIndex = getCurrentPageRouteIndex(location.pathname, siteMetadata.pageRoutes);
   const componentsTitle = getPageTitle(intl, currentPageRouteIndex, siteMetadata.pageRoutes);
   const { prevLink, nextLink } = getPageNavigationLinks(intl, currentPageRouteIndex, siteMetadata.pageRoutes);
 
