@@ -1,5 +1,5 @@
 import { Color } from '@altenull/foret-core';
-import { Heading3, Paragraph } from '@altenull/foret-react';
+import { Heading3, MarginalParagraph } from '@altenull/foret-react';
 import { css, Global } from '@emotion/core';
 import { Link } from 'gatsby';
 import { IntlContextConsumer, useIntl } from 'gatsby-plugin-intl';
@@ -79,7 +79,7 @@ const DrawerContainer = () => {
               <ul css={pageListWrapperStyles}>{pages}</ul>
 
               <div css={preferredLanguageWrapperStyles}>
-                <Paragraph>{intl.formatMessage({ id: 'drawer.preferredLanguageTitle' })}</Paragraph>
+                <MarginalParagraph>{intl.formatMessage({ id: 'drawer.preferredLanguageTitle' })}</MarginalParagraph>
                 <div css={languageLinksWrapperStyles}>{getLanguageLinks(languages)}</div>
               </div>
             </div>

@@ -1,4 +1,4 @@
-import { Heading2, Paragraph } from '@altenull/foret-react';
+import { MarginalHeading2, MarginalParagraph } from '@altenull/foret-react';
 import { useIntl } from 'gatsby-plugin-intl';
 import React from 'react';
 import { ResponsiveContentLayout } from '../common';
@@ -9,18 +9,24 @@ const ContentSection = () => {
   return (
     <section>
       <ResponsiveContentLayout>
-        <Heading2>{intl.formatMessage({ id: 'designPrinciple.content.designPrinciple.principle1Title' })}</Heading2>
-        <Paragraph>
+        <MarginalHeading2>
+          {intl.formatMessage({ id: 'designPrinciple.content.designPrinciple.principle1Title' })}
+        </MarginalHeading2>
+        <MarginalParagraph>
           {intl.formatMessage({ id: 'designPrinciple.content.designPrinciple.principle1Description' })}
-        </Paragraph>
-        <Heading2>{intl.formatMessage({ id: 'designPrinciple.content.designPrinciple.principle2Title' })}</Heading2>
-        <Paragraph>
+        </MarginalParagraph>
+        <MarginalHeading2>
+          {intl.formatMessage({ id: 'designPrinciple.content.designPrinciple.principle2Title' })}
+        </MarginalHeading2>
+        <MarginalParagraph>
           {intl.formatMessage({ id: 'designPrinciple.content.designPrinciple.principle2Description' })}
-        </Paragraph>
-        <Heading2>{intl.formatMessage({ id: 'designPrinciple.content.designPrinciple.principle3Title' })}</Heading2>
-        <Paragraph>
+        </MarginalParagraph>
+        <MarginalHeading2>
+          {intl.formatMessage({ id: 'designPrinciple.content.designPrinciple.principle3Title' })}
+        </MarginalHeading2>
+        <MarginalParagraph>
           {intl.formatMessage({ id: 'designPrinciple.content.designPrinciple.principle3Description' })}
-        </Paragraph>
+        </MarginalParagraph>
       </ResponsiveContentLayout>
     </section>
   );
