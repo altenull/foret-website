@@ -1,4 +1,4 @@
-import { Heading2 } from '@altenull/foret-react';
+import { MarginalHeading2 } from '@altenull/foret-react';
 import { css } from '@emotion/core';
 import React from 'react';
 import { LinkIcon } from '../icons';
@@ -14,14 +14,14 @@ const linkIconStyles = css`
   transform: translateY(-50%);
 `;
 
-const AnchorHeading2 = ({ headingHash, children }) => {
+const AnchorMarginalHeading2 = ({ headingHash, children }) => {
   return (
-    <Heading2 css={heading2Styles} id={headingHash}>
+    <MarginalHeading2 css={heading2Styles} id={headingHash}>
       {/* TODO: LinkIcon should be visible when AnchorHeading2 is hovered */}
       <LinkIcon css={linkIconStyles} />
       {children}
-    </Heading2>
+    </MarginalHeading2>
   );
 };
 
-export default AnchorHeading2;
+export default AnchorMarginalHeading2;

@@ -1,9 +1,9 @@
-import { Paragraph } from '@altenull/foret-react';
+import { MarginalParagraph } from '@altenull/foret-react';
 import { css } from '@emotion/core';
 import { useIntl } from 'gatsby-plugin-intl';
 import React from 'react';
 import { ResponsiveContentLayout } from '../common';
-import AnchorHeading2 from './AnchorHeading2';
+import AnchorMarginalHeading2 from './AnchorMarginalHeading2';
 
 const sectionStyles = css`
   position: relative;
@@ -15,10 +15,10 @@ const CheckboxSection = ({ headingHash }) => {
   return (
     <section css={sectionStyles}>
       <ResponsiveContentLayout>
-        <AnchorHeading2 headingHash={headingHash}>
+        <AnchorMarginalHeading2 headingHash={headingHash}>
           {intl.formatMessage({ id: 'components.checkbox.title' })}
-        </AnchorHeading2>
-        <Paragraph>{intl.formatMessage({ id: 'components.checkbox.description' })}</Paragraph>
+        </AnchorMarginalHeading2>
+        <MarginalParagraph>{intl.formatMessage({ id: 'components.checkbox.description' })}</MarginalParagraph>
       </ResponsiveContentLayout>
     </section>
   );

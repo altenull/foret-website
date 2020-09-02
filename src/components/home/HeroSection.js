@@ -7,7 +7,8 @@ const sectionStyles = css``;
 const canvasStyles = css`
   width: 100%;
   height: 100%;
-  background-color: ${Color.Soil};
+  background-color: #54392d;
+  /* background-color: ${Color.Soil}; */
 `;
 
 const HeroSection = () => {

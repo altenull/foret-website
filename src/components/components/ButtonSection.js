@@ -1,10 +1,10 @@
-import { Paragraph, PrimaryButton, SecondaryButton, Heading3 } from '@altenull/foret-react';
+import { MarginalHeading3, MarginalParagraph, PrimaryButton, SecondaryButton } from '@altenull/foret-react';
 import { css } from '@emotion/core';
 import { graphql, useStaticQuery } from 'gatsby';
 import { useIntl } from 'gatsby-plugin-intl';
 import React from 'react';
-import { ComponentDemoBox, ResponsiveContentLayout, CodeViewer } from '../common';
-import AnchorHeading2 from './AnchorHeading2';
+import { CodeViewer, ComponentDemoBox, ResponsiveContentLayout } from '../common';
+import AnchorMarginalHeading2 from './AnchorMarginalHeading2';
 
 const sectionStyles = css`
   position: relative;
@@ -89,11 +89,11 @@ const ButtonSection = ({ headingHash }) => {
   return (
     <section css={sectionStyles}>
       <ResponsiveContentLayout>
-        <AnchorHeading2 headingHash={headingHash}>
+        <AnchorMarginalHeading2 headingHash={headingHash}>
           {intl.formatMessage({ id: 'components.button.title' })}
-        </AnchorHeading2>
-        <Paragraph>{intl.formatMessage({ id: 'components.button.description' })}</Paragraph>
-        <Heading3>Imports</Heading3>
+        </AnchorMarginalHeading2>
+        <MarginalParagraph>{intl.formatMessage({ id: 'components.button.description' })}</MarginalParagraph>
+        <MarginalHeading3>Imports</MarginalHeading3>
         React
         <CodeViewer codeInHtml={getImportButtonReact.nodes[0].html} />
         Angular

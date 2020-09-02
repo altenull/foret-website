@@ -1,4 +1,4 @@
-import { Heading2, Paragraph, Subtitle2, Tab, TabGroup } from '@altenull/foret-react';
+import { MarginalHeading2, MarginalParagraph, Subtitle2, Tab, TabGroup } from '@altenull/foret-react';
 import { css } from '@emotion/core';
 import { graphql, useStaticQuery } from 'gatsby';
 import { useIntl } from 'gatsby-plugin-intl';
@@ -45,15 +45,17 @@ const ContentSection = () => {
     }
   `);
 
-  const installationTitle = <Heading2>{intl.formatMessage({ id: 'getStarted.content.installation.title' })}</Heading2>;
+  const installationTitle = (
+    <MarginalHeading2>{intl.formatMessage({ id: 'getStarted.content.installation.title' })}</MarginalHeading2>
+  );
   const troubleShootingTitle = (
-    <Heading2>{intl.formatMessage({ id: 'getStarted.content.troubleShooting.title' })}</Heading2>
+    <MarginalHeading2>{intl.formatMessage({ id: 'getStarted.content.troubleShooting.title' })}</MarginalHeading2>
   );
 
   const reactVersionContent = () => (
     <div css={contentWrapperStyles}>
       {installationTitle}
-      <Paragraph>{intl.formatMessage({ id: 'getStarted.content.installation.description' })}</Paragraph>
+      <MarginalParagraph>{intl.formatMessage({ id: 'getStarted.content.installation.description' })}</MarginalParagraph>
 
       <Subtitle2>{intl.formatMessage({ id: 'getStarted.content.installation.installWithNpm' })}</Subtitle2>
       <CodeViewer codeInHtml={getInstallWithNpmReact.nodes[0].html}></CodeViewer>
@@ -64,14 +66,16 @@ const ContentSection = () => {
       <p>Don’t forget to install the @emotion/core ^10.0.0 also.</p>
 
       {troubleShootingTitle}
-      <Paragraph>{intl.formatMessage({ id: 'getStarted.content.troubleShooting.description' })}</Paragraph>
+      <MarginalParagraph>
+        {intl.formatMessage({ id: 'getStarted.content.troubleShooting.description' })}
+      </MarginalParagraph>
     </div>
   );
 
   const angularVersionContent = () => (
     <div css={contentWrapperStyles}>
       {installationTitle}
-      <Paragraph>{intl.formatMessage({ id: 'getStarted.content.installation.description' })}</Paragraph>
+      <MarginalParagraph>{intl.formatMessage({ id: 'getStarted.content.installation.description' })}</MarginalParagraph>
 
       <Subtitle2>{intl.formatMessage({ id: 'getStarted.content.installation.installWithNpm' })}</Subtitle2>
       <CodeViewer codeInHtml={getInstallWithNpmNg.nodes[0].html}></CodeViewer>
@@ -80,7 +84,9 @@ const ContentSection = () => {
       <CodeViewer codeInHtml={getInstallWithYarnNg.nodes[0].html}></CodeViewer>
 
       {troubleShootingTitle}
-      <Paragraph>{intl.formatMessage({ id: 'getStarted.content.troubleShooting.description' })}</Paragraph>
+      <MarginalParagraph>
+        {intl.formatMessage({ id: 'getStarted.content.troubleShooting.description' })}
+      </MarginalParagraph>
     </div>
   );
 
