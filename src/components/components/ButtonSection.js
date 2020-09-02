@@ -1,9 +1,9 @@
-import { Paragraph, PrimaryButton, SecondaryButton } from '@altenull/foret-react';
+import { Paragraph, PrimaryButton, SecondaryButton, Heading3 } from '@altenull/foret-react';
 import { css } from '@emotion/core';
 import { graphql, useStaticQuery } from 'gatsby';
 import { useIntl } from 'gatsby-plugin-intl';
 import React from 'react';
-import { ComponentDemoBox, ResponsiveContentLayout } from '../common';
+import { ComponentDemoBox, ResponsiveContentLayout, CodeViewer } from '../common';
 import AnchorHeading2 from './AnchorHeading2';
 
 const sectionStyles = css`
@@ -13,12 +13,24 @@ const sectionStyles = css`
 const ButtonSection = ({ headingHash }) => {
   const intl = useIntl();
   const {
+    getImportButtonReact,
+    getImportButtonNg,
     getDemoPrimaryButton,
     getDemoPrimaryButtonDisabled,
     getDemoSecondaryButton,
     getDemoSecondaryButtonDisabled,
   } = useStaticQuery(graphql`
     query {
+      getImportButtonReact: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/import-button-react.md/" } }) {
+        nodes {
+          html
+        }
+      }
+      getImportButtonNg: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/import-button-ng.md/" } }) {
+        nodes {
+          html
+        }
+      }
       getDemoPrimaryButton: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/demo-primary-button.md/" } }) {
         nodes {
           html
@@ -81,7 +93,11 @@ const ButtonSection = ({ headingHash }) => {
           {intl.formatMessage({ id: 'components.button.title' })}
         </AnchorHeading2>
         <Paragraph>{intl.formatMessage({ id: 'components.button.description' })}</Paragraph>
-
+        <Heading3>Imports</Heading3>
+        React
+        <CodeViewer codeInHtml={getImportButtonReact.nodes[0].html} />
+        Angular
+        <CodeViewer codeInHtml={getImportButtonNg.nodes[0].html} />
         {getPrimaryButtonDemoBox()}
         {getPrimaryButtonDisabledDemoBox()}
         {getSecondaryButtonDemoBox()}
