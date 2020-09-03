@@ -3,8 +3,6 @@ import {
   MarginalParagraph,
   PrimaryButton,
   SecondaryButton,
-  Subtitle1,
-  Subtitle2,
   Tab,
   TabGroup,
 } from '@altenull/foret-react';
@@ -13,7 +11,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { useIntl } from 'gatsby-plugin-intl';
 import React from 'react';
 import { ComponentFactorEnum } from '../../enums/components/component-factor.enum';
-import { getPropsOfComponentFactor } from '../../utils/page.utils';
+import { getPropsOfComponentFactor, getPropsTable } from '../../utils/page.utils';
 import { CodeViewer, ComponentDemoBox, ResponsiveContentLayout } from '../common';
 import AnchorMarginalHeading2 from './AnchorMarginalHeading2';
 
@@ -166,14 +164,6 @@ const ButtonSection = ({ headingHash }) => {
   );
 
   const buttonProps = getPropsOfComponentFactor(intl, ComponentFactorEnum.Button);
-  const buttonPropsTableRows = buttonProps.map((buttonProp, index) => (
-    <tr key={index}>
-      <td>{buttonProp.name}</td>
-      <td>{buttonProp.type}</td>
-      <td>{buttonProp.default}</td>
-      <td>{buttonProp.description}</td>
-    </tr>
-  ));
 
   const getReactVersionContent = () => (
     <div css={contentWrapperStyles}>
@@ -187,19 +177,7 @@ const ButtonSection = ({ headingHash }) => {
       {getSecondaryButtonDisabledReactDemoBox()}
 
       <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.props' })}</MarginalHeading3>
-      {buttonProps.length > 0 && (
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Type</th>
-              <th>Default</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>{buttonPropsTableRows}</tbody>
-        </table>
-      )}
+      {getPropsTable(buttonProps)}
     </div>
   );
 

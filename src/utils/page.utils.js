@@ -1,4 +1,5 @@
-import { PropsTableColumnEnum } from '../enums/components/props-table-column.enum';
+import React from 'react';
+import { propsTableColumns } from '../variables/components';
 
 export const getCurrentPageRouteIndex = (pathname, pageRoutes) => {
   return pageRoutes.findIndex(({ key, ...rest }) => pathname.includes(key));
@@ -31,13 +32,6 @@ export const getPageNavigationLinks = (intl, currentPageRouteIndex, pageRoutes) 
 };
 
 export const getPropsOfComponentFactor = (intl, componentFactor) => {
-  const propsTableColumns = [
-    PropsTableColumnEnum.Name,
-    PropsTableColumnEnum.Type,
-    PropsTableColumnEnum.Default,
-    PropsTableColumnEnum.Description,
-  ];
-
   const numberOfProps =
     Object.keys(intl.messages).filter((key) => key.includes(`components.${componentFactor}.props.`)).length /
     propsTableColumns.length;
@@ -56,4 +50,28 @@ export const getPropsOfComponentFactor = (intl, componentFactor) => {
 
     return propsTableRow;
   });
+};
+
+export const getPropsTable = (componentProps) => {
+  const getPropsTableHeader = () =>
+    propsTableColumns.map((propsTableColumn) => <th key={propsTableColumn}>{propsTableColumn}</th>);
+
+  const getPropsTableRows = () =>
+    componentProps.map((prop, index) => (
+      <tr key={index}>
+        <td>{prop.name}</td>
+        <td>{prop.type}</td>
+        <td>{prop.default}</td>
+        <td>{prop.description}</td>
+      </tr>
+    ));
+
+  return (
+    <table>
+      <thead>
+        <tr>{getPropsTableHeader()}</tr>
+      </thead>
+      <tbody>{getPropsTableRows()}</tbody>
+    </table>
+  );
 };
