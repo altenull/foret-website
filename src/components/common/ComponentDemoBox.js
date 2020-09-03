@@ -6,7 +6,7 @@ import { Color } from '@altenull/foret-core';
 const demoWrapperStyles = css`
   margin-bottom: -8px;
   background-color: ${Color.White};
-  padding: 24px;
+  padding: 48px 24px;
 `;
 
 const ComponentDemoBox = ({ demo, codeInHtml }) => (
