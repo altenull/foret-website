@@ -1,3 +1,5 @@
+import { PropsTableColumnEnum } from '../enums/components/props-table-column.enum';
+
 export const getCurrentPageRouteIndex = (pathname, pageRoutes) => {
   return pageRoutes.findIndex(({ key, ...rest }) => pathname.includes(key));
 };
@@ -26,4 +28,32 @@ export const getPageNavigationLinks = (intl, currentPageRouteIndex, pageRoutes) 
       }),
     },
   };
+};
+
+export const getPropsOfComponentFactor = (intl, componentFactor) => {
+  const propsTableColumns = [
+    PropsTableColumnEnum.Name,
+    PropsTableColumnEnum.Type,
+    PropsTableColumnEnum.Default,
+    PropsTableColumnEnum.Description,
+  ];
+
+  const numberOfProps =
+    Object.keys(intl.messages).filter((key) => key.includes(`components.${componentFactor}.props.`)).length /
+    propsTableColumns.length;
+
+  // If we store any array data into locale file(ko.json or en.json), each item of array will be mapped to one key-value object item.
+  // https://dev.to/louisbertin/multilingual-website-with-gatsby-and-contentful-part-2-25pf
+  return Array.from(Array(numberOfProps), (x, index) => {
+    const propsTableRow = propsTableColumns.reduce((acc, propsTableColumn) => {
+      return {
+        ...acc,
+        [propsTableColumn]: intl.formatMessage({
+          id: `components.${componentFactor}.props.${index}.${propsTableColumn}`,
+        }),
+      };
+    }, {});
+
+    return propsTableRow;
+  });
 };
