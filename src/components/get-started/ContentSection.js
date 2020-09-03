@@ -52,7 +52,7 @@ const ContentSection = () => {
     <MarginalHeading2>{intl.formatMessage({ id: 'getStarted.content.troubleShooting.title' })}</MarginalHeading2>
   );
 
-  const reactVersionContent = () => (
+  const getReactVersionContent = () => (
     <div css={contentWrapperStyles}>
       {installationTitle}
       <MarginalParagraph>{intl.formatMessage({ id: 'getStarted.content.installation.description' })}</MarginalParagraph>
@@ -72,7 +72,7 @@ const ContentSection = () => {
     </div>
   );
 
-  const angularVersionContent = () => (
+  const getAngularVersionContent = () => (
     <div css={contentWrapperStyles}>
       {installationTitle}
       <MarginalParagraph>{intl.formatMessage({ id: 'getStarted.content.installation.description' })}</MarginalParagraph>
@@ -95,11 +95,11 @@ const ContentSection = () => {
       <ResponsiveContentLayout>
         <TabGroup selectedValue={'contentSectionReactTap'} name={'content-section-tap'}>
           <Tab id={'content-section-react-tap'} labelText={'React'} value={'contentSectionReactTap'}>
-            {reactVersionContent()}
+            {getReactVersionContent()}
           </Tab>
 
           <Tab id={'content-section-ng-tap'} labelText={'Angular'} value={'contentSectionNgTap'}>
-            {angularVersionContent()}
+            {getAngularVersionContent()}
           </Tab>
         </TabGroup>
       </ResponsiveContentLayout>

@@ -5,6 +5,8 @@ import {
   SecondaryButton,
   Subtitle1,
   Subtitle2,
+  Tab,
+  TabGroup,
 } from '@altenull/foret-react';
 import { css } from '@emotion/core';
 import { graphql, useStaticQuery } from 'gatsby';
@@ -19,15 +21,19 @@ const sectionStyles = css`
   position: relative;
 `;
 
+const contentWrapperStyles = css`
+  padding: 32px 0;
+`;
+
 const ButtonSection = ({ headingHash }) => {
   const intl = useIntl();
   const {
     getImportButtonReact,
     getImportButtonNg,
-    getDemoPrimaryButton,
-    getDemoPrimaryButtonDisabled,
-    getDemoSecondaryButton,
-    getDemoSecondaryButtonDisabled,
+    getDemoPrimaryButtonReact,
+    getDemoPrimaryButtonDisabledReact,
+    getDemoSecondaryButtonReact,
+    getDemoSecondaryButtonDisabledReact,
   } = useStaticQuery(graphql`
     query {
       getImportButtonReact: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/import-button-react.md/" } }) {
@@ -40,25 +46,29 @@ const ButtonSection = ({ headingHash }) => {
           html
         }
       }
-      getDemoPrimaryButton: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/demo-primary-button.md/" } }) {
-        nodes {
-          html
-        }
-      }
-      getDemoPrimaryButtonDisabled: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/demo-primary-button-disabled.md/" } }
+      getDemoPrimaryButtonReact: allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/demo-primary-button-react.md/" } }
       ) {
         nodes {
           html
         }
       }
-      getDemoSecondaryButton: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/demo-secondary-button.md/" } }) {
+      getDemoPrimaryButtonDisabledReact: allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/demo-primary-button-disabled-react.md/" } }
+      ) {
         nodes {
           html
         }
       }
-      getDemoSecondaryButtonDisabled: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/demo-secondary-button-disabled.md/" } }
+      getDemoSecondaryButtonReact: allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/demo-secondary-button-react.md/" } }
+      ) {
+        nodes {
+          html
+        }
+      }
+      getDemoSecondaryButtonDisabledReact: allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/demo-secondary-button-disabled-react.md/" } }
       ) {
         nodes {
           html
@@ -67,31 +77,31 @@ const ButtonSection = ({ headingHash }) => {
     }
   `);
 
-  const getPrimaryButtonDemoBox = () => (
+  const getPrimaryButtonReactDemoBox = () => (
     <ComponentDemoBox
       demo={<PrimaryButton>primary button</PrimaryButton>}
-      codeInHtml={getDemoPrimaryButton.nodes[0].html}
+      codeInHtml={getDemoPrimaryButtonReact.nodes[0].html}
     />
   );
 
-  const getPrimaryButtonDisabledDemoBox = () => (
+  const getPrimaryButtonDisabledReactDemoBox = () => (
     <ComponentDemoBox
       demo={<PrimaryButton disabled>primary button(disabled)</PrimaryButton>}
-      codeInHtml={getDemoPrimaryButtonDisabled.nodes[0].html}
+      codeInHtml={getDemoPrimaryButtonDisabledReact.nodes[0].html}
     />
   );
 
-  const getSecondaryButtonDemoBox = () => (
+  const getSecondaryButtonDemoReactBox = () => (
     <ComponentDemoBox
       demo={<SecondaryButton>secondary button</SecondaryButton>}
-      codeInHtml={getDemoSecondaryButton.nodes[0].html}
+      codeInHtml={getDemoSecondaryButtonReact.nodes[0].html}
     />
   );
 
-  const getSecondaryButtonDisabledDemoBox = () => (
+  const getSecondaryButtonDisabledReactDemoBox = () => (
     <ComponentDemoBox
       demo={<SecondaryButton disabled>secondary button(disabled)</SecondaryButton>}
-      codeInHtml={getDemoSecondaryButtonDisabled.nodes[0].html}
+      codeInHtml={getDemoSecondaryButtonDisabledReact.nodes[0].html}
     />
   );
 
@@ -105,6 +115,58 @@ const ButtonSection = ({ headingHash }) => {
     </tr>
   ));
 
+  const getReactVersionContent = () => (
+    <div css={contentWrapperStyles}>
+      <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.imports' })}</MarginalHeading3>
+      <CodeViewer codeInHtml={getImportButtonReact.nodes[0].html} />
+
+      <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</MarginalHeading3>
+      {getPrimaryButtonReactDemoBox()}
+      {getPrimaryButtonDisabledReactDemoBox()}
+      {getSecondaryButtonDemoReactBox()}
+      {getSecondaryButtonDisabledReactDemoBox()}
+
+      <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.props' })}</MarginalHeading3>
+      {buttonProps.length > 0 && (
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>{buttonPropsTableRows}</tbody>
+        </table>
+      )}
+    </div>
+  );
+
+  const getAngularVersionContent = () => (
+    <div css={contentWrapperStyles}>
+      <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.imports' })}</MarginalHeading3>
+      <CodeViewer codeInHtml={getImportButtonNg.nodes[0].html} />
+
+      <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</MarginalHeading3>
+
+      <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.props' })}</MarginalHeading3>
+      {buttonProps.length > 0 && (
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>{buttonPropsTableRows}</tbody>
+        </table>
+      )}
+    </div>
+  );
+
   return (
     <section css={sectionStyles}>
       <ResponsiveContentLayout>
@@ -113,32 +175,15 @@ const ButtonSection = ({ headingHash }) => {
         </AnchorMarginalHeading2>
         <MarginalParagraph>{intl.formatMessage({ id: 'components.button.description' })}</MarginalParagraph>
 
-        <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.imports' })}</MarginalHeading3>
-        <Subtitle1>React</Subtitle1>
-        <CodeViewer codeInHtml={getImportButtonReact.nodes[0].html} />
-        <Subtitle2>Angular</Subtitle2>
-        <CodeViewer codeInHtml={getImportButtonNg.nodes[0].html} />
+        <TabGroup selectedValue={'buttonSectionReactTap'} name={'button-section-tap'}>
+          <Tab id={'button-section-react-tap'} labelText={'React'} value={'buttonSectionReactTap'}>
+            {getReactVersionContent()}
+          </Tab>
 
-        <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</MarginalHeading3>
-        {getPrimaryButtonDemoBox()}
-        {getPrimaryButtonDisabledDemoBox()}
-        {getSecondaryButtonDemoBox()}
-        {getSecondaryButtonDisabledDemoBox()}
-
-        <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.props' })}</MarginalHeading3>
-        {buttonProps.length > 0 && (
-          <table>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th>Default</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>{buttonPropsTableRows}</tbody>
-          </table>
-        )}
+          <Tab id={'button-section-ng-tap'} labelText={'Angular'} value={'contentSectionNgTap'}>
+            {getAngularVersionContent()}
+          </Tab>
+        </TabGroup>
       </ResponsiveContentLayout>
     </section>
   );
