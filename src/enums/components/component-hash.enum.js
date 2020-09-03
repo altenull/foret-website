@@ -1,4 +1,6 @@
+import { ComponentFactorEnum } from './component-factor.enum';
+
 export const ComponentHashEnum = Object.freeze({
-  Button: '#button',
-  Checkbox: '#checkbox',
+  Button: `#${ComponentFactorEnum.Button}`,
+  Checkbox: `#${ComponentFactorEnum.Checkbox}`,
 });
