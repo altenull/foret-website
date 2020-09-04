@@ -1,3 +1,4 @@
+import { Table, TableBody, TableCell, TableHead, TableRow } from '@altenull/foret-react';
 import React from 'react';
 import { propsTableColumns } from '../variables/components';
 
@@ -54,24 +55,28 @@ export const getPropsOfComponentFactor = (intl, componentFactor) => {
 
 export const getPropsTable = (componentProps) => {
   const getPropsTableHeader = () =>
-    propsTableColumns.map((propsTableColumn) => <th key={propsTableColumn}>{propsTableColumn}</th>);
+    propsTableColumns.map((propsTableColumn) => (
+      <TableCell key={propsTableColumn} type={'th'}>
+        {propsTableColumn}
+      </TableCell>
+    ));
 
   const getPropsTableRows = () =>
     componentProps.map((prop, index) => (
-      <tr key={index}>
-        <td>{prop.name}</td>
-        <td>{prop.type}</td>
-        <td>{prop.default}</td>
-        <td>{prop.description}</td>
-      </tr>
+      <TableRow key={index}>
+        <TableCell>{prop.name}</TableCell>
+        <TableCell>{prop.type}</TableCell>
+        <TableCell>{prop.default}</TableCell>
+        <TableCell>{prop.description}</TableCell>
+      </TableRow>
     ));
 
   return (
-    <table>
-      <thead>
-        <tr>{getPropsTableHeader()}</tr>
-      </thead>
-      <tbody>{getPropsTableRows()}</tbody>
-    </table>
+    <Table>
+      <TableHead>
+        <TableRow>{getPropsTableHeader()}</TableRow>
+      </TableHead>
+      <TableBody>{getPropsTableRows()}</TableBody>
+    </Table>
   );
 };
