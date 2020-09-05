@@ -83,32 +83,54 @@
     "checkbox": {
       "title": "Checkbox",
       "description": "Checkbox is Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris congue augue quis auctor tempus. Donec augue sem, hendrerit et risus vitae, vehicula posuere mauris. Vestibulum volutpat tellus quis augue molestie aliquam. In in mauris ipsum. Cras facilisis sem eget dui porta suscipit. Maecenas at mauris convallis sem mollis cursus eu eu neque.",
-      "props": [
-        {
-          "name": "legendText",
-          "type": "string",
-          "default": " ",
-          "description": "The label of Checkbox"
-        },
-        {
-          "name": "disabled",
-          "type": "boolean",
-          "default": "false",
-          "description": "If true, the Checkbox will be disabled."
-        },
-        {
-          "name": "children",
-          "type": "React.Node",
-          "default": " ",
-          "description": "The content of Checkbox."
-        },
-        {
-          "name": "onChange",
-          "type": "(newChecked: boolean, id: string, event: React.ChagneEvent<HTMLInputElement>) => void",
-          "default": "() => {}",
-          "description": "Function"
-        }
-      ]
+      "props": {
+        "checkboxGroup": [
+          {
+            "name": "legendText",
+            "type": "string",
+            "default": " ",
+            "description": "The label of Checkbox"
+          },
+          {
+            "name": "disabled",
+            "type": "boolean",
+            "default": "false",
+            "description": "If true, the Checkbox will be disabled."
+          },
+          {
+            "name": "children",
+            "type": "React.Node",
+            "default": " ",
+            "description": "The content of Checkbox."
+          },
+          {
+            "name": "onChange",
+            "type": "(newChecked: boolean, id: string, event: React.ChagneEvent<HTMLInputElement>) => void",
+            "default": "() => '{}'",
+            "description": "Function"
+          }
+        ],
+        "checkbox": [
+          {
+            "name": "id",
+            "type": "string",
+            "default": " ",
+            "description": "The id of Checkbox"
+          },
+          {
+            "name": "labelText",
+            "type": "string",
+            "default": " ",
+            "description": "The label of a checkbox"
+          },
+          {
+            "name": "value",
+            "type": "string",
+            "default": " ",
+            "description": "value of checkbox"
+          }
+        ]
+      }
     }
   }
 }

@@ -163,7 +163,7 @@ const ButtonSection = ({ headingHash }) => {
     />
   );
 
-  const buttonProps = getPropsOfComponentFactor(intl, ComponentFactorEnum.Button);
+  const buttonProps = getPropsOfComponentFactor(intl, `components.${ComponentFactorEnum.Button}.props.`);
 
   const getReactVersionContent = () => (
     <div css={contentWrapperStyles}>

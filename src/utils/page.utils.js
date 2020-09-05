@@ -32,10 +32,9 @@ export const getPageNavigationLinks = (intl, currentPageRouteIndex, pageRoutes) 
   };
 };
 
-export const getPropsOfComponentFactor = (intl, componentFactor) => {
+export const getPropsOfComponentFactor = (intl, intlMessageSubKey) => {
   const numberOfProps =
-    Object.keys(intl.messages).filter((key) => key.includes(`components.${componentFactor}.props.`)).length /
-    propsTableColumns.length;
+    Object.keys(intl.messages).filter((key) => key.includes(intlMessageSubKey)).length / propsTableColumns.length;
 
   // If we store any array data into locale file(ko.json or en.json), each item of array will be mapped to one key-value object item.
   // https://dev.to/louisbertin/multilingual-website-with-gatsby-and-contentful-part-2-25pf
@@ -44,7 +43,7 @@ export const getPropsOfComponentFactor = (intl, componentFactor) => {
       return {
         ...acc,
         [propsTableColumn]: intl.formatMessage({
-          id: `components.${componentFactor}.props.${index}.${propsTableColumn}`,
+          id: `${intlMessageSubKey}${index}.${propsTableColumn}`,
         }),
       };
     }, {});

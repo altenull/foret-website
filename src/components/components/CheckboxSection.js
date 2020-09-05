@@ -1,4 +1,12 @@
-import { Checkbox, CheckboxGroup, MarginalHeading3, MarginalParagraph, Tab, TabGroup } from '@altenull/foret-react';
+import {
+  Checkbox,
+  CheckboxGroup,
+  MarginalHeading3,
+  MarginalParagraph,
+  Subtitle2,
+  Tab,
+  TabGroup,
+} from '@altenull/foret-react';
 import { css } from '@emotion/core';
 import { graphql, useStaticQuery } from 'gatsby';
 import { useIntl } from 'gatsby-plugin-intl';
@@ -96,7 +104,11 @@ const CheckboxSection = ({ headingHash }) => {
     <ComponentDemoBox demo={getDemoCheckboxDisabled()} codeInHtml={getDemoCheckboxDisabledNg.nodes[0].html} />
   );
 
-  const checkboxProps = getPropsOfComponentFactor(intl, ComponentFactorEnum.Checkbox);
+  const checkboxGroupProps = getPropsOfComponentFactor(
+    intl,
+    `components.${ComponentFactorEnum.Checkbox}.props.checkboxGroup.`
+  );
+  const checkboxProps = getPropsOfComponentFactor(intl, `components.${ComponentFactorEnum.Checkbox}.props.checkbox.`);
 
   const getReactVersionContent = () => (
     <div css={contentWrapperStyles}>
@@ -108,6 +120,9 @@ const CheckboxSection = ({ headingHash }) => {
       {getCheckboxDisabledReactDemoBox()}
 
       <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.props' })}</MarginalHeading3>
+      <Subtitle2>{'<CheckboxGroup>'}</Subtitle2>
+      {getPropsTable(checkboxGroupProps)}
+      <Subtitle2>{'<Checkbox>'}</Subtitle2>
       {getPropsTable(checkboxProps)}
     </div>
   );
