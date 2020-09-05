@@ -206,7 +206,7 @@ const ButtonSection = ({ headingHash }) => {
             {getReactVersionContent()}
           </Tab>
 
-          <Tab id={'button-section-ng-tap'} labelText={'Angular'} value={'contentSectionNgTap'}>
+          <Tab id={'button-section-ng-tap'} labelText={'Angular'} value={'buttonSectionNgTap'}>
             {getAngularVersionContent()}
           </Tab>
         </TabGroup>
