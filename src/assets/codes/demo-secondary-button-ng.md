@@ -1,3 +1,5 @@
 ```html
-<button foretSecondaryButton>secondary button</button>
+<button foretSecondaryButton>
+  secondary button
+</button>
 ```

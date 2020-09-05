@@ -1,3 +1,5 @@
 ```jsx
-<SecondaryButton disabled={true}>secondary button(disabled)</SecondaryButton>
+<SecondaryButton disabled={true}>
+  secondary button(disabled)
+</SecondaryButton>
 ```
