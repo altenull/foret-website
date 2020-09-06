@@ -12,32 +12,30 @@ const contentWrapperStyles = css`
 const ContentSection = () => {
   const intl = useIntl();
   const {
-    getInstallWithNpmReact,
-    getInstallWithYarnReact,
-    getInstallWithNpmNg,
-    getInstallWithYarnNg,
+    getInstallViaNpmReact,
+    getInstallViaYarnReact,
+    getInstallViaNpmNg,
+    getInstallViaYarnNg,
   } = useStaticQuery(graphql`
     query {
-      getInstallWithNpmReact: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/install-with-npm-react.md/" } }
+      getInstallViaNpmReact: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/install-via-npm-react.md/" } }) {
+        nodes {
+          html
+        }
+      }
+      getInstallViaYarnReact: allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/install-via-yarn-react.md/" } }
       ) {
         nodes {
           html
         }
       }
-      getInstallWithYarnReact: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/install-with-yarn-react.md/" } }
-      ) {
+      getInstallViaNpmNg: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/install-via-npm-ng.md/" } }) {
         nodes {
           html
         }
       }
-      getInstallWithNpmNg: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/install-with-npm-ng.md/" } }) {
-        nodes {
-          html
-        }
-      }
-      getInstallWithYarnNg: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/install-with-yarn-ng.md/" } }) {
+      getInstallViaYarnNg: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/install-via-yarn-ng.md/" } }) {
         nodes {
           html
         }
@@ -57,11 +55,11 @@ const ContentSection = () => {
       {installationTitle}
       <MarginalParagraph>{intl.formatMessage({ id: 'getStarted.content.installation.description' })}</MarginalParagraph>
 
-      <Subtitle2>{intl.formatMessage({ id: 'getStarted.content.installation.installWithNpm' })}</Subtitle2>
-      <CodeViewer codeInHtml={getInstallWithNpmReact.nodes[0].html}></CodeViewer>
+      <Subtitle2>{intl.formatMessage({ id: 'getStarted.content.installation.installViaNpm' })}</Subtitle2>
+      <CodeViewer codeInHtml={getInstallViaNpmReact.nodes[0].html}></CodeViewer>
 
-      <Subtitle2>{intl.formatMessage({ id: 'getStarted.content.installation.installWithYarn' })}</Subtitle2>
-      <CodeViewer codeInHtml={getInstallWithYarnReact.nodes[0].html}></CodeViewer>
+      <Subtitle2>{intl.formatMessage({ id: 'getStarted.content.installation.installViaYarn' })}</Subtitle2>
+      <CodeViewer codeInHtml={getInstallViaYarnReact.nodes[0].html}></CodeViewer>
 
       <p>Don’t forget to install the @emotion/core ^10.0.0 also.</p>
 
@@ -77,11 +75,11 @@ const ContentSection = () => {
       {installationTitle}
       <MarginalParagraph>{intl.formatMessage({ id: 'getStarted.content.installation.description' })}</MarginalParagraph>
 
-      <Subtitle2>{intl.formatMessage({ id: 'getStarted.content.installation.installWithNpm' })}</Subtitle2>
-      <CodeViewer codeInHtml={getInstallWithNpmNg.nodes[0].html}></CodeViewer>
+      <Subtitle2>{intl.formatMessage({ id: 'getStarted.content.installation.installViaNpm' })}</Subtitle2>
+      <CodeViewer codeInHtml={getInstallViaNpmNg.nodes[0].html}></CodeViewer>
 
-      <Subtitle2>{intl.formatMessage({ id: 'getStarted.content.installation.installWithYarn' })}</Subtitle2>
-      <CodeViewer codeInHtml={getInstallWithYarnNg.nodes[0].html}></CodeViewer>
+      <Subtitle2>{intl.formatMessage({ id: 'getStarted.content.installation.installViaYarn' })}</Subtitle2>
+      <CodeViewer codeInHtml={getInstallViaYarnNg.nodes[0].html}></CodeViewer>
 
       {troubleShootingTitle}
       <MarginalParagraph>

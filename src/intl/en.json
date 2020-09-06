@@ -29,8 +29,8 @@
       "installation": {
         "title": "Installation",
         "description": "foret is served as an npm package. Add them to your project by running:",
-        "installWithNpm": "Using npm:",
-        "installWithYarn": "If you prefer Yarn:"
+        "installViaNpm": "Using npm:",
+        "installViaYarn": "If you prefer Yarn:"
       },
       "troubleShooting": {
         "title": "Trouble Shooting",

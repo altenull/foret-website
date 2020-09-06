@@ -29,8 +29,8 @@
       "installation": {
         "title": "설치하기",
         "description": "foret은 npm package로 제공됩니다. 프로젝트에 추가하려면 다음 명령어를 실행해보세요.",
-        "installWithNpm": "npm으로 설치:",
-        "installWithYarn": "yarn을 선호한다면:"
+        "installViaNpm": "npm으로 설치:",
+        "installViaYarn": "yarn을 선호한다면:"
       },
       "troubleShooting": {
         "title": "문제 해결",
