@@ -73,18 +73,18 @@ const CheckboxSection = ({ headingHash }) => {
   `);
 
   const getDemoCheckbox = () => (
-    <CheckboxGroup legendText={'checkbox'} name={'foret-react-checkbox'}>
-      <Checkbox id={'checkbox-1'} labelText={'option 1'} value={'checkbox1'} />
-      <Checkbox id={'checkbox-2'} labelText={'option 2'} value={'checkbox2'} checked />
-      <Checkbox id={'checkbox-3'} labelText={'option 3'} value={'checkbox3'} checked />
+    <CheckboxGroup legendText={'Checkbox'}>
+      <Checkbox id={'checkbox-1'} labelText={'option 1'} />
+      <Checkbox id={'checkbox-2'} labelText={'option 2'} checked />
+      <Checkbox id={'checkbox-3'} labelText={'option 3'} checked />
     </CheckboxGroup>
   );
 
   const getDemoCheckboxDisabled = () => (
-    <CheckboxGroup legendText={'checkbox'} name={'foret-react-checkbox'} disabled={true}>
-      <Checkbox id={'checkbox-1'} labelText={'option 1'} value={'checkbox1'} />
-      <Checkbox id={'checkbox-2'} labelText={'option 2'} value={'checkbox2'} checked />
-      <Checkbox id={'checkbox-3'} labelText={'option 3'} value={'checkbox3'} checked />
+    <CheckboxGroup legendText={'Disabled checkbox'} disabled={true}>
+      <Checkbox id={'disabled-checkbox-1'} labelText={'option 1'} />
+      <Checkbox id={'disabled-checkbox-2'} labelText={'option 2'} checked />
+      <Checkbox id={'disabled-checkbox-3'} labelText={'option 3'} checked />
     </CheckboxGroup>
   );
 
@@ -134,7 +134,6 @@ const CheckboxSection = ({ headingHash }) => {
           <Tab id={'checkbox-section-react-tap'} labelText={'React'} value={'checkboxSectionReactTap'}>
             {getReactVersionContent()}
           </Tab>
-
           <Tab id={'checkbox-section-ng-tap'} labelText={'Angular'} value={'contentSectionNgTap'}>
             {getAngularVersionContent()}
           </Tab>

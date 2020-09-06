@@ -105,7 +105,7 @@
           },
           {
             "name": "onChange",
-            "type": "(newChecked: boolean, id: string, event: React.ChagneEvent<HTMLInputElement>) => void",
+            "type": "(id: string, newChecked: boolean) => void",
             "default": "() => '{}'",
             "description": "Function"
           }
@@ -122,12 +122,6 @@
             "type": "string",
             "default": " ",
             "description": "The label of a checkbox"
-          },
-          {
-            "name": "value",
-            "type": "string",
-            "default": " ",
-            "description": "value of checkbox"
           }
         ]
       }
