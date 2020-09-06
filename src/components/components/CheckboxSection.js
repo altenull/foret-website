@@ -146,7 +146,7 @@ const CheckboxSection = ({ headingHash }) => {
           <Tab id={'checkbox-section-react-tap'} labelText={'React'} value={'checkboxSectionReactTap'}>
             {getReactVersionContent()}
           </Tab>
-          <Tab id={'checkbox-section-ng-tap'} labelText={'Angular'} value={'contentSectionNgTap'}>
+          <Tab id={'checkbox-section-ng-tap'} labelText={'Angular'} value={'checkboxSectionNgTap'}>
             {getAngularVersionContent()}
           </Tab>
         </TabGroup>

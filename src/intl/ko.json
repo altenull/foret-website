@@ -125,6 +125,30 @@
           }
         ]
       }
+    },
+    "toggle": {
+      "title": "Toggle",
+      "description": "Toggle 컴포넌트는 is used to quickly switch between two possible states. They are commonly used for “on/off” switches.",
+      "props": [
+        {
+          "name": "id",
+          "type": "string",
+          "default": " ",
+          "description": "The id of Toggle"
+        },
+        {
+          "name": "checked",
+          "type": "boolean",
+          "default": "false",
+          "description": "If true, the Toggle will be on."
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "default": "false",
+          "description": "If true, the Toggle will be disabled."
+        }
+      ]
     }
   }
 }

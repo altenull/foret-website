@@ -5,7 +5,7 @@ import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment, useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { Layout, PageNavigationSection } from '../components/common';
-import { ButtonSection, CheckboxSection, HeroSection, TOC } from '../components/components';
+import { ButtonSection, CheckboxSection, HeroSection, TOC, ToggleSection } from '../components/components';
 import { ComponentHashEnum } from '../enums/components/component-hash.enum';
 import { useGetSiteMetadata } from '../hooks';
 import { getCurrentPageRouteIndex, getPageNavigationLinks, getPageTitle } from '../utils/page.utils';
@@ -21,7 +21,7 @@ const ComponentsPage = ({ location }) => {
   const intl = useIntl();
   const { siteMetadata } = useGetSiteMetadata();
 
-  const componentHashes = [ComponentHashEnum.Button, ComponentHashEnum.Checkbox];
+  const componentHashes = [ComponentHashEnum.Button, ComponentHashEnum.Checkbox, ComponentHashEnum.Toggle];
 
   const checkHashAndScrollTo = () => {
     if (!!location.hash) {
@@ -94,6 +94,7 @@ const ComponentsPage = ({ location }) => {
     const componentHashToSectionMap = {
       [ComponentHashEnum.Button]: ButtonSection,
       [ComponentHashEnum.Checkbox]: CheckboxSection,
+      [ComponentHashEnum.Toggle]: ToggleSection,
     };
 
     return componentHashes.map((componentHash) => {
@@ -107,6 +108,7 @@ const ComponentsPage = ({ location }) => {
     const componentHashToIntlIdMap = {
       [ComponentHashEnum.Button]: 'components.button.title',
       [ComponentHashEnum.Checkbox]: 'components.checkbox.title',
+      [ComponentHashEnum.Toggle]: 'components.toggle.title',
     };
 
     return componentHashes.map((componentHash) => ({
