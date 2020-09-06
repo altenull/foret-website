@@ -38,8 +38,8 @@ const HeaderContainer = () => {
   const [isDrawerShowing, setIsDrawerShowing] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
+  const { siteMetadata } = useGetSiteMetadata();
   const getLogoImageResponse = useGetLogoImage();
-  const getSiteMetadataResponse = useGetSiteMetadata();
   const isMounted = useIsMounted();
   const intl = useIntl();
   const location = useLocation();
@@ -75,10 +75,7 @@ const HeaderContainer = () => {
     setIsDrawerShowing(!isDrawerShowing);
   };
 
-  const isNotHomePage = getSiteMetadataResponse.siteMetadata.pageRoutes.reduce(
-    (acc, { key, ...rest }) => acc || location.pathname.includes(key),
-    false
-  );
+  const isNotHomePage = siteMetadata.pageRoutes.find((pageRoute) => location.pathname.includes(pageRoute.key));
   const headerContentColor = isDrawerShowing ? Color.Ink : isNotHomePage ? Color.Ink : Color.White;
 
   return (

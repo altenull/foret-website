@@ -2,15 +2,13 @@ import { Table, TableBody, TableCell, TableHead, TableRow } from '@altenull/fore
 import React from 'react';
 import { propsTableColumns } from '../variables/components';
 
-export const getCurrentPageRouteIndex = (pathname, pageRoutes) => {
-  return pageRoutes.findIndex(({ key, ...rest }) => pathname.includes(key));
-};
+export const getCurrentPageRouteIndex = (pathname, pageRoutes) =>
+  pageRoutes.findIndex((pageRoute) => pathname.includes(pageRoute.key));
 
-export const getPageTitle = (intl, currentPageRouteIndex, pageRoutes) => {
-  return `${intl.formatMessage({
+export const getPageTitle = (intl, currentPageRouteIndex, pageRoutes) =>
+  `${intl.formatMessage({
     id: `pages.${pageRoutes[currentPageRouteIndex].camelCase}`,
   })} | ${intl.formatMessage({ id: 'title' })}`;
-};
 
 export const getPageNavigationLinks = (intl, currentPageRouteIndex, pageRoutes) => {
   const prevPageNavigationIndex = currentPageRouteIndex - 1 < 0 ? pageRoutes.length - 1 : currentPageRouteIndex - 1;

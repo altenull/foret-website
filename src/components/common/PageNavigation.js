@@ -1,4 +1,3 @@
-// TODO: Set styles
 import { Subtitle2 } from '@altenull/foret-react';
 import { css, keyframes } from '@emotion/core';
 import { Link } from 'gatsby';

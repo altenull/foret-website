@@ -3,7 +3,6 @@ const { LanguageEnum } = require('./src/enums/core/language.enum');
 
 /**
  * Configure your Gatsby site with this file.
- *
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 

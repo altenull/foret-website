@@ -1,7 +1,7 @@
+import { Color } from '@altenull/foret-core';
+import { css } from '@emotion/core';
 import React from 'react';
 import CodeViewer from './CodeViewer';
-import { css } from '@emotion/core';
-import { Color } from '@altenull/foret-core';
 
 const demoWrapperStyles = css`
   margin-bottom: -8px;
