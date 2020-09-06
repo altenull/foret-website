@@ -88,22 +88,6 @@ const CheckboxSection = ({ headingHash }) => {
     </CheckboxGroup>
   );
 
-  const getCheckboxReactDemoBox = () => (
-    <ComponentDemoBox demo={getDemoCheckbox()} codeInHtml={getDemoCheckboxReact.nodes[0].html} />
-  );
-
-  const getCheckboxDisabledReactDemoBox = () => (
-    <ComponentDemoBox demo={getDemoCheckboxDisabled()} codeInHtml={getDemoCheckboxDisabledReact.nodes[0].html} />
-  );
-
-  const getCheckboxNgDemoBox = () => (
-    <ComponentDemoBox demo={getDemoCheckbox()} codeInHtml={getDemoCheckboxNg.nodes[0].html} />
-  );
-
-  const getCheckboxDisabledNgDemoBox = () => (
-    <ComponentDemoBox demo={getDemoCheckboxDisabled()} codeInHtml={getDemoCheckboxDisabledNg.nodes[0].html} />
-  );
-
   const checkboxGroupProps = getPropsOfComponentFactor(
     intl,
     `components.${ComponentFactorEnum.Checkbox}.props.checkboxGroup.`
@@ -116,8 +100,8 @@ const CheckboxSection = ({ headingHash }) => {
       <CodeViewer codeInHtml={getImportCheckboxReact.nodes[0].html} />
 
       <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</MarginalHeading3>
-      {getCheckboxReactDemoBox()}
-      {getCheckboxDisabledReactDemoBox()}
+      <ComponentDemoBox demo={getDemoCheckbox()} codeInHtml={getDemoCheckboxReact.nodes[0].html} />
+      <ComponentDemoBox demo={getDemoCheckboxDisabled()} codeInHtml={getDemoCheckboxDisabledReact.nodes[0].html} />
 
       <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.props' })}</MarginalHeading3>
       <Subtitle2>{'<CheckboxGroup>'}</Subtitle2>
@@ -133,8 +117,8 @@ const CheckboxSection = ({ headingHash }) => {
       <CodeViewer codeInHtml={getImportCheckboxNg.nodes[0].html} />
 
       <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</MarginalHeading3>
-      {getCheckboxNgDemoBox()}
-      {getCheckboxDisabledNgDemoBox()}
+      <ComponentDemoBox demo={getDemoCheckbox()} codeInHtml={getDemoCheckboxNg.nodes[0].html} />
+      <ComponentDemoBox demo={getDemoCheckboxDisabled()} codeInHtml={getDemoCheckboxDisabledNg.nodes[0].html} />
     </div>
   );
 
