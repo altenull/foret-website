@@ -9,8 +9,8 @@ const demoWrapperStyles = css`
   padding: 48px 24px;
 `;
 
-const ComponentDemoBox = ({ demo, codeInHtml }) => (
-  <div>
+const ComponentDemoBox = ({ demo, codeInHtml, ...props }) => (
+  <div {...props}>
     <div css={demoWrapperStyles}>{demo}</div>
     <CodeViewer codeInHtml={codeInHtml} />
   </div>
