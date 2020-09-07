@@ -6,7 +6,7 @@ import CodeViewer from './CodeViewer';
 const demoWrapperStyles = css`
   margin-bottom: -8px;
   background-color: ${Color.White};
-  padding: 48px 24px;
+  padding: 40px 24px;
 `;
 
 const ComponentDemoBox = ({ demo, codeInHtml, ...props }) => (
