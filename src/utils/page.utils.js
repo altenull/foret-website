@@ -1,6 +1,7 @@
 import { Table, TableBody, TableCell, TableHead, TableRow } from '@altenull/foret-react';
 import React from 'react';
 import { propsTableColumns } from '../variables/components';
+import { css } from '@emotion/core';
 
 export const getCurrentPageRouteIndex = (pathname, pageRoutes) =>
   pageRoutes.findIndex((pageRoute) => pathname.includes(pageRoute.key));
@@ -62,7 +63,12 @@ export const getPropsTable = (componentProps) => {
     componentProps.map((prop, index) => (
       <TableRow key={index}>
         <TableCell>{prop.name}</TableCell>
-        <TableCell>{prop.type}</TableCell>
+        <TableCell
+          css={css`
+            font-style: italic;
+          `}>
+          {prop.type}
+        </TableCell>
         <TableCell>{prop.default}</TableCell>
         <TableCell>{prop.description}</TableCell>
       </TableRow>
