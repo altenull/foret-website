@@ -14,7 +14,7 @@ import { ComponentFactorEnum } from '../../enums/components/component-factor.enu
 import { useButtonSectionQuery } from '../../hooks';
 import { marginBottom32px, marginBottom64px } from '../../utils/margin.utils';
 import { getPropsOfComponentFactor, getPropsTable } from '../../utils/page.utils';
-import { CodeViewer, ComponentDemoBox, ResponsiveContentLayout } from '../common';
+import { CodeViewer, ComponentDemoBox, DemoDivider, ResponsiveContentLayout } from '../common';
 import AnchorMarginalHeading2 from './AnchorMarginalHeading2';
 
 const sectionStyles = css`
@@ -39,9 +39,7 @@ const ButtonSection = ({ headingHash }) => {
   const getDemoPrimaryButton = () => (
     <Fragment>
       <PrimaryButton>primary button</PrimaryButton>
-      <br />
-      <br />
-      <br />
+      <DemoDivider />
       <PrimaryButton disabled>primary button(disabled)</PrimaryButton>
     </Fragment>
   );
@@ -49,9 +47,7 @@ const ButtonSection = ({ headingHash }) => {
   const getDemoSecondaryButton = () => (
     <Fragment>
       <SecondaryButton>secondary button</SecondaryButton>
-      <br />
-      <br />
-      <br />
+      <DemoDivider />
       <SecondaryButton disabled>secondary button(disabled)</SecondaryButton>
     </Fragment>
   );

@@ -6,7 +6,7 @@ import { ComponentFactorEnum } from '../../enums/components/component-factor.enu
 import { useToggleSectionQuery } from '../../hooks';
 import { marginBottom32px, marginBottom64px } from '../../utils/margin.utils';
 import { getPropsOfComponentFactor, getPropsTable } from '../../utils/page.utils';
-import { CodeViewer, ComponentDemoBox, ResponsiveContentLayout } from '../common';
+import { CodeViewer, ComponentDemoBox, DemoDivider, ResponsiveContentLayout } from '../common';
 import AnchorMarginalHeading2 from './AnchorMarginalHeading2';
 
 const sectionStyles = css`
@@ -31,9 +31,7 @@ const ToggleSection = ({ headingHash }) => {
   const getDemoToggle = () => (
     <Fragment>
       <Toggle id={'toggle-1'} checked={true} />
-      <br />
-      <br />
-      <br />
+      <DemoDivider />
       <Toggle id={'toggle-2'} checked={false} />
     </Fragment>
   );
@@ -41,9 +39,7 @@ const ToggleSection = ({ headingHash }) => {
   const getDemoToggleDisabled = () => (
     <Fragment>
       <Toggle id={'disabled-toggle-1'} checked={true} disabled={true} />
-      <br />
-      <br />
-      <br />
+      <DemoDivider />
       <Toggle id={'disabled-toggle-2'} checked={false} disabled={true} />
     </Fragment>
   );
