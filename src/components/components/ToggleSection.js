@@ -1,9 +1,9 @@
 import { MarginalHeading3, MarginalParagraph, Tab, TabGroup, Toggle } from '@altenull/foret-react';
 import { css } from '@emotion/core';
-import { graphql, useStaticQuery } from 'gatsby';
 import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
 import { ComponentFactorEnum } from '../../enums/components/component-factor.enum';
+import { useToggleSectionQuery } from '../../hooks';
 import { marginBottom32px, marginBottom64px } from '../../utils/margin.utils';
 import { getPropsOfComponentFactor, getPropsTable } from '../../utils/page.utils';
 import { CodeViewer, ComponentDemoBox, ResponsiveContentLayout } from '../common';
@@ -26,44 +26,7 @@ const ToggleSection = ({ headingHash }) => {
     getDemoToggleNg,
     getDemoToggleDisabledReact,
     getDemoToggleDisabledNg,
-  } = useStaticQuery(graphql`
-    query {
-      getImportToggleReact: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/import-toggle-react.md/" } }) {
-        nodes {
-          html
-        }
-      }
-      getImportToggleNg: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/import-toggle-ng.md/" } }) {
-        nodes {
-          html
-        }
-      }
-      getDemoToggleReact: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/demo-toggle-react.md/" } }) {
-        nodes {
-          html
-        }
-      }
-      getDemoToggleDisabledReact: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/demo-toggle-disabled-react.md/" } }
-      ) {
-        nodes {
-          html
-        }
-      }
-      getDemoToggleNg: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/demo-toggle-ng.md/" } }) {
-        nodes {
-          html
-        }
-      }
-      getDemoToggleDisabledNg: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/demo-toggle-disabled-ng.md/" } }
-      ) {
-        nodes {
-          html
-        }
-      }
-    }
-  `);
+  } = useToggleSectionQuery();
 
   const getDemoToggle = () => (
     <Fragment>

@@ -8,12 +8,12 @@ import {
   TabGroup,
 } from '@altenull/foret-react';
 import { css } from '@emotion/core';
-import { graphql, useStaticQuery } from 'gatsby';
 import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
 import { ComponentFactorEnum } from '../../enums/components/component-factor.enum';
+import { useButtonSectionQuery } from '../../hooks';
+import { marginBottom32px, marginBottom64px } from '../../utils/margin.utils';
 import { getPropsOfComponentFactor, getPropsTable } from '../../utils/page.utils';
-import { marginBottom64px, marginBottom32px } from '../../utils/margin.utils';
 import { CodeViewer, ComponentDemoBox, ResponsiveContentLayout } from '../common';
 import AnchorMarginalHeading2 from './AnchorMarginalHeading2';
 
@@ -34,48 +34,7 @@ const ButtonSection = ({ headingHash }) => {
     getDemoSecondaryButtonReact,
     getDemoPrimaryButtonNg,
     getDemoSecondaryButtonNg,
-  } = useStaticQuery(graphql`
-    query {
-      getImportButtonReact: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/import-button-react.md/" } }) {
-        nodes {
-          html
-        }
-      }
-      getImportButtonNg: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/import-button-ng.md/" } }) {
-        nodes {
-          html
-        }
-      }
-      getDemoPrimaryButtonReact: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/demo-primary-button-react.md/" } }
-      ) {
-        nodes {
-          html
-        }
-      }
-      getDemoSecondaryButtonReact: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/demo-secondary-button-react.md/" } }
-      ) {
-        nodes {
-          html
-        }
-      }
-      getDemoPrimaryButtonNg: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/demo-primary-button-ng.md/" } }
-      ) {
-        nodes {
-          html
-        }
-      }
-      getDemoSecondaryButtonNg: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/demo-secondary-button-ng.md/" } }
-      ) {
-        nodes {
-          html
-        }
-      }
-    }
-  `);
+  } = useButtonSectionQuery();
 
   const getDemoPrimaryButton = () => (
     <Fragment>

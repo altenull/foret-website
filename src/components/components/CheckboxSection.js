@@ -8,12 +8,12 @@ import {
   TabGroup,
 } from '@altenull/foret-react';
 import { css } from '@emotion/core';
-import { graphql, useStaticQuery } from 'gatsby';
 import { useIntl } from 'gatsby-plugin-intl';
 import React from 'react';
 import { ComponentFactorEnum } from '../../enums/components/component-factor.enum';
+import { useCheckboxSectionQuery } from '../../hooks';
+import { marginBottom16px, marginBottom32px, marginBottom64px } from '../../utils/margin.utils';
 import { getPropsOfComponentFactor, getPropsTable } from '../../utils/page.utils';
-import { marginBottom64px, marginBottom48px, marginBottom16px, marginBottom32px } from '../../utils/margin.utils';
 import { CodeViewer, ComponentDemoBox, ResponsiveContentLayout } from '../common';
 import AnchorMarginalHeading2 from './AnchorMarginalHeading2';
 
@@ -34,44 +34,7 @@ const CheckboxSection = ({ headingHash }) => {
     getDemoCheckboxNg,
     getDemoCheckboxDisabledReact,
     getDemoCheckboxDisabledNg,
-  } = useStaticQuery(graphql`
-    query {
-      getImportCheckboxReact: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/import-checkbox-react.md/" } }) {
-        nodes {
-          html
-        }
-      }
-      getImportCheckboxNg: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/import-checkbox-ng.md/" } }) {
-        nodes {
-          html
-        }
-      }
-      getDemoCheckboxReact: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/demo-checkbox-react.md/" } }) {
-        nodes {
-          html
-        }
-      }
-      getDemoCheckboxDisabledReact: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/demo-checkbox-disabled-react.md/" } }
-      ) {
-        nodes {
-          html
-        }
-      }
-      getDemoCheckboxNg: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/demo-checkbox-ng.md/" } }) {
-        nodes {
-          html
-        }
-      }
-      getDemoCheckboxDisabledNg: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/demo-checkbox-disabled-ng.md/" } }
-      ) {
-        nodes {
-          html
-        }
-      }
-    }
-  `);
+  } = useCheckboxSectionQuery();
 
   const getDemoCheckbox = () => (
     <CheckboxGroup legendText={'Checkbox'}>
