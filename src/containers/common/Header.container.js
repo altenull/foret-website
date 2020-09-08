@@ -54,6 +54,17 @@ const HeaderContainer = () => {
     }
   }, [isScrolled]);
 
+  const handleEscapeKeydown = useCallback(
+    (event) => {
+      // We use KeyboardEvent.code since KeyboardEvent.keyCode is deprecated.
+      // https://developer.mozilla.org/ko/docs/Web/API/KeyboardEvent/keyCode
+      if (event.code === 'Escape') {
+        setIsDrawerShowing(false);
+      }
+    },
+    [setIsDrawerShowing]
+  );
+
   useEffect(() => {
     if (isMounted) {
       // Check whether logo wrapper should be animated or not at initial load
@@ -70,6 +81,16 @@ const HeaderContainer = () => {
       document.removeEventListener('scroll', handleScroll);
     };
   }, [isMounted, isScrolled, handleScroll]);
+
+  useEffect(() => {
+    if (isMounted) {
+      document.addEventListener('keydown', handleEscapeKeydown);
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscapeKeydown);
+    };
+  }, [isMounted, handleEscapeKeydown]);
 
   const toggleDrawer = () => {
     setIsDrawerShowing(!isDrawerShowing);
