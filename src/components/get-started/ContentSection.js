@@ -1,8 +1,16 @@
 import { MarginalHeading2, MarginalParagraph, Subtitle1, Subtitle2, Tab, TabGroup } from '@altenull/foret-react';
+import { css } from '@emotion/core';
 import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
-import { useSiteMetadataQuery, useGetStartedContentSectionQuery } from '../../hooks';
+import { useGetStartedContentSectionQuery, useSiteMetadataQuery } from '../../hooks';
 import { CodeViewer, ResponsiveContentLayout, TabContentWrapper } from '../common';
+
+const anchorStyles = css`
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+`;
 
 const ContentSection = () => {
   const intl = useIntl();
@@ -21,7 +29,7 @@ const ContentSection = () => {
       <MarginalHeading2>{intl.formatMessage({ id: 'getStarted.content.contributing.title' })}</MarginalHeading2>
       <MarginalParagraph>
         {intl.formatMessage({ id: 'getStarted.content.contributing.description1' })}
-        <a href={siteMetadata.hosts.foretGithub} target={'_blank'}>
+        <a css={anchorStyles} href={siteMetadata.hosts.foretGithub} target={'_blank'} rel={'noreferrer'}>
           @altenull/foret
         </a>
         {intl.formatMessage({ id: 'getStarted.content.contributing.description2' })}
@@ -34,7 +42,7 @@ const ContentSection = () => {
       <MarginalHeading2>{intl.formatMessage({ id: 'getStarted.content.installation.title' })}</MarginalHeading2>
       <MarginalParagraph>
         {intl.formatMessage({ id: 'getStarted.content.installation.description1' })}
-        <a href={siteMetadata.hosts.foretReactNpm} target={'_blank'}>
+        <a css={anchorStyles} href={siteMetadata.hosts.foretReactNpm} target={'_blank'} rel={'noreferrer'}>
           npm package
         </a>
         {intl.formatMessage({ id: 'getStarted.content.installation.description2' })}
@@ -55,7 +63,7 @@ const ContentSection = () => {
       <MarginalHeading2>{intl.formatMessage({ id: 'getStarted.content.installation.title' })}</MarginalHeading2>
       <MarginalParagraph>
         {intl.formatMessage({ id: 'getStarted.content.installation.description1' })}
-        <a href={siteMetadata.hosts.foretNgNpm} target={'_blank'}>
+        <a css={anchorStyles} href={siteMetadata.hosts.foretNgNpm} target={'_blank'} rel={'noreferrer'}>
           npm package
         </a>
         {intl.formatMessage({ id: 'getStarted.content.installation.description2' })}

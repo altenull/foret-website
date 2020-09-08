@@ -27,13 +27,6 @@ export const wrapRootElement = ({ element }) => {
       }
     }
 
-    a {
-      text-decoration: none;
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-
     #___gatsby,
     #gatsby-focus-wrapper {
       height: 100vh;
