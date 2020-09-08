@@ -5,7 +5,7 @@ import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 import { Layout, PageNavigationSection } from '../components/common';
 import { ContentSection, HeroSection } from '../components/design-principle';
-import { useGetSiteMetadata } from '../hooks';
+import { useSiteMetadataQuery } from '../hooks';
 import { getCurrentPageRouteIndex, getPageNavigationLinks, getPageTitle } from '../utils/page.utils';
 
 const layoutStyles = css`
@@ -14,7 +14,7 @@ const layoutStyles = css`
 
 const DesignPrinciplePage = ({ location }) => {
   const intl = useIntl();
-  const { siteMetadata } = useGetSiteMetadata();
+  const { siteMetadata } = useSiteMetadataQuery();
 
   const currentPageRouteIndex = getCurrentPageRouteIndex(location.pathname, siteMetadata.pageRoutes);
   const designPrincipleTitle = getPageTitle(intl, currentPageRouteIndex, siteMetadata.pageRoutes);

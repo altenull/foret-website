@@ -7,7 +7,7 @@ import { Helmet } from 'react-helmet';
 import { Layout, PageNavigationSection } from '../components/common';
 import { ButtonSection, CheckboxSection, HeroSection, TOC, ToggleSection } from '../components/components';
 import { ComponentHashEnum } from '../enums/components/component-hash.enum';
-import { useGetSiteMetadata } from '../hooks';
+import { useSiteMetadataQuery } from '../hooks';
 import { getCurrentPageRouteIndex, getPageNavigationLinks, getPageTitle } from '../utils/page.utils';
 
 const layoutStyles = css`
@@ -19,7 +19,7 @@ const ComponentsPage = ({ location }) => {
   const heroSectionRef = useRef();
 
   const intl = useIntl();
-  const { siteMetadata } = useGetSiteMetadata();
+  const { siteMetadata } = useSiteMetadataQuery();
 
   const componentHashes = [ComponentHashEnum.Button, ComponentHashEnum.Checkbox, ComponentHashEnum.Toggle];
 

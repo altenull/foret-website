@@ -1,12 +1,12 @@
 import { MarginalHeading2, MarginalParagraph, Subtitle1, Subtitle2, Tab, TabGroup } from '@altenull/foret-react';
 import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
-import { useGetSiteMetadata, useGetStartedContentSectionQuery } from '../../hooks';
+import { useSiteMetadataQuery, useGetStartedContentSectionQuery } from '../../hooks';
 import { CodeViewer, ResponsiveContentLayout, TabContentWrapper } from '../common';
 
 const ContentSection = () => {
   const intl = useIntl();
-  const { siteMetadata } = useGetSiteMetadata();
+  const { siteMetadata } = useSiteMetadataQuery();
   const {
     getInstallViaNpmReact,
     getInstallViaYarnReact,

@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby';
 
-const useGetLogoImage = () => {
+const useLogoImageQuery = () => {
   const { logoImage } = useStaticQuery(graphql`
     query {
       logoImage: file(relativePath: { eq: "logo-temp.png" }) {
@@ -13,11 +13,11 @@ const useGetLogoImage = () => {
     }
   `);
 
-  const getLogoImageRepsonse = {
+  const logoImageQueryRepsonse = {
     fixed: logoImage.childImageSharp.fixed,
   };
 
-  return getLogoImageRepsonse;
+  return logoImageQueryRepsonse;
 };
 
-export default useGetLogoImage;
+export default useLogoImageQuery;

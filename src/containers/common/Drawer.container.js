@@ -5,7 +5,7 @@ import { Link } from 'gatsby';
 import { IntlContextConsumer, useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
 import { LanguageLink } from '../../components/common';
-import { useGetSiteMetadata } from '../../hooks';
+import { useSiteMetadataQuery } from '../../hooks';
 
 const drawerStyles = css`
   position: fixed;
@@ -55,7 +55,7 @@ const globalStyles = css`
 `;
 
 const DrawerContainer = () => {
-  const getSiteMetadataResponse = useGetSiteMetadata();
+  const getSiteMetadataResponse = useSiteMetadataQuery();
   const intl = useIntl();
 
   const pages = getSiteMetadataResponse.siteMetadata.pageRoutes.map(({ key, camelCase }) => (

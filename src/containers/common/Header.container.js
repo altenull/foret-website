@@ -7,7 +7,7 @@ import ReactDOM from 'react-dom';
 import { HeaderLogo } from '../../components/common';
 import { HamburgerIcon } from '../../components/icons';
 import { BreakpointEnum } from '../../enums/core/breakpoint.enum';
-import { useGetLogoImage, useGetSiteMetadata, useIsMounted } from '../../hooks';
+import { useIsMounted, useLogoImageQuery, useSiteMetadataQuery } from '../../hooks';
 import { mediaQuery } from '../../utils/media-query.utils';
 import DrawerContainer from './Drawer.container';
 
@@ -38,8 +38,8 @@ const HeaderContainer = () => {
   const [isDrawerShowing, setIsDrawerShowing] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const { siteMetadata } = useGetSiteMetadata();
-  const getLogoImageResponse = useGetLogoImage();
+  const { siteMetadata } = useSiteMetadataQuery();
+  const getLogoImageResponse = useLogoImageQuery();
   const isMounted = useIsMounted();
   const intl = useIntl();
   const location = useLocation();
