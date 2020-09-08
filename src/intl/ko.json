@@ -23,18 +23,23 @@
   },
   "getStarted": {
     "hero": {
-      "title": "시작하기"
+      "title": "시작하기",
+      "subtitle1": "Foret 디자인 시스템은 React 그리고 Angular 버전으로 제공됩니다.",
+      "subtitle2": "시작하는데 필요한 모든 정보는 아래에 있습니다."
     },
     "content": {
       "installation": {
         "title": "설치하기",
-        "description": "foret은 npm package로 제공됩니다. 프로젝트에 추가하려면 다음 명령어를 실행해보세요.",
+        "description1": "Foret 컴포넌트는 ",
+        "description2": "로 제공됩니다. 프로젝트에 추가하려면 다음 명령어를 실행해보세요.",
         "installViaNpm": "npm으로 설치:",
-        "installViaYarn": "yarn을 선호한다면:"
+        "installViaYarn": "yarn을 선호한다면:",
+        "installEmotionCore": "@emotion/core ^10.0.0 설치도 잊지마세요."
       },
-      "troubleShooting": {
-        "title": "문제 해결",
-        "description": "Foret React / Angular를 설치하는 중에 이슈를 발생하였다면, 지원을 받기위해 Github 저장소롤 이동하세요. 만약 발생된 이슈가 존재하지 않는 이슈라면 등록해주세요."
+      "contributing": {
+        "title": "Contributing",
+        "description1": "저희는 높은 품질의 컴포넌트를 제공하기를 원하며, 이는 여러분의 피드백 없이는 불가능한 일입니다. 디자인 시스템에 대한 제안이나 이슈가 있을 시에는 ",
+        "description2": "에서 이슈 혹은 pull request를 생성해주세요."
       }
     }
   },

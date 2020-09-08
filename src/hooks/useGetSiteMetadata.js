@@ -9,6 +9,11 @@ const useGetSiteMetadata = () => {
             key
             camelCase
           }
+          hosts {
+            foretNgNpm
+            foretReactNpm
+            foretGithub
+          }
         }
       }
     }

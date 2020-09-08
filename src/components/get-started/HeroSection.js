@@ -1,8 +1,8 @@
-import { Heading1, Subtitle1 } from '@altenull/foret-react';
+import { MarginalHeading1, Subtitle1 } from '@altenull/foret-react';
 import { css } from '@emotion/core';
+import { useIntl } from 'gatsby-plugin-intl';
 import React from 'react';
 import { ResponsiveContentLayout } from '../common';
-import { useIntl } from 'gatsby-plugin-intl';
 
 const sectionStyles = css`
   position: relative;
@@ -22,9 +22,9 @@ const HeroSection = () => {
   return (
     <section css={sectionStyles}>
       <ResponsiveContentLayout css={responsiveContentLayoutStyles}>
-        <Heading1>{intl.formatMessage({ id: 'getStarted.hero.title' })}</Heading1>
-        <Subtitle1>Our components are served as an npm packages.</Subtitle1>
-        <Subtitle1>Our components are served both angular and react versions</Subtitle1>
+        <MarginalHeading1>{intl.formatMessage({ id: 'getStarted.hero.title' })}</MarginalHeading1>
+        <Subtitle1>{intl.formatMessage({ id: 'getStarted.hero.subtitle1' })}</Subtitle1>
+        <Subtitle1>{intl.formatMessage({ id: 'getStarted.hero.subtitle2' })}</Subtitle1>
       </ResponsiveContentLayout>
     </section>
   );
