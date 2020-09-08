@@ -26,6 +26,11 @@ module.exports = {
         camelCase: 'components',
       },
     ],
+    hosts: {
+      foretReactNpm: 'https://www.npmjs.com/package/@altenull/foret-react',
+      foretNgNpm: 'https://www.npmjs.com/package/@altenull/foret-ng',
+      foretGithub: 'https://github.com/altenull/foret',
+    },
   },
   plugins: [
     'gatsby-plugin-emotion',
