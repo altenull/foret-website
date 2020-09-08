@@ -22,7 +22,8 @@ const ContentSection = () => {
     getInstallViaYarnNg,
   } = useGetStartedContentSectionQuery();
 
-  // Font, Styles이 이미 구현되어 있으므로 추가로적으로 설치할 필요가 없습니다.
+  // TODO: Add below message in Korean, English
+  //       Font, Styles 등은 이미 포함되어 있으므로 추가적으로 설치할 필요가 없습니다.
 
   const getSharedContributingContent = () => (
     <Fragment>
