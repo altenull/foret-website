@@ -4,7 +4,7 @@ import PageNavigation from './PageNavigation';
 import ResponsiveContentLayout from './ResponsiveContentLayout';
 
 const sectionStyles = css`
-  margin-bottom: 64px;
+  margin-bottom: 104px;
 `;
 
 const PageNavigationSection = ({ prevLink, nextLink }) => {
