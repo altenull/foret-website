@@ -6,15 +6,11 @@ import { ComponentFactorEnum } from '../../enums/components/component-factor.enu
 import { useToggleSectionQuery } from '../../hooks';
 import { marginBottom32px, marginBottom64px } from '../../utils/margin.utils';
 import { getPropsOfComponentFactor, getPropsTable } from '../../utils/page.utils';
-import { CodeViewer, ComponentDemoBox, DemoDivider, ResponsiveContentLayout } from '../common';
+import { CodeViewer, ComponentDemoBox, DemoDivider, ResponsiveContentLayout, TabContentWrapper } from '../common';
 import AnchorMarginalHeading2 from './AnchorMarginalHeading2';
 
 const sectionStyles = css`
   position: relative;
-`;
-
-const contentWrapperStyles = css`
-  padding: 64px 0;
 `;
 
 const ToggleSection = ({ headingHash }) => {
@@ -47,7 +43,7 @@ const ToggleSection = ({ headingHash }) => {
   const toggleProps = getPropsOfComponentFactor(intl, `components.${ComponentFactorEnum.Toggle}.props.`);
 
   const getReactVersionContent = () => (
-    <div css={contentWrapperStyles}>
+    <TabContentWrapper>
       <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.imports' })}</MarginalHeading3>
       <CodeViewer codeInHtml={getImportToggleReact.nodes[0].html} css={marginBottom64px} />
 
@@ -61,18 +57,18 @@ const ToggleSection = ({ headingHash }) => {
 
       <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.props' })}</MarginalHeading3>
       {getPropsTable(toggleProps)}
-    </div>
+    </TabContentWrapper>
   );
 
   const getAngularVersionContent = () => (
-    <div css={contentWrapperStyles}>
+    <TabContentWrapper>
       <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.imports' })}</MarginalHeading3>
       <CodeViewer codeInHtml={getImportToggleNg.nodes[0].html} css={marginBottom64px} />
 
       <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</MarginalHeading3>
       <ComponentDemoBox demo={getDemoToggle()} codeInHtml={getDemoToggleNg.nodes[0].html} css={marginBottom32px} />
       <ComponentDemoBox demo={getDemoToggleDisabled()} codeInHtml={getDemoToggleDisabledNg.nodes[0].html} />
-    </div>
+    </TabContentWrapper>
   );
 
   return (

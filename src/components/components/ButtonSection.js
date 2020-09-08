@@ -14,15 +14,11 @@ import { ComponentFactorEnum } from '../../enums/components/component-factor.enu
 import { useButtonSectionQuery } from '../../hooks';
 import { marginBottom32px, marginBottom64px } from '../../utils/margin.utils';
 import { getPropsOfComponentFactor, getPropsTable } from '../../utils/page.utils';
-import { CodeViewer, ComponentDemoBox, DemoDivider, ResponsiveContentLayout } from '../common';
+import { CodeViewer, ComponentDemoBox, DemoDivider, ResponsiveContentLayout, TabContentWrapper } from '../common';
 import AnchorMarginalHeading2 from './AnchorMarginalHeading2';
 
 const sectionStyles = css`
   position: relative;
-`;
-
-const contentWrapperStyles = css`
-  padding: 64px 0;
 `;
 
 const ButtonSection = ({ headingHash }) => {
@@ -55,7 +51,7 @@ const ButtonSection = ({ headingHash }) => {
   const buttonProps = getPropsOfComponentFactor(intl, `components.${ComponentFactorEnum.Button}.props.`);
 
   const getReactVersionContent = () => (
-    <div css={contentWrapperStyles}>
+    <TabContentWrapper>
       <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.imports' })}</MarginalHeading3>
       <CodeViewer codeInHtml={getImportButtonReact.nodes[0].html} css={marginBottom64px} />
 
@@ -73,11 +69,11 @@ const ButtonSection = ({ headingHash }) => {
 
       <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.props' })}</MarginalHeading3>
       {getPropsTable(buttonProps)}
-    </div>
+    </TabContentWrapper>
   );
 
   const getAngularVersionContent = () => (
-    <div css={contentWrapperStyles}>
+    <TabContentWrapper>
       <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.imports' })}</MarginalHeading3>
       <CodeViewer codeInHtml={getImportButtonNg.nodes[0].html} css={marginBottom64px} />
 
@@ -90,7 +86,7 @@ const ButtonSection = ({ headingHash }) => {
       />
       <Subtitle2>Secondary Button:</Subtitle2>
       <ComponentDemoBox demo={getDemoSecondaryButton()} codeInHtml={getDemoSecondaryButtonNg.nodes[0].html} />
-    </div>
+    </TabContentWrapper>
   );
 
   return (

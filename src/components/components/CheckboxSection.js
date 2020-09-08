@@ -14,15 +14,11 @@ import { ComponentFactorEnum } from '../../enums/components/component-factor.enu
 import { useCheckboxSectionQuery } from '../../hooks';
 import { marginBottom16px, marginBottom32px, marginBottom64px } from '../../utils/margin.utils';
 import { getPropsOfComponentFactor, getPropsTable } from '../../utils/page.utils';
-import { CodeViewer, ComponentDemoBox, ResponsiveContentLayout } from '../common';
+import { CodeViewer, ComponentDemoBox, ResponsiveContentLayout, TabContentWrapper } from '../common';
 import AnchorMarginalHeading2 from './AnchorMarginalHeading2';
 
 const sectionStyles = css`
   position: relative;
-`;
-
-const contentWrapperStyles = css`
-  padding: 64px 0;
 `;
 
 const CheckboxSection = ({ headingHash }) => {
@@ -59,7 +55,7 @@ const CheckboxSection = ({ headingHash }) => {
   const checkboxProps = getPropsOfComponentFactor(intl, `components.${ComponentFactorEnum.Checkbox}.props.checkbox.`);
 
   const getReactVersionContent = () => (
-    <div css={contentWrapperStyles}>
+    <TabContentWrapper>
       <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.imports' })}</MarginalHeading3>
       <CodeViewer codeInHtml={getImportCheckboxReact.nodes[0].html} css={marginBottom64px} />
 
@@ -81,18 +77,18 @@ const CheckboxSection = ({ headingHash }) => {
 
       <Subtitle2 css={marginBottom16px}>{'<Checkbox>'}</Subtitle2>
       {getPropsTable(checkboxProps)}
-    </div>
+    </TabContentWrapper>
   );
 
   const getAngularVersionContent = () => (
-    <div css={contentWrapperStyles}>
+    <TabContentWrapper>
       <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.imports' })}</MarginalHeading3>
       <CodeViewer codeInHtml={getImportCheckboxNg.nodes[0].html} css={marginBottom64px} />
 
       <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</MarginalHeading3>
       <ComponentDemoBox demo={getDemoCheckbox()} codeInHtml={getDemoCheckboxNg.nodes[0].html} css={marginBottom32px} />
       <ComponentDemoBox demo={getDemoCheckboxDisabled()} codeInHtml={getDemoCheckboxDisabledNg.nodes[0].html} />
-    </div>
+    </TabContentWrapper>
   );
 
   return (
