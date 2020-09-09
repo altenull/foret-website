@@ -88,7 +88,9 @@ const ButtonSection = ({ headingHash }) => {
       <MarginalHeading3 css={marginTopForHeading3}>
         {intl.formatMessage({ id: 'components.shared.liveDemo' })}
       </MarginalHeading3>
+      <Subtitle2>Primary Button:</Subtitle2>
       <ComponentDemoBox demo={getDemoPrimaryButton()} codeInHtml={getDemoPrimaryButtonNg.nodes[0].html} />
+      <Subtitle2 css={marginTopForSubtitle2}>Secondary Button:</Subtitle2>
       <ComponentDemoBox demo={getDemoSecondaryButton()} codeInHtml={getDemoSecondaryButtonNg.nodes[0].html} />
 
       <MarginalHeading3 css={marginTopForHeading3}>

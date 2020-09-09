@@ -1,7 +1,5 @@
 ```html
-<foret-checkbox-group
-  [legendText]="'checkbox'"
-  [name]="'foret-ng-checkbox'">
+<foret-checkbox-group [legendText]="'checkbox'" [name]="'foret-ng-checkbox'">
   <foret-checkbox
     [id]="'checkbox-1'"
     [labelText]="'option 1'"
