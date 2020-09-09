@@ -1,17 +1,13 @@
 import { css } from '@emotion/core';
 
-export const marginBottom16px = css`
-  margin-bottom: 16px;
+export const marginTopForSubtitle2 = css`
+  margin-top: 2em;
 `;
 
-export const marginBottom32px = css`
-  margin-bottom: 32px;
+export const marginTopForHeading2 = css`
+  margin-top: 1.5em;
 `;
 
-export const marginBottom48px = css`
-  margin-bottom: 48px;
-`;
-
-export const marginBottom64px = css`
-  margin-bottom: 64px;
+export const marginTopForHeading3 = css`
+  margin-top: 1.5em;
 `;

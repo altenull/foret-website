@@ -63,13 +63,17 @@
       "title": "Components"
     },
     "shared": {
+      "overview": "Overview",
       "imports": "Imports",
       "liveDemo": "Live Demo",
       "props": "Props"
     },
     "button": {
       "title": "Button",
-      "description": "Buttons are used to initialize an action. Button labels express what action will occur when the user interacts with it.",
+      "description": "A button is an interactive element that results in an action described on it",
+      "overview": {
+        "description": "1. Uppercase"
+      },
       "props": [
         {
           "name": "disabled",
@@ -88,6 +92,9 @@
     "checkbox": {
       "title": "Checkbox",
       "description": "Checkbox is Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris congue augue quis auctor tempus. Donec augue sem, hendrerit et risus vitae, vehicula posuere mauris. Vestibulum volutpat tellus quis augue molestie aliquam. In in mauris ipsum. Cras facilisis sem eget dui porta suscipit. Maecenas at mauris convallis sem mollis cursus eu eu neque.",
+      "overview": {
+        "description": "Checkbox description here"
+      },
       "props": {
         "checkboxGroup": [
           {
@@ -134,6 +141,9 @@
     "toggle": {
       "title": "Toggle",
       "description": "A toggle is used to quickly switch between two possible states. They are commonly used for “on/off” switches.",
+      "overview": {
+        "description": "Toggle description here"
+      },
       "props": [
         {
           "name": "id",

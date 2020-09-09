@@ -1,6 +1,6 @@
 ```jsx
 <CheckboxGroup
-  legendText={'Disabled checkbox'}
+  legendText={'Checkbox'}
   disabled={true}>
   <Checkbox
     id={'disabled-checkbox-1'}

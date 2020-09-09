@@ -14,9 +14,9 @@ const linkIconStyles = css`
   transform: translateY(-50%);
 `;
 
-const AnchorMarginalHeading2 = ({ headingHash, children }) => {
+const AnchorMarginalHeading2 = ({ headingHash, children, ...props }) => {
   return (
-    <MarginalHeading2 css={heading2Styles} id={headingHash}>
+    <MarginalHeading2 css={heading2Styles} id={headingHash} {...props}>
       {/* TODO: LinkIcon should be visible when AnchorHeading2 is hovered */}
       <LinkIcon css={linkIconStyles} />
       {children}

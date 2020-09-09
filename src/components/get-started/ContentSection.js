@@ -3,6 +3,7 @@ import { css } from '@emotion/core';
 import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
 import { useGetStartedContentSectionQuery, useSiteMetadataQuery } from '../../hooks';
+import { marginTopForHeading2, marginTopForSubtitle2 } from '../../utils/margin.utils';
 import { CodeViewer, ResponsiveContentLayout, TabContentWrapper } from '../common';
 
 const anchorStyles = css`
@@ -27,7 +28,9 @@ const ContentSection = () => {
 
   const getSharedContributingContent = () => (
     <Fragment>
-      <MarginalHeading2>{intl.formatMessage({ id: 'getStarted.content.contributing.title' })}</MarginalHeading2>
+      <MarginalHeading2 css={marginTopForHeading2}>
+        {intl.formatMessage({ id: 'getStarted.content.contributing.title' })}
+      </MarginalHeading2>
       <MarginalParagraph>
         {intl.formatMessage({ id: 'getStarted.content.contributing.description1' })}
         <a css={anchorStyles} href={siteMetadata.hosts.foretGithub} target={'_blank'} rel={'noreferrer'}>
@@ -49,9 +52,13 @@ const ContentSection = () => {
         {intl.formatMessage({ id: 'getStarted.content.installation.description2' })}
       </MarginalParagraph>
 
-      <Subtitle2>{intl.formatMessage({ id: 'getStarted.content.installation.installViaNpm' })}</Subtitle2>
+      <Subtitle2 css={marginTopForSubtitle2}>
+        {intl.formatMessage({ id: 'getStarted.content.installation.installViaNpm' })}
+      </Subtitle2>
       <CodeViewer codeInHtml={getInstallViaNpmReact.nodes[0].html}></CodeViewer>
-      <Subtitle2>{intl.formatMessage({ id: 'getStarted.content.installation.installViaYarn' })}</Subtitle2>
+      <Subtitle2 css={marginTopForSubtitle2}>
+        {intl.formatMessage({ id: 'getStarted.content.installation.installViaYarn' })}
+      </Subtitle2>
       <CodeViewer codeInHtml={getInstallViaYarnReact.nodes[0].html}></CodeViewer>
       <Subtitle1>{intl.formatMessage({ id: 'getStarted.content.installation.installEmotionCore' })}</Subtitle1>
 
@@ -70,9 +77,13 @@ const ContentSection = () => {
         {intl.formatMessage({ id: 'getStarted.content.installation.description2' })}
       </MarginalParagraph>
 
-      <Subtitle2>{intl.formatMessage({ id: 'getStarted.content.installation.installViaNpm' })}</Subtitle2>
+      <Subtitle2 css={marginTopForSubtitle2}>
+        {intl.formatMessage({ id: 'getStarted.content.installation.installViaNpm' })}
+      </Subtitle2>
       <CodeViewer codeInHtml={getInstallViaNpmNg.nodes[0].html}></CodeViewer>
-      <Subtitle2>{intl.formatMessage({ id: 'getStarted.content.installation.installViaYarn' })}</Subtitle2>
+      <Subtitle2 css={marginTopForSubtitle2}>
+        {intl.formatMessage({ id: 'getStarted.content.installation.installViaYarn' })}
+      </Subtitle2>
       <CodeViewer codeInHtml={getInstallViaYarnNg.nodes[0].html}></CodeViewer>
 
       {getSharedContributingContent()}
