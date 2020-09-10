@@ -7,6 +7,21 @@ export const PROPS_TABLE_COLUMNS = [
   PropsTableColumnEnum.Description,
 ];
 
+export const BUTTON_PROPS_WITHOUT_DESCRIPTION = [
+  {
+    key: 'disabled',
+    name: 'disabled',
+    type: 'boolean',
+    default: 'false',
+  },
+  {
+    key: 'children',
+    name: 'children',
+    type: 'React.Node',
+    default: '',
+  },
+];
+
 export const CHECKBOX_GROUP_PROPS_WITHOUT_DESCRIPTION = [
   {
     key: 'legendText',

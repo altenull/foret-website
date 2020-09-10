@@ -75,20 +75,12 @@
       "overview": {
         "description": "1. Uppercase"
       },
-      "props": [
-        {
-          "name": "disabled",
-          "type": "boolean",
-          "default": "false",
-          "description": "If set to true, the button would be disabled."
-        },
-        {
-          "name": "children",
-          "type": "React.Node",
-          "default": " ",
-          "description": "The content of the button."
+      "propsDescription": {
+        "button": {
+          "disabled": "If set to true, the button would be disabled.",
+          "children": "The content of the button."
         }
-      ]
+      }
     },
     "checkbox": {
       "title": "Checkbox",

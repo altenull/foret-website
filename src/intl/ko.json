@@ -75,20 +75,12 @@
       "overview": {
         "description": "1. 대문자(Uppercase)"
       },
-      "props": [
-        {
-          "name": "disabled",
-          "type": "boolean",
-          "default": "false",
-          "description": "true를 할당하면, 버튼은 disabled 상태가 됩니다."
-        },
-        {
-          "name": "children",
-          "type": "React.Node",
-          "default": " ",
-          "description": "버튼에 표시되는 내용입니다."
+      "propsDescription": {
+        "button": {
+          "disabled": "true를 할당하면, 버튼은 disabled 상태가 됩니다.",
+          "children": "버튼에 표시되는 내용입니다."
         }
-      ]
+      }
     },
     "checkbox": {
       "title": "Checkbox",

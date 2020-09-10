@@ -10,11 +10,11 @@ import {
 import { css } from '@emotion/core';
 import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
+import { BUTTON_PROPS_WITHOUT_DESCRIPTION } from '../../constants/components';
 import { ComponentFactorEnum } from '../../enums/components/component-factor.enum';
 import { useButtonSectionQuery } from '../../hooks';
+import { getPropsOfComponentFactor, getPropsTable } from '../../utils/components.utils';
 import { marginTopForHeading3, marginTopForSubtitle2 } from '../../utils/margin.utils';
-import { getPropsOfComponentFactor } from '../../utils/page.utils';
-import { getPropsTable } from '../../utils/components.utils';
 import { CodeViewer, ComponentDemoBox, DemoDivider, ResponsiveContentLayout, TabContentWrapper } from '../common';
 import AnchorMarginalHeading2 from './AnchorMarginalHeading2';
 
@@ -56,31 +56,38 @@ const ButtonSection = ({ headingHash }) => {
     </Fragment>
   );
 
-  const buttonProps = getPropsOfComponentFactor(intl, `components.${ComponentFactorEnum.Button}.props.`);
+  const getReactVersionContent = () => {
+    const buttonProps = getPropsOfComponentFactor(
+      intl,
+      ComponentFactorEnum.Button,
+      'button',
+      BUTTON_PROPS_WITHOUT_DESCRIPTION
+    );
 
-  const getReactVersionContent = () => (
-    <TabContentWrapper>
-      {getSharedOverviewContent()}
+    return (
+      <TabContentWrapper>
+        {getSharedOverviewContent()}
 
-      <MarginalHeading3 css={marginTopForHeading3}>
-        {intl.formatMessage({ id: 'components.shared.liveDemo' })}
-      </MarginalHeading3>
-      <Subtitle2>Primary Button:</Subtitle2>
-      <ComponentDemoBox demo={getDemoPrimaryButton()} codeInHtml={getDemoPrimaryButtonReact.nodes[0].html} />
-      <Subtitle2 css={marginTopForSubtitle2}>Secondary Button:</Subtitle2>
-      <ComponentDemoBox demo={getDemoSecondaryButton()} codeInHtml={getDemoSecondaryButtonReact.nodes[0].html} />
+        <MarginalHeading3 css={marginTopForHeading3}>
+          {intl.formatMessage({ id: 'components.shared.liveDemo' })}
+        </MarginalHeading3>
+        <Subtitle2>Primary Button:</Subtitle2>
+        <ComponentDemoBox demo={getDemoPrimaryButton()} codeInHtml={getDemoPrimaryButtonReact.nodes[0].html} />
+        <Subtitle2 css={marginTopForSubtitle2}>Secondary Button:</Subtitle2>
+        <ComponentDemoBox demo={getDemoSecondaryButton()} codeInHtml={getDemoSecondaryButtonReact.nodes[0].html} />
 
-      <MarginalHeading3 css={marginTopForHeading3}>
-        {intl.formatMessage({ id: 'components.shared.imports' })}
-      </MarginalHeading3>
-      <CodeViewer codeInHtml={getImportButtonReact.nodes[0].html} />
+        <MarginalHeading3 css={marginTopForHeading3}>
+          {intl.formatMessage({ id: 'components.shared.imports' })}
+        </MarginalHeading3>
+        <CodeViewer codeInHtml={getImportButtonReact.nodes[0].html} />
 
-      <MarginalHeading3 css={marginTopForHeading3}>
-        {intl.formatMessage({ id: 'components.shared.props' })}
-      </MarginalHeading3>
-      {getPropsTable(buttonProps)}
-    </TabContentWrapper>
-  );
+        <MarginalHeading3 css={marginTopForHeading3}>
+          {intl.formatMessage({ id: 'components.shared.props' })}
+        </MarginalHeading3>
+        {getPropsTable(buttonProps)}
+      </TabContentWrapper>
+    );
+  };
 
   const getAngularVersionContent = () => (
     <TabContentWrapper>
