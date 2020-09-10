@@ -96,7 +96,7 @@
         },
         "checkbox": {
           "id": "체크박스의 id입니다. 체크박스를 구분하기 위해 사용됩니다.",
-          "labelText": "체크박스의 라벨입니다.",
+          "labelText": "스의 라벨입니다.",
           "checked": "true를 할당하면, 체크박스는 checked 상태가 됩니다."
         }
       },
@@ -110,6 +110,39 @@
           "id": "체크박스의 id입니다. 체크박스를 구분하기 위해 사용됩니다.",
           "labelText": "체크박스의 라벨입니다.",
           "checked": "true를 할당하면, 체크박스는 checked 상태가 됩니다."
+        }
+      }
+    },
+    "radioButton": {
+      "title": "Radio Button",
+      "description": "Radio Button 컴포넌트는 별빛이 별이 가을로 듯합니다. 어머니, 별빛이 나의 아무 된 아이들의 계십니다. 겨울이 별들을 마디씩 가득 동경과 하나에 북간도에 비둘기, 패, 있습니다. 속의 때 오면 않은 슬퍼하는 덮어 피어나듯이 동경과 있습니다. 아침이 이름을 헤는 슬퍼하는 마디씩 너무나 때 까닭입니다. 벌레는 슬퍼하는 계절이 이름과, 피어나듯이 남은 둘 거외다.",
+      "overview": {
+        "description": "라디오버튼 설명."
+      },
+      "propsDescription": {
+        "radioButtonGroup": {
+          "legendText": "라디오버튼 그룹의 라벨입니다.",
+          "checkedValue": "TODO: checked value",
+          "disabled": "true를 할당하면, 모든 라디오 버튼은 disabled 상태가 됩니다.",
+          "onChange": "사용자가 라디오버튼을 클릭 할 때 호출되는 콜백 함수입니다."
+        },
+        "radioButton": {
+          "id": "라디오버튼의 id입니다. 라디오버튼을 구분하기 위해 사용됩니다.",
+          "labelText": "라디오버튼의 라벨입니다.",
+          "value": "TODO: value"
+        }
+      },
+      "propertiesDescription": {
+        "radioButtonGroup": {
+          "legendText": "라디오버튼 그룹의 라벨입니다.",
+          "checkedValue": "TODO: checked value",
+          "disabled": "true를 할당하면, 모든 라디오 버튼은 disabled 상태가 됩니다.",
+          "changeRadioButton": "사용자가 라디오버튼을 클릭 할 때 호출되는 콜백 함수입니다."
+        },
+        "radioButton": {
+          "id": "라디오버튼의 id입니다. 라디오버튼을 구분하기 위해 사용됩니다.",
+          "labelText": "라디오버튼의 라벨입니다.",
+          "value": "TODO: value"
         }
       }
     },
