@@ -66,7 +66,8 @@
       "overview": "개요",
       "imports": "Imports",
       "liveDemo": "라이브 데모",
-      "props": "Props"
+      "props": "Props",
+      "properties": "Properties"
     },
     "button": {
       "title": "Button",
@@ -79,13 +80,13 @@
           "name": "disabled",
           "type": "boolean",
           "default": "false",
-          "description": "If true, the Button will be disabled."
+          "description": "true를 할당하면, 버튼은 disabled 상태가 됩니다."
         },
         {
           "name": "children",
           "type": "React.Node",
           "default": " ",
-          "description": "The content of the Button."
+          "description": "버튼에 표시되는 내용입니다."
         }
       ]
     },
@@ -95,47 +96,29 @@
       "overview": {
         "description": "체크박스 설명.."
       },
-      "props": {
-        "checkboxGroup": [
-          {
-            "name": "legendText",
-            "type": "string",
-            "default": " ",
-            "description": "The label of Checkbox"
-          },
-          {
-            "name": "disabled",
-            "type": "boolean",
-            "default": "false",
-            "description": "If true, the Checkbox will be disabled."
-          },
-          {
-            "name": "children",
-            "type": "React.Node",
-            "default": " ",
-            "description": "The content of Checkbox."
-          },
-          {
-            "name": "onChange",
-            "type": "(id: string, newChecked: boolean) => void",
-            "default": "() => '{}'",
-            "description": "Function"
-          }
-        ],
-        "checkbox": [
-          {
-            "name": "id",
-            "type": "string",
-            "default": " ",
-            "description": "The id of Checkbox"
-          },
-          {
-            "name": "labelText",
-            "type": "string",
-            "default": " ",
-            "description": "The label of a checkbox"
-          }
-        ]
+      "propsDescription": {
+        "checkboxGroup": {
+          "legendText": "체크박스 그룹의 라벨입니다.",
+          "disabled": "true를 할당하면, 모든 체크박스는 disabled 상태가 됩니다.",
+          "onChange": "사용자가 체크박스를 클릭 할 때 호출되는 콜백 함수입니다."
+        },
+        "checkbox": {
+          "id": "체크박스의 id입니다. 체크박스를 구분하기 위해 사용됩니다.",
+          "labelText": "체크박스의 라벨입니다.",
+          "checked": "true를 할당하면, 체크박스는 checked 상태가 됩니다."
+        }
+      },
+      "propertiesDescription": {
+        "checkboxGroup": {
+          "legendText": "체크박스 그룹의 라벨입니다.",
+          "disabled": "true를 할당하면, 모든 체크박스는 disabled 상태가 됩니다.",
+          "changeCheckbox": "사용자가 체크박스를 클릭 할 때 호출되는 콜백 함수입니다."
+        },
+        "checkbox": {
+          "id": "체크박스의 id입니다. 체크박스를 구분하기 위해 사용됩니다.",
+          "labelText": "체크박스의 라벨입니다.",
+          "checked": "true를 할당하면, 체크박스는 checked 상태가 됩니다."
+        }
       }
     },
     "toggle": {

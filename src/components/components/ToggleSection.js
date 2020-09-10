@@ -1,11 +1,12 @@
-import { MarginalHeading3, MarginalParagraph, Tab, TabGroup, Toggle, Subtitle2 } from '@altenull/foret-react';
+import { MarginalHeading3, MarginalParagraph, Subtitle2, Tab, TabGroup, Toggle } from '@altenull/foret-react';
 import { css } from '@emotion/core';
 import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
 import { ComponentFactorEnum } from '../../enums/components/component-factor.enum';
 import { useToggleSectionQuery } from '../../hooks';
+import { getPropsTable } from '../../utils/components.utils';
 import { marginTopForHeading2, marginTopForHeading3, marginTopForSubtitle2 } from '../../utils/margin.utils';
-import { getPropsOfComponentFactor, getPropsTable } from '../../utils/page.utils';
+import { getPropsOfComponentFactor } from '../../utils/page.utils';
 import { CodeViewer, ComponentDemoBox, DemoDivider, ResponsiveContentLayout, TabContentWrapper } from '../common';
 import AnchorMarginalHeading2 from './AnchorMarginalHeading2';
 

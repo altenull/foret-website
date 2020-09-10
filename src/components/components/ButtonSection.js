@@ -13,7 +13,8 @@ import React, { Fragment } from 'react';
 import { ComponentFactorEnum } from '../../enums/components/component-factor.enum';
 import { useButtonSectionQuery } from '../../hooks';
 import { marginTopForHeading3, marginTopForSubtitle2 } from '../../utils/margin.utils';
-import { getPropsOfComponentFactor, getPropsTable } from '../../utils/page.utils';
+import { getPropsOfComponentFactor } from '../../utils/page.utils';
+import { getPropsTable } from '../../utils/components.utils';
 import { CodeViewer, ComponentDemoBox, DemoDivider, ResponsiveContentLayout, TabContentWrapper } from '../common';
 import AnchorMarginalHeading2 from './AnchorMarginalHeading2';
 

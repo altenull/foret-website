@@ -66,7 +66,8 @@
       "overview": "Overview",
       "imports": "Imports",
       "liveDemo": "Live Demo",
-      "props": "Props"
+      "props": "Props",
+      "properties": "Properties"
     },
     "button": {
       "title": "Button",
@@ -79,13 +80,13 @@
           "name": "disabled",
           "type": "boolean",
           "default": "false",
-          "description": "If true, the Button will be disabled."
+          "description": "If set to true, the button would be disabled."
         },
         {
           "name": "children",
           "type": "React.Node",
           "default": " ",
-          "description": "The content of the Button."
+          "description": "The content of the button."
         }
       ]
     },
@@ -95,47 +96,29 @@
       "overview": {
         "description": "Checkbox description here"
       },
-      "props": {
-        "checkboxGroup": [
-          {
-            "name": "legendText",
-            "type": "string",
-            "default": " ",
-            "description": "The label of Checkbox"
-          },
-          {
-            "name": "disabled",
-            "type": "boolean",
-            "default": "false",
-            "description": "If true, the Checkbox will be disabled."
-          },
-          {
-            "name": "children",
-            "type": "React.Node",
-            "default": " ",
-            "description": "The content of Checkbox."
-          },
-          {
-            "name": "onChange",
-            "type": "(id: string, newChecked: boolean) => void",
-            "default": "() => '{}'",
-            "description": "Function"
-          }
-        ],
-        "checkbox": [
-          {
-            "name": "id",
-            "type": "string",
-            "default": " ",
-            "description": "The id of Checkbox"
-          },
-          {
-            "name": "labelText",
-            "type": "string",
-            "default": " ",
-            "description": "The label of a checkbox"
-          }
-        ]
+      "propsDescription": {
+        "checkboxGroup": {
+          "legendText": "The label of checkbox group.",
+          "disabled": "If set to true, every checkbox in checkbox group would be disabled.",
+          "onChange": "Callback function to invoke when the user clicks on the checkbox."
+        },
+        "checkbox": {
+          "id": "The id of checkbox. It's used to identifies the checkbox.",
+          "labelText": "The label of a checkbox.",
+          "checked": "If set to true, the checkbox would be checked."
+        }
+      },
+      "propertiesDescription": {
+        "checkboxGroup": {
+          "legendText": "The label of checkbox group.",
+          "disabled": "If set to true, every checkbox in checkbox group would be disabled.",
+          "changeCheckbox": "Callback function to invoke when the user clicks on the checkbox."
+        },
+        "checkbox": {
+          "id": "The id of checkbox. It's used to identifies the checkbox.",
+          "labelText": "The label of a checkbox.",
+          "checked": "If set to true, the checkbox would be checked."
+        }
       }
     },
     "toggle": {

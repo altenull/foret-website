@@ -10,10 +10,16 @@ import {
 import { css } from '@emotion/core';
 import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
+import {
+  CHECKBOX_GROUP_PROPERTIES_WITHOUT_DESCRIPTION,
+  CHECKBOX_GROUP_PROPS_WITHOUT_DESCRIPTION,
+  CHECKBOX_PROPERTIES_WITHOUT_DESCRIPTION,
+  CHECKBOX_PROPS_WITHOUT_DESCRIPTION,
+} from '../../constants/components';
 import { ComponentFactorEnum } from '../../enums/components/component-factor.enum';
 import { useCheckboxSectionQuery } from '../../hooks';
+import { getPropertiesOfComponentFactor, getPropsOfComponentFactor, getPropsTable } from '../../utils/components.utils';
 import { marginTopForHeading2, marginTopForHeading3, marginTopForSubtitle2 } from '../../utils/margin.utils';
-import { getPropsOfComponentFactor, getPropsTable } from '../../utils/page.utils';
 import { CodeViewer, ComponentDemoBox, ResponsiveContentLayout, TabContentWrapper } from '../common';
 import AnchorMarginalHeading2 from './AnchorMarginalHeading2';
 
@@ -42,70 +48,102 @@ const CheckboxSection = ({ headingHash }) => {
   const getDemoCheckbox = () => (
     <CheckboxGroup legendText={'Checkbox'}>
       <Checkbox id={'checkbox-1'} labelText={'option 1'} />
-      <Checkbox id={'checkbox-2'} labelText={'option 2'} checked />
-      <Checkbox id={'checkbox-3'} labelText={'option 3'} checked />
+      <Checkbox id={'checkbox-2'} labelText={'option 2'} checked={true} />
+      <Checkbox id={'checkbox-3'} labelText={'option 3'} checked={true} />
     </CheckboxGroup>
   );
 
   const getDemoCheckboxDisabled = () => (
     <CheckboxGroup legendText={'Checkbox'} disabled={true}>
       <Checkbox id={'disabled-checkbox-1'} labelText={'option 1'} />
-      <Checkbox id={'disabled-checkbox-2'} labelText={'option 2'} checked />
-      <Checkbox id={'disabled-checkbox-3'} labelText={'option 3'} checked />
+      <Checkbox id={'disabled-checkbox-2'} labelText={'option 2'} checked={true} />
+      <Checkbox id={'disabled-checkbox-3'} labelText={'option 3'} checked={true} />
     </CheckboxGroup>
   );
 
-  const checkboxGroupProps = getPropsOfComponentFactor(
-    intl,
-    `components.${ComponentFactorEnum.Checkbox}.props.checkboxGroup.`
-  );
-  const checkboxProps = getPropsOfComponentFactor(intl, `components.${ComponentFactorEnum.Checkbox}.props.checkbox.`);
+  const getReactVersionContent = () => {
+    const checkboxGroupProps = getPropsOfComponentFactor(
+      intl,
+      ComponentFactorEnum.Checkbox,
+      'checkboxGroup',
+      CHECKBOX_GROUP_PROPS_WITHOUT_DESCRIPTION
+    );
+    const checkboxProps = getPropsOfComponentFactor(
+      intl,
+      ComponentFactorEnum.Checkbox,
+      'checkbox',
+      CHECKBOX_PROPS_WITHOUT_DESCRIPTION
+    );
 
-  const getReactVersionContent = () => (
-    <TabContentWrapper>
-      {getSharedOverviewContent()}
+    return (
+      <TabContentWrapper>
+        {getSharedOverviewContent()}
 
-      <MarginalHeading3 css={marginTopForHeading3}>
-        {intl.formatMessage({ id: 'components.shared.liveDemo' })}
-      </MarginalHeading3>
-      <Subtitle2>Default:</Subtitle2>
-      <ComponentDemoBox demo={getDemoCheckbox()} codeInHtml={getDemoCheckboxReact.nodes[0].html} />
-      <Subtitle2 css={marginTopForSubtitle2}>Disabled:</Subtitle2>
-      <ComponentDemoBox demo={getDemoCheckboxDisabled()} codeInHtml={getDemoCheckboxDisabledReact.nodes[0].html} />
+        <MarginalHeading3 css={marginTopForHeading3}>
+          {intl.formatMessage({ id: 'components.shared.liveDemo' })}
+        </MarginalHeading3>
+        <Subtitle2>Default:</Subtitle2>
+        <ComponentDemoBox demo={getDemoCheckbox()} codeInHtml={getDemoCheckboxReact.nodes[0].html} />
+        <Subtitle2 css={marginTopForSubtitle2}>Disabled:</Subtitle2>
+        <ComponentDemoBox demo={getDemoCheckboxDisabled()} codeInHtml={getDemoCheckboxDisabledReact.nodes[0].html} />
 
-      <MarginalHeading3 css={marginTopForHeading3}>
-        {intl.formatMessage({ id: 'components.shared.imports' })}
-      </MarginalHeading3>
-      <CodeViewer codeInHtml={getImportCheckboxReact.nodes[0].html} />
+        <MarginalHeading3 css={marginTopForHeading3}>
+          {intl.formatMessage({ id: 'components.shared.imports' })}
+        </MarginalHeading3>
+        <CodeViewer codeInHtml={getImportCheckboxReact.nodes[0].html} />
 
-      <MarginalHeading3 css={marginTopForHeading3}>
-        {intl.formatMessage({ id: 'components.shared.props' })}
-      </MarginalHeading3>
-      <Subtitle2>{'<CheckboxGroup>'}</Subtitle2>
-      {getPropsTable(checkboxGroupProps)}
-      <Subtitle2 css={marginTopForSubtitle2}>{'<Checkbox>'}</Subtitle2>
-      {getPropsTable(checkboxProps)}
-    </TabContentWrapper>
-  );
+        <MarginalHeading3 css={marginTopForHeading3}>
+          {intl.formatMessage({ id: 'components.shared.props' })}
+        </MarginalHeading3>
+        <Subtitle2>{'<CheckboxGroup>'}</Subtitle2>
+        {getPropsTable(checkboxGroupProps)}
+        <Subtitle2 css={marginTopForSubtitle2}>{'<Checkbox>'}</Subtitle2>
+        {getPropsTable(checkboxProps)}
+      </TabContentWrapper>
+    );
+  };
 
-  const getAngularVersionContent = () => (
-    <TabContentWrapper>
-      {getSharedOverviewContent()}
+  const getAngularVersionContent = () => {
+    const checkboxGroupProperties = getPropertiesOfComponentFactor(
+      intl,
+      ComponentFactorEnum.Checkbox,
+      'checkboxGroup',
+      CHECKBOX_GROUP_PROPERTIES_WITHOUT_DESCRIPTION
+    );
+    const checkboxProperties = getPropertiesOfComponentFactor(
+      intl,
+      ComponentFactorEnum.Checkbox,
+      'checkbox',
+      CHECKBOX_PROPERTIES_WITHOUT_DESCRIPTION
+    );
 
-      <MarginalHeading3 css={marginTopForHeading3}>
-        {intl.formatMessage({ id: 'components.shared.liveDemo' })}
-      </MarginalHeading3>
-      <Subtitle2>Default:</Subtitle2>
-      <ComponentDemoBox demo={getDemoCheckbox()} codeInHtml={getDemoCheckboxNg.nodes[0].html} />
-      <Subtitle2 css={marginTopForSubtitle2}>Disabled:</Subtitle2>
-      <ComponentDemoBox demo={getDemoCheckboxDisabled()} codeInHtml={getDemoCheckboxDisabledNg.nodes[0].html} />
+    return (
+      <TabContentWrapper>
+        {getSharedOverviewContent()}
 
-      <MarginalHeading3 css={marginTopForHeading3}>
-        {intl.formatMessage({ id: 'components.shared.imports' })}
-      </MarginalHeading3>
-      <CodeViewer codeInHtml={getImportCheckboxNg.nodes[0].html} />
-    </TabContentWrapper>
-  );
+        <MarginalHeading3 css={marginTopForHeading3}>
+          {intl.formatMessage({ id: 'components.shared.liveDemo' })}
+        </MarginalHeading3>
+        <Subtitle2>Default:</Subtitle2>
+        <ComponentDemoBox demo={getDemoCheckbox()} codeInHtml={getDemoCheckboxNg.nodes[0].html} />
+        <Subtitle2 css={marginTopForSubtitle2}>Disabled:</Subtitle2>
+        <ComponentDemoBox demo={getDemoCheckboxDisabled()} codeInHtml={getDemoCheckboxDisabledNg.nodes[0].html} />
+
+        <MarginalHeading3 css={marginTopForHeading3}>
+          {intl.formatMessage({ id: 'components.shared.imports' })}
+        </MarginalHeading3>
+        <CodeViewer codeInHtml={getImportCheckboxNg.nodes[0].html} />
+
+        <MarginalHeading3 css={marginTopForHeading3}>
+          {intl.formatMessage({ id: 'components.shared.properties' })}
+        </MarginalHeading3>
+        <Subtitle2>{'<foret-checkbox-group>'}</Subtitle2>
+        {getPropsTable(checkboxGroupProperties)}
+        <Subtitle2 css={marginTopForSubtitle2}>{'<foret-checkbox>'}</Subtitle2>
+        {getPropsTable(checkboxProperties)}
+      </TabContentWrapper>
+    );
+  };
 
   return (
     <section css={sectionStyles}>
