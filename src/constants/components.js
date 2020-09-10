@@ -106,6 +106,102 @@ export const CHECKBOX_PROPERTIES_WITHOUT_DESCRIPTION = [
   },
 ];
 
+export const RADIO_BUTTON_GROUP_PROPS_WITHOUT_DESCRIPTION = [
+  {
+    key: 'legendText',
+    name: 'legendText',
+    type: 'string',
+    default: '',
+  },
+  {
+    key: 'checkedValue',
+    name: 'checkedValue',
+    type: 'string',
+    default: '',
+  },
+  {
+    key: 'disabled',
+    name: 'disabled',
+    type: 'boolean',
+    default: 'false',
+  },
+  {
+    key: 'onChange',
+    name: 'onChange',
+    type: 'function(id: string, newCheckedValue: string)',
+    default: '',
+  },
+];
+
+export const RADIO_BUTTON_PROPS_WITHOUT_DESCRIPTION = [
+  {
+    key: 'id',
+    name: 'id',
+    type: 'string',
+    default: '',
+  },
+  {
+    key: 'labelText',
+    name: 'labelText',
+    type: 'string',
+    default: '',
+  },
+  {
+    key: 'value',
+    name: 'value',
+    type: 'string',
+    default: '',
+  },
+];
+
+export const RADIO_BUTTON_GROUP_PROPERTIES_WITHOUT_DESCRIPTION = [
+  {
+    key: 'legendText',
+    name: '@Input() legendText',
+    type: 'string',
+    default: '',
+  },
+  {
+    key: 'checkedValue',
+    name: '@Input() checkedValue',
+    type: 'string',
+    default: '',
+  },
+  {
+    key: 'disabled',
+    name: '@Input() disabled',
+    type: 'boolean',
+    default: 'false',
+  },
+  {
+    key: 'changeRadioButton',
+    name: '@Output() changeRadioButton',
+    type: 'function({ id: string, newCheckedValue: string })',
+    default: '',
+  },
+];
+
+export const RADIO_BUTTON_PROPERTIES_WITHOUT_DESCRIPTION = [
+  {
+    key: 'id',
+    name: '@Input() id',
+    type: 'string',
+    default: '',
+  },
+  {
+    key: 'labelText',
+    name: '@Input() labelText',
+    type: 'string',
+    default: '',
+  },
+  {
+    key: 'value',
+    name: '@Input() value',
+    type: 'string',
+    default: '',
+  },
+];
+
 export const TOGGLE_PROPS_WITHOUT_DESCRIPTION = [
   {
     key: 'id',
