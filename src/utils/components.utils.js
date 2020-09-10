@@ -35,7 +35,12 @@ export const getPropsTable = (componentProps) => {
   const getPropsTableRows = () =>
     componentProps.map((prop, index) => (
       <TableRow key={index}>
-        <TableCell>{prop.name}</TableCell>
+        <TableCell
+          css={css`
+            white-space: pre-line;
+          `}>
+          {prop.name}
+        </TableCell>
         <TableCell
           css={css`
             font-style: italic;

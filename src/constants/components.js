@@ -67,19 +67,19 @@ export const CHECKBOX_PROPS_WITHOUT_DESCRIPTION = [
 export const CHECKBOX_GROUP_PROPERTIES_WITHOUT_DESCRIPTION = [
   {
     key: 'legendText',
-    name: '@Input() legendText',
+    name: '@Input()\nlegendText',
     type: 'string',
     default: '',
   },
   {
     key: 'disabled',
-    name: '@Input() disabled',
+    name: '@Input()\ndisabled',
     type: 'boolean',
     default: 'false',
   },
   {
     key: 'changeCheckbox',
-    name: '@Output() changeCheckbox',
+    name: '@Output()\nchangeCheckbox',
     type: 'function({ id: string, newChecked: boolean })',
     default: '',
   },
@@ -88,19 +88,19 @@ export const CHECKBOX_GROUP_PROPERTIES_WITHOUT_DESCRIPTION = [
 export const CHECKBOX_PROPERTIES_WITHOUT_DESCRIPTION = [
   {
     key: 'id',
-    name: '@Input() id',
+    name: '@Input()\nid',
     type: 'string',
     default: '',
   },
   {
     key: 'labelText',
-    name: '@Input() labelText',
+    name: '@Input()\nlabelText',
     type: 'string',
     default: '',
   },
   {
     key: 'checked',
-    name: '@Input() checked',
+    name: '@Input()\nchecked',
     type: 'boolean',
     default: 'false',
   },
@@ -157,25 +157,25 @@ export const RADIO_BUTTON_PROPS_WITHOUT_DESCRIPTION = [
 export const RADIO_BUTTON_GROUP_PROPERTIES_WITHOUT_DESCRIPTION = [
   {
     key: 'legendText',
-    name: '@Input() legendText',
+    name: '@Input()\nlegendText',
     type: 'string',
     default: '',
   },
   {
     key: 'checkedValue',
-    name: '@Input() checkedValue',
+    name: '@Input()\ncheckedValue',
     type: 'string',
     default: '',
   },
   {
     key: 'disabled',
-    name: '@Input() disabled',
+    name: '@Input()\ndisabled',
     type: 'boolean',
     default: 'false',
   },
   {
     key: 'changeRadioButton',
-    name: '@Output() changeRadioButton',
+    name: '@Output()\nchangeRadioButton',
     type: 'function({ id: string, newCheckedValue: string })',
     default: '',
   },
@@ -184,19 +184,19 @@ export const RADIO_BUTTON_GROUP_PROPERTIES_WITHOUT_DESCRIPTION = [
 export const RADIO_BUTTON_PROPERTIES_WITHOUT_DESCRIPTION = [
   {
     key: 'id',
-    name: '@Input() id',
+    name: '@Input()\nid',
     type: 'string',
     default: '',
   },
   {
     key: 'labelText',
-    name: '@Input() labelText',
+    name: '@Input()\nlabelText',
     type: 'string',
     default: '',
   },
   {
     key: 'value',
-    name: '@Input() value',
+    name: '@Input()\nvalue',
     type: 'string',
     default: '',
   },
@@ -232,25 +232,25 @@ export const TOGGLE_PROPS_WITHOUT_DESCRIPTION = [
 export const TOGGLE_PROPERTIES_WITHOUT_DESCRIPTION = [
   {
     key: 'id',
-    name: '@Input() id',
+    name: '@Input()\nid',
     type: 'string',
     default: '',
   },
   {
     key: 'disabled',
-    name: '@Input() disabled',
+    name: '@Input()\ndisabled',
     type: 'boolean',
     default: 'false',
   },
   {
     key: 'checked',
-    name: '@Input() checked',
+    name: '@Input()\nchecked',
     type: 'boolean',
     default: 'false',
   },
   {
     key: 'toggle',
-    name: '@Output() toggle',
+    name: '@Output()\ntoggle',
     type: 'function({ id: string, newChecked: boolean })',
     default: '',
   },
