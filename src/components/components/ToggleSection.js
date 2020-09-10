@@ -2,11 +2,11 @@ import { MarginalHeading3, MarginalParagraph, Subtitle2, Tab, TabGroup, Toggle }
 import { css } from '@emotion/core';
 import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
+import { TOGGLE_PROPS_WITHOUT_DESCRIPTION, TOGGLE_PROPERTIES_WITHOUT_DESCRIPTION } from '../../constants/components';
 import { ComponentFactorEnum } from '../../enums/components/component-factor.enum';
 import { useToggleSectionQuery } from '../../hooks';
-import { getPropsTable } from '../../utils/components.utils';
+import { getPropertiesOfComponentFactor, getPropsOfComponentFactor, getPropsTable } from '../../utils/components.utils';
 import { marginTopForHeading2, marginTopForHeading3, marginTopForSubtitle2 } from '../../utils/margin.utils';
-import { getPropsOfComponentFactor } from '../../utils/page.utils';
 import { CodeViewer, ComponentDemoBox, DemoDivider, ResponsiveContentLayout, TabContentWrapper } from '../common';
 import AnchorMarginalHeading2 from './AnchorMarginalHeading2';
 
@@ -48,50 +48,71 @@ const ToggleSection = ({ headingHash }) => {
     </Fragment>
   );
 
-  const toggleProps = getPropsOfComponentFactor(intl, `components.${ComponentFactorEnum.Toggle}.props.`);
+  const getReactVersionContent = () => {
+    const toggleProps = getPropsOfComponentFactor(
+      intl,
+      ComponentFactorEnum.Toggle,
+      'toggle',
+      TOGGLE_PROPS_WITHOUT_DESCRIPTION
+    );
 
-  const getReactVersionContent = () => (
-    <TabContentWrapper>
-      {getSharedOverviewContent()}
+    return (
+      <TabContentWrapper>
+        {getSharedOverviewContent()}
 
-      <MarginalHeading3 css={marginTopForHeading3}>
-        {intl.formatMessage({ id: 'components.shared.liveDemo' })}
-      </MarginalHeading3>
-      <Subtitle2>Default:</Subtitle2>
-      <ComponentDemoBox demo={getDemoToggle()} codeInHtml={getDemoToggleReact.nodes[0].html} />
-      <Subtitle2 css={marginTopForSubtitle2}>Disabled:</Subtitle2>
-      <ComponentDemoBox demo={getDemoToggleDisabled()} codeInHtml={getDemoToggleDisabledReact.nodes[0].html} />
+        <MarginalHeading3 css={marginTopForHeading3}>
+          {intl.formatMessage({ id: 'components.shared.liveDemo' })}
+        </MarginalHeading3>
+        <Subtitle2>Default:</Subtitle2>
+        <ComponentDemoBox demo={getDemoToggle()} codeInHtml={getDemoToggleReact.nodes[0].html} />
+        <Subtitle2 css={marginTopForSubtitle2}>Disabled:</Subtitle2>
+        <ComponentDemoBox demo={getDemoToggleDisabled()} codeInHtml={getDemoToggleDisabledReact.nodes[0].html} />
 
-      <MarginalHeading3 css={marginTopForHeading3}>
-        {intl.formatMessage({ id: 'components.shared.imports' })}
-      </MarginalHeading3>
-      <CodeViewer codeInHtml={getImportToggleReact.nodes[0].html} />
+        <MarginalHeading3 css={marginTopForHeading3}>
+          {intl.formatMessage({ id: 'components.shared.imports' })}
+        </MarginalHeading3>
+        <CodeViewer codeInHtml={getImportToggleReact.nodes[0].html} />
 
-      <MarginalHeading3 css={marginTopForHeading3}>
-        {intl.formatMessage({ id: 'components.shared.props' })}
-      </MarginalHeading3>
-      {getPropsTable(toggleProps)}
-    </TabContentWrapper>
-  );
+        <MarginalHeading3 css={marginTopForHeading3}>
+          {intl.formatMessage({ id: 'components.shared.props' })}
+        </MarginalHeading3>
+        {getPropsTable(toggleProps)}
+      </TabContentWrapper>
+    );
+  };
 
-  const getAngularVersionContent = () => (
-    <TabContentWrapper>
-      {getSharedOverviewContent()}
+  const getAngularVersionContent = () => {
+    const toggleProperties = getPropertiesOfComponentFactor(
+      intl,
+      ComponentFactorEnum.Toggle,
+      'toggle',
+      TOGGLE_PROPERTIES_WITHOUT_DESCRIPTION
+    );
 
-      <MarginalHeading3 css={marginTopForHeading3}>
-        {intl.formatMessage({ id: 'components.shared.liveDemo' })}
-      </MarginalHeading3>
-      <Subtitle2>Default:</Subtitle2>
-      <ComponentDemoBox demo={getDemoToggle()} codeInHtml={getDemoToggleNg.nodes[0].html} />
-      <Subtitle2 css={marginTopForSubtitle2}>Disabled:</Subtitle2>
-      <ComponentDemoBox demo={getDemoToggleDisabled()} codeInHtml={getDemoToggleDisabledNg.nodes[0].html} />
+    return (
+      <TabContentWrapper>
+        {getSharedOverviewContent()}
 
-      <MarginalHeading3 css={marginTopForHeading3}>
-        {intl.formatMessage({ id: 'components.shared.imports' })}
-      </MarginalHeading3>
-      <CodeViewer codeInHtml={getImportToggleNg.nodes[0].html} />
-    </TabContentWrapper>
-  );
+        <MarginalHeading3 css={marginTopForHeading3}>
+          {intl.formatMessage({ id: 'components.shared.liveDemo' })}
+        </MarginalHeading3>
+        <Subtitle2>Default:</Subtitle2>
+        <ComponentDemoBox demo={getDemoToggle()} codeInHtml={getDemoToggleNg.nodes[0].html} />
+        <Subtitle2 css={marginTopForSubtitle2}>Disabled:</Subtitle2>
+        <ComponentDemoBox demo={getDemoToggleDisabled()} codeInHtml={getDemoToggleDisabledNg.nodes[0].html} />
+
+        <MarginalHeading3 css={marginTopForHeading3}>
+          {intl.formatMessage({ id: 'components.shared.imports' })}
+        </MarginalHeading3>
+        <CodeViewer codeInHtml={getImportToggleNg.nodes[0].html} />
+
+        <MarginalHeading3 css={marginTopForHeading3}>
+          {intl.formatMessage({ id: 'components.shared.properties' })}
+        </MarginalHeading3>
+        {getPropsTable(toggleProperties)}
+      </TabContentWrapper>
+    );
+  };
 
   return (
     <section css={sectionStyles}>

@@ -105,3 +105,57 @@ export const CHECKBOX_PROPERTIES_WITHOUT_DESCRIPTION = [
     default: 'false',
   },
 ];
+
+export const TOGGLE_PROPS_WITHOUT_DESCRIPTION = [
+  {
+    key: 'id',
+    name: 'id',
+    type: 'string',
+    default: '',
+  },
+  {
+    key: 'disabled',
+    name: 'disabled',
+    type: 'boolean',
+    default: 'false',
+  },
+  {
+    key: 'checked',
+    name: 'checked',
+    type: 'boolean',
+    default: 'false',
+  },
+  {
+    key: 'onToggle',
+    name: 'onToggle',
+    type: 'function(id: string, newChecked: boolean)',
+    default: '',
+  },
+];
+
+export const TOGGLE_PROPERTIES_WITHOUT_DESCRIPTION = [
+  {
+    key: 'id',
+    name: '@Input() id',
+    type: 'string',
+    default: '',
+  },
+  {
+    key: 'disabled',
+    name: '@Input() disabled',
+    type: 'boolean',
+    default: 'false',
+  },
+  {
+    key: 'checked',
+    name: '@Input() checked',
+    type: 'boolean',
+    default: 'false',
+  },
+  {
+    key: 'toggle',
+    name: '@Output() toggle',
+    type: 'function({ id: string, newChecked: boolean })',
+    default: '',
+  },
+];

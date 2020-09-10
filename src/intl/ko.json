@@ -119,26 +119,22 @@
       "overview": {
         "description": "토글 설명.."
       },
-      "props": [
-        {
-          "name": "id",
-          "type": "string",
-          "default": " ",
-          "description": "The id of Toggle"
-        },
-        {
-          "name": "checked",
-          "type": "boolean",
-          "default": "false",
-          "description": "If true, the Toggle will be on."
-        },
-        {
-          "name": "disabled",
-          "type": "boolean",
-          "default": "false",
-          "description": "If true, the Toggle will be disabled."
+      "propsDescription": {
+        "toggle": {
+          "id": "토글의 id입니다. 토글을 구분하기 위해 사용됩니다.",
+          "disabled": "true를 할당하면, 토글은 disabled 상태가 됩니다.",
+          "checked": "true를 할당하면, 토글은 checked 상태가 됩니다.",
+          "onToggle": "사용자가 토글을 클릭 할 때 호출되는 콜백 함수입니다."
         }
-      ]
+      },
+      "propertiesDescription": {
+        "toggle": {
+          "id": "토글의 id입니다. 토글을 구분하기 위해 사용됩니다.",
+          "disabled": "true를 할당하면, 토글은 disabled 상태가 됩니다.",
+          "checked": "true를 할당하면, 토글은 checked 상태가 됩니다.",
+          "toggle": "사용자가 토글을 클릭 할 때 호출되는 콜백 함수입니다."
+        }
+      }
     }
   }
 }

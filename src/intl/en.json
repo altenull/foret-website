@@ -119,26 +119,22 @@
       "overview": {
         "description": "Toggle description here"
       },
-      "props": [
-        {
-          "name": "id",
-          "type": "string",
-          "default": " ",
-          "description": "The id of Toggle"
-        },
-        {
-          "name": "checked",
-          "type": "boolean",
-          "default": "false",
-          "description": "If true, the Toggle will be on."
-        },
-        {
-          "name": "disabled",
-          "type": "boolean",
-          "default": "false",
-          "description": "If true, the Toggle will be disabled."
+      "propsDescription": {
+        "toggle": {
+          "id": "The id of toggle. It's used to identifies the toggle.",
+          "disabled": "If set to true, the toggle would be disabled.",
+          "checked": "If set to true, the toggle would be checked.",
+          "onToggle": "Callback function to invoke when the user clicks on the toggle."
         }
-      ]
+      },
+      "propertiesDescription": {
+        "toggle": {
+          "id": "The id of toggle. It's used to identifies the toggle.",
+          "disabled": "If set to true, the toggle would be disabled.",
+          "checked": "If set to true, the toggle would be checked.",
+          "toggle": "Callback function to invoke when the user clicks on the toggle."
+        }
+      }
     }
   }
 }
