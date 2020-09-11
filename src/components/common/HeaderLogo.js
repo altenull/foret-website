@@ -7,6 +7,7 @@ const headerLogoStyles = css`
   display: flex;
   align-items: center;
   text-decoration: none;
+  pointer-events: all;
 `;
 
 const logoStyles = (isScrolled) => css`

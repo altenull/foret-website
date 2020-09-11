@@ -22,6 +22,7 @@ const headerStyles = css`
   justify-content: space-between;
   box-sizing: border-box;
   z-index: 1100; /* TODO: Manage z-index in one place */
+  pointer-events: none;
   ${mediaQuery(BreakpointEnum.ViewPort9)} {
     width: calc(100% - 4rem);
     max-width: 1440px;
@@ -32,6 +33,7 @@ const headerStyles = css`
 const hamburgerMenuStyles = css`
   display: flex;
   align-items: center;
+  pointer-events: all;
 `;
 
 const HeaderContainer = () => {
