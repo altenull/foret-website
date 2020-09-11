@@ -7,13 +7,85 @@ export const PROPS_TABLE_COLUMNS = [
   PropsTableColumnEnum.Description,
 ];
 
+const ID_SUB_PROP = {
+  key: 'id',
+  name: 'id',
+  type: 'string',
+  default: '',
+};
+
+const ID_SUB_PROPERTY = {
+  key: 'id',
+  name: '@Input()\nid',
+  type: 'string',
+  default: '',
+};
+
+const LEGEND_TEXT_SUB_PROP = {
+  key: 'legendText',
+  name: 'legendText',
+  type: 'string',
+  default: '',
+};
+
+const LEGEND_TEXT_SUB_PROPERTY = {
+  key: 'legendText',
+  name: '@Input()\nlegendText',
+  type: 'string',
+  default: '',
+};
+
+const LABEL_TEXT_SUB_PROP = {
+  key: 'labelText',
+  name: 'labelText',
+  type: 'string',
+  default: '',
+};
+
+const LABEL_TEXT_SUB_PROPERTY = {
+  key: 'labelText',
+  name: '@Input()\nlabelText',
+  type: 'string',
+  default: '',
+};
+
+const VALUE_SUB_PROP = {
+  key: 'value',
+  name: 'value',
+  type: 'string',
+  default: '',
+};
+
+const CHECKED_SUB_PROP = {
+  key: 'checked',
+  name: 'checked',
+  type: 'boolean',
+  default: 'false',
+};
+
+const CHECKED_SUB_PROPERTY = {
+  key: 'checked',
+  name: '@Input()\nchecked',
+  type: 'boolean',
+  default: 'false',
+};
+
+const DISABLED_SUB_PROP = {
+  key: 'disabled',
+  name: 'disabled',
+  type: 'boolean',
+  default: 'false',
+};
+
+const DISABELD_SUB_PROPERTY = {
+  key: 'disabled',
+  name: '@Input()\ndisabled',
+  type: 'boolean',
+  default: 'false',
+};
+
 export const BUTTON_PROPS_WITHOUT_DESCRIPTION = [
-  {
-    key: 'disabled',
-    name: 'disabled',
-    type: 'boolean',
-    default: 'false',
-  },
+  DISABLED_SUB_PROP,
   {
     key: 'children',
     name: 'children',
@@ -23,18 +95,8 @@ export const BUTTON_PROPS_WITHOUT_DESCRIPTION = [
 ];
 
 export const CHECKBOX_GROUP_PROPS_WITHOUT_DESCRIPTION = [
-  {
-    key: 'legendText',
-    name: 'legendText',
-    type: 'string',
-    default: '',
-  },
-  {
-    key: 'disabled',
-    name: 'disabled',
-    type: 'boolean',
-    default: 'false',
-  },
+  LEGEND_TEXT_SUB_PROP,
+  DISABLED_SUB_PROP,
   {
     key: 'onChange',
     name: 'onChange',
@@ -43,40 +105,11 @@ export const CHECKBOX_GROUP_PROPS_WITHOUT_DESCRIPTION = [
   },
 ];
 
-export const CHECKBOX_PROPS_WITHOUT_DESCRIPTION = [
-  {
-    key: 'id',
-    name: 'id',
-    type: 'string',
-    default: '',
-  },
-  {
-    key: 'labelText',
-    name: 'labelText',
-    type: 'string',
-    default: '',
-  },
-  {
-    key: 'checked',
-    name: 'checked',
-    type: 'boolean',
-    default: 'false',
-  },
-];
+export const CHECKBOX_PROPS_WITHOUT_DESCRIPTION = [ID_SUB_PROP, LABEL_TEXT_SUB_PROP, CHECKED_SUB_PROP];
 
 export const CHECKBOX_GROUP_PROPERTIES_WITHOUT_DESCRIPTION = [
-  {
-    key: 'legendText',
-    name: '@Input()\nlegendText',
-    type: 'string',
-    default: '',
-  },
-  {
-    key: 'disabled',
-    name: '@Input()\ndisabled',
-    type: 'boolean',
-    default: 'false',
-  },
+  LEGEND_TEXT_SUB_PROPERTY,
+  DISABELD_SUB_PROPERTY,
   {
     key: 'changeCheckbox',
     name: '@Output()\nchangeCheckbox',
@@ -85,45 +118,16 @@ export const CHECKBOX_GROUP_PROPERTIES_WITHOUT_DESCRIPTION = [
   },
 ];
 
-export const CHECKBOX_PROPERTIES_WITHOUT_DESCRIPTION = [
-  {
-    key: 'id',
-    name: '@Input()\nid',
-    type: 'string',
-    default: '',
-  },
-  {
-    key: 'labelText',
-    name: '@Input()\nlabelText',
-    type: 'string',
-    default: '',
-  },
-  {
-    key: 'checked',
-    name: '@Input()\nchecked',
-    type: 'boolean',
-    default: 'false',
-  },
-];
+export const CHECKBOX_PROPERTIES_WITHOUT_DESCRIPTION = [ID_SUB_PROPERTY, LABEL_TEXT_SUB_PROPERTY, CHECKED_SUB_PROPERTY];
 
 export const RADIO_BUTTON_GROUP_PROPS_WITHOUT_DESCRIPTION = [
-  {
-    key: 'legendText',
-    name: 'legendText',
-    type: 'string',
-    default: '',
-  },
+  LEGEND_TEXT_SUB_PROP,
+  DISABLED_SUB_PROP,
   {
     key: 'checkedValue',
     name: 'checkedValue',
     type: 'string',
     default: '',
-  },
-  {
-    key: 'disabled',
-    name: 'disabled',
-    type: 'boolean',
-    default: 'false',
   },
   {
     key: 'onChange',
@@ -133,45 +137,16 @@ export const RADIO_BUTTON_GROUP_PROPS_WITHOUT_DESCRIPTION = [
   },
 ];
 
-export const RADIO_BUTTON_PROPS_WITHOUT_DESCRIPTION = [
-  {
-    key: 'id',
-    name: 'id',
-    type: 'string',
-    default: '',
-  },
-  {
-    key: 'labelText',
-    name: 'labelText',
-    type: 'string',
-    default: '',
-  },
-  {
-    key: 'value',
-    name: 'value',
-    type: 'string',
-    default: '',
-  },
-];
+export const RADIO_BUTTON_PROPS_WITHOUT_DESCRIPTION = [ID_SUB_PROP, LABEL_TEXT_SUB_PROP, VALUE_SUB_PROP];
 
 export const RADIO_BUTTON_GROUP_PROPERTIES_WITHOUT_DESCRIPTION = [
-  {
-    key: 'legendText',
-    name: '@Input()\nlegendText',
-    type: 'string',
-    default: '',
-  },
+  LEGEND_TEXT_SUB_PROPERTY,
+  DISABELD_SUB_PROPERTY,
   {
     key: 'checkedValue',
     name: '@Input()\ncheckedValue',
     type: 'string',
     default: '',
-  },
-  {
-    key: 'disabled',
-    name: '@Input()\ndisabled',
-    type: 'boolean',
-    default: 'false',
   },
   {
     key: 'changeRadioButton',
@@ -182,18 +157,8 @@ export const RADIO_BUTTON_GROUP_PROPERTIES_WITHOUT_DESCRIPTION = [
 ];
 
 export const RADIO_BUTTON_PROPERTIES_WITHOUT_DESCRIPTION = [
-  {
-    key: 'id',
-    name: '@Input()\nid',
-    type: 'string',
-    default: '',
-  },
-  {
-    key: 'labelText',
-    name: '@Input()\nlabelText',
-    type: 'string',
-    default: '',
-  },
+  ID_SUB_PROPERTY,
+  LABEL_TEXT_SUB_PROPERTY,
   {
     key: 'value',
     name: '@Input()\nvalue',
@@ -203,18 +168,9 @@ export const RADIO_BUTTON_PROPERTIES_WITHOUT_DESCRIPTION = [
 ];
 
 export const SELECT_PROPS_WITHOUT_DESCRIPTION = [
-  {
-    key: 'id',
-    name: 'id',
-    type: 'string',
-    default: '',
-  },
-  {
-    key: 'legendText',
-    name: 'legendText',
-    type: 'string',
-    default: '',
-  },
+  ID_SUB_PROP,
+  LEGEND_TEXT_SUB_PROP,
+  DISABLED_SUB_PROP,
   {
     key: 'selectedValue',
     name: 'selectedValue',
@@ -228,12 +184,6 @@ export const SELECT_PROPS_WITHOUT_DESCRIPTION = [
     default: '',
   },
   {
-    key: 'disabled',
-    name: 'disabled',
-    type: 'boolean',
-    default: 'false',
-  },
-  {
     key: 'onChange',
     name: 'onChange',
     type: 'function(id: string, newSelectedValue: string)',
@@ -241,66 +191,19 @@ export const SELECT_PROPS_WITHOUT_DESCRIPTION = [
   },
 ];
 
-export const SELECT_ITEM_GROUP_PROPS_WITHOUT_DESCRIPTION = [
-  {
-    key: 'labelText',
-    name: 'labelText',
-    type: 'string',
-    default: '',
-  },
-  {
-    key: 'disabled',
-    name: 'disabled',
-    type: 'boolean',
-    default: 'false',
-  },
-];
+export const SELECT_ITEM_GROUP_PROPS_WITHOUT_DESCRIPTION = [LABEL_TEXT_SUB_PROP, DISABLED_SUB_PROP];
 
-export const SELECT_ITEM_PROPS_WITHOUT_DESCRIPTION = [
-  {
-    key: 'value',
-    name: 'value',
-    type: 'string',
-    default: '',
-  },
-  {
-    key: 'labelText',
-    name: 'labelText',
-    type: 'string',
-    default: '',
-  },
-  {
-    key: 'disabled',
-    name: 'disabled',
-    type: 'boolean',
-    default: 'false',
-  },
-];
+export const SELECT_ITEM_PROPS_WITHOUT_DESCRIPTION = [VALUE_SUB_PROP, LABEL_TEXT_SUB_PROP, DISABLED_SUB_PROP];
 
 export const SELECT_PROPERTIES_WITHOUT_DESCRIPTION = [
-  {
-    key: 'id',
-    name: '@Input()\nid',
-    type: 'string',
-    default: '',
-  },
-  {
-    key: 'legendText',
-    name: '@Input()\nlegendText',
-    type: 'string',
-    default: '',
-  },
+  ID_SUB_PROPERTY,
+  LEGEND_TEXT_SUB_PROPERTY,
+  DISABELD_SUB_PROPERTY,
   {
     key: 'placeholder',
     name: '@Input()\nplaceholder',
     type: 'string',
     default: '',
-  },
-  {
-    key: 'disabled',
-    name: '@Input()\ndisabled',
-    type: 'boolean',
-    default: 'false',
   },
   {
     key: 'changeSelect',
@@ -311,24 +214,9 @@ export const SELECT_PROPERTIES_WITHOUT_DESCRIPTION = [
 ];
 
 export const TOGGLE_PROPS_WITHOUT_DESCRIPTION = [
-  {
-    key: 'id',
-    name: 'id',
-    type: 'string',
-    default: '',
-  },
-  {
-    key: 'disabled',
-    name: 'disabled',
-    type: 'boolean',
-    default: 'false',
-  },
-  {
-    key: 'checked',
-    name: 'checked',
-    type: 'boolean',
-    default: 'false',
-  },
+  ID_SUB_PROP,
+  DISABLED_SUB_PROP,
+  CHECKED_SUB_PROP,
   {
     key: 'onToggle',
     name: 'onToggle',
@@ -338,24 +226,9 @@ export const TOGGLE_PROPS_WITHOUT_DESCRIPTION = [
 ];
 
 export const TOGGLE_PROPERTIES_WITHOUT_DESCRIPTION = [
-  {
-    key: 'id',
-    name: '@Input()\nid',
-    type: 'string',
-    default: '',
-  },
-  {
-    key: 'disabled',
-    name: '@Input()\ndisabled',
-    type: 'boolean',
-    default: 'false',
-  },
-  {
-    key: 'checked',
-    name: '@Input()\nchecked',
-    type: 'boolean',
-    default: 'false',
-  },
+  ID_SUB_PROPERTY,
+  DISABELD_SUB_PROPERTY,
+  CHECKED_SUB_PROPERTY,
   {
     key: 'toggle',
     name: '@Output()\ntoggle',
