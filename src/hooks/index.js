@@ -4,5 +4,6 @@ export { default as useGetStartedContentSectionQuery } from './useGetStartedCont
 export { default as useIsMounted } from './useIsMounted';
 export { default as useLogoImageQuery } from './useLogoImageQuery';
 export { default as useRadioButtonSectionQuery } from './useRadioButtonSectionQuery';
+export { default as useSelectSectionQuery } from './useSelectSectionQuery';
 export { default as useSiteMetadataQuery } from './useSiteMetadataQuery';
 export { default as useToggleSectionQuery } from './useToggleSectionQuery';

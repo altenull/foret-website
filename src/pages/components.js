@@ -10,6 +10,7 @@ import {
   CheckboxSection,
   HeroSection,
   RadioButtonSection,
+  SelectSection,
   TOC,
   ToggleSection,
 } from '../components/components';
@@ -32,6 +33,7 @@ const ComponentsPage = ({ location }) => {
     ComponentHashEnum.Button,
     ComponentHashEnum.Checkbox,
     ComponentHashEnum.RadioButton,
+    ComponentHashEnum.Select,
     ComponentHashEnum.Toggle,
   ];
 
@@ -107,6 +109,7 @@ const ComponentsPage = ({ location }) => {
       [ComponentHashEnum.Button]: ButtonSection,
       [ComponentHashEnum.Checkbox]: CheckboxSection,
       [ComponentHashEnum.RadioButton]: RadioButtonSection,
+      [ComponentHashEnum.Select]: SelectSection,
       [ComponentHashEnum.Toggle]: ToggleSection,
     };
 
@@ -122,6 +125,7 @@ const ComponentsPage = ({ location }) => {
       [ComponentHashEnum.Button]: 'components.button.title',
       [ComponentHashEnum.Checkbox]: 'components.checkbox.title',
       [ComponentHashEnum.RadioButton]: 'components.radioButton.title',
+      [ComponentHashEnum.Select]: 'components.select.title',
       [ComponentHashEnum.Toggle]: 'components.toggle.title',
     };
 

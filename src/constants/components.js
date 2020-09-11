@@ -202,6 +202,114 @@ export const RADIO_BUTTON_PROPERTIES_WITHOUT_DESCRIPTION = [
   },
 ];
 
+export const SELECT_PROPS_WITHOUT_DESCRIPTION = [
+  {
+    key: 'id',
+    name: 'id',
+    type: 'string',
+    default: '',
+  },
+  {
+    key: 'legendText',
+    name: 'legendText',
+    type: 'string',
+    default: '',
+  },
+  {
+    key: 'selectedValue',
+    name: 'selectedValue',
+    type: 'string',
+    default: '',
+  },
+  {
+    key: 'placeholder',
+    name: 'placeholder',
+    type: 'string',
+    default: '',
+  },
+  {
+    key: 'disabled',
+    name: 'disabled',
+    type: 'boolean',
+    default: 'false',
+  },
+  {
+    key: 'onChange',
+    name: 'onChange',
+    type: 'function(id: string, newSelectedValue: string)',
+    default: '',
+  },
+];
+
+export const SELECT_ITEM_GROUP_PROPS_WITHOUT_DESCRIPTION = [
+  {
+    key: 'labelText',
+    name: 'labelText',
+    type: 'string',
+    default: '',
+  },
+  {
+    key: 'disabled',
+    name: 'disabled',
+    type: 'boolean',
+    default: 'false',
+  },
+];
+
+export const SELECT_ITEM_PROPS_WITHOUT_DESCRIPTION = [
+  {
+    key: 'value',
+    name: 'value',
+    type: 'string',
+    default: '',
+  },
+  {
+    key: 'labelText',
+    name: 'labelText',
+    type: 'string',
+    default: '',
+  },
+  {
+    key: 'disabled',
+    name: 'disabled',
+    type: 'boolean',
+    default: 'false',
+  },
+];
+
+export const SELECT_PROPERTIES_WITHOUT_DESCRIPTION = [
+  {
+    key: 'id',
+    name: '@Input()\nid',
+    type: 'string',
+    default: '',
+  },
+  {
+    key: 'legendText',
+    name: '@Input()\nlegendText',
+    type: 'string',
+    default: '',
+  },
+  {
+    key: 'placeholder',
+    name: '@Input()\nplaceholder',
+    type: 'string',
+    default: '',
+  },
+  {
+    key: 'disabled',
+    name: '@Input()\ndisabled',
+    type: 'boolean',
+    default: 'false',
+  },
+  {
+    key: 'changeSelect',
+    name: '@Output()\nchangeSelect',
+    type: 'function({ id: string, newSelectedValue: string })',
+    default: '',
+  },
+];
+
 export const TOGGLE_PROPS_WITHOUT_DESCRIPTION = [
   {
     key: 'id',
