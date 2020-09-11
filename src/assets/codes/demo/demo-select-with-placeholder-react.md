@@ -1,7 +1,7 @@
 ```jsx
 <Select
   id={'select-with-placeholder'}
-  legendText={'select'}
+  legendText={'Select'}
   placeholder={'Please choose an option'}>
 
   <SelectItem value={'option1'} labelText={'option 1'} />

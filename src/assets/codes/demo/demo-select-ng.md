@@ -1,5 +1,5 @@
 ```html
-<foret-select [id]="'select'" [legendText]="'select'">
+<foret-select [id]="'select'" [legendText]="'Select'">
 
   <option value="option1">option 1</option>
 

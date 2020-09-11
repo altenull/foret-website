@@ -1,7 +1,7 @@
 ```jsx
 <Select
   id={'grouped-select'}
-  legendText={'select'}
+  legendText={'Select'}
   selectedValue={'option2'}>
 
   <SelectItemGroup labelText={'Category 1'}>

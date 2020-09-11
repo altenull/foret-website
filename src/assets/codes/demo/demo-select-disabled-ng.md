@@ -1,7 +1,7 @@
 ```html
 <foret-select
   [id]="'disabled-select'"
-  [legendText]="'select'"
+  [legendText]="'Select'"
   [disabled]="true">
 
   <option value="option1">option 1</option>

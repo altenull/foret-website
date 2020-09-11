@@ -51,7 +51,7 @@ const SelectSection = ({ headingHash }) => {
   );
 
   const getDemoSelect = () => (
-    <Select id={'select'} legendText={'select'} selectedValue={'option2'}>
+    <Select id={'select'} legendText={'Select'} selectedValue={'option2'}>
       <SelectItem value={'option1'} labelText={'option 1'} />
       <SelectItem value={'option2'} labelText={'option 2'} />
       <SelectItem value={'option3'} labelText={'option 3'} disabled={true} />
@@ -62,7 +62,7 @@ const SelectSection = ({ headingHash }) => {
   );
 
   const getDemoSelectGrouped = () => (
-    <Select id={'grouped-select'} legendText={'select'} selectedValue={'option2'}>
+    <Select id={'grouped-select'} legendText={'Select'} selectedValue={'option2'}>
       <SelectItemGroup labelText={'Category 1'}>
         <SelectItem value={'option1'} labelText={'option 1'} />
         <SelectItem value={'option2'} labelText={'option 2'} />
@@ -78,7 +78,7 @@ const SelectSection = ({ headingHash }) => {
   );
 
   const getDemoSelectWithPlaceholder = () => (
-    <Select id={'select-with-placeholder'} legendText={'select'} placeholder={'Please choose an option'}>
+    <Select id={'select-with-placeholder'} legendText={'Select'} placeholder={'Please choose an option'}>
       <SelectItem value={'option1'} labelText={'option 1'} />
       <SelectItem value={'option2'} labelText={'option 2'} />
       <SelectItem value={'option3'} labelText={'option 3'} disabled={true} />
@@ -89,7 +89,7 @@ const SelectSection = ({ headingHash }) => {
   );
 
   const getDemoSelectDisabled = () => (
-    <Select id={'disabled-select'} legendText={'select'} selectedValue={'option2'} disabled={true}>
+    <Select id={'disabled-select'} legendText={'Select'} selectedValue={'option2'} disabled={true}>
       <SelectItem value={'option1'} labelText={'option 1'} />
       <SelectItem value={'option2'} labelText={'option 2'} />
       <SelectItem value={'option3'} labelText={'option 3'} />

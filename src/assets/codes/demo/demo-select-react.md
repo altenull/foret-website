@@ -1,5 +1,5 @@
 ```jsx
-<Select id={'select'} legendText={'select'} selectedValue={'option2'}>
+<Select id={'select'} legendText={'Select'} selectedValue={'option2'}>
 
   <SelectItem value={'option1'} labelText={'option 1'} />
 

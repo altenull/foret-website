@@ -1,5 +1,5 @@
 ```html
-<foret-select [id]="'grouped-select'" [legendText]="'select'">
+<foret-select [id]="'grouped-select'" [legendText]="'Select'">
 
   <optgroup label="Category 1">
 

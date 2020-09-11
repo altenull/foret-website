@@ -1,7 +1,7 @@
 ```jsx
 <Select
   id={'disabled-select'}
-  legendText={'select'}
+  legendText={'Select'}
   selectedValue={'option2'}
   disabled={true}>
 

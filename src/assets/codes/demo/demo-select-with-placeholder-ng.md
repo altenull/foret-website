@@ -1,7 +1,7 @@
 ```html
 <foret-select
   [id]="'select-with-placeholder'"
-  [legendText]="'select'"
+  [legendText]="'Select'"
   [placeholder]="'Please choose an option'">
  
   <option value="option1">option 1</option>
