@@ -95,19 +95,19 @@
           "onChange": "Callback function to invoke when the user clicks on the checkbox."
         },
         "checkbox": {
-          "id": "The id of checkbox. It's used to identifies the checkbox.",
+          "id": "The id of a checkbox. It's used to identifies the checkbox.",
           "labelText": "The label of a checkbox.",
           "checked": "If set to true, the checkbox would be checked."
         }
       },
       "propertiesDescription": {
         "checkboxGroup": {
-          "legendText": "The label of checkbox group.",
+          "legendText": "The label of a checkbox group.",
           "disabled": "If set to true, every checkbox in checkbox group would be disabled.",
           "changeCheckbox": "Callback function to invoke when the user clicks on the checkbox."
         },
         "checkbox": {
-          "id": "The id of checkbox. It's used to identifies the checkbox.",
+          "id": "The id of a checkbox. It's used to identifies the checkbox.",
           "labelText": "The label of a checkbox.",
           "checked": "If set to true, the checkbox would be checked."
         }
@@ -121,28 +121,28 @@
       },
       "propsDescription": {
         "radioButtonGroup": {
-          "legendText": "The label of radio button group.",
-          "checkedValue": "TODO: checked value",
+          "legendText": "The label of a radio button group.",
+          "checkedValue": "If it matches the value property of the radio button, that radio button will be set up as checked.",
           "disabled": "If set to true, every radio button in radio button group would be disabled.",
           "onChange": "Callback function to invoke when the user clicks on the radio button."
         },
         "radioButton": {
-          "id": "The id of radio button. It's used to identifies the radio button.",
+          "id": "The id of a radio button. It's used to identifies the radio button.",
           "labelText": "The label of a radio button.",
-          "value": "TODO: value"
+          "value": "The value of a radio button."
         }
       },
       "propertiesDescription": {
         "radioButtonGroup": {
-          "legendText": "The label of radio button group.",
-          "checkedValue": "TODO: checked value",
+          "legendText": "The label of a radio button group.",
+          "checkedValue": "If it matches the value property of the radio button, that radio button will be set up as checked.",
           "disabled": "If set to true, every radio button in radio button group would be disabled.",
           "changeRadioButton": "Callback function to invoke when the user clicks on the radio button."
         },
         "radioButton": {
-          "id": "The id of radio button. It's used to identifies the radio button.",
+          "id": "The id of a radio button. It's used to identifies the radio button.",
           "labelText": "The label of a radio button.",
-          "value": "TODO: value"
+          "value": "The value of a radio button."
         }
       }
     },

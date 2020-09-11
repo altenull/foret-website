@@ -122,27 +122,27 @@
       "propsDescription": {
         "radioButtonGroup": {
           "legendText": "라디오버튼 그룹의 라벨입니다.",
-          "checkedValue": "TODO: checked value",
+          "checkedValue": "라디오버튼의 value 프로퍼티와 일치하면, 해당 라디오버튼은 checked로 설정됩니다.",
           "disabled": "true를 할당하면, 모든 라디오 버튼은 disabled 상태가 됩니다.",
           "onChange": "사용자가 라디오버튼을 클릭 할 때 호출되는 콜백 함수입니다."
         },
         "radioButton": {
           "id": "라디오버튼의 id입니다. 라디오버튼을 구분하기 위해 사용됩니다.",
           "labelText": "라디오버튼의 라벨입니다.",
-          "value": "TODO: value"
+          "value": "라디오버튼의 value입니다."
         }
       },
       "propertiesDescription": {
         "radioButtonGroup": {
           "legendText": "라디오버튼 그룹의 라벨입니다.",
-          "checkedValue": "TODO: checked value",
+          "checkedValue": "라디오버튼의 value 프로퍼티와 일치하면, 해당 라디오버튼은 checked로 설정됩니다.",
           "disabled": "true를 할당하면, 모든 라디오 버튼은 disabled 상태가 됩니다.",
           "changeRadioButton": "사용자가 라디오버튼을 클릭 할 때 호출되는 콜백 함수입니다."
         },
         "radioButton": {
           "id": "라디오버튼의 id입니다. 라디오버튼을 구분하기 위해 사용됩니다.",
           "labelText": "라디오버튼의 라벨입니다.",
-          "value": "TODO: value"
+          "value": "라디오버튼의 value입니다."
         }
       }
     },
