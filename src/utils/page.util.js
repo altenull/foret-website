@@ -1,4 +1,4 @@
-import { PROPS_TABLE_COLUMNS } from '../constants/components';
+import { PROPS_TABLE_COLUMNS } from '../constants/components.constant';
 
 export const getCurrentPageRouteIndex = (pathname, pageRoutes) =>
   pageRoutes.findIndex((pageRoute) => pathname.includes(pageRoute.key));
