@@ -17,7 +17,7 @@ import {
   CHECKBOX_PROPS_WITHOUT_DESCRIPTION,
 } from '../../constants/components';
 import { ComponentFactorEnum } from '../../enums/components/component-factor.enum';
-import { useCheckboxSectionQuery } from '../../hooks';
+import { useCheckboxSectionQuery } from '../../hooks/components';
 import { getPropertiesOfComponentFactor, getPropsOfComponentFactor, getPropsTable } from '../../utils/components.utils';
 import { marginTopForHeading2, marginTopForHeading3, marginTopForSubtitle2 } from '../../utils/margin.utils';
 import { CodeViewer, ComponentDemoBox, ResponsiveContentLayout, TabContentWrapper } from '../common';
@@ -30,12 +30,12 @@ const sectionStyles = css`
 const CheckboxSection = ({ headingHash }) => {
   const intl = useIntl();
   const {
-    getImportCheckboxReact,
-    getImportCheckboxNg,
-    getDemoCheckboxReact,
-    getDemoCheckboxNg,
-    getDemoCheckboxDisabledReact,
-    getDemoCheckboxDisabledNg,
+    importCheckboxReactCode,
+    importCheckboxNgCode,
+    demoCheckboxReactCode,
+    demoCheckboxNgCode,
+    demoCheckboxDisabledReactCode,
+    demoCheckboxDisabledNgCode,
   } = useCheckboxSectionQuery();
 
   const getSharedOverviewContent = () => (
@@ -83,14 +83,14 @@ const CheckboxSection = ({ headingHash }) => {
           {intl.formatMessage({ id: 'components.shared.liveDemo' })}
         </MarginalHeading3>
         <Subtitle2>Default:</Subtitle2>
-        <ComponentDemoBox demo={getDemoCheckbox()} codeInHtml={getDemoCheckboxReact.nodes[0].html} />
+        <ComponentDemoBox demo={getDemoCheckbox()} codeInHtml={demoCheckboxReactCode.nodes[0].html} />
         <Subtitle2 css={marginTopForSubtitle2}>Disabled:</Subtitle2>
-        <ComponentDemoBox demo={getDemoCheckboxDisabled()} codeInHtml={getDemoCheckboxDisabledReact.nodes[0].html} />
+        <ComponentDemoBox demo={getDemoCheckboxDisabled()} codeInHtml={demoCheckboxDisabledReactCode.nodes[0].html} />
 
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.imports' })}
         </MarginalHeading3>
-        <CodeViewer codeInHtml={getImportCheckboxReact.nodes[0].html} />
+        <CodeViewer codeInHtml={importCheckboxReactCode.nodes[0].html} />
 
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.props' })}
@@ -125,14 +125,14 @@ const CheckboxSection = ({ headingHash }) => {
           {intl.formatMessage({ id: 'components.shared.liveDemo' })}
         </MarginalHeading3>
         <Subtitle2>Default:</Subtitle2>
-        <ComponentDemoBox demo={getDemoCheckbox()} codeInHtml={getDemoCheckboxNg.nodes[0].html} />
+        <ComponentDemoBox demo={getDemoCheckbox()} codeInHtml={demoCheckboxNgCode.nodes[0].html} />
         <Subtitle2 css={marginTopForSubtitle2}>Disabled:</Subtitle2>
-        <ComponentDemoBox demo={getDemoCheckboxDisabled()} codeInHtml={getDemoCheckboxDisabledNg.nodes[0].html} />
+        <ComponentDemoBox demo={getDemoCheckboxDisabled()} codeInHtml={demoCheckboxDisabledNgCode.nodes[0].html} />
 
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.imports' })}
         </MarginalHeading3>
-        <CodeViewer codeInHtml={getImportCheckboxNg.nodes[0].html} />
+        <CodeViewer codeInHtml={importCheckboxNgCode.nodes[0].html} />
 
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.properties' })}

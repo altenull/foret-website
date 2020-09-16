@@ -2,48 +2,48 @@ import { graphql, useStaticQuery } from 'gatsby';
 
 const useRadioButtonSectionQuery = () => {
   const {
-    getImportRadioButtonReact,
-    getImportRadioButtonNg,
-    getDemoRadioButtonReact,
-    getDemoRadioButtonNg,
-    getDemoRadioButtonDisabledReact,
-    getDemoRadioButtonDisabledNg,
+    importRadioButtonReactCode,
+    importRadioButtonNgCode,
+    demoRadioButtonReactCode,
+    demoRadioButtonNgCode,
+    demoRadioButtonDisabledReactCode,
+    demoRadioButtonDisabledNgCode,
   } = useStaticQuery(graphql`
     query {
-      getImportRadioButtonReact: allMarkdownRemark(
+      importRadioButtonReactCode: allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/import-radio-button-react.md/" } }
       ) {
         nodes {
           html
         }
       }
-      getImportRadioButtonNg: allMarkdownRemark(
+      importRadioButtonNgCode: allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/import-radio-button-ng.md/" } }
       ) {
         nodes {
           html
         }
       }
-      getDemoRadioButtonReact: allMarkdownRemark(
+      demoRadioButtonReactCode: allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/demo-radio-button-react.md/" } }
       ) {
         nodes {
           html
         }
       }
-      getDemoRadioButtonDisabledReact: allMarkdownRemark(
+      demoRadioButtonDisabledReactCode: allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/demo-radio-button-disabled-react.md/" } }
       ) {
         nodes {
           html
         }
       }
-      getDemoRadioButtonNg: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/demo-radio-button-ng.md/" } }) {
+      demoRadioButtonNgCode: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/demo-radio-button-ng.md/" } }) {
         nodes {
           html
         }
       }
-      getDemoRadioButtonDisabledNg: allMarkdownRemark(
+      demoRadioButtonDisabledNgCode: allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/demo-radio-button-disabled-ng.md/" } }
       ) {
         nodes {
@@ -54,12 +54,12 @@ const useRadioButtonSectionQuery = () => {
   `);
 
   const radioButtonSectionQueryResponse = {
-    getImportRadioButtonReact,
-    getImportRadioButtonNg,
-    getDemoRadioButtonReact,
-    getDemoRadioButtonNg,
-    getDemoRadioButtonDisabledReact,
-    getDemoRadioButtonDisabledNg,
+    importRadioButtonReactCode,
+    importRadioButtonNgCode,
+    demoRadioButtonReactCode,
+    demoRadioButtonNgCode,
+    demoRadioButtonDisabledReactCode,
+    demoRadioButtonDisabledNgCode,
   };
 
   return radioButtonSectionQueryResponse;

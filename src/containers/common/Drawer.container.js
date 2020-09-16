@@ -5,7 +5,7 @@ import { Link } from 'gatsby';
 import { IntlContextConsumer, useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
 import { LanguageLink } from '../../components/common';
-import { useSiteMetadataQuery } from '../../hooks';
+import { useSiteMetadataQuery } from '../../hooks/core';
 
 const drawerStyles = css`
   position: fixed;

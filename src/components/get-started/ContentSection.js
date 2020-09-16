@@ -2,7 +2,8 @@ import { MarginalHeading2, MarginalParagraph, Subtitle1, Subtitle2, Tab, TabGrou
 import { css } from '@emotion/core';
 import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
-import { useGetStartedContentSectionQuery, useSiteMetadataQuery } from '../../hooks';
+import { useSiteMetadataQuery } from '../../hooks/core';
+import { useGetStartedContentSectionQuery } from '../../hooks/get-started';
 import { marginTopForHeading2, marginTopForSubtitle2 } from '../../utils/margin.utils';
 import { CodeViewer, ResponsiveContentLayout, TabContentWrapper } from '../common';
 

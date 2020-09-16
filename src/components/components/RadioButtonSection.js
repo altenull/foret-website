@@ -17,7 +17,7 @@ import {
   RADIO_BUTTON_PROPS_WITHOUT_DESCRIPTION,
 } from '../../constants/components';
 import { ComponentFactorEnum } from '../../enums/components/component-factor.enum';
-import { useRadioButtonSectionQuery } from '../../hooks';
+import { useRadioButtonSectionQuery } from '../../hooks/components';
 import { getPropertiesOfComponentFactor, getPropsOfComponentFactor, getPropsTable } from '../../utils/components.utils';
 import { marginTopForHeading2, marginTopForHeading3, marginTopForSubtitle2 } from '../../utils/margin.utils';
 import { CodeViewer, ComponentDemoBox, ResponsiveContentLayout, TabContentWrapper } from '../common';
@@ -30,12 +30,12 @@ const sectionStyles = css`
 const RadioButtonSection = ({ headingHash }) => {
   const intl = useIntl();
   const {
-    getImportRadioButtonReact,
-    getImportRadioButtonNg,
-    getDemoRadioButtonReact,
-    getDemoRadioButtonNg,
-    getDemoRadioButtonDisabledReact,
-    getDemoRadioButtonDisabledNg,
+    importRadioButtonReactCode,
+    importRadioButtonNgCode,
+    demoRadioButtonReactCode,
+    demoRadioButtonNgCode,
+    demoRadioButtonDisabledReactCode,
+    demoRadioButtonDisabledNgCode,
   } = useRadioButtonSectionQuery();
 
   const getSharedOverviewContent = () => (
@@ -83,17 +83,17 @@ const RadioButtonSection = ({ headingHash }) => {
           {intl.formatMessage({ id: 'components.shared.liveDemo' })}
         </MarginalHeading3>
         <Subtitle2>Default:</Subtitle2>
-        <ComponentDemoBox demo={getDemoRadioButton()} codeInHtml={getDemoRadioButtonReact.nodes[0].html} />
+        <ComponentDemoBox demo={getDemoRadioButton()} codeInHtml={demoRadioButtonReactCode.nodes[0].html} />
         <Subtitle2 css={marginTopForSubtitle2}>Disabled:</Subtitle2>
         <ComponentDemoBox
           demo={getDemoRadioButtonDisabled()}
-          codeInHtml={getDemoRadioButtonDisabledReact.nodes[0].html}
+          codeInHtml={demoRadioButtonDisabledReactCode.nodes[0].html}
         />
 
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.imports' })}
         </MarginalHeading3>
-        <CodeViewer codeInHtml={getImportRadioButtonReact.nodes[0].html} />
+        <CodeViewer codeInHtml={importRadioButtonReactCode.nodes[0].html} />
 
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.props' })}
@@ -128,14 +128,17 @@ const RadioButtonSection = ({ headingHash }) => {
           {intl.formatMessage({ id: 'components.shared.liveDemo' })}
         </MarginalHeading3>
         <Subtitle2>Default:</Subtitle2>
-        <ComponentDemoBox demo={getDemoRadioButton()} codeInHtml={getDemoRadioButtonNg.nodes[0].html} />
+        <ComponentDemoBox demo={getDemoRadioButton()} codeInHtml={demoRadioButtonNgCode.nodes[0].html} />
         <Subtitle2 css={marginTopForSubtitle2}>Disabled:</Subtitle2>
-        <ComponentDemoBox demo={getDemoRadioButtonDisabled()} codeInHtml={getDemoRadioButtonDisabledNg.nodes[0].html} />
+        <ComponentDemoBox
+          demo={getDemoRadioButtonDisabled()}
+          codeInHtml={demoRadioButtonDisabledNgCode.nodes[0].html}
+        />
 
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.imports' })}
         </MarginalHeading3>
-        <CodeViewer codeInHtml={getImportRadioButtonNg.nodes[0].html} />
+        <CodeViewer codeInHtml={importRadioButtonNgCode.nodes[0].html} />
 
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.properties' })}

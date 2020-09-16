@@ -4,7 +4,7 @@ import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
 import { TOGGLE_PROPS_WITHOUT_DESCRIPTION, TOGGLE_PROPERTIES_WITHOUT_DESCRIPTION } from '../../constants/components';
 import { ComponentFactorEnum } from '../../enums/components/component-factor.enum';
-import { useToggleSectionQuery } from '../../hooks';
+import { useToggleSectionQuery } from '../../hooks/components';
 import { getPropertiesOfComponentFactor, getPropsOfComponentFactor, getPropsTable } from '../../utils/components.utils';
 import { marginTopForHeading2, marginTopForHeading3, marginTopForSubtitle2 } from '../../utils/margin.utils';
 import { CodeViewer, ComponentDemoBox, DemoDivider, ResponsiveContentLayout, TabContentWrapper } from '../common';
@@ -17,12 +17,12 @@ const sectionStyles = css`
 const ToggleSection = ({ headingHash }) => {
   const intl = useIntl();
   const {
-    getImportToggleReact,
-    getImportToggleNg,
-    getDemoToggleReact,
-    getDemoToggleNg,
-    getDemoToggleDisabledReact,
-    getDemoToggleDisabledNg,
+    importToggleReactCode,
+    importToggleNgCode,
+    demoToggleReactCode,
+    demoToggleNgCode,
+    demoToggleDisabledReactCode,
+    demoToggleDisabledNgCode,
   } = useToggleSectionQuery();
 
   const getSharedOverviewContent = () => (
@@ -64,14 +64,14 @@ const ToggleSection = ({ headingHash }) => {
           {intl.formatMessage({ id: 'components.shared.liveDemo' })}
         </MarginalHeading3>
         <Subtitle2>Default:</Subtitle2>
-        <ComponentDemoBox demo={getDemoToggle()} codeInHtml={getDemoToggleReact.nodes[0].html} />
+        <ComponentDemoBox demo={getDemoToggle()} codeInHtml={demoToggleReactCode.nodes[0].html} />
         <Subtitle2 css={marginTopForSubtitle2}>Disabled:</Subtitle2>
-        <ComponentDemoBox demo={getDemoToggleDisabled()} codeInHtml={getDemoToggleDisabledReact.nodes[0].html} />
+        <ComponentDemoBox demo={getDemoToggleDisabled()} codeInHtml={demoToggleDisabledReactCode.nodes[0].html} />
 
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.imports' })}
         </MarginalHeading3>
-        <CodeViewer codeInHtml={getImportToggleReact.nodes[0].html} />
+        <CodeViewer codeInHtml={importToggleReactCode.nodes[0].html} />
 
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.props' })}
@@ -97,14 +97,14 @@ const ToggleSection = ({ headingHash }) => {
           {intl.formatMessage({ id: 'components.shared.liveDemo' })}
         </MarginalHeading3>
         <Subtitle2>Default:</Subtitle2>
-        <ComponentDemoBox demo={getDemoToggle()} codeInHtml={getDemoToggleNg.nodes[0].html} />
+        <ComponentDemoBox demo={getDemoToggle()} codeInHtml={demoToggleNgCode.nodes[0].html} />
         <Subtitle2 css={marginTopForSubtitle2}>Disabled:</Subtitle2>
-        <ComponentDemoBox demo={getDemoToggleDisabled()} codeInHtml={getDemoToggleDisabledNg.nodes[0].html} />
+        <ComponentDemoBox demo={getDemoToggleDisabled()} codeInHtml={demoToggleDisabledNgCode.nodes[0].html} />
 
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.imports' })}
         </MarginalHeading3>
-        <CodeViewer codeInHtml={getImportToggleNg.nodes[0].html} />
+        <CodeViewer codeInHtml={importToggleNgCode.nodes[0].html} />
 
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.properties' })}

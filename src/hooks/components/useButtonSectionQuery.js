@@ -2,46 +2,46 @@ import { graphql, useStaticQuery } from 'gatsby';
 
 const useButtonSectionQuery = () => {
   const {
-    getImportButtonReact,
-    getImportButtonNg,
-    getDemoPrimaryButtonReact,
-    getDemoSecondaryButtonReact,
-    getDemoPrimaryButtonNg,
-    getDemoSecondaryButtonNg,
+    importButtonReactCode,
+    importButtonNgCode,
+    demoPrimaryButtonReactCode,
+    demoSecondaryButtonReactCode,
+    demoPrimaryButtonNgCode,
+    demoSecondaryButtonNgCode,
   } = useStaticQuery(graphql`
     query {
-      getImportButtonReact: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/import-button-react.md/" } }) {
+      importButtonReactCode: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/import-button-react.md/" } }) {
         nodes {
           html
         }
       }
-      getImportButtonNg: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/import-button-ng.md/" } }) {
+      importButtonNgCode: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/import-button-ng.md/" } }) {
         nodes {
           html
         }
       }
-      getDemoPrimaryButtonReact: allMarkdownRemark(
+      demoPrimaryButtonReactCode: allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/demo-primary-button-react.md/" } }
       ) {
         nodes {
           html
         }
       }
-      getDemoSecondaryButtonReact: allMarkdownRemark(
+      demoSecondaryButtonReactCode: allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/demo-secondary-button-react.md/" } }
       ) {
         nodes {
           html
         }
       }
-      getDemoPrimaryButtonNg: allMarkdownRemark(
+      demoPrimaryButtonNgCode: allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/demo-primary-button-ng.md/" } }
       ) {
         nodes {
           html
         }
       }
-      getDemoSecondaryButtonNg: allMarkdownRemark(
+      demoSecondaryButtonNgCode: allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/demo-secondary-button-ng.md/" } }
       ) {
         nodes {
@@ -52,12 +52,12 @@ const useButtonSectionQuery = () => {
   `);
 
   const buttonSectionQueryResponse = {
-    getImportButtonReact,
-    getImportButtonNg,
-    getDemoPrimaryButtonReact,
-    getDemoSecondaryButtonReact,
-    getDemoPrimaryButtonNg,
-    getDemoSecondaryButtonNg,
+    importButtonReactCode,
+    importButtonNgCode,
+    demoPrimaryButtonReactCode,
+    demoSecondaryButtonReactCode,
+    demoPrimaryButtonNgCode,
+    demoSecondaryButtonNgCode,
   };
 
   return buttonSectionQueryResponse;

@@ -18,7 +18,7 @@ import {
   SELECT_PROPS_WITHOUT_DESCRIPTION,
 } from '../../constants/components';
 import { ComponentFactorEnum } from '../../enums/components/component-factor.enum';
-import { useSelectSectionQuery } from '../../hooks';
+import { useSelectSectionQuery } from '../../hooks/components';
 import { getPropertiesOfComponentFactor, getPropsOfComponentFactor, getPropsTable } from '../../utils/components.utils';
 import { marginTopForHeading2, marginTopForHeading3, marginTopForSubtitle2 } from '../../utils/margin.utils';
 import { CodeViewer, ComponentDemoBox, ResponsiveContentLayout, TabContentWrapper } from '../common';
@@ -31,16 +31,16 @@ const sectionStyles = css`
 const SelectSection = ({ headingHash }) => {
   const intl = useIntl();
   const {
-    getImportSelectReact,
-    getImportSelectNg,
-    getDemoSelectReact,
-    getDemoSelectNg,
-    getDemoSelectGroupedReact,
-    getDemoSelectGroupedNg,
-    getDemoSelectWithPlaceholderReact,
-    getDemoSelectWithPlaceholderNg,
-    getDemoSelectDisabledReact,
-    getDemoSelectDisabledNg,
+    importSelectReactCode,
+    importSelectNgCode,
+    demoSelectReactCode,
+    demoSelectNgCode,
+    demoSelectGroupedReactCode,
+    demoSelectGroupedNgCode,
+    demoSelectWithPlaceholderReactCode,
+    demoSelectWithPlaceholderNgCode,
+    demoSelectDisabledReactCode,
+    demoSelectDisabledNgCode,
   } = useSelectSectionQuery();
 
   const getSharedOverviewContent = () => (
@@ -127,21 +127,21 @@ const SelectSection = ({ headingHash }) => {
           {intl.formatMessage({ id: 'components.shared.liveDemo' })}
         </MarginalHeading3>
         <Subtitle2>Default:</Subtitle2>
-        <ComponentDemoBox demo={getDemoSelect()} codeInHtml={getDemoSelectReact.nodes[0].html} />
+        <ComponentDemoBox demo={getDemoSelect()} codeInHtml={demoSelectReactCode.nodes[0].html} />
         <Subtitle2 css={marginTopForSubtitle2}>Grouped:</Subtitle2>
-        <ComponentDemoBox demo={getDemoSelectGrouped()} codeInHtml={getDemoSelectGroupedReact.nodes[0].html} />
+        <ComponentDemoBox demo={getDemoSelectGrouped()} codeInHtml={demoSelectGroupedReactCode.nodes[0].html} />
         <Subtitle2 css={marginTopForSubtitle2}>With placeholder:</Subtitle2>
         <ComponentDemoBox
           demo={getDemoSelectWithPlaceholder()}
-          codeInHtml={getDemoSelectWithPlaceholderReact.nodes[0].html}
+          codeInHtml={demoSelectWithPlaceholderReactCode.nodes[0].html}
         />
         <Subtitle2 css={marginTopForSubtitle2}>Disabled:</Subtitle2>
-        <ComponentDemoBox demo={getDemoSelectDisabled()} codeInHtml={getDemoSelectDisabledReact.nodes[0].html} />
+        <ComponentDemoBox demo={getDemoSelectDisabled()} codeInHtml={demoSelectDisabledReactCode.nodes[0].html} />
 
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.imports' })}
         </MarginalHeading3>
-        <CodeViewer codeInHtml={getImportSelectReact.nodes[0].html} />
+        <CodeViewer codeInHtml={importSelectReactCode.nodes[0].html} />
 
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.props' })}
@@ -171,21 +171,21 @@ const SelectSection = ({ headingHash }) => {
           {intl.formatMessage({ id: 'components.shared.liveDemo' })}
         </MarginalHeading3>
         <Subtitle2>Default:</Subtitle2>
-        <ComponentDemoBox demo={getDemoSelect()} codeInHtml={getDemoSelectNg.nodes[0].html} />
+        <ComponentDemoBox demo={getDemoSelect()} codeInHtml={demoSelectNgCode.nodes[0].html} />
         <Subtitle2 css={marginTopForSubtitle2}>Grouped:</Subtitle2>
-        <ComponentDemoBox demo={getDemoSelectGrouped()} codeInHtml={getDemoSelectGroupedNg.nodes[0].html} />
+        <ComponentDemoBox demo={getDemoSelectGrouped()} codeInHtml={demoSelectGroupedNgCode.nodes[0].html} />
         <Subtitle2 css={marginTopForSubtitle2}>With placeholder:</Subtitle2>
         <ComponentDemoBox
           demo={getDemoSelectWithPlaceholder()}
-          codeInHtml={getDemoSelectWithPlaceholderNg.nodes[0].html}
+          codeInHtml={demoSelectWithPlaceholderNgCode.nodes[0].html}
         />
         <Subtitle2 css={marginTopForSubtitle2}>Disabled:</Subtitle2>
-        <ComponentDemoBox demo={getDemoSelectDisabled()} codeInHtml={getDemoSelectDisabledNg.nodes[0].html} />
+        <ComponentDemoBox demo={getDemoSelectDisabled()} codeInHtml={demoSelectDisabledNgCode.nodes[0].html} />
 
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.imports' })}
         </MarginalHeading3>
-        <CodeViewer codeInHtml={getImportSelectNg.nodes[0].html} />
+        <CodeViewer codeInHtml={importSelectNgCode.nodes[0].html} />
 
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.properties' })}

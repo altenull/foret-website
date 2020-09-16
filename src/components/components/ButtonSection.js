@@ -12,7 +12,7 @@ import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
 import { BUTTON_PROPS_WITHOUT_DESCRIPTION } from '../../constants/components';
 import { ComponentFactorEnum } from '../../enums/components/component-factor.enum';
-import { useButtonSectionQuery } from '../../hooks';
+import { useButtonSectionQuery } from '../../hooks/components';
 import { getPropsOfComponentFactor, getPropsTable } from '../../utils/components.utils';
 import { marginTopForHeading3, marginTopForSubtitle2 } from '../../utils/margin.utils';
 import { CodeViewer, ComponentDemoBox, DemoDivider, ResponsiveContentLayout, TabContentWrapper } from '../common';
@@ -25,12 +25,12 @@ const sectionStyles = css`
 const ButtonSection = ({ headingHash }) => {
   const intl = useIntl();
   const {
-    getImportButtonReact,
-    getImportButtonNg,
-    getDemoPrimaryButtonReact,
-    getDemoSecondaryButtonReact,
-    getDemoPrimaryButtonNg,
-    getDemoSecondaryButtonNg,
+    importButtonReactCode,
+    importButtonNgCode,
+    demoPrimaryButtonReactCode,
+    demoSecondaryButtonReactCode,
+    demoPrimaryButtonNgCode,
+    demoSecondaryButtonNgCode,
   } = useButtonSectionQuery();
 
   const getSharedOverviewContent = () => (
@@ -72,14 +72,14 @@ const ButtonSection = ({ headingHash }) => {
           {intl.formatMessage({ id: 'components.shared.liveDemo' })}
         </MarginalHeading3>
         <Subtitle2>Primary Button:</Subtitle2>
-        <ComponentDemoBox demo={getDemoPrimaryButton()} codeInHtml={getDemoPrimaryButtonReact.nodes[0].html} />
+        <ComponentDemoBox demo={getDemoPrimaryButton()} codeInHtml={demoPrimaryButtonReactCode.nodes[0].html} />
         <Subtitle2 css={marginTopForSubtitle2}>Secondary Button:</Subtitle2>
-        <ComponentDemoBox demo={getDemoSecondaryButton()} codeInHtml={getDemoSecondaryButtonReact.nodes[0].html} />
+        <ComponentDemoBox demo={getDemoSecondaryButton()} codeInHtml={demoSecondaryButtonReactCode.nodes[0].html} />
 
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.imports' })}
         </MarginalHeading3>
-        <CodeViewer codeInHtml={getImportButtonReact.nodes[0].html} />
+        <CodeViewer codeInHtml={importButtonReactCode.nodes[0].html} />
 
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.props' })}
@@ -97,14 +97,14 @@ const ButtonSection = ({ headingHash }) => {
         {intl.formatMessage({ id: 'components.shared.liveDemo' })}
       </MarginalHeading3>
       <Subtitle2>Primary Button:</Subtitle2>
-      <ComponentDemoBox demo={getDemoPrimaryButton()} codeInHtml={getDemoPrimaryButtonNg.nodes[0].html} />
+      <ComponentDemoBox demo={getDemoPrimaryButton()} codeInHtml={demoPrimaryButtonNgCode.nodes[0].html} />
       <Subtitle2 css={marginTopForSubtitle2}>Secondary Button:</Subtitle2>
-      <ComponentDemoBox demo={getDemoSecondaryButton()} codeInHtml={getDemoSecondaryButtonNg.nodes[0].html} />
+      <ComponentDemoBox demo={getDemoSecondaryButton()} codeInHtml={demoSecondaryButtonNgCode.nodes[0].html} />
 
       <MarginalHeading3 css={marginTopForHeading3}>
         {intl.formatMessage({ id: 'components.shared.imports' })}
       </MarginalHeading3>
-      <CodeViewer codeInHtml={getImportButtonNg.nodes[0].html} />
+      <CodeViewer codeInHtml={importButtonNgCode.nodes[0].html} />
     </TabContentWrapper>
   );
 

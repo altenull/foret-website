@@ -9,7 +9,7 @@ import {
   TAB_PROPS_WITHOUT_DESCRIPTION,
 } from '../../constants/components';
 import { ComponentFactorEnum } from '../../enums/components/component-factor.enum';
-import { useTabSectionQuery } from '../../hooks';
+import { useTabSectionQuery } from '../../hooks/components';
 import { getPropertiesOfComponentFactor, getPropsOfComponentFactor, getPropsTable } from '../../utils/components.utils';
 import { marginTopForHeading2, marginTopForHeading3, marginTopForSubtitle2 } from '../../utils/margin.utils';
 import { CodeViewer, ComponentDemoBox, ResponsiveContentLayout, TabContentWrapper } from '../common';
@@ -21,7 +21,7 @@ const sectionStyles = css`
 
 const TabSection = ({ headingHash }) => {
   const intl = useIntl();
-  const { getImportTabReact, getImportTabNg, getDemoTabReact, getDemoTabNg } = useTabSectionQuery();
+  const { importTabReactCode, importTabNgCode, demoTabReactCode, demoTabNgCode } = useTabSectionQuery();
 
   const getSharedOverviewContent = () => (
     <Fragment>
@@ -64,12 +64,12 @@ const TabSection = ({ headingHash }) => {
           {intl.formatMessage({ id: 'components.shared.liveDemo' })}
         </MarginalHeading3>
         <Subtitle2>Default:</Subtitle2>
-        <ComponentDemoBox demo={getDemoTab()} codeInHtml={getDemoTabReact.nodes[0].html} />
+        <ComponentDemoBox demo={getDemoTab()} codeInHtml={demoTabReactCode.nodes[0].html} />
 
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.imports' })}
         </MarginalHeading3>
-        <CodeViewer codeInHtml={getImportTabReact.nodes[0].html} />
+        <CodeViewer codeInHtml={importTabReactCode.nodes[0].html} />
 
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.props' })}
@@ -103,12 +103,12 @@ const TabSection = ({ headingHash }) => {
           {intl.formatMessage({ id: 'components.shared.liveDemo' })}
         </MarginalHeading3>
         <Subtitle2>Default:</Subtitle2>
-        <ComponentDemoBox demo={getDemoTab()} codeInHtml={getDemoTabNg.nodes[0].html} />
+        <ComponentDemoBox demo={getDemoTab()} codeInHtml={demoTabNgCode.nodes[0].html} />
 
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.imports' })}
         </MarginalHeading3>
-        <CodeViewer codeInHtml={getImportTabNg.nodes[0].html} />
+        <CodeViewer codeInHtml={importTabNgCode.nodes[0].html} />
 
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.properties' })}

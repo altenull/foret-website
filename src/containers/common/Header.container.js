@@ -7,7 +7,8 @@ import ReactDOM from 'react-dom';
 import { HeaderLogo } from '../../components/common';
 import { HamburgerIcon } from '../../components/icons';
 import { BreakpointEnum } from '../../enums/core/breakpoint.enum';
-import { useIsMounted, useLogoImageQuery, useSiteMetadataQuery } from '../../hooks';
+import { useLogoImageQuery } from '../../hooks/common';
+import { useIsMounted, useSiteMetadataQuery } from '../../hooks/core';
 import { mediaQuery } from '../../utils/media-query.utils';
 import DrawerContainer from './Drawer.container';
 

@@ -16,7 +16,7 @@ import {
   TabSection,
 } from '../components/components';
 import { ComponentHashEnum } from '../enums/components/component-hash.enum';
-import { useSiteMetadataQuery } from '../hooks';
+import { useSiteMetadataQuery } from '../hooks/core';
 import { getCurrentPageRouteIndex, getPageNavigationLinks, getPageTitle } from '../utils/page.utils';
 
 const layoutStyles = css`

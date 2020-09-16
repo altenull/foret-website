@@ -4,7 +4,7 @@ import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 import { Layout, PageNavigationSection } from '../components/common';
-import { useSiteMetadataQuery } from '../hooks';
+import { useSiteMetadataQuery } from '../hooks/core';
 import { getCurrentPageRouteIndex, getPageNavigationLinks, getPageTitle } from '../utils/page.utils';
 
 const layoutStyles = css`
