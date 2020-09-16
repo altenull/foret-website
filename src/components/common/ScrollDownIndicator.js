@@ -18,12 +18,21 @@ const breatheDown = keyframes`
 `;
 
 const scrollDownIndicatorStyles = (hasScrolledDown) => css`
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 128px;
   padding: 8px;
-  animation: ${!hasScrolledDown && breatheDown} 3.2s infinite;
+  margin: 0 auto;
+  z-index: 500; /* TODO: Manage z-index in one place */
+  transition: opacity 0.3s ease-in-out;
+  opacity: ${hasScrolledDown ? '0' : '1'};
+  pointer-events: ${hasScrolledDown && 'none'};
+  animation: ${breatheDown} 3.2s infinite;
 `;
 
-const ScrollDownIndicator = ({ hasScrolledDown = false }) => {
-  return <ArrowDownIcon css={scrollDownIndicatorStyles(hasScrolledDown)} />;
+const ScrollDownIndicator = ({ hasScrolledDown = false, ...props }) => {
+  return <ArrowDownIcon css={scrollDownIndicatorStyles(hasScrolledDown)} {...props} />;
 };
 
 export default ScrollDownIndicator;
