@@ -13,6 +13,7 @@ import {
   SelectSection,
   TOC,
   ToggleSection,
+  TabSection,
 } from '../components/components';
 import { ComponentHashEnum } from '../enums/components/component-hash.enum';
 import { useSiteMetadataQuery } from '../hooks';
@@ -34,6 +35,7 @@ const ComponentsPage = ({ location }) => {
     ComponentHashEnum.Checkbox,
     ComponentHashEnum.RadioButton,
     ComponentHashEnum.Select,
+    ComponentHashEnum.Tab,
     ComponentHashEnum.Toggle,
   ];
 
@@ -110,6 +112,7 @@ const ComponentsPage = ({ location }) => {
       [ComponentHashEnum.Checkbox]: CheckboxSection,
       [ComponentHashEnum.RadioButton]: RadioButtonSection,
       [ComponentHashEnum.Select]: SelectSection,
+      [ComponentHashEnum.Tab]: TabSection,
       [ComponentHashEnum.Toggle]: ToggleSection,
     };
 
@@ -126,6 +129,7 @@ const ComponentsPage = ({ location }) => {
       [ComponentHashEnum.Checkbox]: 'components.checkbox.title',
       [ComponentHashEnum.RadioButton]: 'components.radioButton.title',
       [ComponentHashEnum.Select]: 'components.select.title',
+      [ComponentHashEnum.Tab]: 'components.tab.title',
       [ComponentHashEnum.Toggle]: 'components.toggle.title',
     };
 

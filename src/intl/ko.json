@@ -181,6 +181,35 @@
         }
       }
     },
+    "tab": {
+      "title": "Tab",
+      "description": "콘텐트를 분리합니다.",
+      "overview": {
+        "description": "Tab 설명.."
+      },
+      "propsDescription": {
+        "tabGroup": {
+          "selectedValue": "탭의 value 프로퍼티와 일치하면, 해당 탭이 선택됩니다.",
+          "onChange": "사용자가 하나의 탭을 선택할 때 호출되는 콜백 함수입니다."
+        },
+        "tab": {
+          "id": "탭의 id입니다. 탭을 구분하기 위해 사용됩니다.",
+          "labelText": "탭의 라벨입니다.",
+          "value": "탭의 value입니다."
+        }
+      },
+      "propertiesDescription": {
+        "tabGroup": {
+          "selectedValue": "탭의 value 프로퍼티와 일치하면, 해당 탭이 선택됩니다.",
+          "changeTab": "사용자가 하나의 탭을 선택할 때 호출되는 콜백 함수입니다."
+        },
+        "tab": {
+          "id": "탭의 id입니다. 탭을 구분하기 위해 사용됩니다.",
+          "labelText": "탭의 라벨입니다.",
+          "value": "탭의 value입니다."
+        }
+      }
+    },
     "toggle": {
       "title": "Toggle",
       "description": "Toggle 컴포넌트는 is used to quickly switch between two possible states. They are commonly used for “on/off” switches.",

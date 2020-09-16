@@ -5,5 +5,6 @@ export const ComponentHashEnum = Object.freeze({
   Checkbox: `#${ComponentFactorEnum.Checkbox}`,
   RadioButton: `#${ComponentFactorEnum.RadioButton}`,
   Select: `#${ComponentFactorEnum.Select}`,
+  Tab: `#${ComponentFactorEnum.Tab}`,
   Toggle: `#${ComponentFactorEnum.Toggle}`,
 });

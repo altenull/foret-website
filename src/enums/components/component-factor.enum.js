@@ -3,5 +3,6 @@ export const ComponentFactorEnum = Object.freeze({
   Checkbox: 'checkbox',
   RadioButton: 'radioButton',
   Select: 'select',
+  Tab: 'tab',
   Toggle: 'toggle',
 });

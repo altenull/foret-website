@@ -56,6 +56,20 @@ const VALUE_SUB_PROP = {
   default: '',
 };
 
+const VALUE_SUB_PROPERTY = {
+  key: 'value',
+  name: '@Input()\nvalue',
+  type: 'string',
+  default: '',
+};
+
+const SELECTED_VALUE_SUB_PROP = {
+  key: 'selectedValue',
+  name: 'selectedValue',
+  type: 'string',
+  default: '',
+};
+
 const CHECKED_SUB_PROP = {
   key: 'checked',
   name: 'checked',
@@ -159,24 +173,14 @@ export const RADIO_BUTTON_GROUP_PROPERTIES_WITHOUT_DESCRIPTION = [
 export const RADIO_BUTTON_PROPERTIES_WITHOUT_DESCRIPTION = [
   ID_SUB_PROPERTY,
   LABEL_TEXT_SUB_PROPERTY,
-  {
-    key: 'value',
-    name: '@Input()\nvalue',
-    type: 'string',
-    default: '',
-  },
+  VALUE_SUB_PROPERTY,
 ];
 
 export const SELECT_PROPS_WITHOUT_DESCRIPTION = [
   ID_SUB_PROP,
   LEGEND_TEXT_SUB_PROP,
   DISABLED_SUB_PROP,
-  {
-    key: 'selectedValue',
-    name: 'selectedValue',
-    type: 'string',
-    default: '',
-  },
+  SELECTED_VALUE_SUB_PROP,
   {
     key: 'placeholder',
     name: 'placeholder',
@@ -212,6 +216,35 @@ export const SELECT_PROPERTIES_WITHOUT_DESCRIPTION = [
     default: '',
   },
 ];
+
+export const TAB_GROUP_PROPS_WITHOUT_DESCRIPTION = [
+  SELECTED_VALUE_SUB_PROP,
+  {
+    key: 'onChange',
+    name: 'onChange',
+    type: 'function(id: string, newSelectedValue: string)',
+    default: '',
+  },
+];
+
+export const TAB_PROPS_WITHOUT_DESCRIPTION = [ID_SUB_PROP, LABEL_TEXT_SUB_PROP, VALUE_SUB_PROP];
+
+export const TAB_GROUP_PROPERTIES_WITHOUT_DESCRIPTION = [
+  {
+    key: 'selectedValue',
+    name: '@Input()\nselectedValue',
+    type: 'string',
+    default: '',
+  },
+  {
+    key: 'changeTab',
+    name: '@Output()\nchangeTab',
+    type: 'function({ id: string, newSelectedValue: string })',
+    default: '',
+  },
+];
+
+export const TAB_PROPERTIES_WITHOUT_DESCRIPTION = [ID_SUB_PROPERTY, LABEL_TEXT_SUB_PROPERTY, VALUE_SUB_PROPERTY];
 
 export const TOGGLE_PROPS_WITHOUT_DESCRIPTION = [
   ID_SUB_PROP,

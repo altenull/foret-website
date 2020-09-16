@@ -181,6 +181,35 @@
         }
       }
     },
+    "tab": {
+      "title": "Tab",
+      "description": "Separates content into groups within a single context.",
+      "overview": {
+        "description": "Tab description here"
+      },
+      "propsDescription": {
+        "tabGroup": {
+          "selectedValue": "If it matches the value property of the tab, that tab will be selected.",
+          "onChange": "Callback function to invoke when the user clicks on the tab."
+        },
+        "tab": {
+          "id": "The id of tab. It's used to identifies the tab.",
+          "labelText": "The label of a tab.",
+          "value": "The value of a tab."
+        }
+      },
+      "propertiesDescription": {
+        "tabGroup": {
+          "selectedValue": "If it matches the value property of the tab, that tab will be selected.",
+          "changeTab": "Callback function to invoke when the user clicks on the tab."
+        },
+        "tab": {
+          "id": "The id of tab. It's used to identifies the tab.",
+          "labelText": "The label of a tab.",
+          "value": "The value of a tab."
+        }
+      }
+    },
     "toggle": {
       "title": "Toggle",
       "description": "A toggle is used to quickly switch between two possible states. They are commonly used for “on/off” switches.",
