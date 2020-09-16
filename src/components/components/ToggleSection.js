@@ -5,8 +5,8 @@ import React, { Fragment } from 'react';
 import { TOGGLE_PROPS_WITHOUT_DESCRIPTION, TOGGLE_PROPERTIES_WITHOUT_DESCRIPTION } from '../../constants/components';
 import { ComponentFactorEnum } from '../../enums/components/component-factor.enum';
 import { useToggleSectionQuery } from '../../hooks/components';
-import { getPropertiesOfComponentFactor, getPropsOfComponentFactor, getPropsTable } from '../../utils/components.utils';
-import { marginTopForHeading2, marginTopForHeading3, marginTopForSubtitle2 } from '../../utils/margin.utils';
+import { getPropertiesOfComponentFactor, getPropsOfComponentFactor, getPropsTable } from '../../utils/components.util';
+import { marginTopForHeading2, marginTopForHeading3, marginTopForSubtitle2 } from '../../utils/margin.util';
 import { CodeViewer, ComponentDemoBox, DemoDivider, ResponsiveContentLayout, TabContentWrapper } from '../common';
 import AnchorMarginalHeading2 from './AnchorMarginalHeading2';
 

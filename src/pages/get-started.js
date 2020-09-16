@@ -6,7 +6,7 @@ import { Helmet } from 'react-helmet';
 import { Layout, PageNavigationSection } from '../components/common';
 import { ContentSection, HeroSection } from '../components/get-started';
 import { useSiteMetadataQuery } from '../hooks/core';
-import { getCurrentPageRouteIndex, getPageNavigationLinks, getPageTitle } from '../utils/page.utils';
+import { getCurrentPageRouteIndex, getPageNavigationLinks, getPageTitle } from '../utils/page.util';
 
 const layoutStyles = css`
   background-color: ${Color.Paper};

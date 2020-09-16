@@ -9,7 +9,7 @@ import { HamburgerIcon } from '../../components/icons';
 import { BreakpointEnum } from '../../enums/core/breakpoint.enum';
 import { useLogoImageQuery } from '../../hooks/common';
 import { useIsMounted, useSiteMetadataQuery } from '../../hooks/core';
-import { mediaQuery } from '../../utils/media-query.utils';
+import { mediaQuery } from '../../utils/media-query.util';
 import DrawerContainer from './Drawer.container';
 
 const headerStyles = css`

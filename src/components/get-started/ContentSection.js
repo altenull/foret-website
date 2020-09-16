@@ -4,7 +4,7 @@ import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
 import { useSiteMetadataQuery } from '../../hooks/core';
 import { useGetStartedContentSectionQuery } from '../../hooks/get-started';
-import { marginTopForHeading2, marginTopForSubtitle2 } from '../../utils/margin.utils';
+import { marginTopForHeading2, marginTopForSubtitle2 } from '../../utils/margin.util';
 import { CodeViewer, ResponsiveContentLayout, TabContentWrapper } from '../common';
 
 const anchorStyles = css`
