@@ -3,7 +3,7 @@ import { SmallText } from '@altenull/foret-react';
 import { css } from '@emotion/core';
 import { IntlContextConsumer } from 'gatsby-plugin-intl';
 import React from 'react';
-import { LanguageLink } from '../../components/common';
+import { LanguageLink } from '../../components/foundation';
 
 const footerStyles = css`
   padding: 64px 128px;

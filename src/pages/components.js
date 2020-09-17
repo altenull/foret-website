@@ -4,17 +4,18 @@ import { navigate } from 'gatsby';
 import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment, useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
-import { Layout, PageNavigationSection } from '../components/common';
+import { PageNavigationSection } from '../components/common';
 import {
   ButtonSection,
   CheckboxSection,
   HeroSection,
   RadioButtonSection,
   SelectSection,
+  TabSection,
   TOC,
   ToggleSection,
-  TabSection,
 } from '../components/components';
+import { Layout } from '../components/foundation';
 import { ComponentHashEnum } from '../enums/components/component-hash.enum';
 import { useSiteMetadataQuery } from '../hooks/core';
 import { getCurrentPageRouteIndex, getPageNavigationLinks, getPageTitle } from '../utils/page.util';

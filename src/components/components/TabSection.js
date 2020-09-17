@@ -13,7 +13,8 @@ import { useTabSectionQuery } from '../../hooks/components';
 import { getPropertiesOfComponentFactor, getPropsOfComponentFactor, getPropsTable } from '../../utils/components.util';
 import { marginTopForHeading2, marginTopForHeading3, marginTopForSubtitle2 } from '../../utils/margin.util';
 import { CodeViewer, ComponentDemoBox } from '../code';
-import { ResponsiveContentLayout, TabContentWrapper } from '../common';
+import { TabContentWrapper } from '../common';
+import { ResponsiveContentLayout } from '../foundation';
 import AnchorMarginalHeading2 from './AnchorMarginalHeading2';
 
 const sectionStyles = css`

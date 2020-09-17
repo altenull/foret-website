@@ -4,7 +4,7 @@ import { css, Global } from '@emotion/core';
 import { Link } from 'gatsby';
 import { IntlContextConsumer, useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
-import { LanguageLink } from '../../components/common';
+import { LanguageLink } from '../../components/foundation';
 import { useSiteMetadataQuery } from '../../hooks/core';
 
 const drawerStyles = css`

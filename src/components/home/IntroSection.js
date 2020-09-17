@@ -3,7 +3,7 @@ import { Paragraph } from '@altenull/foret-react';
 import { css } from '@emotion/core';
 import { useIntl } from 'gatsby-plugin-intl';
 import React from 'react';
-import { ResponsiveContentLayout } from '../common';
+import { ResponsiveContentLayout } from '../foundation';
 
 const sectionStyles = css`
   padding: 8rem 0;

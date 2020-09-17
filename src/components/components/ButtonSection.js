@@ -16,7 +16,8 @@ import { useButtonSectionQuery } from '../../hooks/components';
 import { getPropsOfComponentFactor, getPropsTable } from '../../utils/components.util';
 import { marginTopForHeading3, marginTopForSubtitle2 } from '../../utils/margin.util';
 import { CodeViewer, ComponentDemoBox, DemoDivider } from '../code';
-import { ResponsiveContentLayout, TabContentWrapper } from '../common';
+import { TabContentWrapper } from '../common';
+import { ResponsiveContentLayout } from '../foundation';
 import AnchorMarginalHeading2 from './AnchorMarginalHeading2';
 
 const sectionStyles = css`

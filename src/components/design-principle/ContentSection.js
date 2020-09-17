@@ -1,7 +1,7 @@
 import { MarginalHeading2, MarginalParagraph } from '@altenull/foret-react';
 import { useIntl } from 'gatsby-plugin-intl';
 import React from 'react';
-import { ResponsiveContentLayout } from '../common';
+import { ResponsiveContentLayout } from '../foundation';
 
 const ContentSection = () => {
   const intl = useIntl();

@@ -3,7 +3,7 @@ import { css } from '@emotion/core';
 import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
-import { Layout } from '../components/common';
+import { Layout } from '../components/foundation';
 import { HeroSection, IntroSection } from '../components/home';
 
 const layoutStyles = css`

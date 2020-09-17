@@ -3,8 +3,9 @@ import { css } from '@emotion/core';
 import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
-import { Layout, PageNavigationSection } from '../components/common';
+import { PageNavigationSection } from '../components/common';
 import { ContentSection, HeroSection } from '../components/design-principle';
+import { Layout } from '../components/foundation';
 import { useSiteMetadataQuery } from '../hooks/core';
 import { getCurrentPageRouteIndex, getPageNavigationLinks, getPageTitle } from '../utils/page.util';
 

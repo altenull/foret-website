@@ -6,7 +6,8 @@ import { useSiteMetadataQuery } from '../../hooks/core';
 import { useGetStartedContentSectionQuery } from '../../hooks/get-started';
 import { marginTopForHeading2, marginTopForSubtitle2 } from '../../utils/margin.util';
 import { CodeViewer } from '../code';
-import { ResponsiveContentLayout, TabContentWrapper } from '../common';
+import { TabContentWrapper } from '../common';
+import { ResponsiveContentLayout } from '../foundation';
 
 const anchorStyles = css`
   text-decoration: none;
