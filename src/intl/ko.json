@@ -62,7 +62,8 @@
   },
   "color": {
     "hero": {
-      "title": "색상"
+      "title": "색상",
+      "subtitle1": "색상은 디자인 시스템의 기본 구성 요소이며 브랜드를 대표합니다."
     }
   },
   "components": {

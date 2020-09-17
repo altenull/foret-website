@@ -1,4 +1,4 @@
-import { MarginalHeading1 } from '@altenull/foret-react';
+import { MarginalHeading1, Subtitle1 } from '@altenull/foret-react';
 import { css } from '@emotion/core';
 import { useIntl } from 'gatsby-plugin-intl';
 import React from 'react';
@@ -23,6 +23,7 @@ const HeroSection = () => {
     <section css={sectionStyles}>
       <ResponsiveContentLayout css={responsiveContentLayoutStyles}>
         <MarginalHeading1>{intl.formatMessage({ id: 'color.hero.title' })}</MarginalHeading1>
+        <Subtitle1>{intl.formatMessage({ id: 'color.hero.subtitle1' })}</Subtitle1>
       </ResponsiveContentLayout>
     </section>
   );
