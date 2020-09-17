@@ -1,8 +1,8 @@
 import {
-  RadioButton,
-  RadioButtonGroup,
   MarginalHeading3,
   MarginalParagraph,
+  RadioButton,
+  RadioButtonGroup,
   Subtitle2,
   Tab,
   TabGroup,
@@ -15,12 +15,13 @@ import {
   RADIO_BUTTON_GROUP_PROPS_WITHOUT_DESCRIPTION,
   RADIO_BUTTON_PROPERTIES_WITHOUT_DESCRIPTION,
   RADIO_BUTTON_PROPS_WITHOUT_DESCRIPTION,
-} from '../../constants/components';
+} from '../../constants/components.constant';
 import { ComponentFactorEnum } from '../../enums/components/component-factor.enum';
 import { useRadioButtonSectionQuery } from '../../hooks/components';
 import { getPropertiesOfComponentFactor, getPropsOfComponentFactor, getPropsTable } from '../../utils/components.util';
 import { marginTopForHeading2, marginTopForHeading3, marginTopForSubtitle2 } from '../../utils/margin.util';
-import { CodeViewer, ComponentDemoBox, ResponsiveContentLayout, TabContentWrapper } from '../common';
+import { CodeViewer, ComponentDemoBox } from '../code';
+import { ResponsiveContentLayout, TabContentWrapper } from '../common';
 import AnchorMarginalHeading2 from './AnchorMarginalHeading2';
 
 const sectionStyles = css`

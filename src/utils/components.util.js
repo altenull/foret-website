@@ -1,7 +1,7 @@
 import { Table, TableBody, TableCell, TableHead, TableRow } from '@altenull/foret-react';
 import { css } from '@emotion/core';
 import React from 'react';
-import { PROPS_TABLE_COLUMNS } from '../constants/components';
+import { PROPS_TABLE_COLUMNS } from '../constants/components.constant';
 import { PropsTableColumnEnum } from '../enums/components/props-table-column.enum';
 
 export const getPropsOfComponentFactor = (intl, componentFactor, targetComponent, propsWithoutDescription) =>

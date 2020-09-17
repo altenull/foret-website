@@ -15,12 +15,13 @@ import {
   CHECKBOX_GROUP_PROPS_WITHOUT_DESCRIPTION,
   CHECKBOX_PROPERTIES_WITHOUT_DESCRIPTION,
   CHECKBOX_PROPS_WITHOUT_DESCRIPTION,
-} from '../../constants/components';
+} from '../../constants/components.constant';
 import { ComponentFactorEnum } from '../../enums/components/component-factor.enum';
 import { useCheckboxSectionQuery } from '../../hooks/components';
 import { getPropertiesOfComponentFactor, getPropsOfComponentFactor, getPropsTable } from '../../utils/components.util';
 import { marginTopForHeading2, marginTopForHeading3, marginTopForSubtitle2 } from '../../utils/margin.util';
-import { CodeViewer, ComponentDemoBox, ResponsiveContentLayout, TabContentWrapper } from '../common';
+import { CodeViewer, ComponentDemoBox } from '../code';
+import { ResponsiveContentLayout, TabContentWrapper } from '../common';
 import AnchorMarginalHeading2 from './AnchorMarginalHeading2';
 
 const sectionStyles = css`
