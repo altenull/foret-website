@@ -60,6 +60,11 @@
       }
     }
   },
+  "color": {
+    "hero": {
+      "title": "색상"
+    }
+  },
   "components": {
     "hero": {
       "title": "컴포넌트"
