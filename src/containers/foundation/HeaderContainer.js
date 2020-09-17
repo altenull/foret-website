@@ -10,7 +10,7 @@ import { BreakpointEnum } from '../../enums/core/breakpoint.enum';
 import { useLogoImageQuery } from '../../hooks/foundation';
 import { useIsMounted, useSiteMetadataQuery } from '../../hooks/core';
 import { mediaQuery } from '../../utils/media-query.util';
-import DrawerContainer from './Drawer.container';
+import DrawerContainer from './DrawerContainer';
 
 const headerStyles = css`
   position: fixed;
