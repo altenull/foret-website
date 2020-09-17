@@ -23,8 +23,8 @@ const HeroSection = () => {
     <section css={sectionStyles}>
       <ResponsiveContentLayout css={responsiveContentLayoutStyles}>
         <MarginalHeading1>{intl.formatMessage({ id: 'designPrinciple.hero.title' })}</MarginalHeading1>
-        <Subtitle1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Subtitle1>
-        <Subtitle1>Lorem ipsum dolor sit amet, consectetur adipiscing elit</Subtitle1>
+        <Subtitle1>{intl.formatMessage({ id: 'designPrinciple.hero.subtitle1' })}</Subtitle1>
+        <Subtitle1>{intl.formatMessage({ id: 'designPrinciple.hero.subtitle2' })}</Subtitle1>
       </ResponsiveContentLayout>
     </section>
   );
