@@ -68,7 +68,9 @@
   },
   "components": {
     "hero": {
-      "title": "Components"
+      "title": "Components",
+      "subtitle1": "Components are the building blocks of the design system.",
+      "subtitle2": "And it is designed to solve a specific UI problem."
     },
     "shared": {
       "overview": "Overview",

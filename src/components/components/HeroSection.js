@@ -23,8 +23,8 @@ const HeroSection = React.forwardRef((props, ref) => {
     <section css={sectionStyles} ref={ref} {...props}>
       <ResponsiveContentLayout css={responsiveContentLayoutStyles}>
         <MarginalHeading1>{intl.formatMessage({ id: 'components.hero.title' })}</MarginalHeading1>
-        <Subtitle1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Subtitle1>
-        <Subtitle1>Lorem ipsum dolor sit amet, consectetur adipiscing elit</Subtitle1>
+        <Subtitle1>{intl.formatMessage({ id: 'components.hero.subtitle1' })}</Subtitle1>
+        <Subtitle1>{intl.formatMessage({ id: 'components.hero.subtitle2' })}</Subtitle1>
       </ResponsiveContentLayout>
     </section>
   );
