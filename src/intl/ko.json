@@ -40,7 +40,7 @@
         "installEmotionCore": "@emotion/core ^10.0.0 설치도 잊지마세요."
       },
       "contributing": {
-        "title": "Contributing",
+        "title": "기여하기",
         "description1": "저희는 높은 품질의 컴포넌트를 제공하기를 원하며, 이는 여러분의 피드백 없이는 불가능한 일입니다. 디자인 시스템에 대한 제안이나 이슈가 있을 시에는 ",
         "description2": "에서 이슈 혹은 pull request를 생성해주세요."
       }
