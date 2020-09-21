@@ -7,6 +7,9 @@
     "color": "Color",
     "components": "Components"
   },
+  "footer": {
+    "contactUs": "Contact Us"
+  },
   "drawer": {
     "preferredLanguageTitle": "Select your preferred language"
   },
