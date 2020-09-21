@@ -1,11 +1,18 @@
 import { graphql, useStaticQuery } from 'gatsby';
 
 const useLogoImageQuery = () => {
-  const { logoImage } = useStaticQuery(graphql`
+  const { logoCircleImage, logoGreenImage } = useStaticQuery(graphql`
     query {
-      logoImage: file(relativePath: { eq: "foret-logo(160x160).png" }) {
+      logoCircleImage: file(relativePath: { eq: "logo-circle(160x160).png" }) {
         childImageSharp {
           fixed(width: 80, height: 80) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      logoGreenImage: file(relativePath: { eq: "logo-green.png" }) {
+        childImageSharp {
+          fixed(width: 323, height: 381) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -14,7 +21,8 @@ const useLogoImageQuery = () => {
   `);
 
   const logoImageQueryRepsonse = {
-    fixed: logoImage.childImageSharp.fixed,
+    logoCircleImage: logoCircleImage.childImageSharp.fixed,
+    logoGreenImage: logoGreenImage.childImageSharp.fixed,
   };
 
   return logoImageQueryRepsonse;

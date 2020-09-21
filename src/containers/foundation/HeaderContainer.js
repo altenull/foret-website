@@ -108,7 +108,7 @@ const HeaderContainer = () => {
 
       <header css={headerStyles} ref={headerRef}>
         <HeaderLogo
-          logoFixed={getLogoImageResponse.fixed}
+          logoFixed={getLogoImageResponse.logoCircleImage}
           logoTitle={intl.formatMessage({ id: 'title' })}
           isScrolled={isScrolled}
           headerContentColor={headerContentColor}
