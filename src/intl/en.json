@@ -47,6 +47,7 @@
     }
   },
   "color": {
+    "copied": "Copied",
     "hero": {
       "title": "Color",
       "subtitle1": "Color is a fundamental component of the design system and represents brand."
