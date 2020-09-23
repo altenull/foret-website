@@ -1,17 +1,37 @@
-import { css } from '@emotion/core';
-import React, { useEffect, useRef } from 'react';
 import { Color, hexToRgb } from '@altenull/foret-core';
+import { Heading1, PrimaryButton, Subtitle1 } from '@altenull/foret-react';
+import { css } from '@emotion/core';
+import { useIntl } from 'gatsby-plugin-intl';
+import React, { useEffect, useRef } from 'react';
 
 const sectionStyles = css``;
 
 const canvasStyles = css`
   width: 100%;
-  height: 100%;
-  background-color: #54392d;
-  /* background-color: ${Color.Soil}; */
+  height: 100vh;
+  background-color: ${Color.Soil};
+`;
+
+const coverPositionerStyles = css`
+  position: absolute;
+  left: 50%;
+  top: 30%;
+`;
+
+const mainTitleStyles = css`
+  color: ${Color.White};
+  margin-bottom: 16px;
+`;
+
+const subtitleStyles = css`
+  color: ${Color.White};
+  max-width: 592px;
+  margin-bottom: 40px;
 `;
 
 const HeroSection = () => {
+  const intl = useIntl();
+
   let ctx;
   let pixelRatio;
   let stageWidth;
@@ -64,6 +84,12 @@ const HeroSection = () => {
   return (
     <section ref={sectionRef} css={sectionStyles}>
       <canvas ref={canvasRef} css={canvasStyles} />
+
+      <div css={coverPositionerStyles}>
+        <Heading1 css={mainTitleStyles}>{intl.formatMessage({ id: 'home.hero.title' })}</Heading1>
+        <Subtitle1 css={subtitleStyles}>{intl.formatMessage({ id: 'home.hero.subtitle' })}</Subtitle1>
+        <PrimaryButton>{intl.formatMessage({ id: 'home.hero.getStartedButton' })}</PrimaryButton>
+      </div>
     </section>
   );
 };
