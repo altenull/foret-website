@@ -7,8 +7,8 @@ import ReactDOM from 'react-dom';
 import { HeaderLogo } from '../../components/foundation';
 import { HamburgerIcon } from '../../components/icons';
 import { BreakpointEnum } from '../../enums/core/breakpoint.enum';
-import { useLogoImageQuery } from '../../hooks/foundation';
 import { useIsMounted, useSiteMetadataQuery } from '../../hooks/core';
+import { useLogoImageQuery } from '../../hooks/foundation';
 import { mediaQuery } from '../../utils/media-query.util';
 import DrawerContainer from './DrawerContainer';
 
@@ -99,8 +99,9 @@ const HeaderContainer = () => {
     setIsDrawerShowing(!isDrawerShowing);
   };
 
-  const isNotHomePage = siteMetadata.pageRoutes.find((pageRoute) => location.pathname.includes(pageRoute.key));
-  const headerContentColor = isDrawerShowing ? Color.Ink : isNotHomePage ? Color.Ink : Color.White;
+  // const isNotHomePage = siteMetadata.pageRoutes.find((pageRoute) => location.pathname.includes(pageRoute.key));
+  // const headerContentColor = isDrawerShowing ? Color.Ink : isNotHomePage ? Color.Ink : Color.White;
+  const headerContentColor = Color.Ink;
 
   return (
     <Fragment>
