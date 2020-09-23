@@ -4,8 +4,8 @@ import { css, Global } from '@emotion/core';
 import { Link } from 'gatsby';
 import { IntlContextConsumer, useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
-import { LanguageLink } from '../../components/foundation';
 import { useSiteMetadataQuery } from '../../hooks/core';
+import { getLanguageLinks } from '../../utils/locale.util';
 
 const drawerStyles = css`
   position: fixed;
@@ -66,12 +66,9 @@ const DrawerContainer = () => {
     </li>
   ));
 
-  const getLanguageLinks = (languages) =>
-    languages.map((language) => <LanguageLink key={language} language={language} />);
-
   return (
     <IntlContextConsumer>
-      {({ languages }) => (
+      {({ language, languages }) => (
         <Fragment>
           <Global styles={globalStyles} />
           <div css={drawerStyles}>
@@ -80,7 +77,7 @@ const DrawerContainer = () => {
 
               <div css={preferredLanguageWrapperStyles}>
                 <MarginalParagraph>{intl.formatMessage({ id: 'drawer.preferredLanguageTitle' })}</MarginalParagraph>
-                <div css={languageLinksWrapperStyles}>{getLanguageLinks(languages)}</div>
+                <div css={languageLinksWrapperStyles}>{getLanguageLinks(language, languages)}</div>
               </div>
             </div>
           </div>

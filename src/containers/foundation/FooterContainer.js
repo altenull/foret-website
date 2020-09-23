@@ -3,7 +3,7 @@ import { SmallText } from '@altenull/foret-react';
 import { css } from '@emotion/core';
 import { IntlContextConsumer, useIntl } from 'gatsby-plugin-intl';
 import React from 'react';
-import { LanguageLink } from '../../components/foundation';
+import { getLanguageLinks } from '../../utils/locale.util';
 
 const footerStyles = css`
   padding: 64px 128px;
@@ -37,15 +37,13 @@ const rightColumnStyles = css`
 
 const FooterContainer = () => {
   const intl = useIntl();
-  const getLanguageLinks = (languages) =>
-    languages.map((language) => <LanguageLink key={language} language={language} />);
 
   return (
     <IntlContextConsumer>
-      {({ languages }) => (
+      {({ language, languages }) => (
         <footer css={footerStyles}>
           <div css={footerContentWrapperStyles}>
-            <div css={languageLinksWrapperStyles}>{getLanguageLinks(languages)}</div>
+            <div css={languageLinksWrapperStyles}>{getLanguageLinks(language, languages)}</div>
             <div css={twoColumnStyles}>
               <div css={leftColumnStyles}>
                 <SmallText>
