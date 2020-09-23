@@ -1,4 +1,3 @@
-// TODO: set styles
 import { Paragraph } from '@altenull/foret-react';
 import { css } from '@emotion/core';
 import { useIntl } from 'gatsby-plugin-intl';
@@ -18,16 +17,13 @@ const paragraphStyles = css`
 const IntroSection = () => {
   const intl = useIntl();
 
-  const descriptionIds = ['home.intro.description1', 'home.intro.description2', 'home.intro.description3'];
-  const descriptions = descriptionIds.map((descriptionId) => (
-    <Paragraph key={descriptionId} css={paragraphStyles}>
-      {intl.formatMessage({ id: descriptionId })}
-    </Paragraph>
-  ));
-
   return (
     <section css={sectionStyles}>
-      <ResponsiveContentLayout>{descriptions}</ResponsiveContentLayout>
+      <ResponsiveContentLayout>
+        <Paragraph css={paragraphStyles}>{intl.formatMessage({ id: 'home.intro.description1' })}</Paragraph>
+        <Paragraph css={paragraphStyles}>{intl.formatMessage({ id: 'home.intro.description2' })}</Paragraph>
+        <Paragraph css={paragraphStyles}>{intl.formatMessage({ id: 'home.intro.description3' })}</Paragraph>
+      </ResponsiveContentLayout>
     </section>
   );
 };
