@@ -1,8 +1,10 @@
 import { Color, hexToRgb } from '@altenull/foret-core';
 import { Heading1, PrimaryButton, Subtitle1 } from '@altenull/foret-react';
 import { css } from '@emotion/core';
+import { Link } from 'gatsby';
 import { useIntl } from 'gatsby-plugin-intl';
 import React, { useEffect, useRef } from 'react';
+import { PageRouteEnum } from '../../enums/core/page-route.enum';
 
 const sectionStyles = css``;
 
@@ -27,6 +29,10 @@ const subtitleStyles = css`
   color: ${Color.White};
   max-width: 592px;
   margin-bottom: 40px;
+`;
+
+const linkStyles = css`
+  text-decoration: none;
 `;
 
 const HeroSection = () => {
@@ -88,7 +94,9 @@ const HeroSection = () => {
       <div css={coverPositionerStyles}>
         <Heading1 css={mainTitleStyles}>{intl.formatMessage({ id: 'home.hero.title' })}</Heading1>
         <Subtitle1 css={subtitleStyles}>{intl.formatMessage({ id: 'home.hero.subtitle' })}</Subtitle1>
-        <PrimaryButton>{intl.formatMessage({ id: 'home.hero.getStartedButton' })}</PrimaryButton>
+        <Link to={`/${PageRouteEnum.GetStarted}`} css={linkStyles}>
+          <PrimaryButton>{intl.formatMessage({ id: 'home.hero.getStartedButton' })}</PrimaryButton>
+        </Link>
       </div>
     </section>
   );
