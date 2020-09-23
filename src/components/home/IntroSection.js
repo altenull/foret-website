@@ -8,7 +8,7 @@ const sectionStyles = css`
   padding: 8rem 0;
 `;
 
-const paragraphStyles = css`
+const descriptionStyles = css`
   & + & {
     margin-top: 2rem;
   }
@@ -20,9 +20,9 @@ const IntroSection = () => {
   return (
     <section css={sectionStyles}>
       <ResponsiveContentLayout>
-        <Paragraph css={paragraphStyles}>{intl.formatMessage({ id: 'home.intro.description1' })}</Paragraph>
-        <Paragraph css={paragraphStyles}>{intl.formatMessage({ id: 'home.intro.description2' })}</Paragraph>
-        <Paragraph css={paragraphStyles}>{intl.formatMessage({ id: 'home.intro.description3' })}</Paragraph>
+        <Paragraph css={descriptionStyles}>{intl.formatMessage({ id: 'home.intro.description1' })}</Paragraph>
+        <Paragraph css={descriptionStyles}>{intl.formatMessage({ id: 'home.intro.description2' })}</Paragraph>
+        <Paragraph css={descriptionStyles}>{intl.formatMessage({ id: 'home.intro.description3' })}</Paragraph>
       </ResponsiveContentLayout>
     </section>
   );
