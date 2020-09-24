@@ -3,7 +3,7 @@ import { css } from '@emotion/core';
 import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
-import { HeroSection } from '../components/color';
+import { ContentSection, HeroSection } from '../components/color';
 import { PageNavigationSection } from '../components/common';
 import { Layout } from '../components/foundation';
 import { useSiteMetadataQuery } from '../hooks/core';
@@ -26,6 +26,7 @@ const ColorPage = ({ location }) => {
       <Helmet title={colorPageTitle} defer={false} />
       <Layout css={layoutStyles}>
         <HeroSection />
+        <ContentSection />
         <PageNavigationSection prevLink={prevLink} nextLink={nextLink} />
       </Layout>
     </Fragment>
