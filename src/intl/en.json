@@ -193,10 +193,7 @@
     },
     "tab": {
       "title": "Tab",
-      "description": "Separates content into groups within a single context.",
-      "overview": {
-        "description": "Tab description here"
-      },
+      "description": "Tabs allow users to alternate between views within the same context.",
       "propsDescription": {
         "tabGroup": {
           "selectedValue": "If it matches the value property of the tab, that tab will be selected.",

@@ -193,10 +193,7 @@
     },
     "tab": {
       "title": "Tab",
-      "description": "콘텐트를 분리합니다.",
-      "overview": {
-        "description": "Tab 설명.."
-      },
+      "description": "탭은 사용자가 동일한 문맥 내의 화면을 번갈아 갈 수 있도록 합니다.",
       "propsDescription": {
         "tabGroup": {
           "selectedValue": "탭의 value 프로퍼티와 일치하면, 해당 탭이 선택됩니다.",

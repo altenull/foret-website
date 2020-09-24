@@ -25,13 +25,6 @@ const TabSection = ({ headingHash }) => {
   const intl = useIntl();
   const { importTabReactCode, importTabNgCode, demoTabReactCode, demoTabNgCode } = useTabSectionQuery();
 
-  const getSharedOverviewContent = () => (
-    <Fragment>
-      <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.notes' })}</MarginalHeading3>
-      <MarginalParagraph>{intl.formatMessage({ id: 'components.tab.notes.description' })}</MarginalParagraph>
-    </Fragment>
-  );
-
   const getDemoTab = () => (
     <TabGroup selectedValue={'tab2'}>
       <Tab id={'tab-1'} labelText={'Tab 1'} value={'tab1'}>
@@ -60,11 +53,7 @@ const TabSection = ({ headingHash }) => {
 
     return (
       <TabContentWrapper>
-        {getSharedOverviewContent()}
-
-        <MarginalHeading3 css={marginTopForHeading3}>
-          {intl.formatMessage({ id: 'components.shared.liveDemo' })}
-        </MarginalHeading3>
+        <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</MarginalHeading3>
         <Subtitle2>Default:</Subtitle2>
         <ComponentDemoBox demo={getDemoTab()} codeInHtml={demoTabReactCode.nodes[0].html} />
 
@@ -100,10 +89,7 @@ const TabSection = ({ headingHash }) => {
 
     return (
       <TabContentWrapper>
-        {getSharedOverviewContent()}
-        <MarginalHeading3 css={marginTopForHeading3}>
-          {intl.formatMessage({ id: 'components.shared.liveDemo' })}
-        </MarginalHeading3>
+        <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</MarginalHeading3>
         <Subtitle2>Default:</Subtitle2>
         <ComponentDemoBox demo={getDemoTab()} codeInHtml={demoTabNgCode.nodes[0].html} />
 
