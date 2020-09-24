@@ -30,13 +30,6 @@ const ToggleSection = ({ headingHash }) => {
     demoToggleDisabledNgCode,
   } = useToggleSectionQuery();
 
-  const getSharedOverviewContent = () => (
-    <Fragment>
-      <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.notes' })}</MarginalHeading3>
-      <MarginalParagraph>{intl.formatMessage({ id: 'components.toggle.notes.description' })}</MarginalParagraph>
-    </Fragment>
-  );
-
   const getDemoToggle = () => (
     <Fragment>
       <Toggle id={'toggle-1'} checked={true} />
@@ -63,11 +56,7 @@ const ToggleSection = ({ headingHash }) => {
 
     return (
       <TabContentWrapper>
-        {getSharedOverviewContent()}
-
-        <MarginalHeading3 css={marginTopForHeading3}>
-          {intl.formatMessage({ id: 'components.shared.liveDemo' })}
-        </MarginalHeading3>
+        <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</MarginalHeading3>
         <Subtitle2>Default:</Subtitle2>
         <ComponentDemoBox demo={getDemoToggle()} codeInHtml={demoToggleReactCode.nodes[0].html} />
         <Subtitle2 css={marginTopForSubtitle2}>Disabled:</Subtitle2>
@@ -96,11 +85,7 @@ const ToggleSection = ({ headingHash }) => {
 
     return (
       <TabContentWrapper>
-        {getSharedOverviewContent()}
-
-        <MarginalHeading3 css={marginTopForHeading3}>
-          {intl.formatMessage({ id: 'components.shared.liveDemo' })}
-        </MarginalHeading3>
+        <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</MarginalHeading3>
         <Subtitle2>Default:</Subtitle2>
         <ComponentDemoBox demo={getDemoToggle()} codeInHtml={demoToggleNgCode.nodes[0].html} />
         <Subtitle2 css={marginTopForSubtitle2}>Disabled:</Subtitle2>

@@ -219,10 +219,7 @@
     },
     "toggle": {
       "title": "Toggle",
-      "description": "A toggle is used to quickly switch between two possible states. They are commonly used for “on/off” switches.",
-      "overview": {
-        "description": "Toggle description here"
-      },
+      "description": "A toggle is used to quickly switch between two mutually exclusive options.",
       "propsDescription": {
         "toggle": {
           "id": "The id of toggle. It's used to identifies the toggle.",
