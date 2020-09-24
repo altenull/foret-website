@@ -32,8 +32,8 @@ const ToggleSection = ({ headingHash }) => {
 
   const getSharedOverviewContent = () => (
     <Fragment>
-      <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.overview' })}</MarginalHeading3>
-      <MarginalParagraph>{intl.formatMessage({ id: 'components.toggle.overview.description' })}</MarginalParagraph>
+      <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.notes' })}</MarginalHeading3>
+      <MarginalParagraph>{intl.formatMessage({ id: 'components.toggle.notes.description' })}</MarginalParagraph>
     </Fragment>
   );
 

@@ -82,7 +82,7 @@
       "subtitle2": "그리고 특정 UI 문제를 해결하기 위해 고안되었습니다."
     },
     "shared": {
-      "overview": "개요",
+      "notes": "특징",
       "imports": "Imports",
       "liveDemo": "라이브 데모",
       "props": "Props",
@@ -91,8 +91,8 @@
     "button": {
       "title": "Button",
       "description": "버튼은 버튼 레이블에 표시된 작업을 수행하는 요소입니다.",
-      "overview": {
-        "description": "1. 대문자(Uppercase)"
+      "notes": {
+        "description": "모든 알파벳은 대문자로 변환됩니다."
       },
       "propsDescription": {
         "button": {

@@ -42,8 +42,8 @@ const RadioButtonSection = ({ headingHash }) => {
 
   const getSharedOverviewContent = () => (
     <Fragment>
-      <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.overview' })}</MarginalHeading3>
-      <MarginalParagraph>{intl.formatMessage({ id: 'components.radioButton.overview.description' })}</MarginalParagraph>
+      <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.notes' })}</MarginalHeading3>
+      <MarginalParagraph>{intl.formatMessage({ id: 'components.radioButton.notes.description' })}</MarginalParagraph>
     </Fragment>
   );
 
