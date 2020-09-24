@@ -45,13 +45,6 @@ const SelectSection = ({ headingHash }) => {
     demoSelectDisabledNgCode,
   } = useSelectSectionQuery();
 
-  const getSharedOverviewContent = () => (
-    <Fragment>
-      <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.notes' })}</MarginalHeading3>
-      <MarginalParagraph>{intl.formatMessage({ id: 'components.select.notes.description' })}</MarginalParagraph>
-    </Fragment>
-  );
-
   const getDemoSelect = () => (
     <Select id={'select'} legendText={'Select'} selectedValue={'option2'}>
       <SelectItem value={'option1'} labelText={'option 1'} />
@@ -123,11 +116,7 @@ const SelectSection = ({ headingHash }) => {
 
     return (
       <TabContentWrapper>
-        {getSharedOverviewContent()}
-
-        <MarginalHeading3 css={marginTopForHeading3}>
-          {intl.formatMessage({ id: 'components.shared.liveDemo' })}
-        </MarginalHeading3>
+        <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</MarginalHeading3>
         <Subtitle2>Default:</Subtitle2>
         <ComponentDemoBox demo={getDemoSelect()} codeInHtml={demoSelectReactCode.nodes[0].html} />
         <Subtitle2 css={marginTopForSubtitle2}>Grouped:</Subtitle2>
@@ -168,10 +157,7 @@ const SelectSection = ({ headingHash }) => {
 
     return (
       <TabContentWrapper>
-        {getSharedOverviewContent()}
-        <MarginalHeading3 css={marginTopForHeading3}>
-          {intl.formatMessage({ id: 'components.shared.liveDemo' })}
-        </MarginalHeading3>
+        <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</MarginalHeading3>
         <Subtitle2>Default:</Subtitle2>
         <ComponentDemoBox demo={getDemoSelect()} codeInHtml={demoSelectNgCode.nodes[0].html} />
         <Subtitle2 css={marginTopForSubtitle2}>Grouped:</Subtitle2>
