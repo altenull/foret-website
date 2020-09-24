@@ -9,7 +9,7 @@ import {
 } from '@altenull/foret-react';
 import { css } from '@emotion/core';
 import { useIntl } from 'gatsby-plugin-intl';
-import React, { Fragment } from 'react';
+import React from 'react';
 import {
   RADIO_BUTTON_GROUP_PROPERTIES_WITHOUT_DESCRIPTION,
   RADIO_BUTTON_GROUP_PROPS_WITHOUT_DESCRIPTION,
@@ -39,13 +39,6 @@ const RadioButtonSection = ({ headingHash }) => {
     demoRadioButtonDisabledReactCode,
     demoRadioButtonDisabledNgCode,
   } = useRadioButtonSectionQuery();
-
-  const getSharedOverviewContent = () => (
-    <Fragment>
-      <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.notes' })}</MarginalHeading3>
-      <MarginalParagraph>{intl.formatMessage({ id: 'components.radioButton.notes.description' })}</MarginalParagraph>
-    </Fragment>
-  );
 
   const getDemoRadioButton = () => (
     <RadioButtonGroup legendText={'Radio button'} checkedValue={'radioButton2'}>
@@ -79,11 +72,7 @@ const RadioButtonSection = ({ headingHash }) => {
 
     return (
       <TabContentWrapper>
-        {getSharedOverviewContent()}
-
-        <MarginalHeading3 css={marginTopForHeading3}>
-          {intl.formatMessage({ id: 'components.shared.liveDemo' })}
-        </MarginalHeading3>
+        <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</MarginalHeading3>
         <Subtitle2>Default:</Subtitle2>
         <ComponentDemoBox demo={getDemoRadioButton()} codeInHtml={demoRadioButtonReactCode.nodes[0].html} />
         <Subtitle2 css={marginTopForSubtitle2}>Disabled:</Subtitle2>
@@ -124,11 +113,7 @@ const RadioButtonSection = ({ headingHash }) => {
 
     return (
       <TabContentWrapper>
-        {getSharedOverviewContent()}
-
-        <MarginalHeading3 css={marginTopForHeading3}>
-          {intl.formatMessage({ id: 'components.shared.liveDemo' })}
-        </MarginalHeading3>
+        <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</MarginalHeading3>
         <Subtitle2>Default:</Subtitle2>
         <ComponentDemoBox demo={getDemoRadioButton()} codeInHtml={demoRadioButtonNgCode.nodes[0].html} />
         <Subtitle2 css={marginTopForSubtitle2}>Disabled:</Subtitle2>
