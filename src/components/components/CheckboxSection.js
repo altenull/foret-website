@@ -9,7 +9,7 @@ import {
 } from '@altenull/foret-react';
 import { css } from '@emotion/core';
 import { useIntl } from 'gatsby-plugin-intl';
-import React, { Fragment } from 'react';
+import React from 'react';
 import {
   CHECKBOX_GROUP_PROPERTIES_WITHOUT_DESCRIPTION,
   CHECKBOX_GROUP_PROPS_WITHOUT_DESCRIPTION,
@@ -39,13 +39,6 @@ const CheckboxSection = ({ headingHash }) => {
     demoCheckboxDisabledReactCode,
     demoCheckboxDisabledNgCode,
   } = useCheckboxSectionQuery();
-
-  const getSharedOverviewContent = () => (
-    <Fragment>
-      <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.notes' })}</MarginalHeading3>
-      <MarginalParagraph>{intl.formatMessage({ id: 'components.checkbox.notes.description' })}</MarginalParagraph>
-    </Fragment>
-  );
 
   const getDemoCheckbox = () => (
     <CheckboxGroup legendText={'Checkbox'}>
@@ -79,11 +72,7 @@ const CheckboxSection = ({ headingHash }) => {
 
     return (
       <TabContentWrapper>
-        {getSharedOverviewContent()}
-
-        <MarginalHeading3 css={marginTopForHeading3}>
-          {intl.formatMessage({ id: 'components.shared.liveDemo' })}
-        </MarginalHeading3>
+        <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</MarginalHeading3>
         <Subtitle2>Default:</Subtitle2>
         <ComponentDemoBox demo={getDemoCheckbox()} codeInHtml={demoCheckboxReactCode.nodes[0].html} />
         <Subtitle2 css={marginTopForSubtitle2}>Disabled:</Subtitle2>
@@ -121,11 +110,7 @@ const CheckboxSection = ({ headingHash }) => {
 
     return (
       <TabContentWrapper>
-        {getSharedOverviewContent()}
-
-        <MarginalHeading3 css={marginTopForHeading3}>
-          {intl.formatMessage({ id: 'components.shared.liveDemo' })}
-        </MarginalHeading3>
+        <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</MarginalHeading3>
         <Subtitle2>Default:</Subtitle2>
         <ComponentDemoBox demo={getDemoCheckbox()} codeInHtml={demoCheckboxNgCode.nodes[0].html} />
         <Subtitle2 css={marginTopForSubtitle2}>Disabled:</Subtitle2>
