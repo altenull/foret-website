@@ -1,4 +1,14 @@
 import { PropsTableColumnEnum } from '../enums/components/props-table-column.enum';
+import { ComponentHashEnum } from '../enums/components/component-hash.enum';
+
+export const COMPONENT_HASHES = [
+  ComponentHashEnum.Button,
+  ComponentHashEnum.Checkbox,
+  ComponentHashEnum.RadioButton,
+  ComponentHashEnum.Select,
+  ComponentHashEnum.Tab,
+  ComponentHashEnum.Toggle,
+];
 
 export const PROPS_TABLE_COLUMNS = [
   PropsTableColumnEnum.Name,

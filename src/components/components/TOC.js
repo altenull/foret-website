@@ -8,7 +8,7 @@ const tocStyles = css`
   position: fixed;
   right: 160px;
   top: 360px;
-  padding-left: 8px;
+  padding-left: 12px;
   border-left: 2px solid ${Color.Fog};
 `;
 
