@@ -7,7 +7,7 @@ import { LanguageEnum } from '../../enums/core/language.enum';
 const languageLinkStyles = css`
   cursor: pointer;
   & + & {
-    margin-left: 16px;
+    margin-left: 32px;
   }
 `;
 
