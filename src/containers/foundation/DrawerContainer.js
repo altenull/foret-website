@@ -1,18 +1,22 @@
 import { Color } from '@altenull/foret-core';
-import { Heading3, MarginalParagraph } from '@altenull/foret-react';
+import { MarginalParagraph } from '@altenull/foret-react';
 import { css, Global } from '@emotion/core';
-import { Link } from 'gatsby';
 import { IntlContextConsumer, useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
+import { PageLink } from '../../components/foundation';
 import { useSiteMetadataQuery } from '../../hooks/core';
+import useIsMounted from '../../hooks/core/useIsMounted';
 import { getLanguageLinks } from '../../utils/locale.util';
 
-const drawerStyles = css`
+const drawerStyles = (shouldStartAnimation) => css`
   position: fixed;
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
+  transition: all 0.3s ease-in-out;
+  opacity: ${shouldStartAnimation ? '1' : '0'};
+  transform: translateY(${shouldStartAnimation ? '0' : '-10%'});
   background-color: ${Color.White};
   z-index: 1000; /* TODO: Manage z-index in one place */
 `;
@@ -22,26 +26,21 @@ const positionerStyles = css`
   box-sizing: border-box;
 `;
 
-const pageListWrapperStyles = css`
-  margin: 0;
+const pageLinkContainerStyles = css`
+  margin: 64px 0;
   padding: 0;
 `;
 
-const pageListItemStyles = css`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 64px;
+const pageLinkStyles = css`
   & + & {
-    margin-top: 2rem;
+    margin-top: 3rem;
   }
 `;
 
-const linkStyles = css`
-  text-decoration: none;
+const preferredLanguageWrapperStyles = css`
+  max-width: 1440px;
+  margin: 0 auto;
 `;
-
-const preferredLanguageWrapperStyles = css``;
 
 const languageLinksWrapperStyles = css`
   display: flex;
@@ -55,15 +54,12 @@ const globalStyles = css`
 `;
 
 const DrawerContainer = () => {
-  const getSiteMetadataResponse = useSiteMetadataQuery();
   const intl = useIntl();
+  const isMounted = useIsMounted();
+  const getSiteMetadataResponse = useSiteMetadataQuery();
 
-  const pages = getSiteMetadataResponse.siteMetadata.pageRoutes.map(({ key, camelCase }) => (
-    <li key={key} css={pageListItemStyles}>
-      <Link to={`/${key}`} css={linkStyles}>
-        <Heading3>{intl.formatMessage({ id: `pages.${camelCase}` })}</Heading3>
-      </Link>
-    </li>
+  const pageLinks = getSiteMetadataResponse.siteMetadata.pageRoutes.map(({ key, camelCase }) => (
+    <PageLink key={key} css={pageLinkStyles} to={`/${key}`} text={intl.formatMessage({ id: `pages.${camelCase}` })} />
   ));
 
   return (
@@ -71,9 +67,10 @@ const DrawerContainer = () => {
       {({ language, languages }) => (
         <Fragment>
           <Global styles={globalStyles} />
-          <div css={drawerStyles}>
+
+          <div css={drawerStyles(isMounted)}>
             <div css={positionerStyles}>
-              <ul css={pageListWrapperStyles}>{pages}</ul>
+              <ul css={pageLinkContainerStyles}>{pageLinks}</ul>
 
               <div css={preferredLanguageWrapperStyles}>
                 <MarginalParagraph>{intl.formatMessage({ id: 'drawer.preferredLanguageTitle' })}</MarginalParagraph>
