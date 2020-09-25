@@ -1,3 +1,4 @@
+import { Color } from '@altenull/foret-core';
 import { css } from '@emotion/core';
 import React from 'react';
 
@@ -9,13 +10,13 @@ const hamburgerIconStyles = css`
   cursor: pointer;
 `;
 
-const lineStyles = (color) => css`
+const lineStyles = css`
   position: absolute;
   left: 0;
   right: 0;
   height: 2px;
   border-radius: 1px;
-  background-color: ${color};
+  background-color: ${Color.Ink};
   transition: top 0.3s ease-in-out, left 0.15s ease-in-out, right 0.15s ease-in-out, transform 0.3s ease-in-out;
 `;
 
@@ -36,13 +37,13 @@ const bottomLineStyles = (shouldTransformToCloseIcon) => css`
   right: ${shouldTransformToCloseIcon ? '50%' : '0'};
 `;
 
-const HamburgerIcon = ({ shouldTransformToCloseIcon, color }) => {
+const HamburgerIcon = ({ shouldTransformToCloseIcon, ...props }) => {
   return (
-    <span css={hamburgerIconStyles}>
-      <span css={[lineStyles(color), topLineStyles(shouldTransformToCloseIcon)]} />
-      <span css={[lineStyles(color), middleLineStyles(shouldTransformToCloseIcon, 1)]} />
-      <span css={[lineStyles(color), middleLineStyles(shouldTransformToCloseIcon, -1)]} />
-      <span css={[lineStyles(color), bottomLineStyles(shouldTransformToCloseIcon)]} />
+    <span css={hamburgerIconStyles} {...props}>
+      <span css={[lineStyles, topLineStyles(shouldTransformToCloseIcon)]} />
+      <span css={[lineStyles, middleLineStyles(shouldTransformToCloseIcon, 1)]} />
+      <span css={[lineStyles, middleLineStyles(shouldTransformToCloseIcon, -1)]} />
+      <span css={[lineStyles, bottomLineStyles(shouldTransformToCloseIcon)]} />
     </span>
   );
 };

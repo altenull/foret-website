@@ -1,13 +1,11 @@
-import { Color } from '@altenull/foret-core';
 import { css } from '@emotion/core';
-import { useLocation } from '@reach/router';
 import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment, useCallback, useEffect, useRef, useState } from 'react';
 import ReactDOM from 'react-dom';
 import { HeaderLogo } from '../../components/foundation';
 import { HamburgerIcon } from '../../components/icons';
 import { BreakpointEnum } from '../../enums/core/breakpoint.enum';
-import { useIsMounted, useSiteMetadataQuery } from '../../hooks/core';
+import { useIsMounted } from '../../hooks/core';
 import { useLogoImageQuery } from '../../hooks/foundation';
 import { mediaQuery } from '../../utils/media-query.util';
 import DrawerContainer from './DrawerContainer';
@@ -41,13 +39,11 @@ const HeaderContainer = () => {
   const [isDrawerShowing, setIsDrawerShowing] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const { siteMetadata } = useSiteMetadataQuery();
-  const getLogoImageResponse = useLogoImageQuery();
-  const isMounted = useIsMounted();
-  const intl = useIntl();
-  const location = useLocation();
-
   const headerRef = useRef();
+
+  const intl = useIntl();
+  const isMounted = useIsMounted();
+  const getLogoImageResponse = useLogoImageQuery();
 
   const handleScroll = useCallback(() => {
     const newIsScrolled = window.scrollY >= headerRef.current.getBoundingClientRect().bottom;
@@ -99,10 +95,6 @@ const HeaderContainer = () => {
     setIsDrawerShowing(!isDrawerShowing);
   };
 
-  // const isNotHomePage = siteMetadata.pageRoutes.find((pageRoute) => location.pathname.includes(pageRoute.key));
-  // const headerContentColor = isDrawerShowing ? Color.Ink : isNotHomePage ? Color.Ink : Color.White;
-  const headerContentColor = Color.Ink;
-
   return (
     <Fragment>
       {isDrawerShowing && ReactDOM.createPortal(<DrawerContainer />, document.body)}
@@ -112,11 +104,10 @@ const HeaderContainer = () => {
           logoFixed={getLogoImageResponse.logoCircleImage}
           logoTitle={intl.formatMessage({ id: 'title' })}
           isScrolled={isScrolled}
-          headerContentColor={headerContentColor}
         />
 
         <div css={hamburgerMenuStyles} onClick={() => toggleDrawer()}>
-          <HamburgerIcon shouldTransformToCloseIcon={isDrawerShowing} color={headerContentColor} />
+          <HamburgerIcon shouldTransformToCloseIcon={isDrawerShowing} />
         </div>
       </header>
     </Fragment>
