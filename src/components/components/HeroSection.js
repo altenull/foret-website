@@ -2,6 +2,7 @@ import { MarginalHeading1, Subtitle1 } from '@altenull/foret-react';
 import { css } from '@emotion/core';
 import { useIntl } from 'gatsby-plugin-intl';
 import React from 'react';
+import { ScrollDownIndicatorContainer } from '../../containers/common';
 import { ResponsiveContentLayout } from '../foundation';
 
 const sectionStyles = css`
@@ -26,6 +27,8 @@ const HeroSection = React.forwardRef((props, ref) => {
         <Subtitle1>{intl.formatMessage({ id: 'components.hero.subtitle1' })}</Subtitle1>
         <Subtitle1>{intl.formatMessage({ id: 'components.hero.subtitle2' })}</Subtitle1>
       </ResponsiveContentLayout>
+
+      <ScrollDownIndicatorContainer />
     </section>
   );
 });
