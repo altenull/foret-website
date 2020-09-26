@@ -52,36 +52,32 @@ const colorCopySuccessMessageStyles = (hasColorCopied) => css`
   opacity: ${hasColorCopied ? '1' : '0'};
 `;
 
-const ColorChip = ({
-  name,
-  color,
-  rgb: { r, g, b },
-  colorCopySuccessMessage,
-  isBrightnessHigh,
-  isHovered,
-  hasColorCopied,
-  ...props
-}) => {
-  return (
-    <div css={colorChipStyles(color)} {...props}>
-      <Paragraph css={sharedTextColorStyles(isBrightnessHigh)}>{name}</Paragraph>
+const ColorChip = React.forwardRef(
+  (
+    { name, color, rgb: { r, g, b }, colorCopySuccessMessage, isBrightnessHigh, isHovered, hasColorCopied, ...props },
+    ref
+  ) => {
+    return (
+      <div css={colorChipStyles(color)} ref={ref} {...props}>
+        <Paragraph css={sharedTextColorStyles(isBrightnessHigh)}>{name}</Paragraph>
 
-      <span css={colorCodeWrapperStyles(isHovered)}>
-        <Subtitle2 css={sharedTextColorStyles(isBrightnessHigh)}>{color}</Subtitle2>
-        <Subtitle2 css={sharedTextColorStyles(isBrightnessHigh)}>
-          rgb({r}, {g}, {b})
+        <span css={colorCodeWrapperStyles(isHovered)}>
+          <Subtitle2 css={sharedTextColorStyles(isBrightnessHigh)}>{color}</Subtitle2>
+          <Subtitle2 css={sharedTextColorStyles(isBrightnessHigh)}>
+            rgb({r}, {g}, {b})
+          </Subtitle2>
+        </span>
+
+        <span css={copyIconWrapperStyles(isHovered, hasColorCopied, isBrightnessHigh)}>
+          <CopyIcon css={copyIconStyles} color={isBrightnessHigh ? Color.Ink : Color.White} />
+        </span>
+
+        <Subtitle2 css={[sharedTextColorStyles(isBrightnessHigh), colorCopySuccessMessageStyles(hasColorCopied)]}>
+          {colorCopySuccessMessage}
         </Subtitle2>
-      </span>
-
-      <span css={copyIconWrapperStyles(isHovered, hasColorCopied, isBrightnessHigh)}>
-        <CopyIcon css={copyIconStyles} color={isBrightnessHigh ? Color.Ink : Color.White} />
-      </span>
-
-      <Subtitle2 css={[sharedTextColorStyles(isBrightnessHigh), colorCopySuccessMessageStyles(hasColorCopied)]}>
-        {colorCopySuccessMessage}
-      </Subtitle2>
-    </div>
-  );
-};
+      </div>
+    );
+  }
+);
 
 export default ColorChip;

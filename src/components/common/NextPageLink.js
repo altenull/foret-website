@@ -2,6 +2,7 @@ import { Subtitle2 } from '@altenull/foret-react';
 import { css, keyframes } from '@emotion/core';
 import { Link } from 'gatsby';
 import React from 'react';
+import { useIsHovered } from '../../hooks/core';
 import { ArrowRightIcon } from '../icons';
 
 const rightBounce = keyframes`
@@ -28,11 +29,13 @@ const arrowRightIconStyles = (isHovered) => css`
   animation: ${isHovered && rightBounce} 0.4s linear;
 `;
 
-const NextPageLink = ({ to, text, isHovered = false, ...props }) => {
+const NextPageLink = ({ to, text, ...props }) => {
+  const [nextPageLinkRef, isNextPageLinkHovered] = useIsHovered();
+
   return (
-    <Link css={nextPageLinkStyles} to={to} {...props}>
+    <Link css={nextPageLinkStyles} ref={nextPageLinkRef} to={to} {...props}>
       <Subtitle2>{text}</Subtitle2>
-      <ArrowRightIcon css={arrowRightIconStyles(isHovered)} />
+      <ArrowRightIcon css={arrowRightIconStyles(isNextPageLinkHovered)} />
     </Link>
   );
 };

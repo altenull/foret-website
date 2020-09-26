@@ -1,7 +1,7 @@
 import { css } from '@emotion/core';
 import { useLocation } from '@reach/router';
 import { useIntl } from 'gatsby-plugin-intl';
-import React, { useState } from 'react';
+import React from 'react';
 import { NextPageLink, PrevPageLink } from '../../components/common';
 import { useSiteMetadataQuery } from '../../hooks/core';
 import { getCurrentPageRouteIndex } from '../../utils/page.util';
@@ -12,28 +12,9 @@ const navStyles = css`
 `;
 
 const PageNavigationContainer = () => {
-  const [isPrevLinkHovered, setIsPrevLinkHovered] = useState(false);
-  const [isNextLinkHovered, setIsNextLinkHovered] = useState(false);
-
   const intl = useIntl();
   const location = useLocation();
   const { siteMetadata } = useSiteMetadataQuery();
-
-  const handlePrevLinkMouseOver = () => {
-    setIsPrevLinkHovered(true);
-  };
-
-  const handlePrevLinkMouseOut = () => {
-    setIsPrevLinkHovered(false);
-  };
-
-  const handleNextLinkMouseOver = () => {
-    setIsNextLinkHovered(true);
-  };
-
-  const handleNextLinkMouseOut = () => {
-    setIsNextLinkHovered(false);
-  };
 
   const getPageNavigationLinks = (intl, currentPageRouteIndex, pageRoutes) => {
     const prevPageNavigationIndex = currentPageRouteIndex - 1 < 0 ? pageRoutes.length - 1 : currentPageRouteIndex - 1;
@@ -60,20 +41,8 @@ const PageNavigationContainer = () => {
 
   return (
     <nav css={navStyles}>
-      <PrevPageLink
-        to={prevLink.to}
-        text={prevLink.text}
-        isHovered={isPrevLinkHovered}
-        onMouseOver={handlePrevLinkMouseOver}
-        onMouseOut={handlePrevLinkMouseOut}
-      />
-      <NextPageLink
-        to={nextLink.to}
-        text={nextLink.text}
-        isHovered={isNextLinkHovered}
-        onMouseOver={handleNextLinkMouseOver}
-        onMouseOut={handleNextLinkMouseOut}
-      />
+      <PrevPageLink to={prevLink.to} text={prevLink.text} />
+      <NextPageLink to={nextLink.to} text={nextLink.text} />
     </nav>
   );
 };

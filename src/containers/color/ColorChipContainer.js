@@ -1,27 +1,22 @@
 import { hexToRgb } from '@altenull/foret-core';
 import { useIntl } from 'gatsby-plugin-intl';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ColorChip } from '../../components/color';
+import useIsHovered from '../../hooks/core/useIsHovered';
 import { clipboardCopy } from '../../utils/clipboard.util';
 import { getBrightness } from '../../utils/color.util';
 
 const ColorChipContainer = ({ name, color }) => {
-  const [isHovered, setIsHovered] = useState(false);
   const [hasColorCopied, setHasColorCopied] = useState(false);
 
   const intl = useIntl();
+  const [colorChipRef, isColorChipHovered] = useIsHovered();
 
-  const handleMouseOver = () => {
-    setIsHovered(true);
-  };
-
-  const handleMouseOut = () => {
-    setIsHovered(false);
-
-    if (hasColorCopied) {
+  useEffect(() => {
+    if (!isColorChipHovered && hasColorCopied) {
       setHasColorCopied(false);
     }
-  };
+  }, [isColorChipHovered, hasColorCopied]);
 
   const handleClick = (color) => {
     const isClipboardCopySuccesss = clipboardCopy(color);
@@ -36,16 +31,15 @@ const ColorChipContainer = ({ name, color }) => {
 
   return (
     <ColorChip
+      ref={colorChipRef}
       name={name}
       color={color}
       rgb={rgb}
       colorCopySuccessMessage={intl.formatMessage({ id: 'color.copied' })}
       isBrightnessHigh={isBrightnessHigh}
-      isHovered={isHovered}
+      isHovered={isColorChipHovered}
       hasColorCopied={hasColorCopied}
       onClick={() => handleClick(color)}
-      onMouseOver={handleMouseOver}
-      onMouseOut={handleMouseOut}
     />
   );
 };
