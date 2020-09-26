@@ -2,7 +2,7 @@ import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 import { PageNavigationSection } from '../components/common';
-import { Layout } from '../components/foundation';
+import { PageLayout } from '../components/foundation';
 import { ContentSection, HeroSection } from '../components/get-started';
 import { useSiteMetadataQuery } from '../hooks/core';
 import { getCurrentPageRouteIndex, getPageTitle } from '../utils/page.util';
@@ -17,11 +17,11 @@ const GetStartedPage = ({ location }) => {
   return (
     <Fragment>
       <Helmet title={getStartedPageTitle} defer={false} />
-      <Layout>
+      <PageLayout>
         <HeroSection />
         <ContentSection />
         <PageNavigationSection />
-      </Layout>
+      </PageLayout>
     </Fragment>
   );
 };

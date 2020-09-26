@@ -4,7 +4,7 @@ import React, { Fragment, useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { PageNavigationSection } from '../components/common';
 import { HeroSection, TOC } from '../components/components';
-import { Layout } from '../components/foundation';
+import { PageLayout } from '../components/foundation';
 import { COMPONENT_HASHES } from '../constants/components.constant';
 import { useIsMounted, useSiteMetadataQuery } from '../hooks/core';
 import { getComponentSections, getTocItems } from '../utils/components.util';
@@ -108,12 +108,12 @@ const ComponentsPage = ({ location }) => {
   return (
     <Fragment>
       <Helmet title={componentsTitle} defer={false} />
-      <Layout>
+      <PageLayout>
         <HeroSection ref={heroSectionRef} />
         {getComponentSections(COMPONENT_HASHES)}
         <TOC items={getTocItems(intl, COMPONENT_HASHES)} currentHash={currentHash} scrollTo={scrollTo} />
         <PageNavigationSection />
-      </Layout>
+      </PageLayout>
     </Fragment>
   );
 };

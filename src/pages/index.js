@@ -1,7 +1,7 @@
 import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
-import { Layout } from '../components/foundation';
+import { PageLayout } from '../components/foundation';
 import { HeroSection, IntroSection } from '../components/home';
 
 const HomePage = () => {
@@ -11,10 +11,10 @@ const HomePage = () => {
   return (
     <Fragment>
       <Helmet title={homePageTitle} defer={false} />
-      <Layout>
+      <PageLayout>
         <HeroSection />
         <IntroSection />
-      </Layout>
+      </PageLayout>
     </Fragment>
   );
 };

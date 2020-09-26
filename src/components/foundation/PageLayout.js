@@ -1,7 +1,7 @@
 import React from 'react';
 import { FooterContainer, HeaderContainer } from '../../containers/foundation';
 
-const Layout = ({ children, ...props }) => {
+const PageLayout = ({ children, ...props }) => {
   return (
     <div {...props}>
       <HeaderContainer />
@@ -11,4 +11,4 @@ const Layout = ({ children, ...props }) => {
   );
 };
 
-export default Layout;
+export default PageLayout;

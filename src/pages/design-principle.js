@@ -3,7 +3,7 @@ import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 import { PageNavigationSection } from '../components/common';
 import { ContentSection, HeroSection } from '../components/design-principle';
-import { Layout } from '../components/foundation';
+import { PageLayout } from '../components/foundation';
 import { useSiteMetadataQuery } from '../hooks/core';
 import { getCurrentPageRouteIndex, getPageTitle } from '../utils/page.util';
 
@@ -17,11 +17,11 @@ const DesignPrinciplePage = ({ location }) => {
   return (
     <Fragment>
       <Helmet title={designPrincipleTitle} defer={false} />
-      <Layout>
+      <PageLayout>
         <HeroSection />
         <ContentSection />
         <PageNavigationSection />
-      </Layout>
+      </PageLayout>
     </Fragment>
   );
 };
