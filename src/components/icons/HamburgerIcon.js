@@ -10,13 +10,13 @@ const hamburgerIconStyles = css`
   cursor: pointer;
 `;
 
-const lineStyles = css`
+const lineStyles = (color) => css`
   position: absolute;
   left: 0;
   right: 0;
   height: 2px;
   border-radius: 1px;
-  background-color: ${Color.Ink};
+  background-color: ${color};
   transition: top 0.3s ease-in-out, left 0.15s ease-in-out, right 0.15s ease-in-out, transform 0.3s ease-in-out;
 `;
 
@@ -37,13 +37,13 @@ const bottomLineStyles = (shouldTransformToCloseIcon) => css`
   right: ${shouldTransformToCloseIcon ? '50%' : '0'};
 `;
 
-const HamburgerIcon = ({ shouldTransformToCloseIcon, ...props }) => {
+const HamburgerIcon = ({ shouldTransformToCloseIcon, color = Color.Ink, ...props }) => {
   return (
     <span css={hamburgerIconStyles} {...props}>
-      <span css={[lineStyles, topLineStyles(shouldTransformToCloseIcon)]} />
-      <span css={[lineStyles, middleLineStyles(shouldTransformToCloseIcon, 1)]} />
-      <span css={[lineStyles, middleLineStyles(shouldTransformToCloseIcon, -1)]} />
-      <span css={[lineStyles, bottomLineStyles(shouldTransformToCloseIcon)]} />
+      <span css={[lineStyles(color), topLineStyles(shouldTransformToCloseIcon)]} />
+      <span css={[lineStyles(color), middleLineStyles(shouldTransformToCloseIcon, 1)]} />
+      <span css={[lineStyles(color), middleLineStyles(shouldTransformToCloseIcon, -1)]} />
+      <span css={[lineStyles(color), bottomLineStyles(shouldTransformToCloseIcon)]} />
     </span>
   );
 };
