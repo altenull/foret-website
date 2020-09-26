@@ -1,7 +1,7 @@
 import { MarginalHeading3, MarginalParagraph, Subtitle2, Tab, TabGroup } from '@altenull/foret-react';
 import { css } from '@emotion/core';
 import { useIntl } from 'gatsby-plugin-intl';
-import React, { Fragment } from 'react';
+import React from 'react';
 import {
   TAB_GROUP_PROPERTIES_WITHOUT_DESCRIPTION,
   TAB_GROUP_PROPS_WITHOUT_DESCRIPTION,

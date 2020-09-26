@@ -10,7 +10,7 @@ import {
 } from '@altenull/foret-react';
 import { css } from '@emotion/core';
 import { useIntl } from 'gatsby-plugin-intl';
-import React, { Fragment } from 'react';
+import React from 'react';
 import {
   SELECT_ITEM_GROUP_PROPS_WITHOUT_DESCRIPTION,
   SELECT_ITEM_PROPS_WITHOUT_DESCRIPTION,
