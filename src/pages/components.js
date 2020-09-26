@@ -10,7 +10,7 @@ import { Layout } from '../components/foundation';
 import { COMPONENT_HASHES } from '../constants/components.constant';
 import { useIsMounted, useSiteMetadataQuery } from '../hooks/core';
 import { getComponentSections, getTocItems } from '../utils/components.util';
-import { getCurrentPageRouteIndex, getPageNavigationLinks, getPageTitle } from '../utils/page.util';
+import { getCurrentPageRouteIndex, getPageTitle } from '../utils/page.util';
 
 const layoutStyles = css`
   background-color: ${Color.Paper};
@@ -110,7 +110,6 @@ const ComponentsPage = ({ location }) => {
 
   const currentPageRouteIndex = getCurrentPageRouteIndex(location.pathname, siteMetadata.pageRoutes);
   const componentsTitle = getPageTitle(intl, currentPageRouteIndex, siteMetadata.pageRoutes);
-  const { prevLink, nextLink } = getPageNavigationLinks(intl, currentPageRouteIndex, siteMetadata.pageRoutes);
 
   return (
     <Fragment>
@@ -119,7 +118,7 @@ const ComponentsPage = ({ location }) => {
         <HeroSection ref={heroSectionRef} />
         {getComponentSections(COMPONENT_HASHES)}
         <TOC items={getTocItems(intl, COMPONENT_HASHES)} currentHash={currentHash} scrollTo={scrollTo} />
-        <PageNavigationSection prevLink={prevLink} nextLink={nextLink} />
+        <PageNavigationSection />
       </Layout>
     </Fragment>
   );

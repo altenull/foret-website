@@ -1,17 +1,17 @@
 import { css } from '@emotion/core';
 import React from 'react';
+import { PageNavigationContainer } from '../../containers/common';
 import { ResponsiveContentLayout } from '../foundation';
-import PageNavigation from './PageNavigation';
 
 const sectionStyles = css`
   margin: 64px 0 104px;
 `;
 
-const PageNavigationSection = ({ prevLink, nextLink }) => {
+const PageNavigationSection = () => {
   return (
     <section css={sectionStyles}>
       <ResponsiveContentLayout>
-        <PageNavigation prevLink={prevLink} nextLink={nextLink} />
+        <PageNavigationContainer />
       </ResponsiveContentLayout>
     </section>
   );

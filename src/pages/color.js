@@ -7,7 +7,7 @@ import { ContentSection, HeroSection } from '../components/color';
 import { PageNavigationSection } from '../components/common';
 import { Layout } from '../components/foundation';
 import { useSiteMetadataQuery } from '../hooks/core';
-import { getCurrentPageRouteIndex, getPageNavigationLinks, getPageTitle } from '../utils/page.util';
+import { getCurrentPageRouteIndex, getPageTitle } from '../utils/page.util';
 
 const layoutStyles = css`
   background-color: ${Color.Paper};
@@ -19,7 +19,6 @@ const ColorPage = ({ location }) => {
 
   const currentPageRouteIndex = getCurrentPageRouteIndex(location.pathname, siteMetadata.pageRoutes);
   const colorPageTitle = getPageTitle(intl, currentPageRouteIndex, siteMetadata.pageRoutes);
-  const { prevLink, nextLink } = getPageNavigationLinks(intl, currentPageRouteIndex, siteMetadata.pageRoutes);
 
   return (
     <Fragment>
@@ -27,7 +26,7 @@ const ColorPage = ({ location }) => {
       <Layout css={layoutStyles}>
         <HeroSection />
         <ContentSection />
-        <PageNavigationSection prevLink={prevLink} nextLink={nextLink} />
+        <PageNavigationSection />
       </Layout>
     </Fragment>
   );

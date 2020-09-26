@@ -7,7 +7,7 @@ import { PageNavigationSection } from '../components/common';
 import { Layout } from '../components/foundation';
 import { ContentSection, HeroSection } from '../components/get-started';
 import { useSiteMetadataQuery } from '../hooks/core';
-import { getCurrentPageRouteIndex, getPageNavigationLinks, getPageTitle } from '../utils/page.util';
+import { getCurrentPageRouteIndex, getPageTitle } from '../utils/page.util';
 
 const layoutStyles = css`
   background-color: ${Color.Paper};
@@ -19,7 +19,6 @@ const GetStartedPage = ({ location }) => {
 
   const currentPageRouteIndex = getCurrentPageRouteIndex(location.pathname, siteMetadata.pageRoutes);
   const getStartedPageTitle = getPageTitle(intl, currentPageRouteIndex, siteMetadata.pageRoutes);
-  const { prevLink, nextLink } = getPageNavigationLinks(intl, currentPageRouteIndex, siteMetadata.pageRoutes);
 
   return (
     <Fragment>
@@ -27,7 +26,7 @@ const GetStartedPage = ({ location }) => {
       <Layout css={layoutStyles}>
         <HeroSection />
         <ContentSection />
-        <PageNavigationSection prevLink={prevLink} nextLink={nextLink} />
+        <PageNavigationSection />
       </Layout>
     </Fragment>
   );
