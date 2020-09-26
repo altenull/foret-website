@@ -14,7 +14,7 @@ const drawerStyles = (shouldStartAnimation) => css`
   top: 0;
   right: 0;
   bottom: 0;
-  transition: all 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, opacity 0.15s;
   opacity: ${shouldStartAnimation ? '1' : '0'};
   transform: translateY(${shouldStartAnimation ? '0' : '-10%'});
   background-color: ${Color.White};
