@@ -52,16 +52,9 @@ const ComponentsPage = ({ location }) => {
 
     if (isMounted) {
       const anchorHeadingIoCallback = (entries) => {
-        const hasNoIntersectingEntry = !entries.find((entry) => entry.isIntersecting);
+        const hasIntersectingEntry = entries.some((entry) => entry.isIntersecting);
 
-        if (hasNoIntersectingEntry) {
-          const isHeroSectionVisible =
-            document.documentElement.scrollTop < heroSectionRef.current.getBoundingClientRect().height;
-
-          if (isHeroSectionVisible) {
-            setCurrentHash('');
-          }
-        } else {
+        if (hasIntersectingEntry) {
           entries.forEach((entry) => {
             if (!entry.isIntersecting) {
               return;
@@ -73,6 +66,13 @@ const ComponentsPage = ({ location }) => {
               setCurrentHash(newHash);
             }
           });
+        } else {
+          const isHeroSectionVisible =
+            document.documentElement.scrollTop < heroSectionRef.current.getBoundingClientRect().height;
+
+          if (isHeroSectionVisible) {
+            setCurrentHash('');
+          }
         }
       };
 
