@@ -54,9 +54,9 @@ const colorCopySuccessMessageStyles = (hasColorCopied) => css`
 
 const ColorChip = ({
   name,
-  colorCopySuccessMessage,
   color,
   rgb: { r, g, b },
+  colorCopySuccessMessage,
   isBrightnessHigh,
   isHovered,
   hasColorCopied,

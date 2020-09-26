@@ -37,9 +37,9 @@ const ColorChipContainer = ({ name, color }) => {
   return (
     <ColorChip
       name={name}
-      colorCopySuccessMessage={intl.formatMessage({ id: 'color.copied' })}
       color={color}
       rgb={rgb}
+      colorCopySuccessMessage={intl.formatMessage({ id: 'color.copied' })}
       isBrightnessHigh={isBrightnessHigh}
       isHovered={isHovered}
       hasColorCopied={hasColorCopied}
