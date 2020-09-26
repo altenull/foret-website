@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f8b5abc4-a3c9-42c3-ac26-acf8c37241a6/deploy-status)](https://app.netlify.com/sites/foretdesign/deploys)
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.org">
