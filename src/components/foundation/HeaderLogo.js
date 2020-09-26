@@ -11,28 +11,28 @@ const headerLogoStyles = css`
   pointer-events: all;
 `;
 
-const logoStyles = (isScrolled) => css`
+const logoStyles = (shouldHideLogoTitle) => css`
   margin-right: 16px;
   transition: width 0.3s, height 0.3s;
-  width: ${isScrolled ? '56px' : '80px'} !important;
-  height: ${isScrolled ? '56px' : '80px'} !important;
+  width: ${shouldHideLogoTitle ? '56px' : '80px'} !important;
+  height: ${shouldHideLogoTitle ? '56px' : '80px'} !important;
 `;
 
-const logoTitleStyles = (isScrolled) => css`
+const logoTitleStyles = (shouldHideLogoTitle) => css`
   font-size: 1.5rem;
   white-space: nowrap;
   color: ${Color.Ink};
-  visibility: ${isScrolled ? 'hidden' : 'visible'};
-  max-width: ${isScrolled ? '0' : 'initial'};
-  opacity: ${isScrolled ? '0' : '1'};
-  transition: ${isScrolled ? 'opacity 0.3s, visibility 0ms 0.3s, max-width 0ms 0.3s' : 'opacity 0.3s'};
+  visibility: ${shouldHideLogoTitle ? 'hidden' : 'visible'};
+  max-width: ${shouldHideLogoTitle ? '0' : 'initial'};
+  opacity: ${shouldHideLogoTitle ? '0' : '1'};
+  transition: ${shouldHideLogoTitle ? 'opacity 0.3s, visibility 0ms 0.3s, max-width 0ms 0.3s' : 'opacity 0.3s'};
 `;
 
-const HeaderLogo = ({ logoFixed, logoTitle, isScrolled }) => {
+const HeaderLogo = ({ logoFixed, logoTitle, shouldHideLogoTitle }) => {
   return (
     <Link to={'/'} css={headerLogoStyles}>
-      <Img fixed={logoFixed} css={logoStyles(isScrolled)} />
-      <span css={logoTitleStyles(isScrolled)}>{logoTitle}</span>
+      <Img fixed={logoFixed} css={logoStyles(shouldHideLogoTitle)} />
+      <span css={logoTitleStyles(shouldHideLogoTitle)}>{logoTitle}</span>
     </Link>
   );
 };

@@ -103,7 +103,7 @@ const HeaderContainer = () => {
         <HeaderLogo
           logoFixed={getLogoImageResponse.logoCircleImage}
           logoTitle={intl.formatMessage({ id: 'title' })}
-          isScrolled={isScrolled}
+          shouldHideLogoTitle={isScrolled}
         />
 
         <div css={hamburgerMenuStyles} onClick={() => toggleDrawer()}>
