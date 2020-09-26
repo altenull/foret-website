@@ -9,7 +9,6 @@ const footerStyles = css`
   padding: 64px 128px;
   box-sizing: border-box;
   border-top: 1px solid ${Color.Ink};
-  background-color: ${Color.Paper};
 `;
 
 const footerContentWrapperStyles = css`

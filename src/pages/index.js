@@ -1,14 +1,8 @@
-import { Color } from '@altenull/foret-core';
-import { css } from '@emotion/core';
 import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 import { Layout } from '../components/foundation';
 import { HeroSection, IntroSection } from '../components/home';
-
-const layoutStyles = css`
-  background-color: ${Color.Paper};
-`;
 
 const HomePage = () => {
   const intl = useIntl();
@@ -17,7 +11,7 @@ const HomePage = () => {
   return (
     <Fragment>
       <Helmet title={homePageTitle} defer={false} />
-      <Layout css={layoutStyles}>
+      <Layout>
         <HeroSection />
         <IntroSection />
       </Layout>

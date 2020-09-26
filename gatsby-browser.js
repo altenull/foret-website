@@ -11,6 +11,7 @@ export const wrapRootElement = ({ element }) => {
       padding: 0;
       min-height: 100vh;
       max-width: 100vw;
+      background-color: ${Color.Paper};
     }
 
     h1,

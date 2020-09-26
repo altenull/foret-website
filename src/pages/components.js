@@ -1,5 +1,3 @@
-import { Color } from '@altenull/foret-core';
-import { css } from '@emotion/core';
 import { navigate } from 'gatsby';
 import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment, useEffect, useRef, useState } from 'react';
@@ -11,10 +9,6 @@ import { COMPONENT_HASHES } from '../constants/components.constant';
 import { useIsMounted, useSiteMetadataQuery } from '../hooks/core';
 import { getComponentSections, getTocItems } from '../utils/components.util';
 import { getCurrentPageRouteIndex, getPageTitle } from '../utils/page.util';
-
-const layoutStyles = css`
-  background-color: ${Color.Paper};
-`;
 
 const ComponentsPage = ({ location }) => {
   const [currentHash, setCurrentHash] = useState(location.hash);
@@ -114,7 +108,7 @@ const ComponentsPage = ({ location }) => {
   return (
     <Fragment>
       <Helmet title={componentsTitle} defer={false} />
-      <Layout css={layoutStyles}>
+      <Layout>
         <HeroSection ref={heroSectionRef} />
         {getComponentSections(COMPONENT_HASHES)}
         <TOC items={getTocItems(intl, COMPONENT_HASHES)} currentHash={currentHash} scrollTo={scrollTo} />
