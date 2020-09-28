@@ -7,7 +7,6 @@ const tocStyles = (theme) => css`
   position: fixed;
   right: 160px;
   top: 360px;
-  padding-left: 12px;
   border-left: 2px solid ${theme.colors.fog};
 `;
 
@@ -18,29 +17,35 @@ const tocItemContainerStyles = css`
   padding: 0;
 `;
 
-const tocItemStyles = css`
+const tocItemStyles = (theme, isActive, isFirstItem) => css`
   display: inline-block;
   text-decoration: none;
-  & + & {
-    margin-top: 8px;
-  }
+  padding-left: 14px;
+  margin-left: -2px;
+  border-left: 2px solid;
+  border-left-color: ${isActive ? theme.colors.foretGreen : 'transparent'};
+  margin-top: ${isFirstItem ? '0' : '8px'};
 `;
 
 const linkTextStyles = (theme, isActive) => css`
-  font-weight: ${isActive ? theme.fontWeights.semiBold : theme.fontWeights.light};
   color: ${isActive ? theme.colors.foretGreen : theme.colors.stone};
 `;
 
 const TOC = ({ items, currentHash, scrollTo }) => {
+  const tocItems = items.map(({ to, text }, index) => {
+    const isActive = to === currentHash;
+    const isFirstItem = index <= 0;
+
+    return (
+      <Link key={to} css={(theme) => tocItemStyles(theme, isActive, isFirstItem)} to={to} onClick={() => scrollTo(to)}>
+        <SmallText css={(theme) => linkTextStyles(theme, isActive)}>{text}</SmallText>
+      </Link>
+    );
+  });
+
   return (
     <nav css={tocStyles}>
-      <ul css={tocItemContainerStyles}>
-        {items.map(({ to, text }) => (
-          <Link key={to} css={tocItemStyles} to={to} onClick={() => scrollTo(to)}>
-            <SmallText css={(theme) => linkTextStyles(theme, to === currentHash)}>{text}</SmallText>
-          </Link>
-        ))}
-      </ul>
+      <ul css={tocItemContainerStyles}>{tocItems}</ul>
     </nav>
   );
 };
