@@ -17,7 +17,7 @@ const breatheDown = keyframes`
   }
 `;
 
-const scrollDownIndicatorStyles = (shouldHideScrollDownIndicator) => css`
+const scrollDownIndicatorStyles = (theme, shouldHideScrollDownIndicator) => css`
   position: fixed;
   left: 0;
   right: 0;
@@ -25,14 +25,14 @@ const scrollDownIndicatorStyles = (shouldHideScrollDownIndicator) => css`
   padding: 8px;
   margin: 0 auto;
   z-index: 500; /* TODO: Manage z-index in one place */
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity ${theme.duration.slow} ease-in-out;
   opacity: ${shouldHideScrollDownIndicator ? '0' : '1'};
   pointer-events: ${shouldHideScrollDownIndicator && 'none'};
   animation: ${breatheDown} 3.2s infinite;
 `;
 
 const ScrollDownIndicator = ({ shouldHideScrollDownIndicator = false, ...props }) => {
-  return <ArrowDownIcon css={scrollDownIndicatorStyles(shouldHideScrollDownIndicator)} {...props} />;
+  return <ArrowDownIcon css={(theme) => scrollDownIndicatorStyles(theme, shouldHideScrollDownIndicator)} {...props} />;
 };
 
 export default ScrollDownIndicator;

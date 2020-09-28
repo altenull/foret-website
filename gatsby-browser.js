@@ -1,7 +1,8 @@
 import { Color } from '@altenull/foret-core';
+import { ThemeProvider } from '@altenull/foret-react';
 import { css, Global } from '@emotion/core';
 import 'prismjs/themes/prism-tomorrow.css';
-import React, { Fragment } from 'react';
+import React from 'react';
 
 // issue - https://github.com/altenull/foret-website/issues/1
 export const wrapRootElement = ({ element }) => {
@@ -35,10 +36,10 @@ export const wrapRootElement = ({ element }) => {
   `;
 
   return (
-    <Fragment>
+    <ThemeProvider>
       <Global styles={globalStyles} />
       {element}
-    </Fragment>
+    </ThemeProvider>
   );
 };
 

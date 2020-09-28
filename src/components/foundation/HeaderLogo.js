@@ -11,28 +11,30 @@ const headerLogoStyles = css`
   pointer-events: all;
 `;
 
-const logoStyles = (shouldHideLogoTitle) => css`
+const logoStyles = (theme, shouldHideLogoTitle) => css`
   margin-right: 16px;
-  transition: width 0.3s, height 0.3s;
+  transition: width ${theme.duration.slow}, height ${theme.duration.slow};
   width: ${shouldHideLogoTitle ? '56px' : '80px'} !important;
   height: ${shouldHideLogoTitle ? '56px' : '80px'} !important;
 `;
 
-const logoTitleStyles = (shouldHideLogoTitle) => css`
+const logoTitleStyles = (theme, shouldHideLogoTitle) => css`
   font-size: 1.5rem;
   white-space: nowrap;
   color: ${Color.Ink};
   visibility: ${shouldHideLogoTitle ? 'hidden' : 'visible'};
   max-width: ${shouldHideLogoTitle ? '0' : 'initial'};
   opacity: ${shouldHideLogoTitle ? '0' : '1'};
-  transition: ${shouldHideLogoTitle ? 'opacity 0.3s, visibility 0ms 0.3s, max-width 0ms 0.3s' : 'opacity 0.3s'};
+  transition: ${shouldHideLogoTitle
+    ? `opacity ${theme.duration.slow}, visibility 0ms ${theme.duration.slow}, max-width 0ms ${theme.duration.slow}`
+    : `opacity ${theme.duration.slow}`};
 `;
 
 const HeaderLogo = ({ logoFixed, logoTitle, shouldHideLogoTitle }) => {
   return (
     <Link to={'/'} css={headerLogoStyles}>
-      <Img fixed={logoFixed} css={logoStyles(shouldHideLogoTitle)} />
-      <span css={logoTitleStyles(shouldHideLogoTitle)}>{logoTitle}</span>
+      <Img fixed={logoFixed} css={(theme) => logoStyles(theme, shouldHideLogoTitle)} />
+      <span css={(theme) => logoTitleStyles(theme, shouldHideLogoTitle)}>{logoTitle}</span>
     </Link>
   );
 };

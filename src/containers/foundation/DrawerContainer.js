@@ -8,13 +8,13 @@ import { useSiteMetadataQuery } from '../../hooks/core';
 import useIsMounted from '../../hooks/core/useIsMounted';
 import { getLanguageLinks } from '../../utils/locale.util';
 
-const drawerStyles = (shouldStartAnimation) => css`
+const drawerStyles = (theme, shouldStartAnimation) => css`
   position: fixed;
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
-  transition: transform 0.3s ease-in-out, opacity 0.15s;
+  transition: transform ${theme.duration.slow} ease-in-out, opacity ${theme.duration.normal};
   opacity: ${shouldStartAnimation ? '1' : '0'};
   transform: translateY(${shouldStartAnimation ? '0' : '-10%'});
   background-color: ${Color.White};
@@ -68,7 +68,7 @@ const DrawerContainer = () => {
         <Fragment>
           <Global styles={globalStyles} />
 
-          <div css={drawerStyles(isMounted)}>
+          <div css={(theme) => drawerStyles(theme, isMounted)}>
             <div css={positionerStyles}>
               <ul css={pageLinkContainerStyles}>{pageLinks}</ul>
 

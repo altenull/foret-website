@@ -19,21 +19,21 @@ const sharedTextColorStyles = (isBrightnessHigh) => css`
   color: ${isBrightnessHigh ? Color.Ink : Color.White};
 `;
 
-const colorCodeWrapperStyles = (isHovered) => css`
+const colorCodeWrapperStyles = (theme, isHovered) => css`
   position: absolute;
   left: 24px;
   bottom: 8px;
-  transition: transform 0.3s, opacity 0.3s;
+  transition: transform ${theme.duration.slow}, opacity ${theme.duration.slow};
   transform: translateY(${isHovered ? '-8px' : '0'});
   opacity: ${isHovered ? '1' : '0'};
 `;
 
-const copyIconWrapperStyles = (isHovered, hasColorCopied, isBrightnessHigh) => css`
+const copyIconWrapperStyles = (theme, isHovered, hasColorCopied, isBrightnessHigh) => css`
   position: absolute;
   border-radius: 50%;
   top: 16px;
   right: 16px;
-  transition: transform 0.3s, opacity 0.3s, background-color 0.3s;
+  transition: transform ${theme.duration.slow}, opacity ${theme.duration.slow}, background-color ${theme.duration.slow};
   transform: translateX(${hasColorCopied ? '8px' : '0'});
   opacity: ${hasColorCopied ? '0' : '1'};
   background-color: ${isHovered ? (isBrightnessHigh ? 'rgba(0, 0, 0, 0.075)' : 'rgba(255, 255, 255, 0.25)') : 'none'};
@@ -43,11 +43,11 @@ const copyIconStyles = css`
   padding: 8px;
 `;
 
-const colorCopySuccessMessageStyles = (hasColorCopied) => css`
+const colorCopySuccessMessageStyles = (theme, hasColorCopied) => css`
   position: absolute;
   top: 24px;
   right: 8px;
-  transition: transform 0.3s, opacity 0.3s;
+  transition: transform ${theme.duration.slow}, opacity ${theme.duration.slow};
   transform: translateX(${hasColorCopied ? '-8px' : '0'});
   opacity: ${hasColorCopied ? '1' : '0'};
 `;
@@ -61,18 +61,22 @@ const ColorChip = React.forwardRef(
       <div css={colorChipStyles(color)} ref={ref} {...props}>
         <Paragraph css={sharedTextColorStyles(isBrightnessHigh)}>{name}</Paragraph>
 
-        <span css={colorCodeWrapperStyles(isHovered)}>
+        <span css={(theme) => colorCodeWrapperStyles(theme, isHovered)}>
           <Subtitle2 css={sharedTextColorStyles(isBrightnessHigh)}>{color}</Subtitle2>
           <Subtitle2 css={sharedTextColorStyles(isBrightnessHigh)}>
             rgb({r}, {g}, {b})
           </Subtitle2>
         </span>
 
-        <span css={copyIconWrapperStyles(isHovered, hasColorCopied, isBrightnessHigh)}>
+        <span css={(theme) => copyIconWrapperStyles(theme, isHovered, hasColorCopied, isBrightnessHigh)}>
           <CopyIcon css={copyIconStyles} color={isBrightnessHigh ? Color.Ink : Color.White} />
         </span>
 
-        <Subtitle2 css={[sharedTextColorStyles(isBrightnessHigh), colorCopySuccessMessageStyles(hasColorCopied)]}>
+        <Subtitle2
+          css={(theme) => [
+            sharedTextColorStyles(isBrightnessHigh),
+            colorCopySuccessMessageStyles(theme, hasColorCopied),
+          ]}>
           {colorCopySuccessMessage}
         </Subtitle2>
       </div>
