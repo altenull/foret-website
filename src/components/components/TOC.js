@@ -28,7 +28,7 @@ const tocItemStyles = css`
 `;
 
 const linkTextStyles = (isActivated) => css`
-  font-weight: ${isActivated ? FontWeight.semiBold : FontWeight.light};
+  font-weight: ${isActivated ? FontWeight.SemiBold : FontWeight.Light};
   color: ${isActivated ? Color.ForetGreen : Color.Stone};
 `;
 
