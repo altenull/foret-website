@@ -4,13 +4,11 @@ import React, { Fragment, useCallback, useEffect, useRef, useState } from 'react
 import ReactDOM from 'react-dom';
 import { HeaderLogo } from '../../components/foundation';
 import { HamburgerIcon } from '../../components/icons';
-import { BreakpointEnum } from '../../enums/core/breakpoint.enum';
 import { useIsMounted } from '../../hooks/core';
 import { useLogoImageQuery } from '../../hooks/foundation';
-import { mediaQuery } from '../../utils/media-query.util';
 import DrawerContainer from './DrawerContainer';
 
-const headerStyles = css`
+const headerStyles = (theme) => css`
   position: fixed;
   top: 1rem;
   left: 50%;
@@ -22,7 +20,7 @@ const headerStyles = css`
   box-sizing: border-box;
   z-index: 1100; /* TODO: Manage z-index in one place */
   pointer-events: none;
-  ${mediaQuery(BreakpointEnum.ViewPort9)} {
+  ${theme.mediaQueries.viewPort9} {
     width: calc(100% - 4rem);
     max-width: 1440px;
     top: 56px;
