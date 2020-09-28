@@ -1,14 +1,13 @@
-import { Color } from '@altenull/foret-core';
 import { SmallText } from '@altenull/foret-react';
 import { css } from '@emotion/core';
 import { IntlContextConsumer, useIntl } from 'gatsby-plugin-intl';
 import React from 'react';
 import { getLanguageLinks } from '../../utils/locale.util';
 
-const footerStyles = css`
+const footerStyles = (theme) => css`
   padding: 64px 128px;
   box-sizing: border-box;
-  border-top: 1px solid ${Color.Ink};
+  border-top: 1px solid ${theme.colors.ink};
 `;
 
 const footerContentWrapperStyles = css`

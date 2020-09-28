@@ -1,4 +1,3 @@
-import { Color } from '@altenull/foret-core';
 import { Heading1, PrimaryButton, Subtitle1 } from '@altenull/foret-react';
 import { css } from '@emotion/core';
 import { Link } from 'gatsby';
@@ -29,10 +28,10 @@ const leftColumnContentPositionerStyles = css`
   margin: 220px 0 0 96px;
 `;
 
-const dividerStyles = css`
+const dividerStyles = (theme) => css`
   flex-basis: 2px;
   min-height: 100%;
-  background-color: ${Color.ForetGreen};
+  background-color: ${theme.colors.foretGreen};
 `;
 
 const mainTitleStyles = css`

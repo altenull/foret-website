@@ -1,4 +1,3 @@
-import { Color } from '@altenull/foret-core';
 import { css } from '@emotion/core';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
@@ -21,7 +20,7 @@ const logoStyles = (theme, shouldHideLogoTitle) => css`
 const logoTitleStyles = (theme, shouldHideLogoTitle) => css`
   font-size: 1.5rem;
   white-space: nowrap;
-  color: ${Color.Ink};
+  color: ${theme.colors.ink};
   visibility: ${shouldHideLogoTitle ? 'hidden' : 'visible'};
   max-width: ${shouldHideLogoTitle ? '0' : 'initial'};
   opacity: ${shouldHideLogoTitle ? '0' : '1'};

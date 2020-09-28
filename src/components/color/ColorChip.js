@@ -15,8 +15,8 @@ const colorChipStyles = (color) => css`
   background-color: ${color};
 `;
 
-const sharedTextColorStyles = (isBrightnessHigh) => css`
-  color: ${isBrightnessHigh ? Color.Ink : Color.White};
+const sharedTextColorStyles = (theme, isBrightnessHigh) => css`
+  color: ${isBrightnessHigh ? theme.colors.ink : theme.colors.white};
 `;
 
 const colorCodeWrapperStyles = (theme, isHovered) => css`
@@ -59,11 +59,11 @@ const ColorChip = React.forwardRef(
   ) => {
     return (
       <div css={colorChipStyles(color)} ref={ref} {...props}>
-        <Paragraph css={sharedTextColorStyles(isBrightnessHigh)}>{name}</Paragraph>
+        <Paragraph css={(theme) => sharedTextColorStyles(theme, isBrightnessHigh)}>{name}</Paragraph>
 
         <span css={(theme) => colorCodeWrapperStyles(theme, isHovered)}>
-          <Subtitle2 css={sharedTextColorStyles(isBrightnessHigh)}>{color}</Subtitle2>
-          <Subtitle2 css={sharedTextColorStyles(isBrightnessHigh)}>
+          <Subtitle2 css={(theme) => sharedTextColorStyles(theme, isBrightnessHigh)}>{color}</Subtitle2>
+          <Subtitle2 css={(theme) => sharedTextColorStyles(theme, isBrightnessHigh)}>
             rgb({r}, {g}, {b})
           </Subtitle2>
         </span>
@@ -74,7 +74,7 @@ const ColorChip = React.forwardRef(
 
         <Subtitle2
           css={(theme) => [
-            sharedTextColorStyles(isBrightnessHigh),
+            sharedTextColorStyles(theme, isBrightnessHigh),
             colorCopySuccessMessageStyles(theme, hasColorCopied),
           ]}>
           {colorCopySuccessMessage}

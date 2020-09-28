@@ -1,4 +1,3 @@
-import { Color } from '@altenull/foret-core';
 import { MarginalParagraph } from '@altenull/foret-react';
 import { css, Global } from '@emotion/core';
 import { IntlContextConsumer, useIntl } from 'gatsby-plugin-intl';
@@ -17,7 +16,7 @@ const drawerStyles = (theme, shouldStartAnimation) => css`
   transition: transform ${theme.duration.slow} ease-in-out, opacity ${theme.duration.normal};
   opacity: ${shouldStartAnimation ? '1' : '0'};
   transform: translateY(${shouldStartAnimation ? '0' : '-10%'});
-  background-color: ${Color.White};
+  background-color: ${theme.colors.white};
   z-index: 1000; /* TODO: Manage z-index in one place */
 `;
 

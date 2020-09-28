@@ -1,4 +1,3 @@
-import { Color } from '@altenull/foret-core';
 import { ThemeProvider } from '@altenull/foret-react';
 import { css, Global } from '@emotion/core';
 import 'prismjs/themes/prism-tomorrow.css';
@@ -6,13 +5,13 @@ import React from 'react';
 
 // issue - https://github.com/altenull/foret-website/issues/1
 export const wrapRootElement = ({ element }) => {
-  const globalStyles = css`
+  const globalStyles = (theme) => css`
     body {
       margin: 0;
       padding: 0;
       min-height: 100vh;
       max-width: 100vw;
-      background-color: ${Color.Paper};
+      background-color: ${theme.colors.paper};
     }
 
     h1,
@@ -25,7 +24,7 @@ export const wrapRootElement = ({ element }) => {
     span,
     div {
       &::selection {
-        background: ${Color.ForetGreen};
+        background: ${theme.colors.foretGreen};
       }
     }
 

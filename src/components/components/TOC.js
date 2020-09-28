@@ -1,15 +1,14 @@
-import { Color } from '@altenull/foret-core';
 import { SmallText } from '@altenull/foret-react';
 import { css } from '@emotion/core';
 import { Link } from 'gatsby';
 import React from 'react';
 
-const tocStyles = css`
+const tocStyles = (theme) => css`
   position: fixed;
   right: 160px;
   top: 360px;
   padding-left: 12px;
-  border-left: 2px solid ${Color.Fog};
+  border-left: 2px solid ${theme.colors.fog};
 `;
 
 const tocItemContainerStyles = css`
@@ -29,7 +28,7 @@ const tocItemStyles = css`
 
 const linkTextStyles = (theme, isActive) => css`
   font-weight: ${isActive ? theme.fontWeights.semiBold : theme.fontWeights.light};
-  color: ${isActive ? Color.ForetGreen : Color.Stone};
+  color: ${isActive ? theme.colors.foretGreen : theme.colors.stone};
 `;
 
 const TOC = ({ items, currentHash, scrollTo }) => {
