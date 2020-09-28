@@ -5,6 +5,14 @@ import React from 'react';
 
 // issue - https://github.com/altenull/foret-website/issues/1
 export const wrapRootElement = ({ element }) => {
+  const customTheme = {
+    zIndexes: {
+      scrollDownIndicator: 900,
+      drawer: 1000,
+      header: 1100,
+    },
+  };
+
   const globalStyles = (theme) => css`
     body {
       margin: 0;
@@ -35,7 +43,7 @@ export const wrapRootElement = ({ element }) => {
   `;
 
   return (
-    <ThemeProvider>
+    <ThemeProvider theme={customTheme}>
       <Global styles={globalStyles} />
       {element}
     </ThemeProvider>

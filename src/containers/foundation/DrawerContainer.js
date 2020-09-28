@@ -17,7 +17,7 @@ const drawerStyles = (theme, shouldStartAnimation) => css`
   opacity: ${shouldStartAnimation ? '1' : '0'};
   transform: translateY(${shouldStartAnimation ? '0' : '-10%'});
   background-color: ${theme.colors.white};
-  z-index: 1000; /* TODO: Manage z-index in one place */
+  z-index: ${theme.zIndexes.drawer};
 `;
 
 const positionerStyles = css`

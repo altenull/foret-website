@@ -18,7 +18,7 @@ const headerStyles = (theme) => css`
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
-  z-index: 1100; /* TODO: Manage z-index in one place */
+  z-index: ${theme.zIndexes.header};
   pointer-events: none;
   ${theme.mediaQueries.viewPort9} {
     width: calc(100% - 4rem);
