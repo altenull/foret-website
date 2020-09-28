@@ -1,4 +1,4 @@
-import { Color, FontWeight } from '@altenull/foret-core';
+import { Color } from '@altenull/foret-core';
 import { SmallText } from '@altenull/foret-react';
 import { css } from '@emotion/core';
 import { Link } from 'gatsby';
@@ -27,9 +27,9 @@ const tocItemStyles = css`
   }
 `;
 
-const linkTextStyles = (isActivated) => css`
-  font-weight: ${isActivated ? FontWeight.SemiBold : FontWeight.Light};
-  color: ${isActivated ? Color.ForetGreen : Color.Stone};
+const linkTextStyles = (theme, isActive) => css`
+  font-weight: ${isActive ? theme.fontWeights.semiBold : theme.fontWeights.light};
+  color: ${isActive ? Color.ForetGreen : Color.Stone};
 `;
 
 const TOC = ({ items, currentHash, scrollTo }) => {
@@ -38,7 +38,7 @@ const TOC = ({ items, currentHash, scrollTo }) => {
       <ul css={tocItemContainerStyles}>
         {items.map(({ to, text }) => (
           <Link key={to} css={tocItemStyles} to={to} onClick={() => scrollTo(to)}>
-            <SmallText css={linkTextStyles(to === currentHash)}>{text}</SmallText>
+            <SmallText css={(theme) => linkTextStyles(theme, to === currentHash)}>{text}</SmallText>
           </Link>
         ))}
       </ul>
