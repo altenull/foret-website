@@ -1,50 +1,14 @@
 import { ThemeProvider } from '@altenull/foret-react';
-import { css, Global } from '@emotion/core';
+import { Global } from '@emotion/core';
 import 'prismjs/themes/prism-tomorrow.css';
 import React from 'react';
+import { getCustomTheme, getGlobalStyles } from './src/utils/theme.util';
 
 // issue - https://github.com/altenull/foret-website/issues/1
 export const wrapRootElement = ({ element }) => {
-  const customTheme = {
-    zIndexes: {
-      scrollDownIndicator: 900,
-      drawer: 1000,
-      header: 1100,
-    },
-  };
-
-  const globalStyles = (theme) => css`
-    body {
-      margin: 0;
-      padding: 0;
-      min-height: 100vh;
-      max-width: 100vw;
-      background-color: ${theme.colors.paper};
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    p,
-    span,
-    div {
-      &::selection {
-        background: ${theme.colors.foretGreen};
-      }
-    }
-
-    #___gatsby,
-    #gatsby-focus-wrapper {
-      height: 100vh;
-    }
-  `;
-
   return (
-    <ThemeProvider theme={customTheme}>
-      <Global styles={globalStyles} />
+    <ThemeProvider theme={getCustomTheme()}>
+      <Global styles={(theme) => getGlobalStyles(theme)} />
       {element}
     </ThemeProvider>
   );
