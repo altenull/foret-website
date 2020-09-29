@@ -24,7 +24,7 @@ const scrollDownIndicatorStyles = (theme, shouldHideScrollDownIndicator) => css`
   bottom: 40px;
   padding: 8px;
   margin: 0 auto;
-  z-index: ${theme.zIndexes.ScrollDownIndicator};
+  z-index: ${theme.zIndexes.scrollDownIndicator};
   transition: opacity ${theme.duration.slow} ease-in-out;
   opacity: ${shouldHideScrollDownIndicator ? '0' : '1'};
   pointer-events: ${shouldHideScrollDownIndicator && 'none'};
