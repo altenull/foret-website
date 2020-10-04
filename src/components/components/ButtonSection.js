@@ -11,11 +11,12 @@ import { css } from '@emotion/core';
 import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
 import { BUTTON_PROPS_WITHOUT_DESCRIPTION } from '../../constants/components.constant';
+import { CodeViewerContainer } from '../../containers/code';
 import { ComponentFactorEnum } from '../../enums/components/component-factor.enum';
 import { useButtonSectionQuery } from '../../hooks/components';
 import { getPropsOfComponentFactor, getPropsTable } from '../../utils/components.util';
 import { marginTopForHeading3, marginTopForSubtitle2 } from '../../utils/margin.util';
-import { CodeViewer, ComponentDemoBox, DemoDivider } from '../code';
+import { ComponentDemoBox, DemoDivider } from '../code';
 import { TabContentWrapper } from '../common';
 import { ResponsiveContentLayout } from '../foundation';
 import AnchorMarginalHeading2 from './AnchorMarginalHeading2';
@@ -81,7 +82,7 @@ const ButtonSection = ({ headingHash }) => {
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.imports' })}
         </MarginalHeading3>
-        <CodeViewer codeInHtml={importButtonReactCode.nodes[0].html} />
+        <CodeViewerContainer codeInHtml={importButtonReactCode.nodes[0].html} />
 
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.props' })}
@@ -106,7 +107,7 @@ const ButtonSection = ({ headingHash }) => {
       <MarginalHeading3 css={marginTopForHeading3}>
         {intl.formatMessage({ id: 'components.shared.imports' })}
       </MarginalHeading3>
-      <CodeViewer codeInHtml={importButtonNgCode.nodes[0].html} />
+      <CodeViewerContainer codeInHtml={importButtonNgCode.nodes[0].html} />
     </TabContentWrapper>
   );
 

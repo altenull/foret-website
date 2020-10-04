@@ -1,6 +1,6 @@
 import { css } from '@emotion/core';
 import React from 'react';
-import CodeViewer from './CodeViewer';
+import { CodeViewerContainer } from '../../containers/code';
 
 const demoWrapperStyles = (theme) => css`
   margin-bottom: -8px;
@@ -11,7 +11,7 @@ const demoWrapperStyles = (theme) => css`
 const ComponentDemoBox = ({ demo, codeInHtml, ...props }) => (
   <div {...props}>
     <div css={demoWrapperStyles}>{demo}</div>
-    <CodeViewer codeInHtml={codeInHtml} />
+    <CodeViewerContainer codeInHtml={codeInHtml} />
   </div>
 );
 

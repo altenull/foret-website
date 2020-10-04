@@ -2,10 +2,10 @@ import { MarginalHeading2, MarginalParagraph, Subtitle1, Subtitle2, Tab, TabGrou
 import { css } from '@emotion/core';
 import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
+import { CodeViewerContainer } from '../../containers/code';
 import { useSiteMetadataQuery } from '../../hooks/core';
 import { useGetStartedContentSectionQuery } from '../../hooks/get-started';
 import { marginTopForHeading2, marginTopForSubtitle2 } from '../../utils/margin.util';
-import { CodeViewer } from '../code';
 import { TabContentWrapper } from '../common';
 import { ResponsiveContentLayout } from '../foundation';
 
@@ -58,11 +58,11 @@ const ContentSection = () => {
       <Subtitle2 css={marginTopForSubtitle2}>
         {intl.formatMessage({ id: 'getStarted.content.installation.installViaNpm' })}
       </Subtitle2>
-      <CodeViewer codeInHtml={getInstallViaNpmReact.nodes[0].html}></CodeViewer>
+      <CodeViewerContainer codeInHtml={getInstallViaNpmReact.nodes[0].html}></CodeViewerContainer>
       <Subtitle2 css={marginTopForSubtitle2}>
         {intl.formatMessage({ id: 'getStarted.content.installation.installViaYarn' })}
       </Subtitle2>
-      <CodeViewer codeInHtml={getInstallViaYarnReact.nodes[0].html}></CodeViewer>
+      <CodeViewerContainer codeInHtml={getInstallViaYarnReact.nodes[0].html}></CodeViewerContainer>
       <Subtitle1>{intl.formatMessage({ id: 'getStarted.content.installation.installEmotionCore' })}</Subtitle1>
 
       {getSharedContributingContent()}
@@ -83,11 +83,11 @@ const ContentSection = () => {
       <Subtitle2 css={marginTopForSubtitle2}>
         {intl.formatMessage({ id: 'getStarted.content.installation.installViaNpm' })}
       </Subtitle2>
-      <CodeViewer codeInHtml={getInstallViaNpmNg.nodes[0].html}></CodeViewer>
+      <CodeViewerContainer codeInHtml={getInstallViaNpmNg.nodes[0].html}></CodeViewerContainer>
       <Subtitle2 css={marginTopForSubtitle2}>
         {intl.formatMessage({ id: 'getStarted.content.installation.installViaYarn' })}
       </Subtitle2>
-      <CodeViewer codeInHtml={getInstallViaYarnNg.nodes[0].html}></CodeViewer>
+      <CodeViewerContainer codeInHtml={getInstallViaYarnNg.nodes[0].html}></CodeViewerContainer>
 
       {getSharedContributingContent()}
     </TabContentWrapper>

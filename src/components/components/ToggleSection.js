@@ -6,11 +6,12 @@ import {
   TOGGLE_PROPERTIES_WITHOUT_DESCRIPTION,
   TOGGLE_PROPS_WITHOUT_DESCRIPTION,
 } from '../../constants/components.constant';
+import { CodeViewerContainer } from '../../containers/code';
 import { ComponentFactorEnum } from '../../enums/components/component-factor.enum';
 import { useToggleSectionQuery } from '../../hooks/components';
 import { getPropertiesOfComponentFactor, getPropsOfComponentFactor, getPropsTable } from '../../utils/components.util';
 import { marginTopForHeading2, marginTopForHeading3, marginTopForSubtitle2 } from '../../utils/margin.util';
-import { CodeViewer, ComponentDemoBox, DemoDivider } from '../code';
+import { ComponentDemoBox, DemoDivider } from '../code';
 import { TabContentWrapper } from '../common';
 import { ResponsiveContentLayout } from '../foundation';
 import AnchorMarginalHeading2 from './AnchorMarginalHeading2';
@@ -65,7 +66,7 @@ const ToggleSection = ({ headingHash }) => {
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.imports' })}
         </MarginalHeading3>
-        <CodeViewer codeInHtml={importToggleReactCode.nodes[0].html} />
+        <CodeViewerContainer codeInHtml={importToggleReactCode.nodes[0].html} />
 
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.props' })}
@@ -94,7 +95,7 @@ const ToggleSection = ({ headingHash }) => {
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.imports' })}
         </MarginalHeading3>
-        <CodeViewer codeInHtml={importToggleNgCode.nodes[0].html} />
+        <CodeViewerContainer codeInHtml={importToggleNgCode.nodes[0].html} />
 
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.properties' })}
