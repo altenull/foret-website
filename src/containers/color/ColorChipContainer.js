@@ -1,5 +1,4 @@
 import { hexToRgb } from '@altenull/foret-core';
-import { useIntl } from 'gatsby-plugin-intl';
 import React, { useEffect, useState } from 'react';
 import { ColorChip } from '../../components/color';
 import useIsHovered from '../../hooks/core/useIsHovered';
@@ -9,7 +8,6 @@ import { getBrightness } from '../../utils/color.util';
 const ColorChipContainer = ({ name, color }) => {
   const [hasColorCopied, setHasColorCopied] = useState(false);
 
-  const intl = useIntl();
   const [colorChipRef, isColorChipHovered] = useIsHovered();
 
   useEffect(() => {
@@ -35,7 +33,6 @@ const ColorChipContainer = ({ name, color }) => {
       name={name}
       color={color}
       rgb={rgb}
-      colorCopySuccessMessage={intl.formatMessage({ id: 'color.copied' })}
       isBrightnessHigh={isBrightnessHigh}
       isHovered={isColorChipHovered}
       hasColorCopied={hasColorCopied}

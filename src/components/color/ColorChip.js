@@ -2,7 +2,8 @@ import { Color } from '@altenull/foret-core';
 import { Paragraph, Subtitle2 } from '@altenull/foret-react';
 import { css } from '@emotion/core';
 import React from 'react';
-import { CopyIcon } from '../../components/icons';
+import { getCopyIconWrapperColor } from '../../utils/color.util';
+import { CopyIconWithCopiedMessage } from '../common';
 
 const colorChipStyles = (color) => css`
   position: relative;
@@ -15,8 +16,8 @@ const colorChipStyles = (color) => css`
   background-color: ${color};
 `;
 
-const sharedTextColorStyles = (theme, isBrightnessHigh) => css`
-  color: ${isBrightnessHigh ? theme.colors.ink : theme.colors.white};
+const sharedTextColorStyles = (contentColor) => css`
+  color: ${contentColor};
 `;
 
 const colorCodeWrapperStyles = (theme, isHovered) => css`
@@ -28,57 +29,35 @@ const colorCodeWrapperStyles = (theme, isHovered) => css`
   opacity: ${isHovered ? '1' : '0'};
 `;
 
-const copyIconWrapperStyles = (theme, isHovered, hasColorCopied, isBrightnessHigh) => css`
+const copyIconWithCopiedMessageStyles = css`
   position: absolute;
-  border-radius: 50%;
-  top: 16px;
   right: 16px;
-  transition: transform ${theme.duration.slow}, opacity ${theme.duration.slow}, background-color ${theme.duration.slow};
-  transform: translateX(${hasColorCopied ? '8px' : '0'});
-  opacity: ${hasColorCopied ? '0' : '1'};
-  background-color: ${isHovered ? (isBrightnessHigh ? 'rgba(0, 0, 0, 0.075)' : 'rgba(255, 255, 255, 0.25)') : 'none'};
-`;
-
-const copyIconStyles = css`
-  padding: 8px;
-`;
-
-const colorCopySuccessMessageStyles = (theme, hasColorCopied) => css`
-  position: absolute;
-  top: 24px;
-  right: 8px;
-  transition: transform ${theme.duration.slow}, opacity ${theme.duration.slow};
-  transform: translateX(${hasColorCopied ? '-8px' : '0'});
-  opacity: ${hasColorCopied ? '1' : '0'};
+  top: 16px;
 `;
 
 const ColorChip = React.forwardRef(
-  (
-    { name, color, rgb: { r, g, b }, colorCopySuccessMessage, isBrightnessHigh, isHovered, hasColorCopied, ...props },
-    ref
-  ) => {
+  ({ name, color, rgb: { r, g, b }, isBrightnessHigh, isHovered, hasColorCopied, ...props }, ref) => {
+    const contentColor = isBrightnessHigh ? Color.Ink : Color.White;
+    const copyIconWrapperColor = getCopyIconWrapperColor(isBrightnessHigh);
+
     return (
       <div css={colorChipStyles(color)} ref={ref} {...props}>
-        <Paragraph css={(theme) => sharedTextColorStyles(theme, isBrightnessHigh)}>{name}</Paragraph>
+        <Paragraph css={sharedTextColorStyles(contentColor)}>{name}</Paragraph>
 
         <span css={(theme) => colorCodeWrapperStyles(theme, isHovered)}>
-          <Subtitle2 css={(theme) => sharedTextColorStyles(theme, isBrightnessHigh)}>{color}</Subtitle2>
-          <Subtitle2 css={(theme) => sharedTextColorStyles(theme, isBrightnessHigh)}>
+          <Subtitle2 css={sharedTextColorStyles(contentColor)}>{color}</Subtitle2>
+          <Subtitle2 css={sharedTextColorStyles(contentColor)}>
             rgb({r}, {g}, {b})
           </Subtitle2>
         </span>
 
-        <span css={(theme) => copyIconWrapperStyles(theme, isHovered, hasColorCopied, isBrightnessHigh)}>
-          <CopyIcon css={copyIconStyles} color={isBrightnessHigh ? Color.Ink : Color.White} />
-        </span>
-
-        <Subtitle2
-          css={(theme) => [
-            sharedTextColorStyles(theme, isBrightnessHigh),
-            colorCopySuccessMessageStyles(theme, hasColorCopied),
-          ]}>
-          {colorCopySuccessMessage}
-        </Subtitle2>
+        <CopyIconWithCopiedMessage
+          css={copyIconWithCopiedMessageStyles}
+          isHovered={isHovered}
+          hasCopied={hasColorCopied}
+          color={contentColor}
+          iconWrapperColor={copyIconWrapperColor}
+        />
       </div>
     );
   }
