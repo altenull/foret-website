@@ -7,6 +7,9 @@
     "color": "Color",
     "components": "Components"
   },
+  "common": {
+    "copied": "Copied"
+  },
   "footer": {
     "contactUs": "Contact Us"
   },
@@ -52,7 +55,6 @@
     }
   },
   "color": {
-    "copied": "Copied",
     "hero": {
       "title": "Color",
       "subtitle1": "Color is a fundamental component of the design system and represents brand."

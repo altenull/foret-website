@@ -1,5 +1,8 @@
 import { Color } from '@altenull/foret-core';
 
+export const COPY_ICON_WRAPPER_DARK = 'rgba(255, 255, 255, 0.25)';
+export const COPY_ICON_WRAPPER_BRIGHT = 'rgba(0, 0, 0, 0.075)';
+
 export const COLOR_WITH_NAMES = [
   {
     name: 'Foret Green',

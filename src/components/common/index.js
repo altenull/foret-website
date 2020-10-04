@@ -1,3 +1,4 @@
+export { default as CopyIconWithCopiedMessage } from './CopyIconWithCopiedMessage';
 export { default as NextPageLink } from './NextPageLink';
 export { default as PageNavigationSection } from './PageNavigationSection';
 export { default as PrevPageLink } from './PrevPageLink';
