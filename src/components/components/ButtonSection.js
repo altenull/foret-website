@@ -3,6 +3,7 @@ import {
   MarginalParagraph,
   PrimaryButton,
   SecondaryButton,
+  DangerButton,
   Subtitle2,
   Tab,
   TabGroup,
@@ -32,8 +33,10 @@ const ButtonSection = ({ headingHash }) => {
     importButtonNgCode,
     demoPrimaryButtonReactCode,
     demoSecondaryButtonReactCode,
+    demoDangerButtonReactCode,
     demoPrimaryButtonNgCode,
     demoSecondaryButtonNgCode,
+    demoDangerButtonNgCode,
   } = useButtonSectionQuery();
 
   const getSharedOverviewContent = () => (
@@ -56,6 +59,14 @@ const ButtonSection = ({ headingHash }) => {
       <SecondaryButton>secondary button</SecondaryButton>
       <DemoDivider />
       <SecondaryButton disabled>secondary button(disabled)</SecondaryButton>
+    </Fragment>
+  );
+
+  const getDemoDangerButton = () => (
+    <Fragment>
+      <DangerButton>danger button</DangerButton>
+      <DemoDivider />
+      <DangerButton disabled>danger button(disabled)</DangerButton>
     </Fragment>
   );
 
@@ -85,6 +96,12 @@ const ButtonSection = ({ headingHash }) => {
           demo={getDemoSecondaryButton()}
           codeInHtml={demoSecondaryButtonReactCode.nodes[0].html}
           codeInMarkdown={demoSecondaryButtonReactCode.nodes[0].rawMarkdownBody}
+        />
+        <Subtitle2 css={marginTopForSubtitle2}>Danger Button:</Subtitle2>
+        <ComponentDemoBox
+          demo={getDemoDangerButton()}
+          codeInHtml={demoDangerButtonReactCode.nodes[0].html}
+          codeInMarkdown={demoDangerButtonReactCode.nodes[0].rawMarkdownBody}
         />
 
         <MarginalHeading3 css={marginTopForHeading3}>
@@ -121,6 +138,12 @@ const ButtonSection = ({ headingHash }) => {
         demo={getDemoSecondaryButton()}
         codeInHtml={demoSecondaryButtonNgCode.nodes[0].html}
         codeInMarkdown={demoSecondaryButtonNgCode.nodes[0].rawMarkdownBody}
+      />
+      <Subtitle2 css={marginTopForSubtitle2}>Danger Button:</Subtitle2>
+      <ComponentDemoBox
+        demo={getDemoDangerButton()}
+        codeInHtml={demoDangerButtonNgCode.nodes[0].html}
+        codeInMarkdown={demoDangerButtonNgCode.nodes[0].rawMarkdownBody}
       />
 
       <MarginalHeading3 css={marginTopForHeading3}>

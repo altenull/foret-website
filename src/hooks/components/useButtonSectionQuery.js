@@ -6,8 +6,10 @@ const useButtonSectionQuery = () => {
     importButtonNgCode,
     demoPrimaryButtonReactCode,
     demoSecondaryButtonReactCode,
+    demoDangerButtonReactCode,
     demoPrimaryButtonNgCode,
     demoSecondaryButtonNgCode,
+    demoDangerButtonNgCode,
   } = useStaticQuery(graphql`
     query {
       importButtonReactCode: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/import-button-react.md/" } }) {
@@ -38,6 +40,14 @@ const useButtonSectionQuery = () => {
           rawMarkdownBody
         }
       }
+      demoDangerButtonReactCode: allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/demo-danger-button-react.md/" } }
+      ) {
+        nodes {
+          html
+          rawMarkdownBody
+        }
+      }
       demoPrimaryButtonNgCode: allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/demo-primary-button-ng.md/" } }
       ) {
@@ -54,6 +64,12 @@ const useButtonSectionQuery = () => {
           rawMarkdownBody
         }
       }
+      demoDangerButtonNgCode: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/demo-danger-button-ng.md/" } }) {
+        nodes {
+          html
+          rawMarkdownBody
+        }
+      }
     }
   `);
 
@@ -62,8 +78,10 @@ const useButtonSectionQuery = () => {
     importButtonNgCode,
     demoPrimaryButtonReactCode,
     demoSecondaryButtonReactCode,
+    demoDangerButtonReactCode,
     demoPrimaryButtonNgCode,
     demoSecondaryButtonNgCode,
+    demoDangerButtonNgCode,
   };
 
   return buttonSectionQueryResponse;

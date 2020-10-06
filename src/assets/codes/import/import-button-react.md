@@ -1,3 +1,7 @@
 ```javascript
-import { PrimaryButton, SecondaryButton } from '@altenull/foret-react';
+import {
+  PrimaryButton,
+  SecondaryButton,
+  DangerButton
+} from '@altenull/foret-react';
 ```
