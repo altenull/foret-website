@@ -15,6 +15,7 @@ const useRadioButtonSectionQuery = () => {
       ) {
         nodes {
           html
+          rawMarkdownBody
         }
       }
       importRadioButtonNgCode: allMarkdownRemark(
@@ -22,6 +23,7 @@ const useRadioButtonSectionQuery = () => {
       ) {
         nodes {
           html
+          rawMarkdownBody
         }
       }
       demoRadioButtonReactCode: allMarkdownRemark(
@@ -29,6 +31,7 @@ const useRadioButtonSectionQuery = () => {
       ) {
         nodes {
           html
+          rawMarkdownBody
         }
       }
       demoRadioButtonDisabledReactCode: allMarkdownRemark(
@@ -36,11 +39,13 @@ const useRadioButtonSectionQuery = () => {
       ) {
         nodes {
           html
+          rawMarkdownBody
         }
       }
       demoRadioButtonNgCode: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/demo-radio-button-ng.md/" } }) {
         nodes {
           html
+          rawMarkdownBody
         }
       }
       demoRadioButtonDisabledNgCode: allMarkdownRemark(
@@ -48,6 +53,7 @@ const useRadioButtonSectionQuery = () => {
       ) {
         nodes {
           html
+          rawMarkdownBody
         }
       }
     }

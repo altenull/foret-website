@@ -13,16 +13,19 @@ const useToggleSectionQuery = () => {
       importToggleReactCode: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/import-toggle-react.md/" } }) {
         nodes {
           html
+          rawMarkdownBody
         }
       }
       importToggleNgCode: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/import-toggle-ng.md/" } }) {
         nodes {
           html
+          rawMarkdownBody
         }
       }
       demoToggleReactCode: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/demo-toggle-react.md/" } }) {
         nodes {
           html
+          rawMarkdownBody
         }
       }
       demoToggleDisabledReactCode: allMarkdownRemark(
@@ -30,11 +33,13 @@ const useToggleSectionQuery = () => {
       ) {
         nodes {
           html
+          rawMarkdownBody
         }
       }
       demoToggleNgCode: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/demo-toggle-ng.md/" } }) {
         nodes {
           html
+          rawMarkdownBody
         }
       }
       demoToggleDisabledNgCode: allMarkdownRemark(
@@ -42,6 +47,7 @@ const useToggleSectionQuery = () => {
       ) {
         nodes {
           html
+          rawMarkdownBody
         }
       }
     }

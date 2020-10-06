@@ -17,16 +17,19 @@ const useSelectSectionQuery = () => {
       importSelectReactCode: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/import-select-react.md/" } }) {
         nodes {
           html
+          rawMarkdownBody
         }
       }
       importSelectNgCode: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/import-select-ng.md/" } }) {
         nodes {
           html
+          rawMarkdownBody
         }
       }
       demoSelectReactCode: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/demo-select-react.md/" } }) {
         nodes {
           html
+          rawMarkdownBody
         }
       }
       demoSelectGroupedReactCode: allMarkdownRemark(
@@ -34,6 +37,7 @@ const useSelectSectionQuery = () => {
       ) {
         nodes {
           html
+          rawMarkdownBody
         }
       }
       demoSelectWithPlaceholderReactCode: allMarkdownRemark(
@@ -41,6 +45,7 @@ const useSelectSectionQuery = () => {
       ) {
         nodes {
           html
+          rawMarkdownBody
         }
       }
       demoSelectDisabledReactCode: allMarkdownRemark(
@@ -48,11 +53,13 @@ const useSelectSectionQuery = () => {
       ) {
         nodes {
           html
+          rawMarkdownBody
         }
       }
       demoSelectNgCode: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/demo-select-ng.md/" } }) {
         nodes {
           html
+          rawMarkdownBody
         }
       }
       demoSelectGroupedNgCode: allMarkdownRemark(
@@ -60,6 +67,7 @@ const useSelectSectionQuery = () => {
       ) {
         nodes {
           html
+          rawMarkdownBody
         }
       }
       demoSelectWithPlaceholderNgCode: allMarkdownRemark(
@@ -67,6 +75,7 @@ const useSelectSectionQuery = () => {
       ) {
         nodes {
           html
+          rawMarkdownBody
         }
       }
       demoSelectDisabledNgCode: allMarkdownRemark(
@@ -74,6 +83,7 @@ const useSelectSectionQuery = () => {
       ) {
         nodes {
           html
+          rawMarkdownBody
         }
       }
     }

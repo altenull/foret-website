@@ -11,6 +11,7 @@ const useGetStartedContentSectionQuery = () => {
       getInstallViaNpmReact: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/install-via-npm-react.md/" } }) {
         nodes {
           html
+          rawMarkdownBody
         }
       }
       getInstallViaYarnReact: allMarkdownRemark(
@@ -18,16 +19,19 @@ const useGetStartedContentSectionQuery = () => {
       ) {
         nodes {
           html
+          rawMarkdownBody
         }
       }
       getInstallViaNpmNg: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/install-via-npm-ng.md/" } }) {
         nodes {
           html
+          rawMarkdownBody
         }
       }
       getInstallViaYarnNg: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/install-via-yarn-ng.md/" } }) {
         nodes {
           html
+          rawMarkdownBody
         }
       }
     }

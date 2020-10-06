@@ -15,16 +15,19 @@ const useCheckboxSectionQuery = () => {
       ) {
         nodes {
           html
+          rawMarkdownBody
         }
       }
       importCheckboxNgCode: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/import-checkbox-ng.md/" } }) {
         nodes {
           html
+          rawMarkdownBody
         }
       }
       demoCheckboxReactCode: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/demo-checkbox-react.md/" } }) {
         nodes {
           html
+          rawMarkdownBody
         }
       }
       demoCheckboxDisabledReactCode: allMarkdownRemark(
@@ -32,11 +35,13 @@ const useCheckboxSectionQuery = () => {
       ) {
         nodes {
           html
+          rawMarkdownBody
         }
       }
       demoCheckboxNgCode: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/demo-checkbox-ng.md/" } }) {
         nodes {
           html
+          rawMarkdownBody
         }
       }
       demoCheckboxDisabledNgCode: allMarkdownRemark(
@@ -44,6 +49,7 @@ const useCheckboxSectionQuery = () => {
       ) {
         nodes {
           html
+          rawMarkdownBody
         }
       }
     }

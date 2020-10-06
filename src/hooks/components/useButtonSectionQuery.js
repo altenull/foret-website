@@ -13,11 +13,13 @@ const useButtonSectionQuery = () => {
       importButtonReactCode: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/import-button-react.md/" } }) {
         nodes {
           html
+          rawMarkdownBody
         }
       }
       importButtonNgCode: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/import-button-ng.md/" } }) {
         nodes {
           html
+          rawMarkdownBody
         }
       }
       demoPrimaryButtonReactCode: allMarkdownRemark(
@@ -25,6 +27,7 @@ const useButtonSectionQuery = () => {
       ) {
         nodes {
           html
+          rawMarkdownBody
         }
       }
       demoSecondaryButtonReactCode: allMarkdownRemark(
@@ -32,6 +35,7 @@ const useButtonSectionQuery = () => {
       ) {
         nodes {
           html
+          rawMarkdownBody
         }
       }
       demoPrimaryButtonNgCode: allMarkdownRemark(
@@ -39,6 +43,7 @@ const useButtonSectionQuery = () => {
       ) {
         nodes {
           html
+          rawMarkdownBody
         }
       }
       demoSecondaryButtonNgCode: allMarkdownRemark(
@@ -46,6 +51,7 @@ const useButtonSectionQuery = () => {
       ) {
         nodes {
           html
+          rawMarkdownBody
         }
       }
     }
