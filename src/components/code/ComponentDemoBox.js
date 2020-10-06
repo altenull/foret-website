@@ -8,10 +8,10 @@ const demoWrapperStyles = (theme) => css`
   padding: 40px 24px;
 `;
 
-const ComponentDemoBox = ({ demo, codeInHtml, ...props }) => (
+const ComponentDemoBox = ({ demo, codeInHtml, codeInMarkdown, ...props }) => (
   <div {...props}>
     <div css={demoWrapperStyles}>{demo}</div>
-    <CodeViewerContainer codeInHtml={codeInHtml} />
+    <CodeViewerContainer codeInHtml={codeInHtml} codeInMarkdown={codeInMarkdown} />
   </div>
 );
 

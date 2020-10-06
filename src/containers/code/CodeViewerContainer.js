@@ -1,8 +1,8 @@
 import { css } from '@emotion/core';
 import React, { useEffect, useState } from 'react';
+import { CopyIconWithCopiedMessage } from '../../components/common';
 import { useIsHovered } from '../../hooks/core';
 import { clipboardCopy } from '../../utils/clipboard.util';
-import { CopyIconWithCopiedMessage } from '../../components/common';
 
 const codeViewerStyles = css`
   position: relative;
@@ -17,7 +17,7 @@ const copyIconWithCopiedMessageStyles = css`
 
 // What's dangerous about dangerouslySetInnerHTML?
 // https://crwi.uk/2019/04/26/dangerously-set-inner-html.html
-const CodeViewerContainer = ({ codeInHtml, ...props }) => {
+const CodeViewerContainer = ({ codeInHtml, codeInMarkdown = '', ...props }) => {
   const [hasCodeCopied, setHasCodeCopied] = useState(false);
 
   const [copyIconWithCopiedMessageRef, isCopyIconWithCopiedMessageRefHovered] = useIsHovered();
@@ -28,8 +28,8 @@ const CodeViewerContainer = ({ codeInHtml, ...props }) => {
     }
   }, [isCopyIconWithCopiedMessageRefHovered, hasCodeCopied]);
 
-  const handleCopyIconClick = (code) => {
-    const isClipboardCopySuccesss = clipboardCopy(code);
+  const handleCopyIconClick = (codeInMarkdown) => {
+    const isClipboardCopySuccesss = clipboardCopy(codeInMarkdown.replace(/(`{3})[a-zA-Z]*\n|(`{3})/g, ''));
 
     if (isClipboardCopySuccesss) {
       setHasCodeCopied(true);
@@ -46,13 +46,15 @@ const CodeViewerContainer = ({ codeInHtml, ...props }) => {
         {...props}
       />
 
-      <CopyIconWithCopiedMessage
-        css={copyIconWithCopiedMessageStyles}
-        ref={copyIconWithCopiedMessageRef}
-        isHovered={isCopyIconWithCopiedMessageRefHovered}
-        hasCopied={hasCodeCopied}
-        onClick={() => handleCopyIconClick('TODO: Inject raw code')}
-      />
+      {!!codeInMarkdown && (
+        <CopyIconWithCopiedMessage
+          css={copyIconWithCopiedMessageStyles}
+          ref={copyIconWithCopiedMessageRef}
+          isHovered={isCopyIconWithCopiedMessageRefHovered}
+          hasCopied={hasCodeCopied}
+          onClick={() => handleCopyIconClick(codeInMarkdown)}
+        />
+      )}
     </div>
   );
 };
