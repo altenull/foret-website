@@ -24,13 +24,19 @@ const twoColumnStyles = css`
 
 const languageLinksWrapperStyles = css`
   display: flex;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 `;
 
 const leftColumnStyles = css``;
 
 const rightColumnStyles = css`
   text-align: right;
+`;
+
+const smallTextStyles = css`
+  & + & {
+    margin-top: 8px;
+  }
 `;
 
 const FooterContainer = () => {
@@ -44,15 +50,14 @@ const FooterContainer = () => {
             <div css={languageLinksWrapperStyles}>{getLanguageLinks(language, languages)}</div>
             <div css={twoColumnStyles}>
               <div css={leftColumnStyles}>
-                <SmallText>
+                <SmallText css={smallTextStyles}>
                   <a href={'mailto:altenull@gmail.com'}>{intl.formatMessage({ id: 'footer.contactUs' })}</a>
                 </SmallText>
-
-                <SmallText>© 2020 · Foret Design System</SmallText>
+                <SmallText css={smallTextStyles}>© 2020 · Foret Design System</SmallText>
               </div>
               <div css={rightColumnStyles}>
-                <SmallText>@altenull/foret-react: v1.0.0</SmallText>
-                <SmallText>@altenull/foret-ng: v1.0.0</SmallText>
+                <SmallText css={smallTextStyles}>@altenull/foret-react: v1.0.0</SmallText>
+                <SmallText css={smallTextStyles}>@altenull/foret-ng: v1.0.0</SmallText>
               </div>
             </div>
           </div>
