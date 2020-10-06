@@ -58,11 +58,17 @@ const ContentSection = () => {
       <Subtitle2 css={marginTopForSubtitle2}>
         {intl.formatMessage({ id: 'getStarted.content.installation.installViaNpm' })}
       </Subtitle2>
-      <CodeViewerContainer codeInHtml={getInstallViaNpmReact.nodes[0].html}></CodeViewerContainer>
+      <CodeViewerContainer
+        codeInHtml={getInstallViaNpmReact.nodes[0].html}
+        codeInMarkdown={getInstallViaNpmReact.nodes[0].rawMarkdownBody}
+      />
       <Subtitle2 css={marginTopForSubtitle2}>
         {intl.formatMessage({ id: 'getStarted.content.installation.installViaYarn' })}
       </Subtitle2>
-      <CodeViewerContainer codeInHtml={getInstallViaYarnReact.nodes[0].html}></CodeViewerContainer>
+      <CodeViewerContainer
+        codeInHtml={getInstallViaYarnReact.nodes[0].html}
+        codeInMarkdown={getInstallViaYarnReact.nodes[0].rawMarkdownBody}
+      />
       <Subtitle1>{intl.formatMessage({ id: 'getStarted.content.installation.installEmotionCore' })}</Subtitle1>
 
       {getSharedContributingContent()}
@@ -83,11 +89,17 @@ const ContentSection = () => {
       <Subtitle2 css={marginTopForSubtitle2}>
         {intl.formatMessage({ id: 'getStarted.content.installation.installViaNpm' })}
       </Subtitle2>
-      <CodeViewerContainer codeInHtml={getInstallViaNpmNg.nodes[0].html}></CodeViewerContainer>
+      <CodeViewerContainer
+        codeInHtml={getInstallViaNpmNg.nodes[0].html}
+        codeInMarkdown={getInstallViaNpmNg.nodes[0].rawMarkdownBody}
+      />
       <Subtitle2 css={marginTopForSubtitle2}>
         {intl.formatMessage({ id: 'getStarted.content.installation.installViaYarn' })}
       </Subtitle2>
-      <CodeViewerContainer codeInHtml={getInstallViaYarnNg.nodes[0].html}></CodeViewerContainer>
+      <CodeViewerContainer
+        codeInHtml={getInstallViaYarnNg.nodes[0].html}
+        codeInMarkdown={getInstallViaYarnNg.nodes[0].rawMarkdownBody}
+      />
 
       {getSharedContributingContent()}
     </TabContentWrapper>

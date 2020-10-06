@@ -59,14 +59,25 @@ const ToggleSection = ({ headingHash }) => {
       <TabContentWrapper>
         <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</MarginalHeading3>
         <Subtitle2>Default:</Subtitle2>
-        <ComponentDemoBox demo={getDemoToggle()} codeInHtml={demoToggleReactCode.nodes[0].html} />
+        <ComponentDemoBox
+          demo={getDemoToggle()}
+          codeInHtml={demoToggleReactCode.nodes[0].html}
+          codeInMarkdown={demoToggleReactCode.nodes[0].rawMarkdownBody}
+        />
         <Subtitle2 css={marginTopForSubtitle2}>Disabled:</Subtitle2>
-        <ComponentDemoBox demo={getDemoToggleDisabled()} codeInHtml={demoToggleDisabledReactCode.nodes[0].html} />
+        <ComponentDemoBox
+          demo={getDemoToggleDisabled()}
+          codeInHtml={demoToggleDisabledReactCode.nodes[0].html}
+          codeInMarkdown={demoToggleDisabledReactCode.nodes[0].rawMarkdownBody}
+        />
 
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.imports' })}
         </MarginalHeading3>
-        <CodeViewerContainer codeInHtml={importToggleReactCode.nodes[0].html} />
+        <CodeViewerContainer
+          codeInHtml={importToggleReactCode.nodes[0].html}
+          codeInMarkdown={importToggleReactCode.nodes[0].rawMarkdownBody}
+        />
 
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.props' })}
@@ -88,14 +99,25 @@ const ToggleSection = ({ headingHash }) => {
       <TabContentWrapper>
         <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</MarginalHeading3>
         <Subtitle2>Default:</Subtitle2>
-        <ComponentDemoBox demo={getDemoToggle()} codeInHtml={demoToggleNgCode.nodes[0].html} />
+        <ComponentDemoBox
+          demo={getDemoToggle()}
+          codeInHtml={demoToggleNgCode.nodes[0].html}
+          codeInMarkdown={demoToggleNgCode.nodes[0].rawMarkdownBody}
+        />
         <Subtitle2 css={marginTopForSubtitle2}>Disabled:</Subtitle2>
-        <ComponentDemoBox demo={getDemoToggleDisabled()} codeInHtml={demoToggleDisabledNgCode.nodes[0].html} />
+        <ComponentDemoBox
+          demo={getDemoToggleDisabled()}
+          codeInHtml={demoToggleDisabledNgCode.nodes[0].html}
+          codeInMarkdown={demoToggleDisabledNgCode.nodes[0].rawMarkdownBody}
+        />
 
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.imports' })}
         </MarginalHeading3>
-        <CodeViewerContainer codeInHtml={importToggleNgCode.nodes[0].html} />
+        <CodeViewerContainer
+          codeInHtml={importToggleNgCode.nodes[0].html}
+          codeInMarkdown={importToggleNgCode.nodes[0].rawMarkdownBody}
+        />
 
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.properties' })}

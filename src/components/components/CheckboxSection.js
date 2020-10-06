@@ -75,14 +75,25 @@ const CheckboxSection = ({ headingHash }) => {
       <TabContentWrapper>
         <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</MarginalHeading3>
         <Subtitle2>Default:</Subtitle2>
-        <ComponentDemoBox demo={getDemoCheckbox()} codeInHtml={demoCheckboxReactCode.nodes[0].html} />
+        <ComponentDemoBox
+          demo={getDemoCheckbox()}
+          codeInHtml={demoCheckboxReactCode.nodes[0].html}
+          codeInMarkdown={demoCheckboxReactCode.nodes[0].rawMarkdownBody}
+        />
         <Subtitle2 css={marginTopForSubtitle2}>Disabled:</Subtitle2>
-        <ComponentDemoBox demo={getDemoCheckboxDisabled()} codeInHtml={demoCheckboxDisabledReactCode.nodes[0].html} />
+        <ComponentDemoBox
+          demo={getDemoCheckboxDisabled()}
+          codeInHtml={demoCheckboxDisabledReactCode.nodes[0].html}
+          codeInMarkdown={demoCheckboxDisabledReactCode.nodes[0].rawMarkdownBody}
+        />
 
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.imports' })}
         </MarginalHeading3>
-        <CodeViewerContainer codeInHtml={importCheckboxReactCode.nodes[0].html} />
+        <CodeViewerContainer
+          codeInHtml={importCheckboxReactCode.nodes[0].html}
+          codeInMarkdown={importCheckboxReactCode.nodes[0].rawMarkdownBody}
+        />
 
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.props' })}
@@ -113,14 +124,25 @@ const CheckboxSection = ({ headingHash }) => {
       <TabContentWrapper>
         <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</MarginalHeading3>
         <Subtitle2>Default:</Subtitle2>
-        <ComponentDemoBox demo={getDemoCheckbox()} codeInHtml={demoCheckboxNgCode.nodes[0].html} />
+        <ComponentDemoBox
+          demo={getDemoCheckbox()}
+          codeInHtml={demoCheckboxNgCode.nodes[0].html}
+          codeInMarkdown={demoCheckboxNgCode.nodes[0].rawMarkdownBody}
+        />
         <Subtitle2 css={marginTopForSubtitle2}>Disabled:</Subtitle2>
-        <ComponentDemoBox demo={getDemoCheckboxDisabled()} codeInHtml={demoCheckboxDisabledNgCode.nodes[0].html} />
+        <ComponentDemoBox
+          demo={getDemoCheckboxDisabled()}
+          codeInHtml={demoCheckboxDisabledNgCode.nodes[0].html}
+          codeInMarkdown={demoCheckboxDisabledNgCode.nodes[0].rawMarkdownBody}
+        />
 
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.imports' })}
         </MarginalHeading3>
-        <CodeViewerContainer codeInHtml={importCheckboxNgCode.nodes[0].html} />
+        <CodeViewerContainer
+          codeInHtml={importCheckboxNgCode.nodes[0].html}
+          codeInMarkdown={importCheckboxNgCode.nodes[0].rawMarkdownBody}
+        />
 
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.properties' })}

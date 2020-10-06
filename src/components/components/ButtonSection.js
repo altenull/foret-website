@@ -75,14 +75,25 @@ const ButtonSection = ({ headingHash }) => {
           {intl.formatMessage({ id: 'components.shared.liveDemo' })}
         </MarginalHeading3>
         <Subtitle2>Primary Button:</Subtitle2>
-        <ComponentDemoBox demo={getDemoPrimaryButton()} codeInHtml={demoPrimaryButtonReactCode.nodes[0].html} />
+        <ComponentDemoBox
+          demo={getDemoPrimaryButton()}
+          codeInHtml={demoPrimaryButtonReactCode.nodes[0].html}
+          codeInMarkdown={demoPrimaryButtonReactCode.nodes[0].rawMarkdownBody}
+        />
         <Subtitle2 css={marginTopForSubtitle2}>Secondary Button:</Subtitle2>
-        <ComponentDemoBox demo={getDemoSecondaryButton()} codeInHtml={demoSecondaryButtonReactCode.nodes[0].html} />
+        <ComponentDemoBox
+          demo={getDemoSecondaryButton()}
+          codeInHtml={demoSecondaryButtonReactCode.nodes[0].html}
+          codeInMarkdown={demoSecondaryButtonReactCode.nodes[0].rawMarkdownBody}
+        />
 
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.imports' })}
         </MarginalHeading3>
-        <CodeViewerContainer codeInHtml={importButtonReactCode.nodes[0].html} />
+        <CodeViewerContainer
+          codeInHtml={importButtonReactCode.nodes[0].html}
+          codeInMarkdown={importButtonReactCode.nodes[0].rawMarkdownBody}
+        />
 
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.props' })}
@@ -100,14 +111,25 @@ const ButtonSection = ({ headingHash }) => {
         {intl.formatMessage({ id: 'components.shared.liveDemo' })}
       </MarginalHeading3>
       <Subtitle2>Primary Button:</Subtitle2>
-      <ComponentDemoBox demo={getDemoPrimaryButton()} codeInHtml={demoPrimaryButtonNgCode.nodes[0].html} />
+      <ComponentDemoBox
+        demo={getDemoPrimaryButton()}
+        codeInHtml={demoPrimaryButtonNgCode.nodes[0].html}
+        codeInMarkdown={demoPrimaryButtonNgCode.nodes[0].rawMarkdownBody}
+      />
       <Subtitle2 css={marginTopForSubtitle2}>Secondary Button:</Subtitle2>
-      <ComponentDemoBox demo={getDemoSecondaryButton()} codeInHtml={demoSecondaryButtonNgCode.nodes[0].html} />
+      <ComponentDemoBox
+        demo={getDemoSecondaryButton()}
+        codeInHtml={demoSecondaryButtonNgCode.nodes[0].html}
+        codeInMarkdown={demoSecondaryButtonNgCode.nodes[0].rawMarkdownBody}
+      />
 
       <MarginalHeading3 css={marginTopForHeading3}>
         {intl.formatMessage({ id: 'components.shared.imports' })}
       </MarginalHeading3>
-      <CodeViewerContainer codeInHtml={importButtonNgCode.nodes[0].html} />
+      <CodeViewerContainer
+        codeInHtml={importButtonNgCode.nodes[0].html}
+        codeInMarkdown={importButtonNgCode.nodes[0].rawMarkdownBody}
+      />
     </TabContentWrapper>
   );
 

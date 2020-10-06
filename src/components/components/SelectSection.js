@@ -119,21 +119,37 @@ const SelectSection = ({ headingHash }) => {
       <TabContentWrapper>
         <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</MarginalHeading3>
         <Subtitle2>Default:</Subtitle2>
-        <ComponentDemoBox demo={getDemoSelect()} codeInHtml={demoSelectReactCode.nodes[0].html} />
+        <ComponentDemoBox
+          demo={getDemoSelect()}
+          codeInHtml={demoSelectReactCode.nodes[0].html}
+          codeInMarkdown={demoSelectReactCode.nodes[0].rawMarkdownBody}
+        />
         <Subtitle2 css={marginTopForSubtitle2}>Grouped:</Subtitle2>
-        <ComponentDemoBox demo={getDemoSelectGrouped()} codeInHtml={demoSelectGroupedReactCode.nodes[0].html} />
+        <ComponentDemoBox
+          demo={getDemoSelectGrouped()}
+          codeInHtml={demoSelectGroupedReactCode.nodes[0].html}
+          codeInMarkdown={demoSelectGroupedReactCode.nodes[0].rawMarkdownBody}
+        />
         <Subtitle2 css={marginTopForSubtitle2}>With placeholder:</Subtitle2>
         <ComponentDemoBox
           demo={getDemoSelectWithPlaceholder()}
           codeInHtml={demoSelectWithPlaceholderReactCode.nodes[0].html}
+          codeInMarkdown={demoSelectWithPlaceholderReactCode.nodes[0].rawMarkdownBody}
         />
         <Subtitle2 css={marginTopForSubtitle2}>Disabled:</Subtitle2>
-        <ComponentDemoBox demo={getDemoSelectDisabled()} codeInHtml={demoSelectDisabledReactCode.nodes[0].html} />
+        <ComponentDemoBox
+          demo={getDemoSelectDisabled()}
+          codeInHtml={demoSelectDisabledReactCode.nodes[0].html}
+          codeInMarkdown={demoSelectDisabledReactCode.nodes[0].rawMarkdownBody}
+        />
 
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.imports' })}
         </MarginalHeading3>
-        <CodeViewerContainer codeInHtml={importSelectReactCode.nodes[0].html} />
+        <CodeViewerContainer
+          codeInHtml={importSelectReactCode.nodes[0].html}
+          codeInMarkdown={importSelectReactCode.nodes[0].rawMarkdownBody}
+        />
 
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.props' })}
@@ -160,21 +176,37 @@ const SelectSection = ({ headingHash }) => {
       <TabContentWrapper>
         <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</MarginalHeading3>
         <Subtitle2>Default:</Subtitle2>
-        <ComponentDemoBox demo={getDemoSelect()} codeInHtml={demoSelectNgCode.nodes[0].html} />
+        <ComponentDemoBox
+          demo={getDemoSelect()}
+          codeInHtml={demoSelectNgCode.nodes[0].html}
+          codeInMarkdown={demoSelectNgCode.nodes[0].rawMarkdownBody}
+        />
         <Subtitle2 css={marginTopForSubtitle2}>Grouped:</Subtitle2>
-        <ComponentDemoBox demo={getDemoSelectGrouped()} codeInHtml={demoSelectGroupedNgCode.nodes[0].html} />
+        <ComponentDemoBox
+          demo={getDemoSelectGrouped()}
+          codeInHtml={demoSelectGroupedNgCode.nodes[0].html}
+          codeInMarkdown={demoSelectGroupedNgCode.nodes[0].rawMarkdownBody}
+        />
         <Subtitle2 css={marginTopForSubtitle2}>With placeholder:</Subtitle2>
         <ComponentDemoBox
           demo={getDemoSelectWithPlaceholder()}
           codeInHtml={demoSelectWithPlaceholderNgCode.nodes[0].html}
+          codeInMarkdown={demoSelectWithPlaceholderNgCode.nodes[0].rawMarkdownBody}
         />
         <Subtitle2 css={marginTopForSubtitle2}>Disabled:</Subtitle2>
-        <ComponentDemoBox demo={getDemoSelectDisabled()} codeInHtml={demoSelectDisabledNgCode.nodes[0].html} />
+        <ComponentDemoBox
+          demo={getDemoSelectDisabled()}
+          codeInHtml={demoSelectDisabledNgCode.nodes[0].html}
+          codeInMarkdown={demoSelectDisabledNgCode.nodes[0].rawMarkdownBody}
+        />
 
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.imports' })}
         </MarginalHeading3>
-        <CodeViewerContainer codeInHtml={importSelectNgCode.nodes[0].html} />
+        <CodeViewerContainer
+          codeInHtml={importSelectNgCode.nodes[0].html}
+          codeInMarkdown={importSelectNgCode.nodes[0].rawMarkdownBody}
+        />
 
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.properties' })}

@@ -56,12 +56,19 @@ const TabSection = ({ headingHash }) => {
       <TabContentWrapper>
         <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</MarginalHeading3>
         <Subtitle2>Default:</Subtitle2>
-        <ComponentDemoBox demo={getDemoTab()} codeInHtml={demoTabReactCode.nodes[0].html} />
+        <ComponentDemoBox
+          demo={getDemoTab()}
+          codeInHtml={demoTabReactCode.nodes[0].html}
+          codeInMarkdown={demoTabReactCode.nodes[0].rawMarkdownBody}
+        />
 
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.imports' })}
         </MarginalHeading3>
-        <CodeViewerContainer codeInHtml={importTabReactCode.nodes[0].html} />
+        <CodeViewerContainer
+          codeInHtml={importTabReactCode.nodes[0].html}
+          codeInMarkdown={importTabReactCode.nodes[0].rawMarkdownBody}
+        />
 
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.props' })}
@@ -92,12 +99,19 @@ const TabSection = ({ headingHash }) => {
       <TabContentWrapper>
         <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</MarginalHeading3>
         <Subtitle2>Default:</Subtitle2>
-        <ComponentDemoBox demo={getDemoTab()} codeInHtml={demoTabNgCode.nodes[0].html} />
+        <ComponentDemoBox
+          demo={getDemoTab()}
+          codeInHtml={demoTabNgCode.nodes[0].html}
+          codeInMarkdown={demoTabNgCode.nodes[0].rawMarkdownBody}
+        />
 
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.imports' })}
         </MarginalHeading3>
-        <CodeViewerContainer codeInHtml={importTabNgCode.nodes[0].html} />
+        <CodeViewerContainer
+          codeInHtml={importTabNgCode.nodes[0].html}
+          codeInMarkdown={importTabNgCode.nodes[0].rawMarkdownBody}
+        />
 
         <MarginalHeading3 css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.properties' })}
