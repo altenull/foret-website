@@ -29,7 +29,8 @@ const CodeViewerContainer = ({ codeInHtml, codeInMarkdown = '', ...props }) => {
   }, [isCopyIconWithCopiedMessageRefHovered, hasCodeCopied]);
 
   const handleCopyIconClick = (codeInMarkdown) => {
-    const isClipboardCopySuccesss = clipboardCopy(codeInMarkdown.replace(/(`{3})[a-zA-Z]*\n|(`{3})/g, ''));
+    const markdownCodeBlockRegExp = /(`{3})[a-zA-Z]*\n|(`{3})/g;
+    const isClipboardCopySuccesss = clipboardCopy(codeInMarkdown.replace(markdownCodeBlockRegExp, ''));
 
     if (isClipboardCopySuccesss) {
       setHasCodeCopied(true);
