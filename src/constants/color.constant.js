@@ -3,53 +3,58 @@ import { Color } from '@altenull/foret-core';
 export const COPY_ICON_WRAPPER_DARK = 'rgba(255, 255, 255, 0.25)';
 export const COPY_ICON_WRAPPER_BRIGHT = 'rgba(0, 0, 0, 0.075)';
 
-export const COLOR_WITH_NAMES = [
+export const FORET_GREEN_COLOR_WITH_NAME = [
   {
     name: 'Foret Green',
     color: Color.ForetGreen,
   },
+];
+
+export const WHITE_COLOR_WITH_NAME = [
   {
-    name: 'Soil',
-    color: Color.Soil,
+    name: 'White',
+    color: Color.White,
   },
-  {
-    name: 'Ink',
-    color: Color.Ink,
-  },
+];
+
+export const GRAY_SCALE_WITH_NAMES = [
   {
     name: 'Paper',
     color: Color.Paper,
-  },
-  {
-    name: 'Stone',
-    color: Color.Stone,
   },
   {
     name: 'Fog',
     color: Color.Fog,
   },
   {
+    name: 'Stone',
+    color: Color.Stone,
+  },
+  {
+    name: 'Ink',
+    color: Color.Ink,
+  },
+  {
     name: 'Black',
     color: Color.Black,
   },
+];
+
+export const FEEDBACK_COLOR_WITH_NAMES = [
   {
-    name: 'White',
-    color: Color.White,
+    name: 'Sun',
+    color: Color.Sun,
   },
   {
-    name: 'Danger',
-    color: Color.Danger,
+    name: 'Soil',
+    color: Color.Soil,
   },
   {
-    name: 'Warning',
-    color: Color.Warning,
+    name: 'Grass',
+    color: Color.Grass,
   },
   {
-    name: 'Success',
-    color: Color.Success,
-  },
-  {
-    name: 'Information',
-    color: Color.Information,
+    name: 'Sky',
+    color: Color.Sky,
   },
 ];
