@@ -5,7 +5,7 @@ import useIsHovered from '../../hooks/core/useIsHovered';
 import { clipboardCopy } from '../../utils/clipboard.util';
 import { getBrightness } from '../../utils/color.util';
 
-const ColorChipContainer = ({ name, color }) => {
+const ColorChipContainer = ({ name, color, ...props }) => {
   const [hasColorCopied, setHasColorCopied] = useState(false);
 
   const [colorChipRef, isColorChipHovered] = useIsHovered();
@@ -37,6 +37,7 @@ const ColorChipContainer = ({ name, color }) => {
       isHovered={isColorChipHovered}
       hasColorCopied={hasColorCopied}
       onClick={() => handleClick(color)}
+      {...props}
     />
   );
 };
