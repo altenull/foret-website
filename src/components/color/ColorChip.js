@@ -7,8 +7,7 @@ import { CopyIconWithCopiedMessage } from '../common';
 
 const colorChipStyles = (color) => css`
   position: relative;
-  min-width: 240px;
-  height: 240px;
+  width: 100%;
   padding: 16px 0 0 24px;
   cursor: pointer;
   box-sizing: border-box;
@@ -32,7 +31,7 @@ const colorCodeWrapperStyles = (theme, isHovered) => css`
 const copyIconWithCopiedMessageStyles = css`
   position: absolute;
   right: 16px;
-  top: 16px;
+  top: 15px;
 `;
 
 const ColorChip = React.forwardRef(
