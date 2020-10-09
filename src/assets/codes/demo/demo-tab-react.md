@@ -13,9 +13,5 @@
     <h3>Tab 3 content</h3>
   </Tab>
 
-  <Tab id={'tab-4'} labelText={'Tab 4'} value={'tab4'}>
-    <h4>Tab 4 content</h4>
-  </Tab>
-
 </TabGroup>
 ```
