@@ -8,11 +8,16 @@ const codeViewerStyles = css`
   position: relative;
 `;
 
-const copyIconWithCopiedMessageStyles = css`
+const copyIconWithCopiedMessageStyles = (theme) => css`
   position: absolute;
   top: 8px;
   right: 12px;
   cursor: pointer;
+  display: none;
+
+  ${theme.mediaQueries.viewPort9} {
+    display: initial;
+  }
 `;
 
 // What's dangerous about dangerouslySetInnerHTML?
@@ -49,7 +54,7 @@ const CodeViewerContainer = ({ codeInHtml, codeInMarkdown = '', ...props }) => {
 
       {!!codeInMarkdown && (
         <CopyIconWithCopiedMessage
-          css={copyIconWithCopiedMessageStyles}
+          css={(theme) => copyIconWithCopiedMessageStyles(theme)}
           ref={copyIconWithCopiedMessageRef}
           isHovered={isCopyIconWithCopiedMessageRefHovered}
           hasCopied={hasCodeCopied}
