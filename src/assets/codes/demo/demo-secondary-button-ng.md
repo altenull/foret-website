@@ -4,6 +4,6 @@
 </button>
 
 <button foretSecondaryButton disabled>
-  secondary button (disabled)
+  secondary button
 </button>
 ```

@@ -2,6 +2,6 @@
 <SecondaryButton>secondary button</SecondaryButton>
 
 <SecondaryButton disabled={true}>
-  secondary button(disabled)
+  secondary button
 </SecondaryButton>
 ```

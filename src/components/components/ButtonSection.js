@@ -50,7 +50,7 @@ const ButtonSection = ({ headingHash }) => {
     <Fragment>
       <PrimaryButton>primary button</PrimaryButton>
       <DemoDivider />
-      <PrimaryButton disabled>primary button(disabled)</PrimaryButton>
+      <PrimaryButton disabled>primary button</PrimaryButton>
     </Fragment>
   );
 
@@ -58,7 +58,7 @@ const ButtonSection = ({ headingHash }) => {
     <Fragment>
       <SecondaryButton>secondary button</SecondaryButton>
       <DemoDivider />
-      <SecondaryButton disabled>secondary button(disabled)</SecondaryButton>
+      <SecondaryButton disabled>secondary button</SecondaryButton>
     </Fragment>
   );
 
@@ -66,7 +66,7 @@ const ButtonSection = ({ headingHash }) => {
     <Fragment>
       <DangerButton>danger button</DangerButton>
       <DemoDivider />
-      <DangerButton disabled>danger button(disabled)</DangerButton>
+      <DangerButton disabled>danger button</DangerButton>
     </Fragment>
   );
 

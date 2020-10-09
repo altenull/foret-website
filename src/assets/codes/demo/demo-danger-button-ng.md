@@ -4,6 +4,6 @@
 </button>
 
 <button foretDangerButton disabled>
-  danger button (disabled)
+  danger button
 </button>
 ```
