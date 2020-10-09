@@ -22,48 +22,74 @@ const whiteColorChipStyles = css`
 
 const grayScaleColorChipStyles = css`
   height: 160px;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 
   &:last-child {
-    margin-top: 0;
+    margin-bottom: 0;
   }
 `;
 
-const feedbackColorChipWrapperStyles = css`
+const feedbackColorChipWrapperStyles = (theme) => css`
   display: flex;
+  flex-direction: column;
+
+  ${theme.mediaQueries.viewPort9} {
+    flex-direction: row;
+  }
 `;
 
-const feedbackColorChipStyles = css`
-  flex: 1;
-  height: 400px;
-  margin-right: 16px;
+const feedbackColorChipStyles = (theme) => css`
+  height: 160px;
+  margin-bottom: 16px;
 
-  &::last-child {
-    margin-right: 0;
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  ${theme.mediaQueries.viewPort9} {
+    flex: 1;
+    height: 400px;
+    margin-right: 16px;
+    margin-bottom: 0;
+  }
+
+  &:last-child {
+    ${theme.mediaQueries.viewPort9} {
+      margin-right: 0;
+    }
   }
 `;
 
 const ContentSection = () => {
-  const getColorChips = (colorWithNames, colorChipStyles) =>
-    colorWithNames.map(({ name, color }) => (
-      <ColorChipContainer key={color} css={colorChipStyles} name={name} color={color} />
-    ));
-
   return (
     <section>
       <ResponsiveContentLayout>
         <MarginalHeading2>Brand Colors</MarginalHeading2>
         <div>
-          {getColorChips(FORET_GREEN_COLOR_WITH_NAME, foretGreenColorChipStyles)}
-          {getColorChips(WHITE_COLOR_WITH_NAME, whiteColorChipStyles)}
+          <ColorChipContainer
+            css={foretGreenColorChipStyles}
+            name={FORET_GREEN_COLOR_WITH_NAME.name}
+            color={FORET_GREEN_COLOR_WITH_NAME.color}
+          />
+          <ColorChipContainer
+            css={whiteColorChipStyles}
+            name={WHITE_COLOR_WITH_NAME.name}
+            color={WHITE_COLOR_WITH_NAME.color}
+          />
         </div>
 
         <MarginalHeading2 css={marginTopForHeading2}>Gray Scale</MarginalHeading2>
-        <div>{getColorChips(GRAY_SCALE_WITH_NAMES, grayScaleColorChipStyles)}</div>
+        <div>
+          {GRAY_SCALE_WITH_NAMES.map(({ name, color }) => (
+            <ColorChipContainer key={color} css={grayScaleColorChipStyles} name={name} color={color} />
+          ))}
+        </div>
 
         <MarginalHeading2 css={marginTopForHeading2}>Feedback Colors</MarginalHeading2>
-        <div css={feedbackColorChipWrapperStyles}>
-          {getColorChips(FEEDBACK_COLOR_WITH_NAMES, feedbackColorChipStyles)}
+        <div css={(theme) => feedbackColorChipWrapperStyles(theme)}>
+          {FEEDBACK_COLOR_WITH_NAMES.map(({ name, color }) => (
+            <ColorChipContainer key={color} css={(theme) => feedbackColorChipStyles(theme)} name={name} color={color} />
+          ))}
         </div>
       </ResponsiveContentLayout>
     </section>
