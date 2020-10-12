@@ -14,11 +14,19 @@ const linkStyles = css`
   text-decoration: none;
 `;
 
+const heading3Styles = (theme) => css`
+  font-size: 28px;
+
+  ${theme.mediaQueries.viewPort9} {
+    font-size: 36px;
+  }
+`;
+
 const PageLink = ({ to, text, ...props }) => {
   return (
     <li css={pageLinkStyles} {...props}>
       <Link to={to} css={linkStyles}>
-        <Heading3>{text}</Heading3>
+        <Heading3 css={(theme) => heading3Styles(theme)}>{text}</Heading3>
       </Link>
     </li>
   );

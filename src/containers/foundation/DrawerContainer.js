@@ -8,6 +8,7 @@ import useIsMounted from '../../hooks/core/useIsMounted';
 import { getLanguageLinks } from '../../utils/locale.util';
 
 const drawerStyles = (theme, shouldStartAnimation) => css`
+  overflow: auto;
   position: fixed;
   left: 0;
   top: 0;
@@ -20,19 +21,33 @@ const drawerStyles = (theme, shouldStartAnimation) => css`
   z-index: ${theme.zIndexes.drawer};
 `;
 
-const positionerStyles = css`
-  padding: 160px 64px 0;
+const positionerStyles = (theme) => css`
+  padding: 128px 16px 0;
   box-sizing: border-box;
+
+  ${theme.mediaQueries.viewPort9} {
+    padding: 160px 64px 0;
+  }
 `;
 
-const pageLinkContainerStyles = css`
-  margin: 64px 0;
+const pageLinkContainerStyles = (theme) => css`
   padding: 0;
+  margin: 0 0 32px;
+
+  ${theme.mediaQueries.viewPort9} {
+    margin: 64px 0;
+  }
 `;
 
-const pageLinkStyles = css`
+const pageLinkStyles = (theme) => css`
   & + & {
-    margin-top: 3rem;
+    margin-top: 2rem;
+  }
+
+  ${theme.mediaQueries.viewPort9} {
+    & + & {
+      margin-top: 3rem;
+    }
   }
 `;
 
@@ -58,7 +73,12 @@ const DrawerContainer = () => {
   const getSiteMetadataResponse = useSiteMetadataQuery();
 
   const pageLinks = getSiteMetadataResponse.siteMetadata.pageRoutes.map(({ key, camelCase }) => (
-    <PageLink key={key} css={pageLinkStyles} to={`/${key}`} text={intl.formatMessage({ id: `pages.${camelCase}` })} />
+    <PageLink
+      key={key}
+      css={(theme) => pageLinkStyles(theme)}
+      to={`/${key}`}
+      text={intl.formatMessage({ id: `pages.${camelCase}` })}
+    />
   ));
 
   return (
@@ -68,8 +88,8 @@ const DrawerContainer = () => {
           <Global styles={globalStyles} />
 
           <div css={(theme) => drawerStyles(theme, isMounted)}>
-            <div css={positionerStyles}>
-              <ul css={pageLinkContainerStyles}>{pageLinks}</ul>
+            <div css={(theme) => positionerStyles(theme)}>
+              <ul css={(theme) => pageLinkContainerStyles(theme)}>{pageLinks}</ul>
 
               <div css={preferredLanguageWrapperStyles}>
                 <MarginalParagraph>{intl.formatMessage({ id: 'drawer.preferredLanguageTitle' })}</MarginalParagraph>
