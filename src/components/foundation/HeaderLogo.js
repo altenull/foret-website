@@ -11,14 +11,20 @@ const headerLogoStyles = css`
 `;
 
 const logoStyles = (theme, shouldHideLogoTitle) => css`
-  margin-right: 16px;
+  margin-right: 12px;
   transition: width ${theme.duration.slow}, height ${theme.duration.slow};
-  width: ${shouldHideLogoTitle ? '56px' : '80px'} !important;
-  height: ${shouldHideLogoTitle ? '56px' : '80px'} !important;
+  width: ${shouldHideLogoTitle ? '48px' : '64px'} !important;
+  height: ${shouldHideLogoTitle ? '48px' : '64px'} !important;
+
+  ${theme.mediaQueries.viewPort9} {
+    margin-right: 16px;
+    width: ${shouldHideLogoTitle ? '56px' : '80px'} !important;
+    height: ${shouldHideLogoTitle ? '56px' : '80px'} !important;
+  }
 `;
 
 const logoTitleStyles = (theme, shouldHideLogoTitle) => css`
-  font-size: 1.5rem;
+  font-size: 1.125rem;
   white-space: nowrap;
   color: ${theme.colors.ink};
   visibility: ${shouldHideLogoTitle ? 'hidden' : 'visible'};
@@ -27,6 +33,10 @@ const logoTitleStyles = (theme, shouldHideLogoTitle) => css`
   transition: ${shouldHideLogoTitle
     ? `opacity ${theme.duration.slow}, visibility 0ms ${theme.duration.slow}, max-width 0ms ${theme.duration.slow}`
     : `opacity ${theme.duration.slow}`};
+
+  ${theme.mediaQueries.viewPort9} {
+    font-size: 1.5rem;
+  }
 `;
 
 const HeaderLogo = ({ logoFixed, logoTitle, shouldHideLogoTitle }) => {

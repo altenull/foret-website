@@ -8,22 +8,27 @@ import { useIsMounted } from '../../hooks/core';
 import { useLogoImageQuery } from '../../hooks/foundation';
 import DrawerContainer from './DrawerContainer';
 
-const headerStyles = (theme) => css`
+const headerStyles = (theme, isScrolled, isDrawerShowing) => css`
   position: fixed;
-  top: 1rem;
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: calc(100% - 2rem);
+  width: 100%;
   height: 80px;
+  padding: 0 16px;
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
   z-index: ${theme.zIndexes.header};
   pointer-events: none;
+  background-color: ${isDrawerShowing ? 'transparent' : isScrolled ? theme.colors.paper : 'transparent'};
+
   ${theme.mediaQueries.viewPort9} {
-    width: calc(100% - 4rem);
+    width: calc(100% - 2rem);
     max-width: 1440px;
     top: 56px;
+    padding: 0;
+    background-color: transparent;
   }
 `;
 
@@ -97,7 +102,7 @@ const HeaderContainer = () => {
     <Fragment>
       {isDrawerShowing && ReactDOM.createPortal(<DrawerContainer />, document.body)}
 
-      <header css={headerStyles} ref={headerRef}>
+      <header css={(theme) => headerStyles(theme, isScrolled, isDrawerShowing)} ref={headerRef}>
         <HeaderLogo
           logoFixed={getLogoImageResponse.logoCircleImage}
           logoTitle={intl.formatMessage({ id: 'title' })}

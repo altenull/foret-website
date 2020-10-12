@@ -16,7 +16,7 @@ const drawerStyles = (theme, shouldStartAnimation) => css`
   bottom: 0;
   transition: transform ${theme.duration.slow} ease-in-out, opacity ${theme.duration.normal};
   opacity: ${shouldStartAnimation ? '1' : '0'};
-  transform: translateY(${shouldStartAnimation ? '0' : '-10%'});
+  transform: translateY(${shouldStartAnimation ? '0' : '-20%'});
   background-color: ${theme.colors.white};
   z-index: ${theme.zIndexes.drawer};
 `;
