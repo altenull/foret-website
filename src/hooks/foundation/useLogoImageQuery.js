@@ -10,19 +10,11 @@ const useLogoImageQuery = () => {
           }
         }
       }
-      logoGreenImage: file(relativePath: { eq: "logo-green.png" }) {
-        childImageSharp {
-          fixed(width: 323, height: 381) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
     }
   `);
 
   const logoImageQueryRepsonse = {
     logoCircleImage: logoCircleImage.childImageSharp.fixed,
-    logoGreenImage: logoGreenImage.childImageSharp.fixed,
   };
 
   return logoImageQueryRepsonse;
