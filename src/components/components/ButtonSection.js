@@ -41,8 +41,12 @@ const ButtonSection = ({ headingHash }) => {
 
   const getSharedOverviewContent = () => (
     <Fragment>
-      <Heading3 enableMargin>{intl.formatMessage({ id: 'components.shared.notes' })}</Heading3>
-      <Paragraph enableMargin>{intl.formatMessage({ id: 'components.button.notes.description' })}</Paragraph>
+      <Heading3 enableMargin enableResponsive>
+        {intl.formatMessage({ id: 'components.shared.notes' })}
+      </Heading3>
+      <Paragraph enableMargin enableResponsive>
+        {intl.formatMessage({ id: 'components.button.notes.description' })}
+      </Paragraph>
     </Fragment>
   );
 
@@ -82,7 +86,7 @@ const ButtonSection = ({ headingHash }) => {
       <TabContentWrapper>
         {getSharedOverviewContent()}
 
-        <Heading3 enableMargin css={marginTopForHeading3}>
+        <Heading3 css={marginTopForHeading3} enableMargin enableResponsive>
           {intl.formatMessage({ id: 'components.shared.liveDemo' })}
         </Heading3>
         <Subtitle2>Primary Button:</Subtitle2>
@@ -104,7 +108,7 @@ const ButtonSection = ({ headingHash }) => {
           codeInMarkdown={demoDangerButtonReactCode.nodes[0].rawMarkdownBody}
         />
 
-        <Heading3 enableMargin css={marginTopForHeading3}>
+        <Heading3 css={marginTopForHeading3} enableMargin enableResponsive>
           {intl.formatMessage({ id: 'components.shared.imports' })}
         </Heading3>
         <CodeViewerContainer
@@ -112,7 +116,7 @@ const ButtonSection = ({ headingHash }) => {
           codeInMarkdown={importButtonReactCode.nodes[0].rawMarkdownBody}
         />
 
-        <Heading3 enableMargin css={marginTopForHeading3}>
+        <Heading3 css={marginTopForHeading3} enableMargin enableResponsive>
           {intl.formatMessage({ id: 'components.shared.props' })}
         </Heading3>
         {getPropsTable(buttonProps)}
@@ -124,7 +128,7 @@ const ButtonSection = ({ headingHash }) => {
     <TabContentWrapper>
       {getSharedOverviewContent()}
 
-      <Heading3 enableMargin css={marginTopForHeading3}>
+      <Heading3 css={marginTopForHeading3} enableMargin enableResponsive>
         {intl.formatMessage({ id: 'components.shared.liveDemo' })}
       </Heading3>
       <Subtitle2>Primary Button:</Subtitle2>
@@ -146,7 +150,7 @@ const ButtonSection = ({ headingHash }) => {
         codeInMarkdown={demoDangerButtonNgCode.nodes[0].rawMarkdownBody}
       />
 
-      <Heading3 enableMargin css={marginTopForHeading3}>
+      <Heading3 css={marginTopForHeading3} enableMargin enableResponsive>
         {intl.formatMessage({ id: 'components.shared.imports' })}
       </Heading3>
       <CodeViewerContainer
@@ -162,7 +166,9 @@ const ButtonSection = ({ headingHash }) => {
         <AnchorHeading2 headingHash={headingHash}>
           {intl.formatMessage({ id: 'components.button.title' })}
         </AnchorHeading2>
-        <Paragraph enableMargin>{intl.formatMessage({ id: 'components.button.description' })}</Paragraph>
+        <Paragraph enableMargin enableResponsive>
+          {intl.formatMessage({ id: 'components.button.description' })}
+        </Paragraph>
 
         <TabGroup selectedValue={'buttonSectionReactTap'} name={'button-section-tap'}>
           <Tab id={'button-section-react-tap'} labelText={'React'} value={'buttonSectionReactTap'}>

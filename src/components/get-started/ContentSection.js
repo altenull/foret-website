@@ -31,10 +31,10 @@ const ContentSection = () => {
 
   const getSharedContributingContent = () => (
     <Fragment>
-      <Heading2 enableMargin css={marginTopForHeading2}>
+      <Heading2 css={marginTopForHeading2} enableMargin enableResponsive>
         {intl.formatMessage({ id: 'getStarted.content.contributing.title' })}
       </Heading2>
-      <Paragraph enableMargin>
+      <Paragraph enableMargin enableResponsive>
         {intl.formatMessage({ id: 'getStarted.content.contributing.description1' })}
         <a css={anchorStyles} href={siteMetadata.hosts.foretGithub} target={'_blank'} rel={'noreferrer'}>
           @altenull/foret
@@ -46,8 +46,8 @@ const ContentSection = () => {
 
   const getReactVersionContent = () => (
     <TabContentWrapper>
-      <Heading2>enableMargin {intl.formatMessage({ id: 'getStarted.content.installation.title' })}</Heading2>
-      <Paragraph enableMargin>
+      <Heading2 enableResponsive>{intl.formatMessage({ id: 'getStarted.content.installation.title' })}</Heading2>
+      <Paragraph enableMargin enableResponsive>
         {intl.formatMessage({ id: 'getStarted.content.installation.description1' })}
         <a css={anchorStyles} href={siteMetadata.hosts.foretReactNpm} target={'_blank'} rel={'noreferrer'}>
           npm package
@@ -77,8 +77,8 @@ const ContentSection = () => {
 
   const getAngularVersionContent = () => (
     <TabContentWrapper>
-      <Heading2>enableMargin {intl.formatMessage({ id: 'getStarted.content.installation.title' })}</Heading2>
-      <Paragraph enableMargin>
+      <Heading2 enableResponsive>{intl.formatMessage({ id: 'getStarted.content.installation.title' })}</Heading2>
+      <Paragraph enableMargin enableResponsive>
         {intl.formatMessage({ id: 'getStarted.content.installation.description1' })}
         <a css={anchorStyles} href={siteMetadata.hosts.foretNgNpm} target={'_blank'} rel={'noreferrer'}>
           npm package

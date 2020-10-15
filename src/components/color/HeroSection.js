@@ -23,7 +23,9 @@ const HeroSection = () => {
   return (
     <section css={sectionStyles}>
       <ResponsiveContentLayout css={responsiveContentLayoutStyles}>
-        <Heading1 enableMargin>{intl.formatMessage({ id: 'color.hero.title' })}</Heading1>
+        <Heading1 enableMargin enableResponsive>
+          {intl.formatMessage({ id: 'color.hero.title' })}
+        </Heading1>
         <Subtitle1>{intl.formatMessage({ id: 'color.hero.subtitle1' })}</Subtitle1>
       </ResponsiveContentLayout>
 

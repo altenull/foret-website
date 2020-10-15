@@ -16,7 +16,7 @@ const linkIconStyles = css`
 
 const AnchorHeading2 = ({ headingHash, children, ...props }) => {
   return (
-    <Heading2 css={heading2Styles} id={headingHash} enableMargin {...props}>
+    <Heading2 css={heading2Styles} id={headingHash} enableMargin enableResponsive {...props}>
       {/* TODO: LinkIcon should be visible when AnchorHeading2 is hovered */}
       <LinkIcon css={linkIconStyles} />
       {children}

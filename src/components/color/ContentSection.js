@@ -64,7 +64,9 @@ const ContentSection = () => {
   return (
     <section>
       <ResponsiveContentLayout>
-        <Heading2 enableMargin>Brand Colors</Heading2>
+        <Heading2 enableMargin enableResponsive>
+          Brand Colors
+        </Heading2>
         <div>
           <ColorChipContainer
             css={foretGreenColorChipStyles}
@@ -78,7 +80,7 @@ const ContentSection = () => {
           />
         </div>
 
-        <Heading2 enableMargin css={marginTopForHeading2}>
+        <Heading2 css={marginTopForHeading2} enableMargin enableResponsive>
           Gray Scale
         </Heading2>
         <div>
@@ -87,7 +89,7 @@ const ContentSection = () => {
           ))}
         </div>
 
-        <Heading2 enableMargin css={marginTopForHeading2}>
+        <Heading2 css={marginTopForHeading2} enableMargin enableResponsive>
           Feedback Colors
         </Heading2>
         <div css={(theme) => feedbackColorChipWrapperStyles(theme)}>

@@ -65,7 +65,9 @@ const CheckboxSection = ({ headingHash }) => {
 
     return (
       <TabContentWrapper>
-        <Heading3 enableMargin>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</Heading3>
+        <Heading3 enableMargin enableResponsive>
+          {intl.formatMessage({ id: 'components.shared.liveDemo' })}
+        </Heading3>
         <Subtitle2>Default:</Subtitle2>
         <ComponentDemoBox
           demo={getDemoCheckbox()}
@@ -79,7 +81,7 @@ const CheckboxSection = ({ headingHash }) => {
           codeInMarkdown={demoCheckboxDisabledReactCode.nodes[0].rawMarkdownBody}
         />
 
-        <Heading3 enableMargin css={marginTopForHeading3}>
+        <Heading3 css={marginTopForHeading3} enableMargin enableResponsive>
           {intl.formatMessage({ id: 'components.shared.imports' })}
         </Heading3>
         <CodeViewerContainer
@@ -87,7 +89,7 @@ const CheckboxSection = ({ headingHash }) => {
           codeInMarkdown={importCheckboxReactCode.nodes[0].rawMarkdownBody}
         />
 
-        <Heading3 enableMargin css={marginTopForHeading3}>
+        <Heading3 css={marginTopForHeading3} enableMargin enableResponsive>
           {intl.formatMessage({ id: 'components.shared.props' })}
         </Heading3>
         <Subtitle2>{'<CheckboxGroup>'}</Subtitle2>
@@ -114,7 +116,9 @@ const CheckboxSection = ({ headingHash }) => {
 
     return (
       <TabContentWrapper>
-        <Heading3 enableMargin>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</Heading3>
+        <Heading3 enableMargin enableResponsive>
+          {intl.formatMessage({ id: 'components.shared.liveDemo' })}
+        </Heading3>
         <Subtitle2>Default:</Subtitle2>
         <ComponentDemoBox
           demo={getDemoCheckbox()}
@@ -128,7 +132,7 @@ const CheckboxSection = ({ headingHash }) => {
           codeInMarkdown={demoCheckboxDisabledNgCode.nodes[0].rawMarkdownBody}
         />
 
-        <Heading3 enableMargin css={marginTopForHeading3}>
+        <Heading3 css={marginTopForHeading3} enableMargin enableResponsive>
           {intl.formatMessage({ id: 'components.shared.imports' })}
         </Heading3>
         <CodeViewerContainer
@@ -136,7 +140,7 @@ const CheckboxSection = ({ headingHash }) => {
           codeInMarkdown={importCheckboxNgCode.nodes[0].rawMarkdownBody}
         />
 
-        <Heading3 enableMargin css={marginTopForHeading3}>
+        <Heading3 css={marginTopForHeading3} enableMargin enableResponsive>
           {intl.formatMessage({ id: 'components.shared.properties' })}
         </Heading3>
         <Subtitle2>{'<foret-checkbox-group>'}</Subtitle2>
@@ -153,7 +157,9 @@ const CheckboxSection = ({ headingHash }) => {
         <AnchorHeading2 css={marginTopForHeading2} headingHash={headingHash}>
           {intl.formatMessage({ id: 'components.checkbox.title' })}
         </AnchorHeading2>
-        <Paragraph enableMargin>{intl.formatMessage({ id: 'components.checkbox.description' })}</Paragraph>
+        <Paragraph enableMargin enableResponsive>
+          {intl.formatMessage({ id: 'components.checkbox.description' })}
+        </Paragraph>
 
         <TabGroup selectedValue={'checkboxSectionReactTap'} name={'checkbox-section-tap'}>
           <Tab id={'checkbox-section-react-tap'} labelText={'React'} value={'checkboxSectionReactTap'}>

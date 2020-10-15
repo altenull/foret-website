@@ -55,7 +55,9 @@ const HeroSection = () => {
       <div css={twoColumnsCoverStyles}>
         <div css={columnStyles}>
           <div css={leftColumnContentPositionerStyles}>
-            <Heading1 css={mainTitleStyles}>{intl.formatMessage({ id: 'home.hero.title' })}</Heading1>
+            <Heading1 css={mainTitleStyles} enableResponsive>
+              {intl.formatMessage({ id: 'home.hero.title' })}
+            </Heading1>
             <Subtitle1 css={subtitleStyles}>{intl.formatMessage({ id: 'home.hero.subtitle' })}</Subtitle1>
             <Link to={`/${PageRouteEnum.GetStarted}`} css={linkStyles}>
               <PrimaryButton>{intl.formatMessage({ id: 'home.hero.getStartedButton' })}</PrimaryButton>

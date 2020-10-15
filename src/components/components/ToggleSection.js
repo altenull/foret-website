@@ -57,7 +57,9 @@ const ToggleSection = ({ headingHash }) => {
 
     return (
       <TabContentWrapper>
-        <Heading3 enableMargin>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</Heading3>
+        <Heading3 enableMargin enableResponsive>
+          {intl.formatMessage({ id: 'components.shared.liveDemo' })}
+        </Heading3>
         <Subtitle2>Default:</Subtitle2>
         <ComponentDemoBox
           demo={getDemoToggle()}
@@ -71,7 +73,7 @@ const ToggleSection = ({ headingHash }) => {
           codeInMarkdown={demoToggleDisabledReactCode.nodes[0].rawMarkdownBody}
         />
 
-        <Heading3 enableMargin css={marginTopForHeading3}>
+        <Heading3 css={marginTopForHeading3} enableMargin enableResponsive>
           {intl.formatMessage({ id: 'components.shared.imports' })}
         </Heading3>
         <CodeViewerContainer
@@ -79,7 +81,7 @@ const ToggleSection = ({ headingHash }) => {
           codeInMarkdown={importToggleReactCode.nodes[0].rawMarkdownBody}
         />
 
-        <Heading3 enableMargin css={marginTopForHeading3}>
+        <Heading3 css={marginTopForHeading3} enableMargin enableResponsive>
           {intl.formatMessage({ id: 'components.shared.props' })}
         </Heading3>
         {getPropsTable(toggleProps)}
@@ -111,7 +113,7 @@ const ToggleSection = ({ headingHash }) => {
           codeInMarkdown={demoToggleDisabledNgCode.nodes[0].rawMarkdownBody}
         />
 
-        <Heading3 enableMargin css={marginTopForHeading3}>
+        <Heading3 css={marginTopForHeading3} enableMargin enableResponsive>
           {intl.formatMessage({ id: 'components.shared.imports' })}
         </Heading3>
         <CodeViewerContainer
@@ -119,7 +121,7 @@ const ToggleSection = ({ headingHash }) => {
           codeInMarkdown={importToggleNgCode.nodes[0].rawMarkdownBody}
         />
 
-        <Heading3 enableMargin css={marginTopForHeading3}>
+        <Heading3 css={marginTopForHeading3} enableMargin enableResponsive>
           {intl.formatMessage({ id: 'components.shared.properties' })}
         </Heading3>
         {getPropsTable(toggleProperties)}
@@ -133,7 +135,9 @@ const ToggleSection = ({ headingHash }) => {
         <AnchorHeading2 css={marginTopForHeading2} headingHash={headingHash}>
           {intl.formatMessage({ id: 'components.toggle.title' })}
         </AnchorHeading2>
-        <Paragraph enableMargin>{intl.formatMessage({ id: 'components.toggle.description' })}</Paragraph>
+        <Paragraph enableMargin enableResponsive>
+          {intl.formatMessage({ id: 'components.toggle.description' })}
+        </Paragraph>
 
         <TabGroup selectedValue={'toggleSectionReactTap'} name={'toggle-section-tap'}>
           <Tab id={'toggle-section-react-tap'} labelText={'React'} value={'toggleSectionReactTap'}>

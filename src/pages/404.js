@@ -11,8 +11,8 @@ export default function () {
     <Fragment>
       <Helmet title={`404 Not Found | ${intl.formatMessage({ id: 'title' })}`} defer={false} />
       <PageLayout>
-        <Heading1>{intl.formatMessage({ id: '404.title' })}</Heading1>
-        <Paragraph>{intl.formatMessage({ id: '404.description' })}</Paragraph>
+        <Heading1 enableResponsive>{intl.formatMessage({ id: '404.title' })}</Heading1>
+        <Paragraph enableResponsive>{intl.formatMessage({ id: '404.description' })}</Paragraph>
       </PageLayout>
     </Fragment>
   );

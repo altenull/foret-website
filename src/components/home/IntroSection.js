@@ -20,9 +20,15 @@ const IntroSection = () => {
   return (
     <section css={sectionStyles}>
       <ResponsiveContentLayout>
-        <Paragraph css={descriptionStyles}>{intl.formatMessage({ id: 'home.intro.description1' })}</Paragraph>
-        <Paragraph css={descriptionStyles}>{intl.formatMessage({ id: 'home.intro.description2' })}</Paragraph>
-        <Paragraph css={descriptionStyles}>{intl.formatMessage({ id: 'home.intro.description3' })}</Paragraph>
+        <Paragraph css={descriptionStyles} enableResponsive>
+          {intl.formatMessage({ id: 'home.intro.description1' })}
+        </Paragraph>
+        <Paragraph css={descriptionStyles} enableResponsive>
+          {intl.formatMessage({ id: 'home.intro.description2' })}
+        </Paragraph>
+        <Paragraph css={descriptionStyles} enableResponsive>
+          {intl.formatMessage({ id: 'home.intro.description3' })}
+        </Paragraph>
       </ResponsiveContentLayout>
     </section>
   );

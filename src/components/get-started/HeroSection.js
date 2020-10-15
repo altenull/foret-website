@@ -23,7 +23,9 @@ const HeroSection = () => {
   return (
     <section css={sectionStyles}>
       <ResponsiveContentLayout css={responsiveContentLayoutStyles}>
-        <Heading1 enableMargin>{intl.formatMessage({ id: 'getStarted.hero.title' })}</Heading1>
+        <Heading1 enableMargin enableResponsive>
+          {intl.formatMessage({ id: 'getStarted.hero.title' })}
+        </Heading1>
         <Subtitle1>{intl.formatMessage({ id: 'getStarted.hero.subtitle1' })}</Subtitle1>
         <Subtitle1>{intl.formatMessage({ id: 'getStarted.hero.subtitle2' })}</Subtitle1>
       </ResponsiveContentLayout>
