@@ -1,4 +1,4 @@
-import { MarginalHeading3, MarginalParagraph, Subtitle2, Tab, TabGroup, Toggle } from '@altenull/foret-react';
+import { Heading3, Paragraph, Subtitle2, Tab, TabGroup, Toggle } from '@altenull/foret-react';
 import { css } from '@emotion/core';
 import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
@@ -57,7 +57,7 @@ const ToggleSection = ({ headingHash }) => {
 
     return (
       <TabContentWrapper>
-        <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</MarginalHeading3>
+        <Heading3 enableMargin>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</Heading3>
         <Subtitle2>Default:</Subtitle2>
         <ComponentDemoBox
           demo={getDemoToggle()}
@@ -71,17 +71,17 @@ const ToggleSection = ({ headingHash }) => {
           codeInMarkdown={demoToggleDisabledReactCode.nodes[0].rawMarkdownBody}
         />
 
-        <MarginalHeading3 css={marginTopForHeading3}>
+        <Heading3 enableMargin css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.imports' })}
-        </MarginalHeading3>
+        </Heading3>
         <CodeViewerContainer
           codeInHtml={importToggleReactCode.nodes[0].html}
           codeInMarkdown={importToggleReactCode.nodes[0].rawMarkdownBody}
         />
 
-        <MarginalHeading3 css={marginTopForHeading3}>
+        <Heading3 enableMargin css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.props' })}
-        </MarginalHeading3>
+        </Heading3>
         {getPropsTable(toggleProps)}
       </TabContentWrapper>
     );
@@ -97,7 +97,7 @@ const ToggleSection = ({ headingHash }) => {
 
     return (
       <TabContentWrapper>
-        <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</MarginalHeading3>
+        <Heading3 enableMargin>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</Heading3>
         <Subtitle2>Default:</Subtitle2>
         <ComponentDemoBox
           demo={getDemoToggle()}
@@ -111,17 +111,17 @@ const ToggleSection = ({ headingHash }) => {
           codeInMarkdown={demoToggleDisabledNgCode.nodes[0].rawMarkdownBody}
         />
 
-        <MarginalHeading3 css={marginTopForHeading3}>
+        <Heading3 enableMargin css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.imports' })}
-        </MarginalHeading3>
+        </Heading3>
         <CodeViewerContainer
           codeInHtml={importToggleNgCode.nodes[0].html}
           codeInMarkdown={importToggleNgCode.nodes[0].rawMarkdownBody}
         />
 
-        <MarginalHeading3 css={marginTopForHeading3}>
+        <Heading3 enableMargin css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.properties' })}
-        </MarginalHeading3>
+        </Heading3>
         {getPropsTable(toggleProperties)}
       </TabContentWrapper>
     );
@@ -133,7 +133,7 @@ const ToggleSection = ({ headingHash }) => {
         <AnchorMarginalHeading2 css={marginTopForHeading2} headingHash={headingHash}>
           {intl.formatMessage({ id: 'components.toggle.title' })}
         </AnchorMarginalHeading2>
-        <MarginalParagraph>{intl.formatMessage({ id: 'components.toggle.description' })}</MarginalParagraph>
+        <Paragraph enableMargin>{intl.formatMessage({ id: 'components.toggle.description' })}</Paragraph>
 
         <TabGroup selectedValue={'toggleSectionReactTap'} name={'toggle-section-tap'}>
           <Tab id={'toggle-section-react-tap'} labelText={'React'} value={'toggleSectionReactTap'}>

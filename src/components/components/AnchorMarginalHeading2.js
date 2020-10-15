@@ -1,4 +1,4 @@
-import { MarginalHeading2 } from '@altenull/foret-react';
+import { Heading2 } from '@altenull/foret-react';
 import { css } from '@emotion/core';
 import React from 'react';
 import { LinkIcon } from '../icons';
@@ -16,11 +16,11 @@ const linkIconStyles = css`
 
 const AnchorMarginalHeading2 = ({ headingHash, children, ...props }) => {
   return (
-    <MarginalHeading2 css={heading2Styles} id={headingHash} {...props}>
+    <Heading2 css={heading2Styles} id={headingHash} enableMargin {...props}>
       {/* TODO: LinkIcon should be visible when AnchorHeading2 is hovered */}
       <LinkIcon css={linkIconStyles} />
       {children}
-    </MarginalHeading2>
+    </Heading2>
   );
 };
 

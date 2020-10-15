@@ -1,4 +1,4 @@
-import { MarginalHeading2, MarginalParagraph, Subtitle1, Subtitle2, Tab, TabGroup } from '@altenull/foret-react';
+import { Heading2, Paragraph, Subtitle1, Subtitle2, Tab, TabGroup } from '@altenull/foret-react';
 import { css } from '@emotion/core';
 import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
@@ -31,29 +31,29 @@ const ContentSection = () => {
 
   const getSharedContributingContent = () => (
     <Fragment>
-      <MarginalHeading2 css={marginTopForHeading2}>
+      <Heading2 enableMargin css={marginTopForHeading2}>
         {intl.formatMessage({ id: 'getStarted.content.contributing.title' })}
-      </MarginalHeading2>
-      <MarginalParagraph>
+      </Heading2>
+      <Paragraph enableMargin>
         {intl.formatMessage({ id: 'getStarted.content.contributing.description1' })}
         <a css={anchorStyles} href={siteMetadata.hosts.foretGithub} target={'_blank'} rel={'noreferrer'}>
           @altenull/foret
         </a>
         {intl.formatMessage({ id: 'getStarted.content.contributing.description2' })}
-      </MarginalParagraph>
+      </Paragraph>
     </Fragment>
   );
 
   const getReactVersionContent = () => (
     <TabContentWrapper>
-      <MarginalHeading2>{intl.formatMessage({ id: 'getStarted.content.installation.title' })}</MarginalHeading2>
-      <MarginalParagraph>
+      <Heading2>enableMargin {intl.formatMessage({ id: 'getStarted.content.installation.title' })}</Heading2>
+      <Paragraph enableMargin>
         {intl.formatMessage({ id: 'getStarted.content.installation.description1' })}
         <a css={anchorStyles} href={siteMetadata.hosts.foretReactNpm} target={'_blank'} rel={'noreferrer'}>
           npm package
         </a>
         {intl.formatMessage({ id: 'getStarted.content.installation.description2' })}
-      </MarginalParagraph>
+      </Paragraph>
 
       <Subtitle2 css={marginTopForSubtitle2}>
         {intl.formatMessage({ id: 'getStarted.content.installation.installViaNpm' })}
@@ -77,14 +77,14 @@ const ContentSection = () => {
 
   const getAngularVersionContent = () => (
     <TabContentWrapper>
-      <MarginalHeading2>{intl.formatMessage({ id: 'getStarted.content.installation.title' })}</MarginalHeading2>
-      <MarginalParagraph>
+      <Heading2>enableMargin {intl.formatMessage({ id: 'getStarted.content.installation.title' })}</Heading2>
+      <Paragraph enableMargin>
         {intl.formatMessage({ id: 'getStarted.content.installation.description1' })}
         <a css={anchorStyles} href={siteMetadata.hosts.foretNgNpm} target={'_blank'} rel={'noreferrer'}>
           npm package
         </a>
         {intl.formatMessage({ id: 'getStarted.content.installation.description2' })}
-      </MarginalParagraph>
+      </Paragraph>
 
       <Subtitle2 css={marginTopForSubtitle2}>
         {intl.formatMessage({ id: 'getStarted.content.installation.installViaNpm' })}

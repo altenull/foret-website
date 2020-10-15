@@ -1,4 +1,4 @@
-import { MarginalParagraph } from '@altenull/foret-react';
+import { Paragraph } from '@altenull/foret-react';
 import { css, Global } from '@emotion/core';
 import { IntlContextConsumer, useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
@@ -92,7 +92,7 @@ const DrawerContainer = () => {
               <ul css={(theme) => pageLinkContainerStyles(theme)}>{pageLinks}</ul>
 
               <div css={preferredLanguageWrapperStyles}>
-                <MarginalParagraph>{intl.formatMessage({ id: 'drawer.preferredLanguageTitle' })}</MarginalParagraph>
+                <Paragraph enableMargin>{intl.formatMessage({ id: 'drawer.preferredLanguageTitle' })}</Paragraph>
                 <div css={languageLinksWrapperStyles}>{getLanguageLinks(language, languages)}</div>
               </div>
             </div>

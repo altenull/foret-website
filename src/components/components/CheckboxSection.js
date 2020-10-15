@@ -1,12 +1,4 @@
-import {
-  Checkbox,
-  CheckboxGroup,
-  MarginalHeading3,
-  MarginalParagraph,
-  Subtitle2,
-  Tab,
-  TabGroup,
-} from '@altenull/foret-react';
+import { Checkbox, CheckboxGroup, Heading3, Paragraph, Subtitle2, Tab, TabGroup } from '@altenull/foret-react';
 import { css } from '@emotion/core';
 import { useIntl } from 'gatsby-plugin-intl';
 import React from 'react';
@@ -73,7 +65,7 @@ const CheckboxSection = ({ headingHash }) => {
 
     return (
       <TabContentWrapper>
-        <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</MarginalHeading3>
+        <Heading3 enableMargin>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</Heading3>
         <Subtitle2>Default:</Subtitle2>
         <ComponentDemoBox
           demo={getDemoCheckbox()}
@@ -87,17 +79,17 @@ const CheckboxSection = ({ headingHash }) => {
           codeInMarkdown={demoCheckboxDisabledReactCode.nodes[0].rawMarkdownBody}
         />
 
-        <MarginalHeading3 css={marginTopForHeading3}>
+        <Heading3 enableMargin css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.imports' })}
-        </MarginalHeading3>
+        </Heading3>
         <CodeViewerContainer
           codeInHtml={importCheckboxReactCode.nodes[0].html}
           codeInMarkdown={importCheckboxReactCode.nodes[0].rawMarkdownBody}
         />
 
-        <MarginalHeading3 css={marginTopForHeading3}>
+        <Heading3 enableMargin css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.props' })}
-        </MarginalHeading3>
+        </Heading3>
         <Subtitle2>{'<CheckboxGroup>'}</Subtitle2>
         {getPropsTable(checkboxGroupProps)}
         <Subtitle2 css={marginTopForSubtitle2}>{'<Checkbox>'}</Subtitle2>
@@ -122,7 +114,7 @@ const CheckboxSection = ({ headingHash }) => {
 
     return (
       <TabContentWrapper>
-        <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</MarginalHeading3>
+        <Heading3 enableMargin>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</Heading3>
         <Subtitle2>Default:</Subtitle2>
         <ComponentDemoBox
           demo={getDemoCheckbox()}
@@ -136,17 +128,17 @@ const CheckboxSection = ({ headingHash }) => {
           codeInMarkdown={demoCheckboxDisabledNgCode.nodes[0].rawMarkdownBody}
         />
 
-        <MarginalHeading3 css={marginTopForHeading3}>
+        <Heading3 enableMargin css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.imports' })}
-        </MarginalHeading3>
+        </Heading3>
         <CodeViewerContainer
           codeInHtml={importCheckboxNgCode.nodes[0].html}
           codeInMarkdown={importCheckboxNgCode.nodes[0].rawMarkdownBody}
         />
 
-        <MarginalHeading3 css={marginTopForHeading3}>
+        <Heading3 enableMargin css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.properties' })}
-        </MarginalHeading3>
+        </Heading3>
         <Subtitle2>{'<foret-checkbox-group>'}</Subtitle2>
         {getPropsTable(checkboxGroupProperties)}
         <Subtitle2 css={marginTopForSubtitle2}>{'<foret-checkbox>'}</Subtitle2>
@@ -161,7 +153,7 @@ const CheckboxSection = ({ headingHash }) => {
         <AnchorMarginalHeading2 css={marginTopForHeading2} headingHash={headingHash}>
           {intl.formatMessage({ id: 'components.checkbox.title' })}
         </AnchorMarginalHeading2>
-        <MarginalParagraph>{intl.formatMessage({ id: 'components.checkbox.description' })}</MarginalParagraph>
+        <Paragraph enableMargin>{intl.formatMessage({ id: 'components.checkbox.description' })}</Paragraph>
 
         <TabGroup selectedValue={'checkboxSectionReactTap'} name={'checkbox-section-tap'}>
           <Tab id={'checkbox-section-react-tap'} labelText={'React'} value={'checkboxSectionReactTap'}>

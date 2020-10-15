@@ -1,12 +1,4 @@
-import {
-  MarginalHeading3,
-  MarginalParagraph,
-  RadioButton,
-  RadioButtonGroup,
-  Subtitle2,
-  Tab,
-  TabGroup,
-} from '@altenull/foret-react';
+import { Heading3, Paragraph, RadioButton, RadioButtonGroup, Subtitle2, Tab, TabGroup } from '@altenull/foret-react';
 import { css } from '@emotion/core';
 import { useIntl } from 'gatsby-plugin-intl';
 import React from 'react';
@@ -73,7 +65,7 @@ const RadioButtonSection = ({ headingHash }) => {
 
     return (
       <TabContentWrapper>
-        <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</MarginalHeading3>
+        <Heading3 enableMargin>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</Heading3>
         <Subtitle2>Default:</Subtitle2>
         <ComponentDemoBox
           demo={getDemoRadioButton()}
@@ -87,17 +79,17 @@ const RadioButtonSection = ({ headingHash }) => {
           codeInMarkdown={demoRadioButtonDisabledReactCode.nodes[0].rawMarkdownBody}
         />
 
-        <MarginalHeading3 css={marginTopForHeading3}>
+        <Heading3 enableMargin css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.imports' })}
-        </MarginalHeading3>
+        </Heading3>
         <CodeViewerContainer
           codeInHtml={importRadioButtonReactCode.nodes[0].html}
           codeInMarkdown={importRadioButtonReactCode.nodes[0].rawMarkdownBody}
         />
 
-        <MarginalHeading3 css={marginTopForHeading3}>
+        <Heading3 enableMargin css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.props' })}
-        </MarginalHeading3>
+        </Heading3>
         <Subtitle2>{'<RadioButtonGroup>'}</Subtitle2>
         {getPropsTable(radioButtonGroupProps)}
         <Subtitle2 css={marginTopForSubtitle2}>{'<RadioButton>'}</Subtitle2>
@@ -122,7 +114,7 @@ const RadioButtonSection = ({ headingHash }) => {
 
     return (
       <TabContentWrapper>
-        <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</MarginalHeading3>
+        <Heading3 enableMargin>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</Heading3>
         <Subtitle2>Default:</Subtitle2>
         <ComponentDemoBox
           demo={getDemoRadioButton()}
@@ -136,17 +128,17 @@ const RadioButtonSection = ({ headingHash }) => {
           codeInMarkdown={demoRadioButtonDisabledNgCode.nodes[0].rawMarkdownBody}
         />
 
-        <MarginalHeading3 css={marginTopForHeading3}>
+        <Heading3 enableMargin css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.imports' })}
-        </MarginalHeading3>
+        </Heading3>
         <CodeViewerContainer
           codeInHtml={importRadioButtonNgCode.nodes[0].html}
           codeInMarkdown={importRadioButtonNgCode.nodes[0].rawMarkdownBody}
         />
 
-        <MarginalHeading3 css={marginTopForHeading3}>
+        <Heading3 enableMargin css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.properties' })}
-        </MarginalHeading3>
+        </Heading3>
         <Subtitle2>{'<foret-radio-button-group>'}</Subtitle2>
         {getPropsTable(radioButtonGroupProperties)}
         <Subtitle2 css={marginTopForSubtitle2}>{'<foret-radio-button>'}</Subtitle2>
@@ -161,7 +153,7 @@ const RadioButtonSection = ({ headingHash }) => {
         <AnchorMarginalHeading2 css={marginTopForHeading2} headingHash={headingHash}>
           {intl.formatMessage({ id: 'components.radioButton.title' })}
         </AnchorMarginalHeading2>
-        <MarginalParagraph>{intl.formatMessage({ id: 'components.radioButton.description' })}</MarginalParagraph>
+        <Paragraph enableMargin>{intl.formatMessage({ id: 'components.radioButton.description' })}</Paragraph>
 
         <TabGroup selectedValue={'radioButtonSectionReactTap'} name={'radioButton-section-tap'}>
           <Tab id={'radioButton-section-react-tap'} labelText={'React'} value={'radioButtonSectionReactTap'}>

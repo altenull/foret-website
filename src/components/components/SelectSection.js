@@ -1,6 +1,6 @@
 import {
-  MarginalHeading3,
-  MarginalParagraph,
+  Heading3,
+  Paragraph,
   Select,
   SelectItem,
   SelectItemGroup,
@@ -117,7 +117,7 @@ const SelectSection = ({ headingHash }) => {
 
     return (
       <TabContentWrapper>
-        <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</MarginalHeading3>
+        <Heading3 enableMargin>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</Heading3>
         <Subtitle2>Default:</Subtitle2>
         <ComponentDemoBox
           demo={getDemoSelect()}
@@ -143,17 +143,17 @@ const SelectSection = ({ headingHash }) => {
           codeInMarkdown={demoSelectDisabledReactCode.nodes[0].rawMarkdownBody}
         />
 
-        <MarginalHeading3 css={marginTopForHeading3}>
+        <Heading3 enableMargin css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.imports' })}
-        </MarginalHeading3>
+        </Heading3>
         <CodeViewerContainer
           codeInHtml={importSelectReactCode.nodes[0].html}
           codeInMarkdown={importSelectReactCode.nodes[0].rawMarkdownBody}
         />
 
-        <MarginalHeading3 css={marginTopForHeading3}>
+        <Heading3 enableMargin css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.props' })}
-        </MarginalHeading3>
+        </Heading3>
         <Subtitle2>{'<Select>'}</Subtitle2>
         {getPropsTable(selectProps)}
         <Subtitle2 css={marginTopForSubtitle2}>{'<SelectItemGroup>'}</Subtitle2>
@@ -174,7 +174,7 @@ const SelectSection = ({ headingHash }) => {
 
     return (
       <TabContentWrapper>
-        <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</MarginalHeading3>
+        <Heading3 enableMargin>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</Heading3>
         <Subtitle2>Default:</Subtitle2>
         <ComponentDemoBox
           demo={getDemoSelect()}
@@ -200,17 +200,17 @@ const SelectSection = ({ headingHash }) => {
           codeInMarkdown={demoSelectDisabledNgCode.nodes[0].rawMarkdownBody}
         />
 
-        <MarginalHeading3 css={marginTopForHeading3}>
+        <Heading3 enableMargin css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.imports' })}
-        </MarginalHeading3>
+        </Heading3>
         <CodeViewerContainer
           codeInHtml={importSelectNgCode.nodes[0].html}
           codeInMarkdown={importSelectNgCode.nodes[0].rawMarkdownBody}
         />
 
-        <MarginalHeading3 css={marginTopForHeading3}>
+        <Heading3 enableMargin css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.properties' })}
-        </MarginalHeading3>
+        </Heading3>
         <Subtitle2>{'<foret-select>'}</Subtitle2>
         {getPropsTable(selectProperties)}
       </TabContentWrapper>
@@ -223,7 +223,7 @@ const SelectSection = ({ headingHash }) => {
         <AnchorMarginalHeading2 css={marginTopForHeading2} headingHash={headingHash}>
           {intl.formatMessage({ id: 'components.select.title' })}
         </AnchorMarginalHeading2>
-        <MarginalParagraph>{intl.formatMessage({ id: 'components.select.description' })}</MarginalParagraph>
+        <Paragraph enableMargin>{intl.formatMessage({ id: 'components.select.description' })}</Paragraph>
 
         <TabGroup selectedValue={'selectSectionReactTap'} name={'select-section-tap'}>
           <Tab id={'select-section-react-tap'} labelText={'React'} value={'selectSectionReactTap'}>

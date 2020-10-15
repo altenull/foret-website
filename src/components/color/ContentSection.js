@@ -1,4 +1,4 @@
-import { MarginalHeading2 } from '@altenull/foret-react';
+import { Heading2 } from '@altenull/foret-react';
 import { css } from '@emotion/core';
 import React from 'react';
 import {
@@ -64,7 +64,7 @@ const ContentSection = () => {
   return (
     <section>
       <ResponsiveContentLayout>
-        <MarginalHeading2>Brand Colors</MarginalHeading2>
+        <Heading2 enableMargin>Brand Colors</Heading2>
         <div>
           <ColorChipContainer
             css={foretGreenColorChipStyles}
@@ -78,14 +78,18 @@ const ContentSection = () => {
           />
         </div>
 
-        <MarginalHeading2 css={marginTopForHeading2}>Gray Scale</MarginalHeading2>
+        <Heading2 enableMargin css={marginTopForHeading2}>
+          Gray Scale
+        </Heading2>
         <div>
           {GRAY_SCALE_WITH_NAMES.map(({ name, color }) => (
             <ColorChipContainer key={color} css={grayScaleColorChipStyles} name={name} color={color} />
           ))}
         </div>
 
-        <MarginalHeading2 css={marginTopForHeading2}>Feedback Colors</MarginalHeading2>
+        <Heading2 enableMargin css={marginTopForHeading2}>
+          Feedback Colors
+        </Heading2>
         <div css={(theme) => feedbackColorChipWrapperStyles(theme)}>
           {FEEDBACK_COLOR_WITH_NAMES.map(({ name, color }) => (
             <ColorChipContainer key={color} css={(theme) => feedbackColorChipStyles(theme)} name={name} color={color} />

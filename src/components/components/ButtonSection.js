@@ -1,9 +1,9 @@
 import {
-  MarginalHeading3,
-  MarginalParagraph,
+  DangerButton,
+  Heading3,
+  Paragraph,
   PrimaryButton,
   SecondaryButton,
-  DangerButton,
   Subtitle2,
   Tab,
   TabGroup,
@@ -41,8 +41,8 @@ const ButtonSection = ({ headingHash }) => {
 
   const getSharedOverviewContent = () => (
     <Fragment>
-      <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.notes' })}</MarginalHeading3>
-      <MarginalParagraph>{intl.formatMessage({ id: 'components.button.notes.description' })}</MarginalParagraph>
+      <Heading3 enableMargin>{intl.formatMessage({ id: 'components.shared.notes' })}</Heading3>
+      <Paragraph enableMargin>{intl.formatMessage({ id: 'components.button.notes.description' })}</Paragraph>
     </Fragment>
   );
 
@@ -82,9 +82,9 @@ const ButtonSection = ({ headingHash }) => {
       <TabContentWrapper>
         {getSharedOverviewContent()}
 
-        <MarginalHeading3 css={marginTopForHeading3}>
+        <Heading3 enableMargin css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.liveDemo' })}
-        </MarginalHeading3>
+        </Heading3>
         <Subtitle2>Primary Button:</Subtitle2>
         <ComponentDemoBox
           demo={getDemoPrimaryButton()}
@@ -104,17 +104,17 @@ const ButtonSection = ({ headingHash }) => {
           codeInMarkdown={demoDangerButtonReactCode.nodes[0].rawMarkdownBody}
         />
 
-        <MarginalHeading3 css={marginTopForHeading3}>
+        <Heading3 enableMargin css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.imports' })}
-        </MarginalHeading3>
+        </Heading3>
         <CodeViewerContainer
           codeInHtml={importButtonReactCode.nodes[0].html}
           codeInMarkdown={importButtonReactCode.nodes[0].rawMarkdownBody}
         />
 
-        <MarginalHeading3 css={marginTopForHeading3}>
+        <Heading3 enableMargin css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.props' })}
-        </MarginalHeading3>
+        </Heading3>
         {getPropsTable(buttonProps)}
       </TabContentWrapper>
     );
@@ -124,9 +124,9 @@ const ButtonSection = ({ headingHash }) => {
     <TabContentWrapper>
       {getSharedOverviewContent()}
 
-      <MarginalHeading3 css={marginTopForHeading3}>
+      <Heading3 enableMargin css={marginTopForHeading3}>
         {intl.formatMessage({ id: 'components.shared.liveDemo' })}
-      </MarginalHeading3>
+      </Heading3>
       <Subtitle2>Primary Button:</Subtitle2>
       <ComponentDemoBox
         demo={getDemoPrimaryButton()}
@@ -146,9 +146,9 @@ const ButtonSection = ({ headingHash }) => {
         codeInMarkdown={demoDangerButtonNgCode.nodes[0].rawMarkdownBody}
       />
 
-      <MarginalHeading3 css={marginTopForHeading3}>
+      <Heading3 enableMargin css={marginTopForHeading3}>
         {intl.formatMessage({ id: 'components.shared.imports' })}
-      </MarginalHeading3>
+      </Heading3>
       <CodeViewerContainer
         codeInHtml={importButtonNgCode.nodes[0].html}
         codeInMarkdown={importButtonNgCode.nodes[0].rawMarkdownBody}
@@ -162,7 +162,7 @@ const ButtonSection = ({ headingHash }) => {
         <AnchorMarginalHeading2 headingHash={headingHash}>
           {intl.formatMessage({ id: 'components.button.title' })}
         </AnchorMarginalHeading2>
-        <MarginalParagraph>{intl.formatMessage({ id: 'components.button.description' })}</MarginalParagraph>
+        <Paragraph enableMargin>{intl.formatMessage({ id: 'components.button.description' })}</Paragraph>
 
         <TabGroup selectedValue={'buttonSectionReactTap'} name={'button-section-tap'}>
           <Tab id={'button-section-react-tap'} labelText={'React'} value={'buttonSectionReactTap'}>

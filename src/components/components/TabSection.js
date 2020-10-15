@@ -1,4 +1,4 @@
-import { MarginalHeading3, MarginalParagraph, Subtitle2, Tab, TabGroup } from '@altenull/foret-react';
+import { Heading3, Paragraph, Subtitle2, Tab, TabGroup } from '@altenull/foret-react';
 import { css } from '@emotion/core';
 import { useIntl } from 'gatsby-plugin-intl';
 import React from 'react';
@@ -51,7 +51,7 @@ const TabSection = ({ headingHash }) => {
 
     return (
       <TabContentWrapper>
-        <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</MarginalHeading3>
+        <Heading3 enableMargin>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</Heading3>
         <Subtitle2>Default:</Subtitle2>
         <ComponentDemoBox
           demo={getDemoTab()}
@@ -59,17 +59,17 @@ const TabSection = ({ headingHash }) => {
           codeInMarkdown={demoTabReactCode.nodes[0].rawMarkdownBody}
         />
 
-        <MarginalHeading3 css={marginTopForHeading3}>
+        <Heading3 enableMargin css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.imports' })}
-        </MarginalHeading3>
+        </Heading3>
         <CodeViewerContainer
           codeInHtml={importTabReactCode.nodes[0].html}
           codeInMarkdown={importTabReactCode.nodes[0].rawMarkdownBody}
         />
 
-        <MarginalHeading3 css={marginTopForHeading3}>
+        <Heading3 enableMargin css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.props' })}
-        </MarginalHeading3>
+        </Heading3>
         <Subtitle2>{'<TabGroup>'}</Subtitle2>
         {getPropsTable(tabGroupProps)}
         <Subtitle2 css={marginTopForSubtitle2}>{'<Tab>'}</Subtitle2>
@@ -94,7 +94,7 @@ const TabSection = ({ headingHash }) => {
 
     return (
       <TabContentWrapper>
-        <MarginalHeading3>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</MarginalHeading3>
+        <Heading3 enableMargin>{intl.formatMessage({ id: 'components.shared.liveDemo' })}</Heading3>
         <Subtitle2>Default:</Subtitle2>
         <ComponentDemoBox
           demo={getDemoTab()}
@@ -102,17 +102,17 @@ const TabSection = ({ headingHash }) => {
           codeInMarkdown={demoTabNgCode.nodes[0].rawMarkdownBody}
         />
 
-        <MarginalHeading3 css={marginTopForHeading3}>
+        <Heading3 enableMargin css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.imports' })}
-        </MarginalHeading3>
+        </Heading3>
         <CodeViewerContainer
           codeInHtml={importTabNgCode.nodes[0].html}
           codeInMarkdown={importTabNgCode.nodes[0].rawMarkdownBody}
         />
 
-        <MarginalHeading3 css={marginTopForHeading3}>
+        <Heading3 enableMargin css={marginTopForHeading3}>
           {intl.formatMessage({ id: 'components.shared.properties' })}
-        </MarginalHeading3>
+        </Heading3>
         <Subtitle2>{'<foret-tab-group>'}</Subtitle2>
         {getPropsTable(tabGroupProperties)}
         <Subtitle2 css={marginTopForSubtitle2}>{'<foret-tab>'}</Subtitle2>
@@ -127,7 +127,7 @@ const TabSection = ({ headingHash }) => {
         <AnchorMarginalHeading2 css={marginTopForHeading2} headingHash={headingHash}>
           {intl.formatMessage({ id: 'components.tab.title' })}
         </AnchorMarginalHeading2>
-        <MarginalParagraph>{intl.formatMessage({ id: 'components.tab.description' })}</MarginalParagraph>
+        <Paragraph enableMargin>{intl.formatMessage({ id: 'components.tab.description' })}</Paragraph>
 
         <TabGroup selectedValue={'tabSectionReactTap'} name={'tab-section-tap'}>
           <Tab id={'tab-section-react-tap'} labelText={'React'} value={'tabSectionReactTap'}>
