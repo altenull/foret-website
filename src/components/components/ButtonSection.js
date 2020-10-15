@@ -39,7 +39,7 @@ const ButtonSection = ({ headingHash }) => {
     demoDangerButtonNgCode,
   } = useButtonSectionQuery();
 
-  const getSharedOverviewContent = () => (
+  const getSharedNotesContent = () => (
     <Fragment>
       <Heading3 enableMargin enableResponsive>
         {intl.formatMessage({ id: 'components.shared.notes' })}
@@ -84,7 +84,7 @@ const ButtonSection = ({ headingHash }) => {
 
     return (
       <TabContentWrapper>
-        {getSharedOverviewContent()}
+        {getSharedNotesContent()}
 
         <Heading3 css={marginTopForHeading3} enableMargin enableResponsive>
           {intl.formatMessage({ id: 'components.shared.liveDemo' })}
@@ -126,7 +126,7 @@ const ButtonSection = ({ headingHash }) => {
 
   const getAngularVersionContent = () => (
     <TabContentWrapper>
-      {getSharedOverviewContent()}
+      {getSharedNotesContent()}
 
       <Heading3 css={marginTopForHeading3} enableMargin enableResponsive>
         {intl.formatMessage({ id: 'components.shared.liveDemo' })}
