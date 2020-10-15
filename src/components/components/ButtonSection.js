@@ -20,7 +20,7 @@ import { marginTopForHeading3, marginTopForSubtitle2 } from '../../utils/margin.
 import { ComponentDemoBox, DemoDivider } from '../code';
 import { TabContentWrapper } from '../common';
 import { ResponsiveContentLayout } from '../foundation';
-import AnchorMarginalHeading2 from './AnchorMarginalHeading2';
+import AnchorHeading2 from './AnchorHeading2';
 
 const sectionStyles = css`
   position: relative;
@@ -159,9 +159,9 @@ const ButtonSection = ({ headingHash }) => {
   return (
     <section css={sectionStyles}>
       <ResponsiveContentLayout>
-        <AnchorMarginalHeading2 headingHash={headingHash}>
+        <AnchorHeading2 headingHash={headingHash}>
           {intl.formatMessage({ id: 'components.button.title' })}
-        </AnchorMarginalHeading2>
+        </AnchorHeading2>
         <Paragraph enableMargin>{intl.formatMessage({ id: 'components.button.description' })}</Paragraph>
 
         <TabGroup selectedValue={'buttonSectionReactTap'} name={'button-section-tap'}>

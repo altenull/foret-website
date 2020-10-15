@@ -14,7 +14,7 @@ import { marginTopForHeading2, marginTopForHeading3, marginTopForSubtitle2 } fro
 import { ComponentDemoBox, DemoDivider } from '../code';
 import { TabContentWrapper } from '../common';
 import { ResponsiveContentLayout } from '../foundation';
-import AnchorMarginalHeading2 from './AnchorMarginalHeading2';
+import AnchorHeading2 from './AnchorHeading2';
 
 const sectionStyles = css`
   position: relative;
@@ -130,9 +130,9 @@ const ToggleSection = ({ headingHash }) => {
   return (
     <section css={sectionStyles}>
       <ResponsiveContentLayout>
-        <AnchorMarginalHeading2 css={marginTopForHeading2} headingHash={headingHash}>
+        <AnchorHeading2 css={marginTopForHeading2} headingHash={headingHash}>
           {intl.formatMessage({ id: 'components.toggle.title' })}
-        </AnchorMarginalHeading2>
+        </AnchorHeading2>
         <Paragraph enableMargin>{intl.formatMessage({ id: 'components.toggle.description' })}</Paragraph>
 
         <TabGroup selectedValue={'toggleSectionReactTap'} name={'toggle-section-tap'}>

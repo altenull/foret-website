@@ -14,7 +14,7 @@ const linkIconStyles = css`
   transform: translateY(-50%);
 `;
 
-const AnchorMarginalHeading2 = ({ headingHash, children, ...props }) => {
+const AnchorHeading2 = ({ headingHash, children, ...props }) => {
   return (
     <Heading2 css={heading2Styles} id={headingHash} enableMargin {...props}>
       {/* TODO: LinkIcon should be visible when AnchorHeading2 is hovered */}
@@ -24,4 +24,4 @@ const AnchorMarginalHeading2 = ({ headingHash, children, ...props }) => {
   );
 };
 
-export default AnchorMarginalHeading2;
+export default AnchorHeading2;

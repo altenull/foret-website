@@ -25,7 +25,7 @@ import { marginTopForHeading2, marginTopForHeading3, marginTopForSubtitle2 } fro
 import { ComponentDemoBox } from '../code';
 import { TabContentWrapper } from '../common';
 import { ResponsiveContentLayout } from '../foundation';
-import AnchorMarginalHeading2 from './AnchorMarginalHeading2';
+import AnchorHeading2 from './AnchorHeading2';
 
 const sectionStyles = css`
   position: relative;
@@ -220,9 +220,9 @@ const SelectSection = ({ headingHash }) => {
   return (
     <section css={sectionStyles}>
       <ResponsiveContentLayout>
-        <AnchorMarginalHeading2 css={marginTopForHeading2} headingHash={headingHash}>
+        <AnchorHeading2 css={marginTopForHeading2} headingHash={headingHash}>
           {intl.formatMessage({ id: 'components.select.title' })}
-        </AnchorMarginalHeading2>
+        </AnchorHeading2>
         <Paragraph enableMargin>{intl.formatMessage({ id: 'components.select.description' })}</Paragraph>
 
         <TabGroup selectedValue={'selectSectionReactTap'} name={'select-section-tap'}>
