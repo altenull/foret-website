@@ -6,6 +6,9 @@ const useGetStartedContentSectionQuery = () => {
     getInstallViaYarnReact,
     getInstallViaNpmNg,
     getInstallViaYarnNg,
+    getSettingUpWithForet,
+    getCustomizingTheme,
+    getDefaultTheme,
   } = useStaticQuery(graphql`
     query {
       getInstallViaNpmReact: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/install-via-npm-react.md/" } }) {
@@ -34,6 +37,24 @@ const useGetStartedContentSectionQuery = () => {
           rawMarkdownBody
         }
       }
+      getSettingUpWithForet: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/setting-up-with-foret.md/" } }) {
+        nodes {
+          html
+          rawMarkdownBody
+        }
+      }
+      getCustomizingTheme: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/customizing-theme.md/" } }) {
+        nodes {
+          html
+          rawMarkdownBody
+        }
+      }
+      getDefaultTheme: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/default-theme.md/" } }) {
+        nodes {
+          html
+          rawMarkdownBody
+        }
+      }
     }
   `);
 
@@ -42,6 +63,9 @@ const useGetStartedContentSectionQuery = () => {
     getInstallViaYarnReact,
     getInstallViaNpmNg,
     getInstallViaYarnNg,
+    getSettingUpWithForet,
+    getCustomizingTheme,
+    getDefaultTheme,
   };
 
   return getStartedContentSectionQueryResponse;
