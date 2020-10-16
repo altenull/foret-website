@@ -67,12 +67,15 @@ export const getPropertiesOfComponentFactor = (intl, componentFactor, targetComp
   });
 
 export const getPropsTable = (componentProps) => {
-  const getPropsTableHeader = () =>
-    PROPS_TABLE_COLUMNS.map((propsTableColumn) => (
-      <TableCell key={propsTableColumn} type={'th'}>
+  const getPropsTableHeader = () => {
+    const TABLE_COLUMN_WIDTHS = ['20%', '30%', '10%', '40%']; // Name - Type - Default - Description
+
+    return PROPS_TABLE_COLUMNS.map((propsTableColumn, index) => (
+      <TableCell key={propsTableColumn} type={'th'} width={TABLE_COLUMN_WIDTHS[index]}>
         {propsTableColumn}
       </TableCell>
     ));
+  };
 
   const getPropsTableRows = () =>
     componentProps.map((prop, index) => (
