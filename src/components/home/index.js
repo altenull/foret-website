@@ -1,2 +1,2 @@
 export { default as HeroSection } from './HeroSection.js';
-export { default as IntroSection } from './IntroSection.js';
+export { default as IntroForetSection } from './IntroForetSection.js';

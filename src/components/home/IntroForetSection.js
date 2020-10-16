@@ -14,7 +14,7 @@ const descriptionStyles = css`
   }
 `;
 
-const IntroSection = () => {
+const IntroForetSection = () => {
   const intl = useIntl();
 
   return (
@@ -34,4 +34,4 @@ const IntroSection = () => {
   );
 };
 
-export default IntroSection;
+export default IntroForetSection;
