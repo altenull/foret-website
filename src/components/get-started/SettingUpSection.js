@@ -3,6 +3,7 @@ import { css } from '@emotion/core';
 import { useIntl } from 'gatsby-plugin-intl';
 import React from 'react';
 import { CodeViewerContainer } from '../../containers/code';
+import { useSiteMetadataQuery } from '../../hooks/core';
 import { useGetStartedPageQuery } from '../../hooks/get-started';
 import { marginTopForHeading2, marginTopForHeading3 } from '../../utils/margin.util';
 import { ComponentDemoBox } from '../code';
@@ -18,6 +19,7 @@ const anchorStyles = css`
 
 const SettingUpSection = () => {
   const intl = useIntl();
+  const { siteMetadata } = useSiteMetadataQuery();
   const { getSettingUpWithForet, getCustomizingTheme, getDefaultTheme } = useGetStartedPageQuery();
 
   return (
@@ -28,7 +30,7 @@ const SettingUpSection = () => {
         </Heading2>
         <Paragraph enableMargin enableResponsive>
           {intl.formatMessage({ id: 'getStarted.content.settingUp.description1' })}
-          <a css={anchorStyles} href={'https://emotion.sh/docs/theming'} target={'_blank'} rel={'noreferrer'}>
+          <a css={anchorStyles} href={siteMetadata.hosts.emotionTheming} target={'_blank'} rel={'noreferrer'}>
             emotion-theming
           </a>
           {intl.formatMessage({ id: 'getStarted.content.settingUp.description2' })}

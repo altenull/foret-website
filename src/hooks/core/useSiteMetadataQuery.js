@@ -13,6 +13,7 @@ const useSiteMetadataQuery = () => {
             foretNgNpm
             foretReactNpm
             foretGithub
+            emotionTheming
           }
         }
       }
