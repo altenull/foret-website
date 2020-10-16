@@ -33,9 +33,12 @@ const headerStyles = (theme, isScrolled, isDrawerShowing) => css`
 `;
 
 const hamburgerMenuStyles = css`
-  display: flex;
-  align-items: center;
+  width: 24px;
+  height: 18px;
+  padding: 8px 6px;
+  margin: auto 0;
   pointer-events: all;
+  cursor: pointer;
 `;
 
 const HeaderContainer = () => {
@@ -109,9 +112,9 @@ const HeaderContainer = () => {
           shouldHideLogoTitle={isScrolled}
         />
 
-        <div css={hamburgerMenuStyles} onClick={() => toggleDrawer()}>
+        <span css={hamburgerMenuStyles} onClick={() => toggleDrawer()}>
           <HamburgerIcon shouldTransformToCloseIcon={isDrawerShowing} />
-        </div>
+        </span>
       </header>
     </Fragment>
   );
