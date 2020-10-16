@@ -3,7 +3,7 @@ import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 import { PageNavigationSection } from '../components/common';
 import { PageLayout } from '../components/foundation';
-import { ContentSection, HeroSection } from '../components/get-started';
+import { ContributingSection, HeroSection, TabbableGetStarted } from '../components/get-started';
 import { useSiteMetadataQuery } from '../hooks/core';
 import { getCurrentPageRouteIndex, getPageTitle } from '../utils/page.util';
 
@@ -19,7 +19,8 @@ const GetStartedPage = ({ location }) => {
       <Helmet title={getStartedPageTitle} defer={false} />
       <PageLayout>
         <HeroSection />
-        <ContentSection />
+        <TabbableGetStarted />
+        <ContributingSection />
         <PageNavigationSection />
       </PageLayout>
     </Fragment>
