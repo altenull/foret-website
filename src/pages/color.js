@@ -1,7 +1,7 @@
 import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
-import { HeroSection, IntroColorSection } from '../components/color';
+import { ColorCollectionSection, HeroSection } from '../components/color';
 import { PageNavigationSection } from '../components/common';
 import { PageLayout } from '../components/foundation';
 import { useSiteMetadataQuery } from '../hooks/core';
@@ -19,7 +19,7 @@ const ColorPage = ({ location }) => {
       <Helmet title={colorPageTitle} defer={false} />
       <PageLayout>
         <HeroSection />
-        <IntroColorSection />
+        <ColorCollectionSection />
         <PageNavigationSection />
       </PageLayout>
     </Fragment>
