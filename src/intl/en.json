@@ -17,8 +17,8 @@
     "preferredLanguageTitle": "Select your preferred language"
   },
   "404": {
-    "title": "Page not found!",
-    "description": "Sorry, but the page you were looking for could not be found."
+    "title": "Page not found.",
+    "description": "We can't seem to find the page you're looking for."
   },
   "home": {
     "hero": {
