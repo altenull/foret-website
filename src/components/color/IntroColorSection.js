@@ -60,7 +60,7 @@ const feedbackColorChipStyles = (theme) => css`
   }
 `;
 
-const ContentSection = () => {
+const IntroColorSection = () => {
   return (
     <section>
       <ResponsiveContentLayout>
@@ -102,4 +102,4 @@ const ContentSection = () => {
   );
 };
 
-export default ContentSection;
+export default IntroColorSection;
