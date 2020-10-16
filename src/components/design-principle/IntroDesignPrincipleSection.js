@@ -4,7 +4,7 @@ import React from 'react';
 import { marginTopForHeading2 } from '../../utils/margin.util';
 import { ResponsiveContentLayout } from '../foundation';
 
-const ContentSection = () => {
+const IntroDesignPrincipleSection = () => {
   const intl = useIntl();
 
   return (
@@ -35,4 +35,4 @@ const ContentSection = () => {
   );
 };
 
-export default ContentSection;
+export default IntroDesignPrincipleSection;

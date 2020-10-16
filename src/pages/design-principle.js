@@ -2,7 +2,7 @@ import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 import { PageNavigationSection } from '../components/common';
-import { ContentSection, HeroSection } from '../components/design-principle';
+import { HeroSection, IntroDesignPrincipleSection } from '../components/design-principle';
 import { PageLayout } from '../components/foundation';
 import { useSiteMetadataQuery } from '../hooks/core';
 import { getCurrentPageRouteIndex, getPageTitle } from '../utils/page.util';
@@ -19,7 +19,7 @@ const DesignPrinciplePage = ({ location }) => {
       <Helmet title={designPrincipleTitle} defer={false} />
       <PageLayout>
         <HeroSection />
-        <ContentSection />
+        <IntroDesignPrincipleSection />
         <PageNavigationSection />
       </PageLayout>
     </Fragment>
