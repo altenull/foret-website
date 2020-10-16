@@ -3,7 +3,7 @@ import { css } from '@emotion/core';
 import { useIntl } from 'gatsby-plugin-intl';
 import React from 'react';
 import { CodeViewerContainer } from '../../containers/code';
-import { useGetStartedContentSectionQuery } from '../../hooks/get-started';
+import { useGetStartedPageQuery } from '../../hooks/get-started';
 import { marginTopForHeading2, marginTopForHeading3 } from '../../utils/margin.util';
 import { ComponentDemoBox } from '../code';
 import { ResponsiveContentLayout } from '../foundation';
@@ -18,7 +18,7 @@ const anchorStyles = css`
 
 const SettingUpSection = () => {
   const intl = useIntl();
-  const { getSettingUpWithForet, getCustomizingTheme, getDefaultTheme } = useGetStartedContentSectionQuery();
+  const { getSettingUpWithForet, getCustomizingTheme, getDefaultTheme } = useGetStartedPageQuery();
 
   return (
     <section>

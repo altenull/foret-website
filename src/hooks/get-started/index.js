@@ -1,1 +1,1 @@
-export { default as useGetStartedContentSectionQuery } from './useGetStartedContentSectionQuery';
+export { default as useGetStartedPageQuery } from './useGetStartedPageQuery';

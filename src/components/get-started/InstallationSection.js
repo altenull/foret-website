@@ -4,7 +4,7 @@ import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
 import { CodeViewerContainer } from '../../containers/code';
 import { useSiteMetadataQuery } from '../../hooks/core';
-import { useGetStartedContentSectionQuery } from '../../hooks/get-started';
+import { useGetStartedPageQuery } from '../../hooks/get-started';
 import { marginTopForSubtitle2 } from '../../utils/margin.util';
 import { ResponsiveContentLayout } from '../foundation';
 
@@ -24,7 +24,7 @@ const InstallationSection = ({ isReactVersion = false, isAngularVersion = false 
     getInstallViaYarnReact,
     getInstallViaNpmNg,
     getInstallViaYarnNg,
-  } = useGetStartedContentSectionQuery();
+  } = useGetStartedPageQuery();
 
   const getReactVersionContent = () => (
     <Fragment>

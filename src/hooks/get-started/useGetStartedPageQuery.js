@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby';
 
-const useGetStartedContentSectionQuery = () => {
+const useGetStartedPageQuery = () => {
   const {
     getInstallViaNpmReact,
     getInstallViaYarnReact,
@@ -71,4 +71,4 @@ const useGetStartedContentSectionQuery = () => {
   return getStartedContentSectionQueryResponse;
 };
 
-export default useGetStartedContentSectionQuery;
+export default useGetStartedPageQuery;
