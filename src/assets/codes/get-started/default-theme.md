@@ -1,17 +1,17 @@
 ```javascript
 const theme = {
   colors: {
-    black: "#000000",
-    fog: "#c6c6c6",
     foretGreen: "#2e8b57",
-    grass: "#43c463",
-    ink: "#262626",
-    paper: "#f5f5f0",
-    sky: "#0875e1",
-    soil: "#ffa126",
-    stone: "#8c8c8c",
-    sun: "#de2e21",
     white: "#ffffff",
+    paper: "#f5f5f0",
+    fog: "#c6c6c6",
+    stone: "#8c8c8c",
+    ink: "#262626",
+    black: "#000000",
+    sun: "#de2e21",
+    soil: "#ffa126",
+    grass: "#43c463",
+    sky: "#0875e1",
   },
   duration: {
     fast: "100ms",
