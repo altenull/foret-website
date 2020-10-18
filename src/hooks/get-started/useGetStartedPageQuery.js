@@ -2,61 +2,59 @@ import { graphql, useStaticQuery } from 'gatsby';
 
 const useGetStartedPageQuery = () => {
   const {
-    getInstallViaNpmReact,
-    getInstallViaYarnReact,
-    getInstallViaNpmNg,
-    getInstallViaYarnNg,
-    getSettingUpWithForet,
-    getCustomizingTheme,
-    getDefaultTheme,
-    getImportForetSass,
+    installViaNpmReact,
+    installViaYarnReact,
+    installViaNpmNg,
+    installViaYarnNg,
+    settingUpWithForet,
+    customizingTheme,
+    defaultTheme,
+    importForetSass,
   } = useStaticQuery(graphql`
     query {
-      getInstallViaNpmReact: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/install-via-npm-react.md/" } }) {
+      installViaNpmReact: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/install-via-npm-react.md/" } }) {
         nodes {
           html
           rawMarkdownBody
         }
       }
-      getInstallViaYarnReact: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/install-via-yarn-react.md/" } }
-      ) {
+      installViaYarnReact: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/install-via-yarn-react.md/" } }) {
         nodes {
           html
           rawMarkdownBody
         }
       }
-      getInstallViaNpmNg: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/install-via-npm-ng.md/" } }) {
+      installViaNpmNg: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/install-via-npm-ng.md/" } }) {
         nodes {
           html
           rawMarkdownBody
         }
       }
-      getInstallViaYarnNg: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/install-via-yarn-ng.md/" } }) {
+      installViaYarnNg: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/install-via-yarn-ng.md/" } }) {
         nodes {
           html
           rawMarkdownBody
         }
       }
-      getSettingUpWithForet: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/setting-up-with-foret.md/" } }) {
+      settingUpWithForet: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/setting-up-with-foret.md/" } }) {
         nodes {
           html
           rawMarkdownBody
         }
       }
-      getCustomizingTheme: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/customizing-theme.md/" } }) {
+      customizingTheme: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/customizing-theme.md/" } }) {
         nodes {
           html
           rawMarkdownBody
         }
       }
-      getDefaultTheme: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/default-theme.md/" } }) {
+      defaultTheme: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/default-theme.md/" } }) {
         nodes {
           html
           rawMarkdownBody
         }
       }
-      getImportForetSass: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/import-foret-sass.md/" } }) {
+      importForetSass: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/import-foret-sass.md/" } }) {
         nodes {
           html
           rawMarkdownBody
@@ -66,14 +64,14 @@ const useGetStartedPageQuery = () => {
   `);
 
   const getStartedContentSectionQueryResponse = {
-    getInstallViaNpmReact,
-    getInstallViaYarnReact,
-    getInstallViaNpmNg,
-    getInstallViaYarnNg,
-    getSettingUpWithForet,
-    getCustomizingTheme,
-    getDefaultTheme,
-    getImportForetSass,
+    installViaNpmReact,
+    installViaYarnReact,
+    installViaNpmNg,
+    installViaYarnNg,
+    settingUpWithForet,
+    customizingTheme,
+    defaultTheme,
+    importForetSass,
   };
 
   return getStartedContentSectionQueryResponse;

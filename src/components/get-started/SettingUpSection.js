@@ -20,7 +20,7 @@ const anchorStyles = css`
 const SettingUpSection = ({ isReactVersion = false, isAngularVersion = false }) => {
   const intl = useIntl();
   const { siteMetadata } = useSiteMetadataQuery();
-  const { getSettingUpWithForet, getCustomizingTheme, getDefaultTheme, getImportForetSass } = useGetStartedPageQuery();
+  const { settingUpWithForet, customizingTheme, defaultTheme, importForetSass } = useGetStartedPageQuery();
 
   const getReactVersionContent = () => (
     <Fragment>
@@ -36,8 +36,8 @@ const SettingUpSection = ({ isReactVersion = false, isAngularVersion = false }) 
       </Paragraph>
       <ComponentDemoBox
         demo={<PrimaryButton onClick={() => alert('Hey there!')}>Hello Foret!</PrimaryButton>}
-        codeInHtml={getSettingUpWithForet.nodes[0].html}
-        codeInMarkdown={getSettingUpWithForet.nodes[0].rawMarkdownBody}
+        codeInHtml={settingUpWithForet.nodes[0].html}
+        codeInMarkdown={settingUpWithForet.nodes[0].rawMarkdownBody}
       />
 
       <Heading3 css={marginTopForHeading3} enableMargin enableResponsive>
@@ -45,8 +45,8 @@ const SettingUpSection = ({ isReactVersion = false, isAngularVersion = false }) 
       </Heading3>
       <Paragraph>{intl.formatMessage({ id: 'getStarted.settingUpReact.customizingTheme.description' })}</Paragraph>
       <CodeViewerContainer
-        codeInHtml={getCustomizingTheme.nodes[0].html}
-        codeInMarkdown={getCustomizingTheme.nodes[0].rawMarkdownBody}
+        codeInHtml={customizingTheme.nodes[0].html}
+        codeInMarkdown={customizingTheme.nodes[0].rawMarkdownBody}
       />
 
       <Heading3 css={marginTopForHeading3} enableMargin enableResponsive>
@@ -54,8 +54,8 @@ const SettingUpSection = ({ isReactVersion = false, isAngularVersion = false }) 
       </Heading3>
       <Paragraph>{intl.formatMessage({ id: 'getStarted.settingUpReact.defaultTheme.description' })}</Paragraph>
       <CodeViewerContainer
-        codeInHtml={getDefaultTheme.nodes[0].html}
-        codeInMarkdown={getDefaultTheme.nodes[0].rawMarkdownBody}
+        codeInHtml={defaultTheme.nodes[0].html}
+        codeInMarkdown={defaultTheme.nodes[0].rawMarkdownBody}
       />
     </Fragment>
   );
@@ -69,8 +69,8 @@ const SettingUpSection = ({ isReactVersion = false, isAngularVersion = false }) 
         {intl.formatMessage({ id: 'getStarted.settingUpNg.description' })}
       </Paragraph>
       <CodeViewerContainer
-        codeInHtml={getImportForetSass.nodes[0].html}
-        codeInMarkdown={getImportForetSass.nodes[0].rawMarkdownBody}
+        codeInHtml={importForetSass.nodes[0].html}
+        codeInMarkdown={importForetSass.nodes[0].rawMarkdownBody}
       />
     </Fragment>
   );

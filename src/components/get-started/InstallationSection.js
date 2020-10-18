@@ -19,12 +19,7 @@ const anchorStyles = css`
 const InstallationSection = ({ isReactVersion = false, isAngularVersion = false }) => {
   const intl = useIntl();
   const { siteMetadata } = useSiteMetadataQuery();
-  const {
-    getInstallViaNpmReact,
-    getInstallViaYarnReact,
-    getInstallViaNpmNg,
-    getInstallViaYarnNg,
-  } = useGetStartedPageQuery();
+  const { installViaNpmReact, installViaYarnReact, installViaNpmNg, installViaYarnNg } = useGetStartedPageQuery();
 
   const getReactVersionContent = () => (
     <Fragment>
@@ -42,15 +37,15 @@ const InstallationSection = ({ isReactVersion = false, isAngularVersion = false 
         {intl.formatMessage({ id: 'getStarted.installation.installViaNpm' })}
       </Subtitle2>
       <CodeViewerContainer
-        codeInHtml={getInstallViaNpmReact.nodes[0].html}
-        codeInMarkdown={getInstallViaNpmReact.nodes[0].rawMarkdownBody}
+        codeInHtml={installViaNpmReact.nodes[0].html}
+        codeInMarkdown={installViaNpmReact.nodes[0].rawMarkdownBody}
       />
       <Subtitle2 css={marginTopForSubtitle2}>
         {intl.formatMessage({ id: 'getStarted.installation.installViaYarn' })}
       </Subtitle2>
       <CodeViewerContainer
-        codeInHtml={getInstallViaYarnReact.nodes[0].html}
-        codeInMarkdown={getInstallViaYarnReact.nodes[0].rawMarkdownBody}
+        codeInHtml={installViaYarnReact.nodes[0].html}
+        codeInMarkdown={installViaYarnReact.nodes[0].rawMarkdownBody}
       />
       <Subtitle1>{intl.formatMessage({ id: 'getStarted.installation.installEmotionCore' })}</Subtitle1>
     </Fragment>
@@ -73,15 +68,15 @@ const InstallationSection = ({ isReactVersion = false, isAngularVersion = false 
         {intl.formatMessage({ id: 'getStarted.installation.installViaNpm' })}
       </Subtitle2>
       <CodeViewerContainer
-        codeInHtml={getInstallViaNpmNg.nodes[0].html}
-        codeInMarkdown={getInstallViaNpmNg.nodes[0].rawMarkdownBody}
+        codeInHtml={installViaNpmNg.nodes[0].html}
+        codeInMarkdown={installViaNpmNg.nodes[0].rawMarkdownBody}
       />
       <Subtitle2 css={marginTopForSubtitle2}>
         {intl.formatMessage({ id: 'getStarted.installation.installViaYarn' })}
       </Subtitle2>
       <CodeViewerContainer
-        codeInHtml={getInstallViaYarnNg.nodes[0].html}
-        codeInMarkdown={getInstallViaYarnNg.nodes[0].rawMarkdownBody}
+        codeInHtml={installViaYarnNg.nodes[0].html}
+        codeInMarkdown={installViaYarnNg.nodes[0].rawMarkdownBody}
       />
     </Fragment>
   );
