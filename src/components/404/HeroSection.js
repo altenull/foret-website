@@ -4,19 +4,8 @@ import { Link } from 'gatsby';
 import { useIntl } from 'gatsby-plugin-intl';
 import React from 'react';
 import { useLogoImageQuery } from '../../hooks/foundation';
-import { GrayscaleLogo, ResponsiveContentLayout } from '../foundation';
-
-const sectionStyles = css`
-  position: relative;
-  height: 100vh;
-`;
-
-const responsiveContentLayoutStyles = css`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-`;
+import { BaseHeroSection } from '../common';
+import { GrayscaleLogo } from '../foundation';
 
 const twoColumnsCoverStyles = (theme) => css`
   display: flex;
@@ -63,26 +52,24 @@ const HeroSection = () => {
   const getLogoImageResponse = useLogoImageQuery();
 
   return (
-    <section css={sectionStyles}>
-      <ResponsiveContentLayout css={responsiveContentLayoutStyles}>
-        <div css={(theme) => twoColumnsCoverStyles(theme)}>
-          <div css={(theme) => leftColumnStyles(theme)}>
-            <Heading1 enableMargin enableResponsive>
-              {intl.formatMessage({ id: '404.title' })}
-            </Heading1>
-            <Subtitle1 css={subtitle1Styles}>{intl.formatMessage({ id: '404.description' })}</Subtitle1>
+    <BaseHeroSection>
+      <div css={(theme) => twoColumnsCoverStyles(theme)}>
+        <div css={(theme) => leftColumnStyles(theme)}>
+          <Heading1 enableMargin enableResponsive>
+            {intl.formatMessage({ id: '404.title' })}
+          </Heading1>
+          <Subtitle1 css={subtitle1Styles}>{intl.formatMessage({ id: '404.description' })}</Subtitle1>
 
-            <Link to={'/'} css={linkStyles}>
-              <PrimaryButton>Foret Home</PrimaryButton>
-            </Link>
-          </div>
-
-          <div css={(theme) => rightColumnStyles(theme)}>
-            <GrayscaleLogo logoFixed={getLogoImageResponse.logoCircleGrayscaleImage} />
-          </div>
+          <Link to={'/'} css={linkStyles}>
+            <PrimaryButton>Foret Home</PrimaryButton>
+          </Link>
         </div>
-      </ResponsiveContentLayout>
-    </section>
+
+        <div css={(theme) => rightColumnStyles(theme)}>
+          <GrayscaleLogo logoFixed={getLogoImageResponse.logoCircleGrayscaleImage} />
+        </div>
+      </div>
+    </BaseHeroSection>
   );
 };
 
