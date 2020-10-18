@@ -22,14 +22,14 @@ const ContributingSection = () => {
     <section>
       <ResponsiveContentLayout>
         <Heading2 css={marginTopForHeading2} enableMargin enableResponsive>
-          {intl.formatMessage({ id: 'getStarted.content.contributing.title' })}
+          {intl.formatMessage({ id: 'getStarted.contributing.title' })}
         </Heading2>
         <Paragraph enableMargin enableResponsive>
-          {intl.formatMessage({ id: 'getStarted.content.contributing.description1' })}
+          {intl.formatMessage({ id: 'getStarted.contributing.description1' })}
           <a css={anchorStyles} href={siteMetadata.hosts.foretGithub} target={'_blank'} rel={'noreferrer'}>
             @altenull/foret
           </a>
-          {intl.formatMessage({ id: 'getStarted.content.contributing.description2' })}
+          {intl.formatMessage({ id: 'getStarted.contributing.description2' })}
         </Paragraph>
       </ResponsiveContentLayout>
     </section>

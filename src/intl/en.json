@@ -26,7 +26,7 @@
       "subtitle": "Foret is an open-source design system for building web applications related to nature with Foret design language.",
       "getStartedButton": "Get Started"
     },
-    "intro": {
+    "introForet": {
       "description1": "The Foret Design System is a personal project started to experience the creation of a design system.",
       "description2": "First, I needed a brand before building a design system. Since I was always interested in nature, I created a fake brand called Foret, which has a mission of 'creating a green space within the living area for modern people in the city.'",
       "description3": "After creating the brand, I defined design principles that serve as guidelines to follow when approaching the design system. Within the design principles, I selected basic elements of the design system such as color and font that match the brand, and developed UI components based on them."
@@ -38,37 +38,35 @@
       "subtitle1": "The Foret Design System is served both React and Angular.",
       "subtitle2": "Head over to Frameworks for all the information you need to get started."
     },
-    "content": {
-      "installation": {
-        "title": "Installation",
-        "description1": "Foret components are served as an ",
-        "description2": ". Add them to your project by running:",
-        "installViaNpm": "Using npm:",
-        "installViaYarn": "If you prefer yarn:",
-        "installEmotionCore": "Don’t forget to install the @emotion/core ^10.0.0 also."
+    "installation": {
+      "title": "Installation",
+      "description1": "Foret components are served as an ",
+      "description2": ". Add them to your project by running:",
+      "installViaNpm": "Using npm:",
+      "installViaYarn": "If you prefer yarn:",
+      "installEmotionCore": "Don’t forget to install the @emotion/core ^10.0.0 also."
+    },
+    "settingUpReact": {
+      "title": "Setting up React App",
+      "description1": "All Foret applications start with a Foret. The Foret is ThemeProvider which is based on ",
+      "description2": ". Therefore, you should render your application inside the Foret like below.",
+      "customizingTheme": {
+        "title": "Customizing Theme",
+        "description": "You can customize the theme to suit you needs. Below example is a way of customizing the theme."
       },
-      "settingUpReact": {
-        "title": "Setting up React App",
-        "description1": "All Foret applications start with a Foret. The Foret is ThemeProvider which is based on ",
-        "description2": ". Therefore, you should render your application inside the Foret like below.",
-        "customizingTheme": {
-          "title": "Customizing Theme",
-          "description": "You can customize the theme to suit you needs. Below example is a way of customizing the theme."
-        },
-        "defaultTheme": {
-          "title": "Default Theme",
-          "description": "The default theme provided by Foret is as follows, and you can access the properties of the default theme or customized theme."
-        }
-      },
-      "settingUpNg": {
-        "title": "Setting up Angular App",
-        "description": "After the above packages are installed, import foret-sass package into your src/styles.scss file like below."
-      },
-      "contributing": {
-        "title": "Contributing",
-        "description1": "We want to provide only components of the highest quality. We can’t do that without your feedback. If you have any suggestions or any issues about what we can do to improve components, please create an issue or submit a pull request at ",
-        "description2": " "
+      "defaultTheme": {
+        "title": "Default Theme",
+        "description": "The default theme provided by Foret is as follows, and you can access the properties of the default theme or customized theme."
       }
+    },
+    "settingUpNg": {
+      "title": "Setting up Angular App",
+      "description": "After the above packages are installed, import foret-sass package into your src/styles.scss file like below."
+    },
+    "contributing": {
+      "title": "Contributing",
+      "description1": "We want to provide only components of the highest quality. We can’t do that without your feedback. If you have any suggestions or any issues about what we can do to improve components, please create an issue or submit a pull request at ",
+      "description2": " "
     }
   },
   "color": {
@@ -83,14 +81,18 @@
       "subtitle1": "Design principles define and convey the key features of the design system.",
       "subtitle2": "The Foret Design System is built on the following design principles."
     },
-    "content": {
-      "designPrinciple": {
-        "principle1Title": "Simple",
-        "principle1Description": "Absolutely necessary and minimal design.",
-        "principle2Title": "Comfortable",
-        "principle2Description": "Not only should it look comfortable in appearance, it should also feel comfortable in usability.",
-        "principle3Title": "Natural",
-        "principle3Description": "It must not splash. The role of each design element should be taken for granted and naturally."
+    "introDesignPrinciple": {
+      "principle1": {
+        "title": "Simple",
+        "description": "Absolutely necessary and minimal design."
+      },
+      "principle2": {
+        "title": "Comfortable",
+        "description": "Not only should it look comfortable in appearance, it should also feel comfortable in usability."
+      },
+      "principle3": {
+        "title": "Natural",
+        "description": "It must not splash. The role of each design element should be taken for granted and naturally."
       }
     }
   },

@@ -26,7 +26,7 @@
       "subtitle": "Foret는 Foret 디자인 언어로 자연과 관련된 웹 애플리케이션을 구축하기 위한 오픈 소스 디자인 시스템입니다.",
       "getStartedButton": "시작하기"
     },
-    "intro": {
+    "introForet": {
       "description1": "Foret 디자인 시스템은 디자인 시스템 제작을 경험하고자 시작한 개인 프로젝트입니다.",
       "description2": "먼저, 디자인 시스템을 제작하기에 앞서 브랜드가 필요했습니다. 평소 자연에 관심이 많았기에 '도시 속 현대인들을 위한 생활권 내에 녹색 공간 조성'이라는 미션을 가진 가상의 브랜드 Foret(포레)를 만들었습니다.",
       "description3": "브랜드를 만든 후, 디자인 시스템에 접근할 때 준수해야 할 지침 역할을 하는 디자인 원칙을 정의하였습니다. 디자인 원칙 안에서 브랜드와 어울리는 색상, 글씨체 등의 디자인 시스템 기본 요소를 직접 선정하였고, 이를 토대로 UI 컴포넌트를 개발하였습니다."
@@ -38,37 +38,35 @@
       "subtitle1": "Foret 디자인 시스템은 React 그리고 Angular 버전으로 제공됩니다.",
       "subtitle2": "시작하는데 필요한 모든 정보는 아래에 있습니다."
     },
-    "content": {
-      "installation": {
-        "title": "설치하기",
-        "description1": "Foret 컴포넌트는 ",
-        "description2": "로 제공됩니다. 프로젝트에 추가하려면 다음 명령어를 실행해보세요.",
-        "installViaNpm": "npm으로 설치:",
-        "installViaYarn": "yarn을 선호한다면:",
-        "installEmotionCore": "@emotion/core ^10.0.0 설치도 잊지마세요."
+    "installation": {
+      "title": "설치하기",
+      "description1": "Foret 컴포넌트는 ",
+      "description2": "로 제공됩니다. 프로젝트에 추가하려면 다음 명령어를 실행해보세요.",
+      "installViaNpm": "npm으로 설치:",
+      "installViaYarn": "yarn을 선호한다면:",
+      "installEmotionCore": "@emotion/core ^10.0.0 설치도 잊지마세요."
+    },
+    "settingUpReact": {
+      "title": "React 앱 설정하기",
+      "description1": "모든 Foret 애플리케이션 Foret로 시작합니다. Foret는 ",
+      "description2": "을 기반으로 한 ThemeProvier입니다. 그러므로, 다음과 같이 Foret 안에 애플리케이션을 랜더해야 합니다.",
+      "customizingTheme": {
+        "title": "테마 커스터마이징",
+        "description": "테마는 필요에 맞게 커스터마이징 될 수 있습니다. 다음 예시는 테마를 커스터마이징하는 방법입니다."
       },
-      "settingUpReact": {
-        "title": "React 앱 설정하기",
-        "description1": "모든 Foret 애플리케이션 Foret로 시작합니다. Foret는 ",
-        "description2": "을 기반으로 한 ThemeProvier입니다. 그러므로, 다음과 같이 Foret 안에 애플리케이션을 랜더해야 합니다.",
-        "customizingTheme": {
-          "title": "테마 커스터마이징",
-          "description": "테마는 필요에 맞게 커스터마이징 될 수 있습니다. 다음 예시는 테마를 커스터마이징하는 방법입니다."
-        },
-        "defaultTheme": {
-          "title": "기본 테마",
-          "description": "Foret가 제공하는 기본 테마는 다음과 같습니다. 기본 테마 혹은 커스터마이징된 테마의 프로퍼티에 접근할 수 있습니다."
-        }
-      },
-      "settingUpNg": {
-        "title": "Angular 앱 설정하기",
-        "description": "위의 패키지가 설치되고 나면, foret-sass 패키지를 다음과 같이 src/styles.scss 파일에 import 해야 합니다."
-      },
-      "contributing": {
-        "title": "기여하기",
-        "description1": "저희는 높은 품질의 컴포넌트를 제공하기를 원하며, 이는 여러분의 피드백 없이는 불가능한 일입니다. 디자인 시스템에 대한 제안이나 이슈가 있을 시에는 ",
-        "description2": "에서 이슈 혹은 pull request를 생성해주세요."
+      "defaultTheme": {
+        "title": "기본 테마",
+        "description": "Foret가 제공하는 기본 테마는 다음과 같습니다. 기본 테마 혹은 커스터마이징된 테마의 프로퍼티에 접근할 수 있습니다."
       }
+    },
+    "settingUpNg": {
+      "title": "Angular 앱 설정하기",
+      "description": "위의 패키지가 설치되고 나면, foret-sass 패키지를 다음과 같이 src/styles.scss 파일에 import 해야 합니다."
+    },
+    "contributing": {
+      "title": "기여하기",
+      "description1": "저희는 높은 품질의 컴포넌트를 제공하기를 원하며, 이는 여러분의 피드백 없이는 불가능한 일입니다. 디자인 시스템에 대한 제안이나 이슈가 있을 시에는 ",
+      "description2": "에서 이슈 혹은 pull request를 생성해주세요."
     }
   },
   "designPrinciple": {
@@ -77,14 +75,18 @@
       "subtitle1": "디자인 원칙은 디자인 시스템의 주요 특징을 정의하고 전달합니다.",
       "subtitle2": "Foret 디자인 시스템은 다음 디자인 원칙을 기반으로 제작되었습니다."
     },
-    "content": {
-      "designPrinciple": {
-        "principle1Title": "단순함(Simple)",
-        "principle1Description": "꼭 필요하고, 최소한의 디자인이어야 합니다.",
-        "principle2Title": "편안함(Comfortable)",
-        "principle2Description": "외관상 편안하게 보여야 함은 물론, 사용성에서도 편안함을 느껴야 합니다.",
-        "principle3Title": "자연스러움(Natural)",
-        "principle3Description": "튀지 않아야 합니다. 각 디자인 요소의 역할이 당연하고 자연스럽게 받아들여져야 합니다."
+    "introDesignPrinciple": {
+      "principle1": {
+        "title": "단순함(Simple)",
+        "description": "꼭 필요하고, 최소한의 디자인이어야 합니다."
+      },
+      "principle2": {
+        "title": "편안함(Comfortable)",
+        "description": "외관상 편안하게 보여야 함은 물론, 사용성에서도 편안함을 느껴야 합니다."
+      },
+      "principle3": {
+        "title": "자연스러움(Natural)",
+        "description": "튀지 않아야 합니다. 각 디자인 요소의 역할이 당연하고 자연스럽게 받아들여져야 합니다."
       }
     }
   },

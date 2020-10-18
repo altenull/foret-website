@@ -25,14 +25,14 @@ const SettingUpSection = ({ isReactVersion = false, isAngularVersion = false }) 
   const getReactVersionContent = () => (
     <Fragment>
       <Heading2 css={marginTopForHeading2} enableMargin enableResponsive>
-        {intl.formatMessage({ id: 'getStarted.content.settingUpReact.title' })}
+        {intl.formatMessage({ id: 'getStarted.settingUpReact.title' })}
       </Heading2>
       <Paragraph enableMargin enableResponsive>
-        {intl.formatMessage({ id: 'getStarted.content.settingUpReact.description1' })}
+        {intl.formatMessage({ id: 'getStarted.settingUpReact.description1' })}
         <a css={anchorStyles} href={siteMetadata.hosts.emotionTheming} target={'_blank'} rel={'noreferrer'}>
           emotion-theming
         </a>
-        {intl.formatMessage({ id: 'getStarted.content.settingUpReact.description2' })}
+        {intl.formatMessage({ id: 'getStarted.settingUpReact.description2' })}
       </Paragraph>
       <ComponentDemoBox
         demo={<PrimaryButton onClick={() => alert('Hey there!')}>Hello Foret!</PrimaryButton>}
@@ -41,20 +41,18 @@ const SettingUpSection = ({ isReactVersion = false, isAngularVersion = false }) 
       />
 
       <Heading3 css={marginTopForHeading3} enableMargin enableResponsive>
-        {intl.formatMessage({ id: 'getStarted.content.settingUpReact.customizingTheme.title' })}
+        {intl.formatMessage({ id: 'getStarted.settingUpReact.customizingTheme.title' })}
       </Heading3>
-      <Paragraph>
-        {intl.formatMessage({ id: 'getStarted.content.settingUpReact.customizingTheme.description' })}
-      </Paragraph>
+      <Paragraph>{intl.formatMessage({ id: 'getStarted.settingUpReact.customizingTheme.description' })}</Paragraph>
       <CodeViewerContainer
         codeInHtml={getCustomizingTheme.nodes[0].html}
         codeInMarkdown={getCustomizingTheme.nodes[0].rawMarkdownBody}
       />
 
       <Heading3 css={marginTopForHeading3} enableMargin enableResponsive>
-        {intl.formatMessage({ id: 'getStarted.content.settingUpReact.defaultTheme.title' })}
+        {intl.formatMessage({ id: 'getStarted.settingUpReact.defaultTheme.title' })}
       </Heading3>
-      <Paragraph>{intl.formatMessage({ id: 'getStarted.content.settingUpReact.defaultTheme.description' })}</Paragraph>
+      <Paragraph>{intl.formatMessage({ id: 'getStarted.settingUpReact.defaultTheme.description' })}</Paragraph>
       <CodeViewerContainer
         codeInHtml={getDefaultTheme.nodes[0].html}
         codeInMarkdown={getDefaultTheme.nodes[0].rawMarkdownBody}
@@ -65,10 +63,10 @@ const SettingUpSection = ({ isReactVersion = false, isAngularVersion = false }) 
   const getAngularVersionContent = () => (
     <Fragment>
       <Heading2 css={marginTopForHeading2} enableMargin enableResponsive>
-        {intl.formatMessage({ id: 'getStarted.content.settingUpNg.title' })}
+        {intl.formatMessage({ id: 'getStarted.settingUpNg.title' })}
       </Heading2>
       <Paragraph enableMargin enableResponsive>
-        {intl.formatMessage({ id: 'getStarted.content.settingUpNg.description' })}
+        {intl.formatMessage({ id: 'getStarted.settingUpNg.description' })}
       </Paragraph>
       <CodeViewerContainer
         codeInHtml={getImportForetSass.nodes[0].html}

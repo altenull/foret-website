@@ -29,55 +29,55 @@ const InstallationSection = ({ isReactVersion = false, isAngularVersion = false 
   const getReactVersionContent = () => (
     <Fragment>
       <Heading2 enableMargin enableResponsive>
-        {intl.formatMessage({ id: 'getStarted.content.installation.title' })}
+        {intl.formatMessage({ id: 'getStarted.installation.title' })}
       </Heading2>
       <Paragraph enableMargin enableResponsive>
-        {intl.formatMessage({ id: 'getStarted.content.installation.description1' })}
+        {intl.formatMessage({ id: 'getStarted.installation.description1' })}
         <a css={anchorStyles} href={siteMetadata.hosts.foretReactNpm} target={'_blank'} rel={'noreferrer'}>
           npm package
         </a>
-        {intl.formatMessage({ id: 'getStarted.content.installation.description2' })}
+        {intl.formatMessage({ id: 'getStarted.installation.description2' })}
       </Paragraph>
       <Subtitle2 css={marginTopForSubtitle2}>
-        {intl.formatMessage({ id: 'getStarted.content.installation.installViaNpm' })}
+        {intl.formatMessage({ id: 'getStarted.installation.installViaNpm' })}
       </Subtitle2>
       <CodeViewerContainer
         codeInHtml={getInstallViaNpmReact.nodes[0].html}
         codeInMarkdown={getInstallViaNpmReact.nodes[0].rawMarkdownBody}
       />
       <Subtitle2 css={marginTopForSubtitle2}>
-        {intl.formatMessage({ id: 'getStarted.content.installation.installViaYarn' })}
+        {intl.formatMessage({ id: 'getStarted.installation.installViaYarn' })}
       </Subtitle2>
       <CodeViewerContainer
         codeInHtml={getInstallViaYarnReact.nodes[0].html}
         codeInMarkdown={getInstallViaYarnReact.nodes[0].rawMarkdownBody}
       />
-      <Subtitle1>{intl.formatMessage({ id: 'getStarted.content.installation.installEmotionCore' })}</Subtitle1>
+      <Subtitle1>{intl.formatMessage({ id: 'getStarted.installation.installEmotionCore' })}</Subtitle1>
     </Fragment>
   );
 
   const getAngularVersionContent = () => (
     <Fragment>
       <Heading2 enableMargin enableResponsive>
-        {intl.formatMessage({ id: 'getStarted.content.installation.title' })}
+        {intl.formatMessage({ id: 'getStarted.installation.title' })}
       </Heading2>
       <Paragraph enableMargin enableResponsive>
-        {intl.formatMessage({ id: 'getStarted.content.installation.description1' })}
+        {intl.formatMessage({ id: 'getStarted.installation.description1' })}
         <a css={anchorStyles} href={siteMetadata.hosts.foretNgNpm} target={'_blank'} rel={'noreferrer'}>
           npm package
         </a>
-        {intl.formatMessage({ id: 'getStarted.content.installation.description2' })}
+        {intl.formatMessage({ id: 'getStarted.installation.description2' })}
       </Paragraph>
 
       <Subtitle2 css={marginTopForSubtitle2}>
-        {intl.formatMessage({ id: 'getStarted.content.installation.installViaNpm' })}
+        {intl.formatMessage({ id: 'getStarted.installation.installViaNpm' })}
       </Subtitle2>
       <CodeViewerContainer
         codeInHtml={getInstallViaNpmNg.nodes[0].html}
         codeInMarkdown={getInstallViaNpmNg.nodes[0].rawMarkdownBody}
       />
       <Subtitle2 css={marginTopForSubtitle2}>
-        {intl.formatMessage({ id: 'getStarted.content.installation.installViaYarn' })}
+        {intl.formatMessage({ id: 'getStarted.installation.installViaYarn' })}
       </Subtitle2>
       <CodeViewerContainer
         codeInHtml={getInstallViaYarnNg.nodes[0].html}

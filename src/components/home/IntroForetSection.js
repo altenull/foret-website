@@ -21,13 +21,13 @@ const IntroForetSection = () => {
     <section css={sectionStyles}>
       <ResponsiveContentLayout>
         <Paragraph css={descriptionStyles} enableResponsive>
-          {intl.formatMessage({ id: 'home.intro.description1' })}
+          {intl.formatMessage({ id: 'home.introForet.description1' })}
         </Paragraph>
         <Paragraph css={descriptionStyles} enableResponsive>
-          {intl.formatMessage({ id: 'home.intro.description2' })}
+          {intl.formatMessage({ id: 'home.introForet.description2' })}
         </Paragraph>
         <Paragraph css={descriptionStyles} enableResponsive>
-          {intl.formatMessage({ id: 'home.intro.description3' })}
+          {intl.formatMessage({ id: 'home.introForet.description3' })}
         </Paragraph>
       </ResponsiveContentLayout>
     </section>

@@ -11,24 +11,24 @@ const IntroDesignPrincipleSection = () => {
     <section>
       <ResponsiveContentLayout>
         <Heading2 enableMargin enableResponsive>
-          {intl.formatMessage({ id: 'designPrinciple.content.designPrinciple.principle1Title' })}
+          {intl.formatMessage({ id: 'designPrinciple.introDesignPrinciple.principle1.title' })}
         </Heading2>
         <Paragraph enableMargin enableResponsive>
-          {intl.formatMessage({ id: 'designPrinciple.content.designPrinciple.principle1Description' })}
+          {intl.formatMessage({ id: 'designPrinciple.introDesignPrinciple.principle1.description' })}
         </Paragraph>
 
         <Heading2 css={marginTopForHeading2} enableMargin enableResponsive>
-          {intl.formatMessage({ id: 'designPrinciple.content.designPrinciple.principle2Title' })}
+          {intl.formatMessage({ id: 'designPrinciple.introDesignPrinciple.principle2.title' })}
         </Heading2>
         <Paragraph enableMargin enableResponsive>
-          {intl.formatMessage({ id: 'designPrinciple.content.designPrinciple.principle2Description' })}
+          {intl.formatMessage({ id: 'designPrinciple.introDesignPrinciple.principle2.description' })}
         </Paragraph>
 
         <Heading2 css={marginTopForHeading2} enableMargin enableResponsive>
-          {intl.formatMessage({ id: 'designPrinciple.content.designPrinciple.principle3Title' })}
+          {intl.formatMessage({ id: 'designPrinciple.introDesignPrinciple.principle3.title' })}
         </Heading2>
         <Paragraph enableMargin enableResponsive>
-          {intl.formatMessage({ id: 'designPrinciple.content.designPrinciple.principle3Description' })}
+          {intl.formatMessage({ id: 'designPrinciple.introDesignPrinciple.principle3.description' })}
         </Paragraph>
       </ResponsiveContentLayout>
     </section>
