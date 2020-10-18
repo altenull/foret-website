@@ -18,7 +18,7 @@ const LanguageLink = ({ language }) => {
   };
 
   return (
-    <Subtitle1 onClick={() => changeLocale(language, null)} css={languageLinkStyles}>
+    <Subtitle1 onClick={() => changeLocale(language)} css={languageLinkStyles}>
       {translatedLanguageMap[language]}
     </Subtitle1>
   );
