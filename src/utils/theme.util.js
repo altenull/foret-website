@@ -17,17 +17,9 @@ export const getGlobalStyles = (theme) => css`
     background-color: ${theme.colors.paper};
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  span,
-  div {
+  * {
     &::selection {
-      background: ${theme.colors.foretGreen};
+      background-color: ${theme.colors.foretGreen};
     }
   }
 
