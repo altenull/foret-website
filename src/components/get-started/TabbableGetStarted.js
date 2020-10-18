@@ -12,13 +12,14 @@ const TabbableGetStarted = () => {
         <Tab id={'tabbable-get-started-react-tap'} labelText={'React'} value={'tabbableGetStartedReactTap'}>
           <TabContentWrapper>
             <InstallationSection isReactVersion={true} />
-            <SettingUpSection />
+            <SettingUpSection isReactVersion={true} />
           </TabContentWrapper>
         </Tab>
 
         <Tab id={'tabbable-get-started-ng-tap'} labelText={'Angular'} value={'tabbableGetStartedNgTap'}>
           <TabContentWrapper>
             <InstallationSection isAngularVersion={true} />
+            <SettingUpSection isAngularVersion={true} />
           </TabContentWrapper>
         </Tab>
       </TabGroup>

@@ -9,6 +9,7 @@ const useGetStartedPageQuery = () => {
     getSettingUpWithForet,
     getCustomizingTheme,
     getDefaultTheme,
+    getImportForetSass,
   } = useStaticQuery(graphql`
     query {
       getInstallViaNpmReact: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/install-via-npm-react.md/" } }) {
@@ -55,6 +56,12 @@ const useGetStartedPageQuery = () => {
           rawMarkdownBody
         }
       }
+      getImportForetSass: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/import-foret-sass.md/" } }) {
+        nodes {
+          html
+          rawMarkdownBody
+        }
+      }
     }
   `);
 
@@ -66,6 +73,7 @@ const useGetStartedPageQuery = () => {
     getSettingUpWithForet,
     getCustomizingTheme,
     getDefaultTheme,
+    getImportForetSass,
   };
 
   return getStartedContentSectionQueryResponse;

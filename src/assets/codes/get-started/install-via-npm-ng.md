@@ -1,3 +1,3 @@
 ```bash
-npm install --save @altenull/foret-ng
+npm install --save @altenull/foret-ng @altenull/foret-sass
 ```

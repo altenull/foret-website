@@ -1,3 +1,3 @@
 ```bash
-yarn add @altenull/foret-ng
+yarn add @altenull/foret-ng @altenull/foret-sass
 ```

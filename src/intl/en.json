@@ -47,8 +47,8 @@
         "installViaYarn": "If you prefer yarn:",
         "installEmotionCore": "Don’t forget to install the @emotion/core ^10.0.0 also."
       },
-      "settingUp": {
-        "title": "Setting up Your App",
+      "settingUpReact": {
+        "title": "Setting up React App",
         "description1": "All Foret applications start with a Foret. The Foret is ThemeProvider which is based on ",
         "description2": ". Therefore, you should render your application inside the Foret like below.",
         "customizingTheme": {
@@ -59,6 +59,10 @@
           "title": "Default Theme",
           "description": "The default theme provided by Foret is as follows, and you can access the properties of the default theme or customized theme."
         }
+      },
+      "settingUpNg": {
+        "title": "Setting up Angular App",
+        "description": "After the above packages are installed, import foret-sass package into your src/styles.scss file like below."
       },
       "contributing": {
         "title": "Contributing",
