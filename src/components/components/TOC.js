@@ -16,9 +16,9 @@ const tocItemContainerStyles = css`
   padding: 0;
 `;
 
-const TOC = ({ items, currentHash, scrollTo }) => {
+const TOC = ({ items, currentHash, onTOCItemClick }) => {
   const tocItems = items.map(({ to, text }) => (
-    <TOCItem key={to} to={to} text={text} isActive={to === currentHash} onClick={() => scrollTo(to)} />
+    <TOCItem key={to} to={to} text={text} isActive={to === currentHash} onClick={() => onTOCItemClick(to)} />
   ));
 
   return (

@@ -11,7 +11,7 @@ import { getComponentSections, getTocItems } from '../utils/components.util';
 import { getCurrentPageRouteIndex, getPageTitle } from '../utils/page.util';
 
 const ComponentsPage = ({ location }) => {
-  const [currentHash, setCurrentHash] = useState(location.hash);
+  const [currentHashForToc, setCurrentHashForToc] = useState(location.hash);
   const [componentHashToYAbsoultePixelMap, setComponentHashToYAbsoultePixelMap] = useState(null);
 
   const heroSectionRef = useRef();
@@ -20,23 +20,24 @@ const ComponentsPage = ({ location }) => {
   const isMounted = useIsMounted();
   const { siteMetadata } = useSiteMetadataQuery();
 
-  const scrollTo = (targetHash) => {
+  const scrollToHashPoint = (targetHash) => {
     window.scrollTo(0, componentHashToYAbsoultePixelMap[targetHash]);
   };
 
-  useEffect(() => {
-    navigate(currentHash === '' ? location.pathname : currentHash);
-  }, [currentHash, location.pathname]);
+  const handleTOCItemClick = (targetHash) => {
+    navigate(targetHash);
+    scrollToHashPoint(targetHash);
+  };
 
-  // initialize componentHashToYAbsoultePixelMap after mounted.
+  // Initialize componentHashToYAbsoultePixelMap after mounted.
   useEffect(() => {
     if (isMounted) {
       const windowScrollY = window.scrollY;
 
       setComponentHashToYAbsoultePixelMap(
         COMPONENT_HASHES.reduce((acc, componentHash) => {
-          const anchorHeadingElement = document.getElementById(componentHash);
-          const yAbsolutePixel = anchorHeadingElement.getBoundingClientRect().y + windowScrollY;
+          const anchorHeading2Element = document.getElementById(componentHash);
+          const yAbsolutePixel = anchorHeading2Element.getBoundingClientRect().y + windowScrollY;
 
           return {
             ...acc,
@@ -45,7 +46,20 @@ const ComponentsPage = ({ location }) => {
         }, {})
       );
     }
-  }, [isMounted]);
+  }, [isMounted, setComponentHashToYAbsoultePixelMap]);
+
+  // Handling when hash in url is updated.
+  useEffect(() => {
+    if (isMounted && componentHashToYAbsoultePixelMap != null) {
+      const hasAccessedWithHashFromUrl = componentHashToYAbsoultePixelMap[location.hash] != null;
+
+      if (hasAccessedWithHashFromUrl) {
+        scrollToHashPoint(location.hash);
+      } else {
+        window.scrollTo(0, 0);
+      }
+    }
+  }, [isMounted, location.hash, componentHashToYAbsoultePixelMap]);
 
   useEffect(() => {
     let anchorHeadingIo;
@@ -62,8 +76,8 @@ const ComponentsPage = ({ location }) => {
 
             const newHash = entry.target.id;
 
-            if (newHash !== currentHash) {
-              setCurrentHash(newHash);
+            if (newHash !== currentHashForToc) {
+              setCurrentHashForToc(newHash);
             }
           });
         } else {
@@ -71,12 +85,12 @@ const ComponentsPage = ({ location }) => {
             document.documentElement.scrollTop < heroSectionRef.current.getBoundingClientRect().height;
 
           if (isHeroSectionVisible) {
-            setCurrentHash('');
+            setCurrentHashForToc('');
           }
         }
       };
 
-      // Intersection Observer API의 사용법과 활용 방법
+      // How to use Intersection Observer API
       // http://blog.hyeyoonjung.com/2019/01/09/intersectionobserver-tutorial/
       anchorHeadingIo = new IntersectionObserver(anchorHeadingIoCallback, { threshold: 0.5 });
 
@@ -90,17 +104,7 @@ const ComponentsPage = ({ location }) => {
         anchorHeadingIo.disconnect();
       }
     };
-  }, [isMounted]);
-
-  useEffect(() => {
-    if (isMounted && componentHashToYAbsoultePixelMap != null) {
-      const hasAccessedWithHashFromUrl = !!location.hash;
-
-      if (hasAccessedWithHashFromUrl) {
-        scrollTo(location.hash);
-      }
-    }
-  }, [isMounted, componentHashToYAbsoultePixelMap]);
+  }, [isMounted, currentHashForToc, setCurrentHashForToc]);
 
   const currentPageRouteIndex = getCurrentPageRouteIndex(location.pathname, siteMetadata.pageRoutes);
   const componentsTitle = getPageTitle(intl, currentPageRouteIndex, siteMetadata.pageRoutes);
@@ -111,7 +115,11 @@ const ComponentsPage = ({ location }) => {
       <PageLayout>
         <HeroSection ref={heroSectionRef} />
         {getComponentSections(COMPONENT_HASHES)}
-        <TOC items={getTocItems(intl, COMPONENT_HASHES)} currentHash={currentHash} scrollTo={scrollTo} />
+        <TOC
+          items={getTocItems(intl, COMPONENT_HASHES)}
+          currentHash={currentHashForToc}
+          onTOCItemClick={handleTOCItemClick}
+        />
         <PageNavigationSection />
       </PageLayout>
     </Fragment>
