@@ -5,14 +5,13 @@ import { PageNavigationSection } from '../components/common';
 import { PageLayout } from '../components/foundation';
 import { ContributingSection, HeroSection, TabbableGetStarted } from '../components/get-started';
 import { useSiteMetadataQuery } from '../hooks/core';
-import { getCurrentPageRouteIndex, getPageTitle } from '../utils/page.util';
+import { getPageTitle } from '../utils/page.util';
 
 const GetStartedPage = ({ location }) => {
   const intl = useIntl();
   const { siteMetadata } = useSiteMetadataQuery();
 
-  const currentPageRouteIndex = getCurrentPageRouteIndex(location.pathname, siteMetadata.pageRoutes);
-  const getStartedPageTitle = getPageTitle(intl, currentPageRouteIndex, siteMetadata.pageRoutes);
+  const getStartedPageTitle = getPageTitle(intl, location.pathname, siteMetadata.pageRoutes);
 
   return (
     <Fragment>

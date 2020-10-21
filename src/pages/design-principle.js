@@ -5,14 +5,13 @@ import { PageNavigationSection } from '../components/common';
 import { HeroSection, IntroDesignPrincipleSection } from '../components/design-principle';
 import { PageLayout } from '../components/foundation';
 import { useSiteMetadataQuery } from '../hooks/core';
-import { getCurrentPageRouteIndex, getPageTitle } from '../utils/page.util';
+import { getPageTitle } from '../utils/page.util';
 
 const DesignPrinciplePage = ({ location }) => {
   const intl = useIntl();
   const { siteMetadata } = useSiteMetadataQuery();
 
-  const currentPageRouteIndex = getCurrentPageRouteIndex(location.pathname, siteMetadata.pageRoutes);
-  const designPrincipleTitle = getPageTitle(intl, currentPageRouteIndex, siteMetadata.pageRoutes);
+  const designPrincipleTitle = getPageTitle(intl, location.pathname, siteMetadata.pageRoutes);
 
   return (
     <Fragment>

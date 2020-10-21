@@ -18,7 +18,7 @@ import { COMPONENT_HASHES } from '../constants/components.constant';
 import { ComponentHashEnum } from '../enums/components/component-hash.enum';
 import { useIsMounted, useSiteMetadataQuery } from '../hooks/core';
 import { getTocItems } from '../utils/components.util';
-import { getCurrentPageRouteIndex, getPageTitle } from '../utils/page.util';
+import { getPageTitle } from '../utils/page.util';
 
 const ComponentsPage = ({ location }) => {
   const [currentHash, setCurrentHash] = useState(location.hash);
@@ -105,8 +105,7 @@ const ComponentsPage = ({ location }) => {
     };
   }, [isMounted, currentHash, setCurrentHash]);
 
-  const currentPageRouteIndex = getCurrentPageRouteIndex(location.pathname, siteMetadata.pageRoutes);
-  const componentsTitle = getPageTitle(intl, currentPageRouteIndex, siteMetadata.pageRoutes);
+  const componentsTitle = getPageTitle(intl, location.pathname, siteMetadata.pageRoutes);
 
   return (
     <Fragment>

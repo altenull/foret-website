@@ -3,10 +3,13 @@ import { PROPS_TABLE_COLUMNS } from '../constants/components.constant';
 export const getCurrentPageRouteIndex = (pathname, pageRoutes) =>
   pageRoutes.findIndex((pageRoute) => pathname.includes(pageRoute.key));
 
-export const getPageTitle = (intl, currentPageRouteIndex, pageRoutes) =>
-  `${intl.formatMessage({
+export const getPageTitle = (intl, pathname, pageRoutes) => {
+  const currentPageRouteIndex = getCurrentPageRouteIndex(pathname, pageRoutes);
+
+  return `${intl.formatMessage({
     id: `pages.${pageRoutes[currentPageRouteIndex].camelCase}`,
   })} | ${intl.formatMessage({ id: 'title' })}`;
+};
 
 export const getPropsOfComponentFactor = (intl, intlMessageSubKey) => {
   const numberOfProps =

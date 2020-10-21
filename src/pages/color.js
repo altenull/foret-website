@@ -5,14 +5,13 @@ import { BrandColorSection, FeedbackColorSection, GrayscaleSection, HeroSection 
 import { PageNavigationSection } from '../components/common';
 import { PageLayout } from '../components/foundation';
 import { useSiteMetadataQuery } from '../hooks/core';
-import { getCurrentPageRouteIndex, getPageTitle } from '../utils/page.util';
+import { getPageTitle } from '../utils/page.util';
 
 const ColorPage = ({ location }) => {
   const intl = useIntl();
   const { siteMetadata } = useSiteMetadataQuery();
 
-  const currentPageRouteIndex = getCurrentPageRouteIndex(location.pathname, siteMetadata.pageRoutes);
-  const colorPageTitle = getPageTitle(intl, currentPageRouteIndex, siteMetadata.pageRoutes);
+  const colorPageTitle = getPageTitle(intl, location.pathname, siteMetadata.pageRoutes);
 
   return (
     <Fragment>
