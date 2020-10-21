@@ -3,10 +3,15 @@ import React from 'react';
 import TOCItem from './TOCItem';
 
 const tocStyles = (theme) => css`
+  display: none;
   position: fixed;
-  right: 160px;
-  top: 360px;
+  left: calc(50% + 440px);
+  top: 408px;
   border-left: 2px solid ${theme.colors.fog};
+
+  ${theme.mediaQueries.viewPort9} {
+    display: initial;
+  }
 `;
 
 const tocItemContainerStyles = css`
