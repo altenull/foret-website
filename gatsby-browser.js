@@ -13,3 +13,10 @@ export const wrapRootElement = ({ element }) => {
     </Foret>
   );
 };
+
+// https://www.gatsbyjs.com/docs/browser-apis#shouldUpdateScroll
+// Default behavior is persisting last known scrolling positions and scrolling back to them on navigation.
+// Should return either an [x, y] Array of coordinates to scroll to,
+// a string of the id or name of an element to scroll to,
+// false to not update the scroll position, or true for the default behavior.
+export const shouldUpdateScroll = () => false;
