@@ -8,7 +8,6 @@ import {
   Tab,
   TabGroup,
 } from '@altenull/foret-react';
-import { css } from '@emotion/core';
 import { useIntl } from 'gatsby-plugin-intl';
 import React from 'react';
 import {
@@ -27,11 +26,7 @@ import { TabContentWrapper } from '../common';
 import { ResponsiveContentLayout } from '../foundation';
 import AnchorHeading2 from './AnchorHeading2';
 
-const sectionStyles = css`
-  position: relative;
-`;
-
-const SelectSection = ({ headingHash }) => {
+const SelectSection = ({ componentHash, onAnchorHeading2Click }) => {
   const intl = useIntl();
   const {
     importSelectReactCode,
@@ -222,9 +217,12 @@ const SelectSection = ({ headingHash }) => {
   };
 
   return (
-    <section css={sectionStyles}>
+    <section>
       <ResponsiveContentLayout>
-        <AnchorHeading2 css={marginTopForHeading2} headingHash={headingHash}>
+        <AnchorHeading2
+          css={marginTopForHeading2}
+          componentHash={componentHash}
+          onAnchorHeading2Click={onAnchorHeading2Click}>
           {intl.formatMessage({ id: 'components.select.title' })}
         </AnchorHeading2>
         <Paragraph enableMargin enableResponsive>

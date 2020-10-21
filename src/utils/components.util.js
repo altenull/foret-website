@@ -13,7 +13,7 @@ import { PROPS_TABLE_COLUMNS } from '../constants/components.constant';
 import { ComponentHashEnum } from '../enums/components/component-hash.enum';
 import { PropsTableColumnEnum } from '../enums/components/props-table-column.enum';
 
-export const getComponentSections = (componentHashes) => {
+export const getComponentSections = (componentHashes, onAnchorHeading2Click) => {
   const componentHashToComponentSectionMap = {
     [ComponentHashEnum.Button]: ButtonSection,
     [ComponentHashEnum.Checkbox]: CheckboxSection,
@@ -26,7 +26,13 @@ export const getComponentSections = (componentHashes) => {
   return componentHashes.map((componentHash) => {
     const SectionComponent = componentHashToComponentSectionMap[componentHash];
 
-    return <SectionComponent key={componentHash} headingHash={componentHash} />;
+    return (
+      <SectionComponent
+        key={componentHash}
+        componentHash={componentHash}
+        onAnchorHeading2Click={onAnchorHeading2Click}
+      />
+    );
   });
 };
 

@@ -18,11 +18,7 @@ import { TabContentWrapper } from '../common';
 import { ResponsiveContentLayout } from '../foundation';
 import AnchorHeading2 from './AnchorHeading2';
 
-const sectionStyles = css`
-  position: relative;
-`;
-
-const TabSection = ({ headingHash }) => {
+const TabSection = ({ componentHash, onAnchorHeading2Click }) => {
   const intl = useIntl();
   const { importTabReactCode, importTabNgCode, demoTabReactCode, demoTabNgCode } = useTabSectionQuery();
 
@@ -126,9 +122,12 @@ const TabSection = ({ headingHash }) => {
   };
 
   return (
-    <section css={sectionStyles}>
+    <section>
       <ResponsiveContentLayout>
-        <AnchorHeading2 css={marginTopForHeading2} headingHash={headingHash}>
+        <AnchorHeading2
+          css={marginTopForHeading2}
+          componentHash={componentHash}
+          onAnchorHeading2Click={onAnchorHeading2Click}>
           {intl.formatMessage({ id: 'components.tab.title' })}
         </AnchorHeading2>
         <Paragraph enableMargin enableResponsive>

@@ -1,5 +1,4 @@
 import { Heading3, Paragraph, Subtitle2, Tab, TabGroup, Toggle } from '@altenull/foret-react';
-import { css } from '@emotion/core';
 import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
 import {
@@ -16,11 +15,7 @@ import { TabContentWrapper } from '../common';
 import { ResponsiveContentLayout } from '../foundation';
 import AnchorHeading2 from './AnchorHeading2';
 
-const sectionStyles = css`
-  position: relative;
-`;
-
-const ToggleSection = ({ headingHash }) => {
+const ToggleSection = ({ componentHash, onAnchorHeading2Click }) => {
   const intl = useIntl();
   const {
     importToggleReactCode,
@@ -130,9 +125,12 @@ const ToggleSection = ({ headingHash }) => {
   };
 
   return (
-    <section css={sectionStyles}>
+    <section>
       <ResponsiveContentLayout>
-        <AnchorHeading2 css={marginTopForHeading2} headingHash={headingHash}>
+        <AnchorHeading2
+          css={marginTopForHeading2}
+          componentHash={componentHash}
+          onAnchorHeading2Click={onAnchorHeading2Click}>
           {intl.formatMessage({ id: 'components.toggle.title' })}
         </AnchorHeading2>
         <Paragraph enableMargin enableResponsive>

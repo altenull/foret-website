@@ -9,16 +9,16 @@ const heading2Styles = css`
 
 const linkIconStyles = css`
   position: absolute;
-  left: -32px;
+  left: -36px;
   top: 50%;
+  padding: 8px;
   transform: translateY(-50%);
 `;
 
-const AnchorHeading2 = ({ headingHash, children, ...props }) => {
+const AnchorHeading2 = ({ componentHash, children, onAnchorHeading2Click, ...props }) => {
   return (
-    <Heading2 css={heading2Styles} id={headingHash} enableMargin enableResponsive {...props}>
-      {/* TODO: LinkIcon should be visible when AnchorHeading2 is hovered */}
-      <LinkIcon css={linkIconStyles} />
+    <Heading2 css={heading2Styles} id={componentHash} enableMargin enableResponsive {...props}>
+      <LinkIcon css={linkIconStyles} onClick={() => onAnchorHeading2Click(componentHash)} />
       {children}
     </Heading2>
   );

@@ -8,7 +8,6 @@ import {
   Tab,
   TabGroup,
 } from '@altenull/foret-react';
-import { css } from '@emotion/core';
 import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
 import { BUTTON_PROPS_WITHOUT_DESCRIPTION } from '../../constants/components.constant';
@@ -22,11 +21,7 @@ import { TabContentWrapper } from '../common';
 import { ResponsiveContentLayout } from '../foundation';
 import AnchorHeading2 from './AnchorHeading2';
 
-const sectionStyles = css`
-  position: relative;
-`;
-
-const ButtonSection = ({ headingHash }) => {
+const ButtonSection = ({ componentHash, onAnchorHeading2Click }) => {
   const intl = useIntl();
   const {
     importButtonReactCode,
@@ -161,9 +156,9 @@ const ButtonSection = ({ headingHash }) => {
   );
 
   return (
-    <section css={sectionStyles}>
+    <section>
       <ResponsiveContentLayout>
-        <AnchorHeading2 headingHash={headingHash}>
+        <AnchorHeading2 componentHash={componentHash} onAnchorHeading2Click={onAnchorHeading2Click}>
           {intl.formatMessage({ id: 'components.button.title' })}
         </AnchorHeading2>
         <Paragraph enableMargin enableResponsive>
