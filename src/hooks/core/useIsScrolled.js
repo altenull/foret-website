@@ -14,6 +14,9 @@ const useIsScrolled = () => {
   }, [isScrolled]);
 
   useEffect(() => {
+    // Check whether scrolling or not at initial load to cover change locale event.
+    handleScroll();
+
     if (document != null) {
       document.addEventListener('scroll', handleScroll, { passive: true });
     }
