@@ -127,25 +127,25 @@
       "description": "체크 박스는 사용자가 목록에서 여러 옵션을 선택할 때 사용됩니다. 사용자는 옵션을 선택하지 않거나 여러 개의 옵션을 선택할 수 있습니다.",
       "propsDescription": {
         "checkboxGroup": {
-          "legendText": "체크박스 그룹의 라벨입니다.",
+          "legendText": "체크박스 그룹의 레이블입니다.",
           "disabled": "true를 할당하면, 모든 체크박스는 disabled 상태가 됩니다.",
           "onChange": "사용자가 체크박스를 클릭 할 때 호출되는 콜백 함수입니다."
         },
         "checkbox": {
           "id": "체크박스의 id입니다. 체크박스를 구분하기 위해 사용됩니다.",
-          "labelText": "스의 라벨입니다.",
+          "labelText": "스의 레이블입니다.",
           "checked": "true를 할당하면, 체크박스는 checked 상태가 됩니다."
         }
       },
       "propertiesDescription": {
         "checkboxGroup": {
-          "legendText": "체크박스 그룹의 라벨입니다.",
+          "legendText": "체크박스 그룹의 레이블입니다.",
           "disabled": "true를 할당하면, 모든 체크박스는 disabled 상태가 됩니다.",
           "changeCheckbox": "사용자가 체크박스를 클릭 할 때 호출되는 콜백 함수입니다."
         },
         "checkbox": {
           "id": "체크박스의 id입니다. 체크박스를 구분하기 위해 사용됩니다.",
-          "labelText": "체크박스의 라벨입니다.",
+          "labelText": "체크박스의 레이블입니다.",
           "checked": "true를 할당하면, 체크박스는 checked 상태가 됩니다."
         }
       }
@@ -155,27 +155,27 @@
       "description": "라디오버튼은 사용자가 목록에서 단 하나의 옵션을 선택할 때 사용됩니다.",
       "propsDescription": {
         "radioButtonGroup": {
-          "legendText": "라디오버튼 그룹의 라벨입니다.",
+          "legendText": "라디오버튼 그룹의 레이블입니다.",
           "checkedValue": "라디오버튼의 value 프로퍼티와 일치하면, 해당 라디오버튼은 checked로 설정됩니다.",
           "disabled": "true를 할당하면, 모든 라디오 버튼은 disabled 상태가 됩니다.",
           "onChange": "사용자가 라디오버튼을 클릭 할 때 호출되는 콜백 함수입니다."
         },
         "radioButton": {
           "id": "라디오버튼의 id입니다. 라디오버튼을 구분하기 위해 사용됩니다.",
-          "labelText": "라디오버튼의 라벨입니다.",
+          "labelText": "라디오버튼의 레이블입니다.",
           "value": "라디오버튼의 value입니다."
         }
       },
       "propertiesDescription": {
         "radioButtonGroup": {
-          "legendText": "라디오버튼 그룹의 라벨입니다.",
+          "legendText": "라디오버튼 그룹의 레이블입니다.",
           "checkedValue": "라디오버튼의 value 프로퍼티와 일치하면, 해당 라디오버튼은 checked로 설정됩니다.",
           "disabled": "true를 할당하면, 모든 라디오 버튼은 disabled 상태가 됩니다.",
           "changeRadioButton": "사용자가 라디오버튼을 클릭 할 때 호출되는 콜백 함수입니다."
         },
         "radioButton": {
           "id": "라디오버튼의 id입니다. 라디오버튼을 구분하기 위해 사용됩니다.",
-          "labelText": "라디오버튼의 라벨입니다.",
+          "labelText": "라디오버튼의 레이블입니다.",
           "value": "라디오버튼의 value입니다."
         }
       }
@@ -186,26 +186,26 @@
       "propsDescription": {
         "select": {
           "id": "셀렉트의 id입니다.",
-          "legendText": "셀렉트의 라벨입니다.",
+          "legendText": "셀렉트의 레이블입니다.",
           "selectedValue": "셀렉트 아이템의 value 프로퍼티와 일치하면, 해당 셀렉트 아이템이 선택됩니다.",
           "placeholder": "셀렉트의 placeholder입니다.",
           "disabled": "true를 할당하면, 셀렉트는 disabled 상태가 됩니다.",
           "onChange": "사용자가 한 옵션을 선택할 때 호출되는 콜백 함수입니다."
         },
         "selectItemGroup": {
-          "labelText": "셀렉트 아이템 그룹의 라벨입니다.",
+          "labelText": "셀렉트 아이템 그룹의 레이블입니다.",
           "disabled": "true를 할당하면, 셀렉트 아이템 그룹은 disabled 상태가 됩니다."
         },
         "selectItem": {
           "value": "셀렉트 아이템의 value입니다.",
-          "labelText": "셀렉트 아이템의 라벨입니다.",
+          "labelText": "셀렉트 아이템의 레이블입니다.",
           "disabled": "true를 할당하면, 셀렉트 아이템은 disabled 상태가 됩니다."
         }
       },
       "propertiesDescription": {
         "select": {
           "id": "셀렉트의 id입니다.",
-          "legendText": "셀렉트의 라벨입니다.",
+          "legendText": "셀렉트의 레이블입니다.",
           "placeholder": "셀렉트의 placeholder입니다.",
           "disabled": "true를 할당하면, 셀렉트는 disabled 상태가 됩니다.",
           "changeSelect": "사용자가 한 옵션을 선택할 때 호출되는 콜백 함수입니다."
@@ -222,7 +222,7 @@
         },
         "tab": {
           "id": "탭의 id입니다. 탭을 구분하기 위해 사용됩니다.",
-          "labelText": "탭의 라벨입니다.",
+          "labelText": "탭의 레이블입니다.",
           "value": "탭의 value입니다."
         }
       },
@@ -233,7 +233,7 @@
         },
         "tab": {
           "id": "탭의 id입니다. 탭을 구분하기 위해 사용됩니다.",
-          "labelText": "탭의 라벨입니다.",
+          "labelText": "탭의 레이블입니다.",
           "value": "탭의 value입니다."
         }
       }
