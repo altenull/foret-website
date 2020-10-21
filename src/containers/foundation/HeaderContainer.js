@@ -1,7 +1,7 @@
 import { css } from '@emotion/core';
 import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment, useCallback, useEffect, useRef, useState } from 'react';
-import ReactDOM from 'react-dom';
+import { Portal } from '../../components/common';
 import { HeaderLogo } from '../../components/foundation';
 import { HamburgerIcon } from '../../components/icons';
 import { useIsMounted } from '../../hooks/core';
@@ -57,7 +57,7 @@ const HeaderContainer = () => {
     if (newIsScrolled !== isScrolled) {
       setIsScrolled(newIsScrolled);
     }
-  }, [isScrolled]);
+  }, [headerRef, isScrolled]);
 
   const handleEscapeKeydown = useCallback(
     (event) => {
@@ -103,7 +103,11 @@ const HeaderContainer = () => {
 
   return (
     <Fragment>
-      {isDrawerShowing && ReactDOM.createPortal(<DrawerContainer />, document.body)}
+      {isDrawerShowing && (
+        <Portal>
+          <DrawerContainer />
+        </Portal>
+      )}
 
       <header css={(theme) => headerStyles(theme, isScrolled, isDrawerShowing)} ref={headerRef}>
         <HeaderLogo

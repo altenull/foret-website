@@ -67,6 +67,10 @@ const globalStyles = css`
   }
 `;
 
+// BUG:
+// If a component contains the Link component from gatsby module,
+// it is re-rendered as many as the number of Link components.
+// It's not solved issue yet.
 const DrawerContainer = () => {
   const intl = useIntl();
   const isMounted = useIsMounted();

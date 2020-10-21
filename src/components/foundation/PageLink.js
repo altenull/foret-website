@@ -14,7 +14,7 @@ const linkStyles = css`
   text-decoration: none;
 `;
 
-const PageLink = ({ to, text, ...props }) => {
+const PageLink = React.memo(({ to, text, ...props }) => {
   return (
     <li css={pageLinkStyles} {...props}>
       <Link to={to} css={linkStyles}>
@@ -22,6 +22,6 @@ const PageLink = ({ to, text, ...props }) => {
       </Link>
     </li>
   );
-};
+});
 
 export default PageLink;
