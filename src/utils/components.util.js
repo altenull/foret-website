@@ -1,40 +1,9 @@
 import { Table, TableBody, TableCell, TableHead, TableRow } from '@altenull/foret-react';
 import { css } from '@emotion/core';
 import React from 'react';
-import {
-  ButtonSection,
-  CheckboxSection,
-  RadioButtonSection,
-  SelectSection,
-  TabSection,
-  ToggleSection,
-} from '../components/components';
 import { PROPS_TABLE_COLUMNS } from '../constants/components.constant';
 import { ComponentHashEnum } from '../enums/components/component-hash.enum';
 import { PropsTableColumnEnum } from '../enums/components/props-table-column.enum';
-
-export const getComponentSections = (componentHashes, onAnchorHeading2Click) => {
-  const componentHashToComponentSectionMap = {
-    [ComponentHashEnum.Button]: ButtonSection,
-    [ComponentHashEnum.Checkbox]: CheckboxSection,
-    [ComponentHashEnum.RadioButton]: RadioButtonSection,
-    [ComponentHashEnum.Select]: SelectSection,
-    [ComponentHashEnum.Tab]: TabSection,
-    [ComponentHashEnum.Toggle]: ToggleSection,
-  };
-
-  return componentHashes.map((componentHash) => {
-    const SectionComponent = componentHashToComponentSectionMap[componentHash];
-
-    return (
-      <SectionComponent
-        key={componentHash}
-        componentHash={componentHash}
-        onAnchorHeading2Click={onAnchorHeading2Click}
-      />
-    );
-  });
-};
 
 export const getTocItems = (intl, componentHashes) => {
   const componentHashToIntlIdMap = {

@@ -22,7 +22,7 @@ const copyIconWithCopiedMessageStyles = (theme) => css`
 
 // What's dangerous about dangerouslySetInnerHTML?
 // https://crwi.uk/2019/04/26/dangerously-set-inner-html.html
-const CodeViewerContainer = ({ codeInHtml, codeInMarkdown = '', ...props }) => {
+const CodeViewerContainer = React.memo(({ codeInHtml, codeInMarkdown = '' }) => {
   const [hasCodeCopied, setHasCodeCopied] = useState(false);
 
   const [copyIconWithCopiedMessageRef, isCopyIconWithCopiedMessageRefHovered] = useIsHovered();
@@ -49,7 +49,6 @@ const CodeViewerContainer = ({ codeInHtml, codeInMarkdown = '', ...props }) => {
         dangerouslySetInnerHTML={{
           __html: codeInHtml,
         }}
-        {...props}
       />
 
       {!!codeInMarkdown && (
@@ -63,6 +62,6 @@ const CodeViewerContainer = ({ codeInHtml, codeInMarkdown = '', ...props }) => {
       )}
     </div>
   );
-};
+});
 
 export default CodeViewerContainer;

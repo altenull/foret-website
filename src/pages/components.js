@@ -3,11 +3,21 @@ import { useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment, useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { PageNavigationSection } from '../components/common';
-import { HeroSection, TOC } from '../components/components';
+import {
+  ButtonSection,
+  CheckboxSection,
+  HeroSection,
+  RadioButtonSection,
+  SelectSection,
+  TabSection,
+  TOC,
+  ToggleSection,
+} from '../components/components';
 import { PageLayout } from '../components/foundation';
 import { COMPONENT_HASHES } from '../constants/components.constant';
+import { ComponentHashEnum } from '../enums/components/component-hash.enum';
 import { useIsMounted, useSiteMetadataQuery } from '../hooks/core';
-import { getComponentSections, getTocItems } from '../utils/components.util';
+import { getTocItems } from '../utils/components.util';
 import { getCurrentPageRouteIndex, getPageTitle } from '../utils/page.util';
 
 const ComponentsPage = ({ location }) => {
@@ -26,6 +36,7 @@ const ComponentsPage = ({ location }) => {
 
   const navigateAndScrollToHashPoint = (targetHash) => {
     navigate(targetHash);
+    setCurrentHash(targetHash);
     scrollToHashPoint(targetHash);
   };
 
@@ -37,8 +48,8 @@ const ComponentsPage = ({ location }) => {
       setComponentHashToYAbsoultePixelMap(
         COMPONENT_HASHES.reduce((acc, componentHash) => {
           const anchorHeading2Element = document.getElementById(componentHash);
-          const MARGIN_Y = 128;
-          const yAbsolutePixel = anchorHeading2Element.getBoundingClientRect().y + windowScrollY - MARGIN_Y;
+          const OFFSET = 128;
+          const yAbsolutePixel = anchorHeading2Element.getBoundingClientRect().y + windowScrollY - OFFSET;
 
           return {
             ...acc,
@@ -48,19 +59,6 @@ const ComponentsPage = ({ location }) => {
       );
     }
   }, [isMounted, setComponentHashToYAbsoultePixelMap]);
-
-  // Handling when hash in url is updated.
-  useEffect(() => {
-    if (isMounted && componentHashToYAbsoultePixelMap != null) {
-      const hasAccessedWithHashFromUrl = componentHashToYAbsoultePixelMap[location.hash] != null;
-
-      if (hasAccessedWithHashFromUrl) {
-        scrollToHashPoint(location.hash);
-      } else {
-        window.scrollTo(0, 0);
-      }
-    }
-  }, [isMounted, location.hash, componentHashToYAbsoultePixelMap]);
 
   useEffect(() => {
     let anchorHeadingIo;
@@ -115,13 +113,25 @@ const ComponentsPage = ({ location }) => {
       <Helmet title={componentsTitle} defer={false} />
       <PageLayout>
         <HeroSection ref={heroSectionRef} />
-        {getComponentSections(COMPONENT_HASHES, navigateAndScrollToHashPoint)}
+        <ButtonSection componentHash={ComponentHashEnum.Button} onAnchorHeading2Click={navigateAndScrollToHashPoint} />
+        <CheckboxSection
+          componentHash={ComponentHashEnum.Checkbox}
+          onAnchorHeading2Click={navigateAndScrollToHashPoint}
+        />
+        <RadioButtonSection
+          componentHash={ComponentHashEnum.RadioButton}
+          onAnchorHeading2Click={navigateAndScrollToHashPoint}
+        />
+        <SelectSection componentHash={ComponentHashEnum.Select} onAnchorHeading2Click={navigateAndScrollToHashPoint} />
+        <TabSection componentHash={ComponentHashEnum.Tab} onAnchorHeading2Click={navigateAndScrollToHashPoint} />
+        <ToggleSection componentHash={ComponentHashEnum.Toggle} onAnchorHeading2Click={navigateAndScrollToHashPoint} />
+        <PageNavigationSection />
+
         <TOC
           items={getTocItems(intl, COMPONENT_HASHES)}
           currentHash={currentHash}
           onTOCItemClick={navigateAndScrollToHashPoint}
         />
-        <PageNavigationSection />
       </PageLayout>
     </Fragment>
   );
