@@ -42,7 +42,7 @@ const SelectSection = ({ componentHash, onAnchorHeading2Click }) => {
   } = useSelectSectionQuery();
 
   const getDemoSelect = () => (
-    <Select id={'select'} legendText={'Select'} selectedValue={'option2'}>
+    <Select id={'default-select'} legendText={'Select'} selectedValue={'option2'}>
       <SelectItem value={'option1'} labelText={'option 1'} />
       <SelectItem value={'option2'} labelText={'option 2'} />
       <SelectItem value={'option3'} labelText={'option 3'} disabled={true} />

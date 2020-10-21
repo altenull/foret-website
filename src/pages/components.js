@@ -37,7 +37,7 @@ const ComponentsPage = ({ location }) => {
       setComponentHashToYAbsoultePixelMap(
         COMPONENT_HASHES.reduce((acc, componentHash) => {
           const anchorHeading2Element = document.getElementById(componentHash);
-          const MARGIN_Y = 240;
+          const MARGIN_Y = 128;
           const yAbsolutePixel = anchorHeading2Element.getBoundingClientRect().y + windowScrollY - MARGIN_Y;
 
           return {
