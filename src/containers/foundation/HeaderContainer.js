@@ -116,7 +116,11 @@ const HeaderContainer = () => {
           shouldHideLogoTitle={isScrolled}
         />
 
-        <span css={hamburgerMenuStyles} onClick={() => toggleDrawer()}>
+        <span
+          css={hamburgerMenuStyles}
+          role={'toolbar'}
+          onClick={() => toggleDrawer()}
+          onKeyDown={() => toggleDrawer()}>
           <HamburgerIcon shouldTransformToCloseIcon={isDrawerShowing} />
         </span>
       </header>

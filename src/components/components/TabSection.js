@@ -1,5 +1,4 @@
 import { Heading3, Paragraph, Subtitle2, Tab, TabGroup } from '@altenull/foret-react';
-import { css } from '@emotion/core';
 import { useIntl } from 'gatsby-plugin-intl';
 import React from 'react';
 import {
