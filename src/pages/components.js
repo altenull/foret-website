@@ -11,7 +11,7 @@ import { getComponentSections, getTocItems } from '../utils/components.util';
 import { getCurrentPageRouteIndex, getPageTitle } from '../utils/page.util';
 
 const ComponentsPage = ({ location }) => {
-  const [currentHashForToc, setCurrentHashForToc] = useState(location.hash);
+  const [currentHash, setCurrentHash] = useState(location.hash);
   const [componentHashToYAbsoultePixelMap, setComponentHashToYAbsoultePixelMap] = useState(null);
 
   const heroSectionRef = useRef();
@@ -24,7 +24,7 @@ const ComponentsPage = ({ location }) => {
     window.scrollTo(0, componentHashToYAbsoultePixelMap[targetHash]);
   };
 
-  const handleTOCItemClick = (targetHash) => {
+  const navigateAndScrollToHashPoint = (targetHash) => {
     navigate(targetHash);
     scrollToHashPoint(targetHash);
   };
@@ -37,7 +37,8 @@ const ComponentsPage = ({ location }) => {
       setComponentHashToYAbsoultePixelMap(
         COMPONENT_HASHES.reduce((acc, componentHash) => {
           const anchorHeading2Element = document.getElementById(componentHash);
-          const yAbsolutePixel = anchorHeading2Element.getBoundingClientRect().y + windowScrollY;
+          const MARGIN_Y = 240;
+          const yAbsolutePixel = anchorHeading2Element.getBoundingClientRect().y + windowScrollY - MARGIN_Y;
 
           return {
             ...acc,
@@ -76,8 +77,8 @@ const ComponentsPage = ({ location }) => {
 
             const newHash = entry.target.id;
 
-            if (newHash !== currentHashForToc) {
-              setCurrentHashForToc(newHash);
+            if (newHash !== currentHash) {
+              setCurrentHash(newHash);
             }
           });
         } else {
@@ -85,7 +86,7 @@ const ComponentsPage = ({ location }) => {
             document.documentElement.scrollTop < heroSectionRef.current.getBoundingClientRect().height;
 
           if (isHeroSectionVisible) {
-            setCurrentHashForToc('');
+            setCurrentHash('');
           }
         }
       };
@@ -104,7 +105,7 @@ const ComponentsPage = ({ location }) => {
         anchorHeadingIo.disconnect();
       }
     };
-  }, [isMounted, currentHashForToc, setCurrentHashForToc]);
+  }, [isMounted, currentHash, setCurrentHash]);
 
   const currentPageRouteIndex = getCurrentPageRouteIndex(location.pathname, siteMetadata.pageRoutes);
   const componentsTitle = getPageTitle(intl, currentPageRouteIndex, siteMetadata.pageRoutes);
@@ -114,11 +115,11 @@ const ComponentsPage = ({ location }) => {
       <Helmet title={componentsTitle} defer={false} />
       <PageLayout>
         <HeroSection ref={heroSectionRef} />
-        {getComponentSections(COMPONENT_HASHES)}
+        {getComponentSections(COMPONENT_HASHES, navigateAndScrollToHashPoint)}
         <TOC
           items={getTocItems(intl, COMPONENT_HASHES)}
-          currentHash={currentHashForToc}
-          onTOCItemClick={handleTOCItemClick}
+          currentHash={currentHash}
+          onTOCItemClick={navigateAndScrollToHashPoint}
         />
         <PageNavigationSection />
       </PageLayout>
