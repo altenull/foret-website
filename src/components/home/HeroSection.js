@@ -4,44 +4,25 @@ import { Link } from 'gatsby';
 import { useIntl } from 'gatsby-plugin-intl';
 import React from 'react';
 import { PageRouteEnum } from '../../enums/core/page-route.enum';
-import { fadeInSalAttributes } from '../../utils/animation.util';
+import { BaseHeroSection } from '../common';
 
-const sectionStyles = css`
-  position: relative;
-  height: 100vh;
-`;
-
-const twoColumnsCoverStyles = css`
-  display: flex;
-  justify-content: space-between;
-  width: calc(100% - 4rem);
-  height: calc(100% - 220px);
-  max-width: 1440px;
-  padding-top: 220px;
-  margin: 0 auto;
-`;
-
-const columnStyles = css`
-  flex: 1;
-`;
-
-const leftColumnContentPositionerStyles = css`
-  margin: 220px 0 0 96px;
-`;
-
-const dividerStyles = (theme) => css`
-  flex-basis: 2px;
-  min-height: 100%;
-  background-color: ${theme.colors.foretGreen};
-`;
-
-const mainTitleStyles = css`
+const mainTitleStyles = (theme) => css`
+  font-size: 72px !important;
   margin-bottom: 16px;
+
+  ${theme.mediaQueries.viewPort9} {
+    font-size: 88px !important;
+  }
 `;
 
-const subtitleStyles = css`
-  max-width: 488px;
+const subtitleStyles = (theme) => css`
+  font-size: 20px !important;
   margin-bottom: 40px;
+
+  ${theme.mediaQueries.viewPort9} {
+    font-size: 24px !important;
+    max-width: 762px;
+  }
 `;
 
 const linkStyles = css`
@@ -52,25 +33,17 @@ const HeroSection = () => {
   const intl = useIntl();
 
   return (
-    <section css={sectionStyles} {...fadeInSalAttributes()}>
-      <div css={twoColumnsCoverStyles}>
-        <div css={columnStyles}>
-          <div css={leftColumnContentPositionerStyles}>
-            <Heading1 css={mainTitleStyles} enableResponsive>
-              {intl.formatMessage({ id: 'home.hero.title' })}
-            </Heading1>
-            <Subtitle1 css={subtitleStyles}>{intl.formatMessage({ id: 'home.hero.subtitle' })}</Subtitle1>
-            <Link to={`/${PageRouteEnum.GetStarted}`} css={linkStyles}>
-              <PrimaryButton>{intl.formatMessage({ id: 'home.hero.getStartedButton' })}</PrimaryButton>
-            </Link>
-          </div>
-        </div>
+    <BaseHeroSection>
+      <Heading1 css={(theme) => mainTitleStyles(theme)} enableResponsive>
+        {intl.formatMessage({ id: 'home.hero.title' })}
+      </Heading1>
 
-        <div css={dividerStyles} />
+      <Subtitle1 css={(theme) => subtitleStyles(theme)}>{intl.formatMessage({ id: 'home.hero.subtitle' })}</Subtitle1>
 
-        <div css={columnStyles}></div>
-      </div>
-    </section>
+      <Link to={`/${PageRouteEnum.GetStarted}`} css={linkStyles}>
+        <PrimaryButton>{intl.formatMessage({ id: 'home.hero.getStartedButton' })}</PrimaryButton>
+      </Link>
+    </BaseHeroSection>
   );
 };
 
