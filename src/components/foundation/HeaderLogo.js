@@ -42,7 +42,7 @@ const logoTitleStyles = (theme, shouldHideLogoTitle) => css`
 const HeaderLogo = React.memo(({ logoFixed, logoTitle, shouldHideLogoTitle }) => {
   return (
     <Link to={'/'} css={headerLogoStyles}>
-      <Img fixed={logoFixed} css={(theme) => logoStyles(theme, shouldHideLogoTitle)} />
+      <Img fixed={logoFixed} css={(theme) => logoStyles(theme, shouldHideLogoTitle)} alt={'Foret logo image'} />
       <span css={(theme) => logoTitleStyles(theme, shouldHideLogoTitle)}>{logoTitle}</span>
     </Link>
   );
