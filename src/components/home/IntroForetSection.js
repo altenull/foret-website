@@ -2,6 +2,7 @@ import { Paragraph } from '@altenull/foret-react';
 import { css } from '@emotion/core';
 import { useIntl } from 'gatsby-plugin-intl';
 import React from 'react';
+import { fadeInSalAttributes } from '../../utils/animation.util';
 import { ResponsiveContentLayout } from '../foundation';
 
 const sectionStyles = css`
@@ -18,7 +19,7 @@ const IntroForetSection = () => {
   const intl = useIntl();
 
   return (
-    <section css={sectionStyles}>
+    <section css={sectionStyles} {...fadeInSalAttributes()}>
       <ResponsiveContentLayout>
         <Paragraph css={descriptionStyles} enableResponsive>
           {intl.formatMessage({ id: 'home.introForet.description1' })}

@@ -2,6 +2,7 @@ import { css } from '@emotion/core';
 import React from 'react';
 import { ScrollDownIndicatorContainer } from '../../containers/common';
 import { ResponsiveContentLayout } from '../foundation';
+import { fadeInSalAttributes } from '../../utils/animation.util';
 
 const sectionStyles = css`
   position: relative;
@@ -17,7 +18,7 @@ const responsiveContentLayoutPositionerStyles = css`
 
 const BaseHeroSection = ({ children, hasScrollDownIndicator = false }) => {
   return (
-    <section css={sectionStyles}>
+    <section css={sectionStyles} {...fadeInSalAttributes()}>
       <ResponsiveContentLayout css={responsiveContentLayoutPositionerStyles}>{children}</ResponsiveContentLayout>
       {hasScrollDownIndicator && <ScrollDownIndicatorContainer />}
     </section>

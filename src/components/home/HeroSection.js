@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 import { useIntl } from 'gatsby-plugin-intl';
 import React from 'react';
 import { PageRouteEnum } from '../../enums/core/page-route.enum';
+import { fadeInSalAttributes } from '../../utils/animation.util';
 
 const sectionStyles = css`
   position: relative;
@@ -51,7 +52,7 @@ const HeroSection = () => {
   const intl = useIntl();
 
   return (
-    <section css={sectionStyles}>
+    <section css={sectionStyles} {...fadeInSalAttributes()}>
       <div css={twoColumnsCoverStyles}>
         <div css={columnStyles}>
           <div css={leftColumnContentPositionerStyles}>

@@ -132,5 +132,15 @@ module.exports = {
         plugins: ['gatsby-remark-prismjs'],
       },
     },
+    {
+      resolve: 'gatsby-plugin-scroll-reveal',
+      options: {
+        threshold: 0.75, // Percentage of an element's area that needs to be visible to launch animation
+        once: true, // Defines if animation needs to be launched once
+        // Advanced Options
+        selector: '[data-sal]', // Selector of the elements to be animated
+        rootMargin: '0% 50%', // Corresponds to root's bounding box margin
+      },
+    },
   ],
 };

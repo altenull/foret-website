@@ -3,6 +3,7 @@ import { css } from '@emotion/core';
 import { useIntl } from 'gatsby-plugin-intl';
 import React from 'react';
 import { ScrollDownIndicatorContainer } from '../../containers/common';
+import { fadeInSalAttributes } from '../../utils/animation.util';
 import { ResponsiveContentLayout } from '../foundation';
 
 const sectionStyles = css`
@@ -21,7 +22,7 @@ const HeroSection = React.forwardRef((props, ref) => {
   const intl = useIntl();
 
   return (
-    <section css={sectionStyles} ref={ref} {...props}>
+    <section css={sectionStyles} ref={ref} {...props} {...fadeInSalAttributes()}>
       <ResponsiveContentLayout css={responsiveContentLayoutStyles}>
         <Heading1 enableMargin enableResponsive>
           {intl.formatMessage({ id: 'components.hero.title' })}

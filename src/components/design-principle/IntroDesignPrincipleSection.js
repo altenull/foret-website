@@ -1,6 +1,7 @@
 import { Heading2, Paragraph } from '@altenull/foret-react';
 import { useIntl } from 'gatsby-plugin-intl';
 import React from 'react';
+import { fadeInSalAttributes } from '../../utils/animation.util';
 import { marginTopForHeading2 } from '../../utils/margin.util';
 import { ResponsiveContentLayout } from '../foundation';
 
@@ -8,7 +9,7 @@ const IntroDesignPrincipleSection = () => {
   const intl = useIntl();
 
   return (
-    <section>
+    <section {...fadeInSalAttributes()}>
       <ResponsiveContentLayout>
         <Heading2 enableMargin enableResponsive>
           {intl.formatMessage({ id: 'designPrinciple.introDesignPrinciple.principle1.title' })}
