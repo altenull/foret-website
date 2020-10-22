@@ -32,6 +32,7 @@ module.exports = {
       foretGithub: 'https://github.com/altenull/foret',
       emotionTheming: 'https://emotion.sh/docs/theming',
     },
+    nodeEnv: process.env.NODE_ENV,
   },
   plugins: [
     'gatsby-plugin-emotion',

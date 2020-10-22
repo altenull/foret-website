@@ -15,6 +15,7 @@ const useSiteMetadataQuery = () => {
             foretGithub
             emotionTheming
           }
+          nodeEnv
         }
       }
     }
