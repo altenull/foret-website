@@ -1,7 +1,7 @@
 import { Foret } from '@altenull/foret-react';
 import { Global } from '@emotion/core';
 import React from 'react';
-import DefaultHelmet from './src/components/seo/DefaultHelmet';
+import { DefaultHelmet } from './src/components/seo';
 import { getCustomTheme, getGlobalStyles } from './src/utils/theme.util';
 
 export const wrapRootElement = ({ element }) => {

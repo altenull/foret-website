@@ -2,7 +2,7 @@ import { Foret } from '@altenull/foret-react';
 import { Global } from '@emotion/core';
 import 'prismjs/themes/prism-tomorrow.css';
 import React from 'react';
-import DefaultHelmet from './src/components/seo/DefaultHelemt';
+import { DefaultHelmet } from './src/components/seo';
 import { getCustomTheme, getGlobalStyles } from './src/utils/theme.util';
 
 // issue - https://github.com/altenull/foret-website/issues/1
