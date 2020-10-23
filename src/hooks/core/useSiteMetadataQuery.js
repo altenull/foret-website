@@ -10,6 +10,7 @@ const useSiteMetadataQuery = () => {
             camelCase
           }
           hosts {
+            foretWebsite
             foretNgNpm
             foretReactNpm
             foretGithub

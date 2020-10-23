@@ -1,11 +1,10 @@
 import { graphql, useStaticQuery } from 'gatsby';
-import { useIntl } from 'gatsby-plugin-intl';
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { LanguageEnum } from '../../enums/core/language.enum';
 import { useSiteMetadataQuery } from '../../hooks/core';
 
-const CustomHelmet = ({ title, language }) => {
-  const intl = useIntl();
+const DefaultHelmet = () => {
   const { siteMetadata } = useSiteMetadataQuery();
   const { foretOg } = useStaticQuery(graphql`
     query {
@@ -19,15 +18,19 @@ const CustomHelmet = ({ title, language }) => {
     }
   `);
 
+  const titleInKorean = 'Foret 디자인 시스템';
+  const descriptionInKorean =
+    'Foret는 Foret 디자인 언어로 자연과 관련된 웹 애플리케이션을 구축하기 위한 오픈 소스 디자인 시스템입니다.';
+
   return (
-    <Helmet htmlAttributes={{ lang: language }} defer={false}>
-      <title>{title}</title>
-      <meta name='description' content={intl.formatMessage({ id: 'description' })} />
+    <Helmet htmlAttributes={{ lang: LanguageEnum.Ko }} defer={false}>
+      <title>{titleInKorean}</title>
+      <meta name='description' content={descriptionInKorean} />
 
       <meta property='og:type' content='website' />
       <meta property='og:url' content={siteMetadata.hosts.foretWebsite} />
-      <meta property='og:title' content={title} />
-      <meta property='og:description' content={intl.formatMessage({ id: 'description' })} />
+      <meta property='og:title' content={titleInKorean} />
+      <meta property='og:description' content={descriptionInKorean} />
       <meta property='og:image' content={foretOg.childImageSharp.fluid.src} />
 
       <link rel='canonical' href={siteMetadata.hosts.foretWebsite} />
@@ -35,4 +38,4 @@ const CustomHelmet = ({ title, language }) => {
   );
 };
 
-export default CustomHelmet;
+export default DefaultHelmet;
