@@ -1,7 +1,7 @@
 {
   "name": "foret-website",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "description": "This website describes Foret Design System.",
   "version": "1.0.0-0",
   "license": "MIT",
   "scripts": {
