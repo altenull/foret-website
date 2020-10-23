@@ -9,8 +9,7 @@ const CustomHelmet = ({ title, language }) => {
     <Helmet htmlAttributes={{ lang: language }} defer={false}>
       <title>{title}</title>
       <meta name='description' content={intl.formatMessage({ id: 'description' })} />
-      {/* TODO: change canonical domain */}
-      <link rel='canonical' href='http://foretdesign.netlify.app/' />
+      <link rel='canonical' href='https://foretdesign.io/' />
     </Helmet>
   );
 };
