@@ -1,5 +1,6 @@
 {
   "title": "Foret Design System",
+  "description": "Foret is an open-source design system for building web applications related to nature with Foret design language.",
   "pages": {
     "home": "Home",
     "getStarted": "Get Started",

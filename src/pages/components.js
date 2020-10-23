@@ -1,7 +1,6 @@
 import { navigate } from 'gatsby';
-import { useIntl } from 'gatsby-plugin-intl';
+import { IntlContextConsumer, useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment, useEffect, useRef, useState } from 'react';
-import { Helmet } from 'react-helmet';
 import { PageNavigationSection } from '../components/common';
 import {
   ButtonSection,
@@ -14,6 +13,7 @@ import {
   ToggleSection,
 } from '../components/components';
 import { PageLayout } from '../components/foundation';
+import { CustomHelmet } from '../components/seo';
 import { COMPONENT_HASHES } from '../constants/components.constant';
 import { ComponentHashEnum } from '../enums/components/component-hash.enum';
 import { useIsMounted, useSiteMetadataQuery } from '../hooks/core';
@@ -108,31 +108,44 @@ const ComponentsPage = ({ location }) => {
   const componentsTitle = getPageTitle(intl, location.pathname, siteMetadata.pageRoutes);
 
   return (
-    <Fragment>
-      <Helmet title={componentsTitle} defer={false} />
-      <PageLayout>
-        <HeroSection ref={heroSectionRef} />
-        <ButtonSection componentHash={ComponentHashEnum.Button} onAnchorHeading2Click={navigateAndScrollToHashPoint} />
-        <CheckboxSection
-          componentHash={ComponentHashEnum.Checkbox}
-          onAnchorHeading2Click={navigateAndScrollToHashPoint}
-        />
-        <RadioButtonSection
-          componentHash={ComponentHashEnum.RadioButton}
-          onAnchorHeading2Click={navigateAndScrollToHashPoint}
-        />
-        <SelectSection componentHash={ComponentHashEnum.Select} onAnchorHeading2Click={navigateAndScrollToHashPoint} />
-        <TabSection componentHash={ComponentHashEnum.Tab} onAnchorHeading2Click={navigateAndScrollToHashPoint} />
-        <ToggleSection componentHash={ComponentHashEnum.Toggle} onAnchorHeading2Click={navigateAndScrollToHashPoint} />
-        <PageNavigationSection />
+    <IntlContextConsumer>
+      {({ language }) => (
+        <Fragment>
+          <CustomHelmet title={componentsTitle} language={language} />
+          <PageLayout>
+            <HeroSection ref={heroSectionRef} />
+            <ButtonSection
+              componentHash={ComponentHashEnum.Button}
+              onAnchorHeading2Click={navigateAndScrollToHashPoint}
+            />
+            <CheckboxSection
+              componentHash={ComponentHashEnum.Checkbox}
+              onAnchorHeading2Click={navigateAndScrollToHashPoint}
+            />
+            <RadioButtonSection
+              componentHash={ComponentHashEnum.RadioButton}
+              onAnchorHeading2Click={navigateAndScrollToHashPoint}
+            />
+            <SelectSection
+              componentHash={ComponentHashEnum.Select}
+              onAnchorHeading2Click={navigateAndScrollToHashPoint}
+            />
+            <TabSection componentHash={ComponentHashEnum.Tab} onAnchorHeading2Click={navigateAndScrollToHashPoint} />
+            <ToggleSection
+              componentHash={ComponentHashEnum.Toggle}
+              onAnchorHeading2Click={navigateAndScrollToHashPoint}
+            />
+            <PageNavigationSection />
 
-        <TOC
-          items={getTocItems(intl, COMPONENT_HASHES)}
-          currentHash={currentHash}
-          onTOCItemClick={navigateAndScrollToHashPoint}
-        />
-      </PageLayout>
-    </Fragment>
+            <TOC
+              items={getTocItems(intl, COMPONENT_HASHES)}
+              currentHash={currentHash}
+              onTOCItemClick={navigateAndScrollToHashPoint}
+            />
+          </PageLayout>
+        </Fragment>
+      )}
+    </IntlContextConsumer>
   );
 };
 

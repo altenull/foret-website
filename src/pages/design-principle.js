@@ -1,9 +1,9 @@
-import { useIntl } from 'gatsby-plugin-intl';
+import { IntlContextConsumer, useIntl } from 'gatsby-plugin-intl';
 import React, { Fragment } from 'react';
-import { Helmet } from 'react-helmet';
 import { PageNavigationSection } from '../components/common';
 import { HeroSection, IntroDesignPrincipleSection } from '../components/design-principle';
 import { PageLayout } from '../components/foundation';
+import { CustomHelmet } from '../components/seo';
 import { useSiteMetadataQuery } from '../hooks/core';
 import { getPageTitle } from '../utils/page.util';
 
@@ -14,14 +14,18 @@ const DesignPrinciplePage = ({ location }) => {
   const designPrincipleTitle = getPageTitle(intl, location.pathname, siteMetadata.pageRoutes);
 
   return (
-    <Fragment>
-      <Helmet title={designPrincipleTitle} defer={false} />
-      <PageLayout>
-        <HeroSection />
-        <IntroDesignPrincipleSection />
-        <PageNavigationSection />
-      </PageLayout>
-    </Fragment>
+    <IntlContextConsumer>
+      {({ language }) => (
+        <Fragment>
+          <CustomHelmet title={designPrincipleTitle} language={language} />
+          <PageLayout>
+            <HeroSection />
+            <IntroDesignPrincipleSection />
+            <PageNavigationSection />
+          </PageLayout>
+        </Fragment>
+      )}
+    </IntlContextConsumer>
   );
 };
 

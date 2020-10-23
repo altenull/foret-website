@@ -1,5 +1,6 @@
 {
   "title": "Foret 디자인 시스템",
+  "description": "Foret는 Foret 디자인 언어로 자연과 관련된 웹 애플리케이션을 구축하기 위한 오픈 소스 디자인 시스템입니다.",
   "pages": {
     "home": "홈페이지",
     "getStarted": "시작하기",
