@@ -18,7 +18,7 @@ const copyIconWrapperStyles = (theme, isHovered, hasCopied, iconWrapperColor) =>
   transition: transform ${theme.duration.slow}, opacity ${theme.duration.slow}, background-color ${theme.duration.slow};
   transform: translateX(${hasCopied ? '8px' : '0'});
   opacity: ${hasCopied ? '0' : '1'};
-  background-color: ${isHovered ? iconWrapperColor : 'none'};
+  background-color: ${isHovered ? iconWrapperColor : 'initial'};
 `;
 
 const copyIconStyles = css`

@@ -7,7 +7,6 @@ const copyIconStyles = (size, color) => css`
   width: ${size}px;
   height: ${size}px;
   fill: ${color};
-  cursor: pointer;
 `;
 
 const CopyIcon = ({ size = 24, color = Color.Ink, ...props }) => {

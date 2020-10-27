@@ -31,7 +31,7 @@ const CodeViewerContainer = React.memo(({ codeInHtml, codeInMarkdown = '' }) => 
     if (!isCopyIconWithCopiedMessageRefHovered && hasCodeCopied) {
       setHasCodeCopied(false);
     }
-  }, [isCopyIconWithCopiedMessageRefHovered, hasCodeCopied]);
+  }, [isCopyIconWithCopiedMessageRefHovered, hasCodeCopied, setHasCodeCopied]);
 
   const handleCopyIconClick = (codeInMarkdown) => {
     const markdownCodeBlockRegExp = /(`{3})[a-zA-Z]*\n|(`{3})/g;
@@ -45,7 +45,6 @@ const CodeViewerContainer = React.memo(({ codeInHtml, codeInMarkdown = '' }) => 
   return (
     <div css={codeViewerStyles}>
       <div
-        className={'code-container'}
         dangerouslySetInnerHTML={{
           __html: codeInHtml,
         }}
