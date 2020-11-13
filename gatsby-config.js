@@ -45,7 +45,7 @@ module.exports = {
       options: {
         path: `${__dirname}/src/intl`,
         languages: [LanguageEnum.Ko, LanguageEnum.En],
-        defaultLanguage: LanguageEnum.Ko,
+        defaultLanguage: LanguageEnum.En,
         redirect: true,
       },
     },
