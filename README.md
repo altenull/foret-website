@@ -20,8 +20,8 @@
 
 This website supports the following languages.
 
-* 한국어 **(default)**
-* English
+* English **(default)**
+* 한국어
 
 
 ## 📝 License
