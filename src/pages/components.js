@@ -123,10 +123,10 @@ const ComponentsPage = ({ location }) => {
               componentHash={ComponentHashEnum.Checkbox}
               onAnchorHeading2Click={navigateAndScrollToHashPoint}
             />
-            <DatePickerSection
+            {/* TODO: <DatePickerSection
               componentHash={ComponentHashEnum.DatePicker}
               onAnchorHeading2Click={navigateAndScrollToHashPoint}
-            />
+            /> */}
             <RadioButtonSection
               componentHash={ComponentHashEnum.RadioButton}
               onAnchorHeading2Click={navigateAndScrollToHashPoint}

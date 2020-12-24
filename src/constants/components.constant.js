@@ -4,7 +4,7 @@ import { PropsTableColumnEnum } from '../enums/components/props-table-column.enu
 export const COMPONENT_HASHES = [
   ComponentHashEnum.Button,
   ComponentHashEnum.Checkbox,
-  ComponentHashEnum.DatePicker,
+  // TODO: ComponentHashEnum.DatePicker,
   ComponentHashEnum.RadioButton,
   ComponentHashEnum.Select,
   ComponentHashEnum.Tab,
