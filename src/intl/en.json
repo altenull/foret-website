@@ -151,6 +151,18 @@
         }
       }
     },
+    "datePicker": {
+      "title": "Date Picker",
+      "description": "Date Picker is ... ",
+      "propsDescription": {
+        "datePicker": {
+          "id": "The id of a date picker. It's used to identifies the date picker.",
+          "selectedDate": "...",
+          "locale": "...",
+          "onChange": "Callback function to invoke when the user clicks on the date."
+        }
+      }
+    },
     "radioButton": {
       "title": "Radio Button",
       "description": "A radio button is used when a user to pick exactly one option from a list.",

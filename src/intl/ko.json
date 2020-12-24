@@ -151,6 +151,18 @@
         }
       }
     },
+    "datePicker": {
+      "title": "Date Picker",
+      "description": "데이트 피커는 ...",
+      "propsDescription": {
+        "datePicker": {
+          "id": "데이트 피커의 id입니다. 데이트 피커를 구분하기 위해 사용됩니다.",
+          "selectedDate": "...",
+          "locale": "...",
+          "onChange": "사용자가 체크박스를 클릭 할 때 호출되는 콜백 함수입니다."
+        }
+      }
+    },
     "radioButton": {
       "title": "Radio Button",
       "description": "라디오버튼은 사용자가 목록에서 단 하나의 옵션을 선택할 때 사용됩니다.",
