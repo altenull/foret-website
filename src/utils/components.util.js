@@ -9,6 +9,7 @@ export const getTocItems = (intl, componentHashes) => {
   const componentHashToIntlIdMap = {
     [ComponentHashEnum.Button]: 'components.button.title',
     [ComponentHashEnum.Checkbox]: 'components.checkbox.title',
+    [ComponentHashEnum.DatePicker]: 'components.datePicker.title',
     [ComponentHashEnum.RadioButton]: 'components.radioButton.title',
     [ComponentHashEnum.Select]: 'components.select.title',
     [ComponentHashEnum.Tab]: 'components.tab.title',
