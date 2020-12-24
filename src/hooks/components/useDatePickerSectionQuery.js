@@ -3,9 +3,9 @@ import { graphql, useStaticQuery } from 'gatsby';
 const useDatePickerSectionQuery = () => {
   const {
     importDatePickerReactCode,
-    demoDatePickerCodeReact,
-    demoDatePickerSelectedDateCodeReact,
-    demoDatePickerLocaleCodeReact,
+    demoDatePickerReactCode,
+    demoDatePickerSelectedDateReactCode,
+    demoDatePickerLocaleReactCode,
   } = useStaticQuery(graphql`
     query {
       importDatePickerReactCode: allMarkdownRemark(
@@ -16,7 +16,7 @@ const useDatePickerSectionQuery = () => {
           rawMarkdownBody
         }
       }
-      demoDatePickerCodeReact: allMarkdownRemark(
+      demoDatePickerReactCode: allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/demo-date-picker-react.md/" } }
       ) {
         nodes {
@@ -24,7 +24,7 @@ const useDatePickerSectionQuery = () => {
           rawMarkdownBody
         }
       }
-      demoDatePickerSelectedDateCodeReact: allMarkdownRemark(
+      demoDatePickerSelectedDateReactCode: allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/demo-date-picker-selected-date-react.md/" } }
       ) {
         nodes {
@@ -32,7 +32,7 @@ const useDatePickerSectionQuery = () => {
           rawMarkdownBody
         }
       }
-      demoDatePickerLocaleCodeReact: allMarkdownRemark(
+      demoDatePickerLocaleReactCode: allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/demo-date-picker-locale-react.md/" } }
       ) {
         nodes {
@@ -45,9 +45,9 @@ const useDatePickerSectionQuery = () => {
 
   const datePickerSectionQueryResponse = {
     importDatePickerReactCode,
-    demoDatePickerCodeReact,
-    demoDatePickerSelectedDateCodeReact,
-    demoDatePickerLocaleCodeReact,
+    demoDatePickerReactCode,
+    demoDatePickerSelectedDateReactCode,
+    demoDatePickerLocaleReactCode,
   };
 
   return datePickerSectionQueryResponse;
