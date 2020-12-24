@@ -5,6 +5,7 @@ import { PageNavigationSection } from '../components/common';
 import {
   ButtonSection,
   CheckboxSection,
+  DatePickerSection,
   HeroSection,
   RadioButtonSection,
   SelectSection,
@@ -120,6 +121,10 @@ const ComponentsPage = ({ location }) => {
             />
             <CheckboxSection
               componentHash={ComponentHashEnum.Checkbox}
+              onAnchorHeading2Click={navigateAndScrollToHashPoint}
+            />
+            <DatePickerSection
+              componentHash={ComponentHashEnum.DatePicker}
               onAnchorHeading2Click={navigateAndScrollToHashPoint}
             />
             <RadioButtonSection

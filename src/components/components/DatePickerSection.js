@@ -1,0 +1,91 @@
+import { DatePicker, Heading3, Paragraph, Subtitle2 } from '@altenull/foret-react';
+import { useIntl } from 'gatsby-plugin-intl';
+import React, { Fragment } from 'react';
+import { CodeViewerContainer } from '../../containers/code';
+import { useDatePickerSectionQuery } from '../../hooks/components';
+import { marginTopForHeading3, marginTopForSubtitle2 } from '../../utils/margin.util';
+import { ComponentDemoBox } from '../code';
+import { TabContentWrapper } from '../common';
+import { ResponsiveContentLayout } from '../foundation';
+import AnchorHeading2 from './AnchorHeading2';
+
+const DatePickerSection = ({ componentHash, onAnchorHeading2Click }) => {
+  const intl = useIntl();
+  const {
+    importDatePickerReactCode,
+    demoDatePickerReactCode,
+    demoDatePickerSelectedDateReactCode,
+    demoDatePickerLocaleReactCode,
+  } = useDatePickerSectionQuery();
+
+  const getDemoDatePicker = () => (
+    <Fragment>
+      <DatePicker id='date-picker' />
+    </Fragment>
+  );
+
+  const getDemoDatePickerSelectedDate = () => (
+    <Fragment>
+      <DatePicker id='date-picker-selected-date' selectedDate={new Date()} />
+    </Fragment>
+  );
+
+  const getDemoDatePickerLocale = () => (
+    <Fragment>
+      <DatePicker id='date-picker-locale' locale={'ko'} />
+    </Fragment>
+  );
+
+  const getReactVersionContent = () => {
+    return (
+      <TabContentWrapper>
+        <Heading3 css={marginTopForHeading3} enableMargin enableResponsive>
+          {intl.formatMessage({ id: 'components.shared.liveDemo' })}
+        </Heading3>
+        <Subtitle2>Date Picker:</Subtitle2>
+        <ComponentDemoBox
+          demo={getDemoDatePicker()}
+          codeInHtml={demoDatePickerReactCode.nodes[0].html}
+          codeInMarkdown={demoDatePickerReactCode.nodes[0].rawMarkdownBody}
+        />
+        <Subtitle2 css={marginTopForSubtitle2}>With selected date:</Subtitle2>
+        <ComponentDemoBox
+          demo={getDemoDatePickerSelectedDate()}
+          codeInHtml={demoDatePickerSelectedDateReactCode.nodes[0].html}
+          codeInMarkdown={demoDatePickerSelectedDateReactCode.nodes[0].rawMarkdownBody}
+        />
+        <Subtitle2 css={marginTopForSubtitle2}>With locale:</Subtitle2>
+        <ComponentDemoBox
+          demo={getDemoDatePickerLocale()}
+          codeInHtml={demoDatePickerLocaleReactCode.nodes[0].html}
+          codeInMarkdown={demoDatePickerLocaleReactCode.nodes[0].rawMarkdownBody}
+        />
+
+        <Heading3 css={marginTopForHeading3} enableMargin enableResponsive>
+          {intl.formatMessage({ id: 'components.shared.imports' })}
+        </Heading3>
+        <CodeViewerContainer
+          codeInHtml={importDatePickerReactCode.nodes[0].html}
+          codeInMarkdown={importDatePickerReactCode.nodes[0].rawMarkdownBody}
+        />
+      </TabContentWrapper>
+    );
+  };
+
+  return (
+    <section>
+      <ResponsiveContentLayout>
+        <AnchorHeading2 componentHash={componentHash} onAnchorHeading2Click={onAnchorHeading2Click}>
+          {intl.formatMessage({ id: 'components.datePicker.title' })}
+        </AnchorHeading2>
+        <Paragraph enableMargin enableResponsive>
+          {intl.formatMessage({ id: 'components.datePicker.description' })}
+        </Paragraph>
+
+        {getReactVersionContent()}
+      </ResponsiveContentLayout>
+    </section>
+  );
+};
+
+export default DatePickerSection;
