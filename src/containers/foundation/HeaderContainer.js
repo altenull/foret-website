@@ -1,12 +1,11 @@
 import { css } from '@emotion/core';
-import { useIntl } from 'gatsby-plugin-intl';
-import React, { Fragment, useCallback, useEffect, useRef, useState } from 'react';
-import { Portal } from '../../components/common';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { useRecoilState } from 'recoil';
 import { HeaderLogo } from '../../components/foundation';
 import { HamburgerIcon } from '../../components/icons';
 import { useIsMounted } from '../../hooks/core';
 import { useLogoImageQuery } from '../../hooks/foundation';
-import DrawerContainer from './DrawerContainer';
+import { isDrawerShowingState } from '../../store/atoms/view.atoms';
 
 const headerStyles = (theme, isScrolled, isDrawerShowing) => css`
   position: fixed;
@@ -42,12 +41,11 @@ const hamburgerMenuStyles = css`
 `;
 
 const HeaderContainer = () => {
-  const [isDrawerShowing, setIsDrawerShowing] = useState(false);
+  const [isDrawerShowing, setIsDrawerShowing] = useRecoilState(isDrawerShowingState);
   const [isScrolled, setIsScrolled] = useState(false);
 
   const headerRef = useRef();
 
-  const intl = useIntl();
   const isMounted = useIsMounted();
   const getLogoImageResponse = useLogoImageQuery();
 
@@ -58,17 +56,6 @@ const HeaderContainer = () => {
       setIsScrolled(newIsScrolled);
     }
   }, [headerRef, isScrolled]);
-
-  const handleEscapeKeydown = useCallback(
-    (event) => {
-      // We use KeyboardEvent.code since KeyboardEvent.keyCode is deprecated.
-      // https://developer.mozilla.org/ko/docs/Web/API/KeyboardEvent/keyCode
-      if (event.code === 'Escape') {
-        setIsDrawerShowing(false);
-      }
-    },
-    [setIsDrawerShowing]
-  );
 
   useEffect(() => {
     if (isMounted) {
@@ -87,44 +74,22 @@ const HeaderContainer = () => {
     };
   }, [isMounted, isScrolled, handleScroll]);
 
-  useEffect(() => {
-    if (isMounted) {
-      document.addEventListener('keydown', handleEscapeKeydown);
-    }
-
-    return () => {
-      document.removeEventListener('keydown', handleEscapeKeydown);
-    };
-  }, [isMounted, handleEscapeKeydown]);
-
   const toggleDrawer = () => {
     setIsDrawerShowing(!isDrawerShowing);
   };
 
   return (
-    <Fragment>
-      {isDrawerShowing && (
-        <Portal>
-          <DrawerContainer />
-        </Portal>
-      )}
+    <header css={(theme) => headerStyles(theme, isScrolled, isDrawerShowing)} ref={headerRef}>
+      <HeaderLogo
+        logoFixed={getLogoImageResponse.logoCircleImage}
+        logoTitle={'Foret Design System'}
+        shouldHideLogoTitle={isScrolled}
+      />
 
-      <header css={(theme) => headerStyles(theme, isScrolled, isDrawerShowing)} ref={headerRef}>
-        <HeaderLogo
-          logoFixed={getLogoImageResponse.logoCircleImage}
-          logoTitle={intl.formatMessage({ id: 'title' })}
-          shouldHideLogoTitle={isScrolled}
-        />
-
-        <span
-          css={hamburgerMenuStyles}
-          role={'toolbar'}
-          onClick={() => toggleDrawer()}
-          onKeyDown={() => toggleDrawer()}>
-          <HamburgerIcon shouldTransformToCloseIcon={isDrawerShowing} />
-        </span>
-      </header>
-    </Fragment>
+      <span css={hamburgerMenuStyles} role={'toolbar'} onClick={toggleDrawer} onKeyDown={toggleDrawer}>
+        <HamburgerIcon shouldTransformToCloseIcon={isDrawerShowing} />
+      </span>
+    </header>
   );
 };
 
