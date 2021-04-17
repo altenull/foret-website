@@ -4,7 +4,7 @@ import { PropsTableColumnEnum } from '../enums/components/props-table-column.enu
 export const COMPONENT_HASHES = [
   ComponentHashEnum.Button,
   ComponentHashEnum.Checkbox,
-  // TODO: ComponentHashEnum.DatePicker,
+  ComponentHashEnum.DatePicker,
   ComponentHashEnum.RadioButton,
   ComponentHashEnum.Select,
   ComponentHashEnum.Tab,
@@ -144,6 +144,28 @@ export const CHECKBOX_GROUP_PROPERTIES_WITHOUT_DESCRIPTION = [
 ];
 
 export const CHECKBOX_PROPERTIES_WITHOUT_DESCRIPTION = [ID_SUB_PROPERTY, LABEL_TEXT_SUB_PROPERTY, CHECKED_SUB_PROPERTY];
+
+export const DATE_PICKER_PROPS_WITHOUT_DESCRIPTION = [
+  ID_SUB_PROP,
+  {
+    key: 'selectedDate',
+    name: 'selectedDate',
+    type: 'Date',
+    default: '',
+  },
+  {
+    key: 'locale',
+    name: 'locale',
+    type: 'string',
+    default: 'en',
+  },
+  {
+    key: 'onChange',
+    name: 'onChange',
+    type: 'function(newSelectedDay: Date, id: string)',
+    default: '',
+  },
+];
 
 export const RADIO_BUTTON_GROUP_PROPS_WITHOUT_DESCRIPTION = [
   LEGEND_TEXT_SUB_PROP,

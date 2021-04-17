@@ -123,10 +123,10 @@ const ComponentsPage = ({ location }) => {
               componentHash={ComponentHashEnum.Checkbox}
               onAnchorHeading2Click={navigateAndScrollToHashPoint}
             />
-            {/* TODO: <DatePickerSection
+            <DatePickerSection
               componentHash={ComponentHashEnum.DatePicker}
               onAnchorHeading2Click={navigateAndScrollToHashPoint}
-            /> */}
+            />
             <RadioButtonSection
               componentHash={ComponentHashEnum.RadioButton}
               onAnchorHeading2Click={navigateAndScrollToHashPoint}
@@ -141,7 +141,6 @@ const ComponentsPage = ({ location }) => {
               onAnchorHeading2Click={navigateAndScrollToHashPoint}
             />
             <PageNavigationSection />
-
             <TOC
               items={getTocItems(intl, COMPONENT_HASHES)}
               currentHash={currentHash}

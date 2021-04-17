@@ -1,9 +1,12 @@
-import { DatePicker, Heading3, Paragraph, Subtitle2 } from '@altenull/foret-react';
+import { DatePicker, Heading3, Paragraph, Subtitle2, Tab, TabGroup } from '@altenull/foret-react';
 import { useIntl } from 'gatsby-plugin-intl';
-import React, { Fragment } from 'react';
+import React from 'react';
+import { DATE_PICKER_PROPS_WITHOUT_DESCRIPTION } from '../../constants/components.constant';
 import { CodeViewerContainer } from '../../containers/code';
+import { ComponentFactorEnum } from '../../enums/components/component-factor.enum';
 import { useDatePickerSectionQuery } from '../../hooks/components';
-import { marginTopForHeading3, marginTopForSubtitle2 } from '../../utils/margin.util';
+import { getPropsOfComponentFactor, getPropsTable } from '../../utils/components.util';
+import { marginTopForHeading2, marginTopForHeading3, marginTopForSubtitle2 } from '../../utils/margin.util';
 import { ComponentDemoBox } from '../code';
 import { TabContentWrapper } from '../common';
 import { ResponsiveContentLayout } from '../foundation';
@@ -18,25 +21,20 @@ const DatePickerSection = ({ componentHash, onAnchorHeading2Click }) => {
     demoDatePickerLocaleReactCode,
   } = useDatePickerSectionQuery();
 
-  const getDemoDatePicker = () => (
-    <Fragment>
-      <DatePicker id='date-picker' />
-    </Fragment>
-  );
+  const getDemoDatePicker = () => <DatePicker id='date-picker' />;
 
-  const getDemoDatePickerSelectedDate = () => (
-    <Fragment>
-      <DatePicker id='date-picker-selected-date' selectedDate={new Date()} />
-    </Fragment>
-  );
+  const getDemoDatePickerSelectedDate = () => <DatePicker id='date-picker-selected-date' selectedDate={new Date()} />;
 
-  const getDemoDatePickerLocale = () => (
-    <Fragment>
-      <DatePicker id='date-picker-locale' locale={'ko'} />
-    </Fragment>
-  );
+  const getDemoDatePickerLocale = () => <DatePicker id='date-picker-locale' locale={'ko'} />;
 
   const getReactVersionContent = () => {
+    const datePickerProps = getPropsOfComponentFactor(
+      intl,
+      ComponentFactorEnum.DatePicker,
+      'datePicker',
+      DATE_PICKER_PROPS_WITHOUT_DESCRIPTION
+    );
+
     return (
       <TabContentWrapper>
         <Heading3 css={marginTopForHeading3} enableMargin enableResponsive>
@@ -68,6 +66,11 @@ const DatePickerSection = ({ componentHash, onAnchorHeading2Click }) => {
           codeInHtml={importDatePickerReactCode.nodes[0].html}
           codeInMarkdown={importDatePickerReactCode.nodes[0].rawMarkdownBody}
         />
+
+        <Heading3 css={marginTopForHeading3} enableMargin enableResponsive>
+          {intl.formatMessage({ id: 'components.shared.props' })}
+        </Heading3>
+        {getPropsTable(datePickerProps)}
       </TabContentWrapper>
     );
   };
@@ -75,14 +78,21 @@ const DatePickerSection = ({ componentHash, onAnchorHeading2Click }) => {
   return (
     <section>
       <ResponsiveContentLayout>
-        <AnchorHeading2 componentHash={componentHash} onAnchorHeading2Click={onAnchorHeading2Click}>
+        <AnchorHeading2
+          css={marginTopForHeading2}
+          componentHash={componentHash}
+          onAnchorHeading2Click={onAnchorHeading2Click}>
           {intl.formatMessage({ id: 'components.datePicker.title' })}
         </AnchorHeading2>
         <Paragraph enableMargin enableResponsive>
           {intl.formatMessage({ id: 'components.datePicker.description' })}
         </Paragraph>
 
-        {getReactVersionContent()}
+        <TabGroup selectedValue={'datePickerSectionReactTap'} name={'datePicker-section-tap'}>
+          <Tab id={'datePicker-section-react-tap'} labelText={'React'} value={'datePickerSectionReactTap'}>
+            {getReactVersionContent()}
+          </Tab>
+        </TabGroup>
       </ResponsiveContentLayout>
     </section>
   );
