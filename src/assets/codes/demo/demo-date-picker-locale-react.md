@@ -1,3 +1,3 @@
 ```jsx
-<DatePicker id={'date-picker-locale'} locale={'ko'}/>
+<DatePicker id="date-picker-locale" locale="ko"/>
 ```

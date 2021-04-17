@@ -1,3 +1,3 @@
 ```jsx
-<DatePicker id={'date-picker'}/>
+<DatePicker id="date-picker"/>
 ```
