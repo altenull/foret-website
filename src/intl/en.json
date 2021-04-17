@@ -153,12 +153,12 @@
     },
     "datePicker": {
       "title": "Date Picker",
-      "description": "Date Picker is ... ",
+      "description": "Date Picker is used when a user to pick a single date.",
       "propsDescription": {
         "datePicker": {
           "id": "The id of a date picker. It's used to identifies the date picker.",
-          "selectedDate": "...",
-          "locale": "...",
+          "selectedDate": "The selected date of date picker.",
+          "locale": "The default locale is 'en'. 'ko' locale is also supported.",
           "onChange": "Callback function to invoke when the user clicks on the date."
         }
       }

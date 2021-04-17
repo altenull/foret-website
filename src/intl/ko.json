@@ -153,13 +153,13 @@
     },
     "datePicker": {
       "title": "Date Picker",
-      "description": "데이트 피커는 ...",
+      "description": "데이트 픽커는 사용자가 날짜를 선택할 때 사용됩니다.",
       "propsDescription": {
         "datePicker": {
-          "id": "데이트 피커의 id입니다. 데이트 피커를 구분하기 위해 사용됩니다.",
-          "selectedDate": "...",
-          "locale": "...",
-          "onChange": "사용자가 체크박스를 클릭 할 때 호출되는 콜백 함수입니다."
+          "id": "데이트 픽커의 id입니다. 데이트 픽커를 구분하기 위해 사용됩니다.",
+          "selectedDate": "데이트 픽커의 선택된 날짜입니다.",
+          "locale": "Default는 'en'이고, 'ko'도 지원합니다.",
+          "onChange": "사용자가 날짜를 클릭 할 때 호출되는 콜백 함수입니다."
         }
       }
     },
