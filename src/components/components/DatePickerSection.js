@@ -1,6 +1,6 @@
 import { DatePicker, Heading3, Paragraph, Subtitle2, Tab, TabGroup } from '@altenull/foret-react';
 import { useIntl } from 'gatsby-plugin-intl';
-import React from 'react';
+import React, { useState } from 'react';
 import { DATE_PICKER_PROPS_WITHOUT_DESCRIPTION } from '../../constants/components.constant';
 import { CodeViewerContainer } from '../../containers/code';
 import { ComponentFactorEnum } from '../../enums/components/component-factor.enum';
@@ -13,6 +13,7 @@ import { ResponsiveContentLayout } from '../foundation';
 import AnchorHeading2 from './AnchorHeading2';
 
 const DatePickerSection = ({ componentHash, onAnchorHeading2Click }) => {
+  const [demoDatePickerSelectedDate, setDemoDatePickerSelectedDate] = useState(new Date());
   const intl = useIntl();
   const {
     importDatePickerReactCode,
@@ -23,7 +24,13 @@ const DatePickerSection = ({ componentHash, onAnchorHeading2Click }) => {
 
   const getDemoDatePicker = () => <DatePicker id='date-picker' />;
 
-  const getDemoDatePickerSelectedDate = () => <DatePicker id='date-picker-selected-date' selectedDate={new Date()} />;
+  const getDemoDatePickerSelectedDate = () => {
+    const handleDatePicker = (newSelectedDate, id) => {
+      setDemoDatePickerSelectedDate(newSelectedDate);
+    }
+
+    return <DatePicker id='date-picker-selected-date' selectedDate={demoDatePickerSelectedDate} onChange={handleDatePicker}/>
+  };
 
   const getDemoDatePickerLocale = () => <DatePicker id='date-picker-locale' locale={'ko'} />;
 
