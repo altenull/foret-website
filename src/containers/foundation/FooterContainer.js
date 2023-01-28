@@ -57,6 +57,8 @@ const FooterContainer = () => {
   const foretReactVersion = useGetNpmPackageVersion('@altenull/foret-react');
   const foretNgVersion = useGetNpmPackageVersion('@altenull/foret-ng');
 
+  const currentYear = new Date().getFullYear();
+
   return (
     <IntlContextConsumer>
       {({ language, languages }) => (
@@ -68,7 +70,7 @@ const FooterContainer = () => {
                 <SmallText css={smallTextStyles}>
                   <a href={'mailto:altenull@gmail.com'}>{intl.formatMessage({ id: 'footer.contactUs' })}</a>
                 </SmallText>
-                <SmallText css={smallTextStyles}>© 2020 · Foret Design System</SmallText>
+                <SmallText css={smallTextStyles}>© {currentYear} · Foret Design System</SmallText>
               </div>
               <div css={(theme) => rightColumnStyles(theme)}>
                 <SmallText css={smallTextStyles}>@altenull/foret-react: {foretReactVersion}</SmallText>
