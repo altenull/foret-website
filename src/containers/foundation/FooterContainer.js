@@ -2,7 +2,7 @@ import { SmallText } from '@altenull/foret-react';
 import { css } from '@emotion/core';
 import { IntlContextConsumer, useIntl } from 'gatsby-plugin-intl';
 import React from 'react';
-import { useGetNpmPackageVersion } from '../../hooks/api/useGetNpmPackageVersion';
+import { useNpmPackageVersionLookup } from '../../hooks/api/useNpmPackageVersionLookup';
 import { getLanguageLinks } from '../../utils/locale.util';
 
 const footerStyles = (theme) => css`
@@ -51,11 +51,16 @@ const smallTextStyles = css`
   }
 `;
 
+const npmPackages = {
+  foretReact: '@altenull/foret-react',
+  foretNg: '@altenull/foret-ng',
+};
+
 const FooterContainer = () => {
   const intl = useIntl();
 
-  const foretReactVersion = useGetNpmPackageVersion('@altenull/foret-react');
-  const foretNgVersion = useGetNpmPackageVersion('@altenull/foret-ng');
+  const foretReactVersion = useNpmPackageVersionLookup(npmPackages.foretReact);
+  const foretNgVersion = useNpmPackageVersionLookup(npmPackages.foretNg);
 
   const currentYear = new Date().getFullYear();
 
@@ -73,8 +78,17 @@ const FooterContainer = () => {
                 <SmallText css={smallTextStyles}>© {currentYear} · Foret Design System</SmallText>
               </div>
               <div css={(theme) => rightColumnStyles(theme)}>
-                <SmallText css={smallTextStyles}>@altenull/foret-react: {foretReactVersion}</SmallText>
-                <SmallText css={smallTextStyles}>@altenull/foret-ng: {foretNgVersion}</SmallText>
+                {foretReactVersion != null && (
+                  <SmallText css={smallTextStyles}>
+                    {npmPackages.foretReact}: {foretReactVersion}
+                  </SmallText>
+                )}
+
+                {foretNgVersion != null && (
+                  <SmallText css={smallTextStyles}>
+                    {npmPackages.foretNg}: {foretNgVersion}
+                  </SmallText>
+                )}
               </div>
             </div>
           </div>
